@@ -3,7 +3,7 @@
 ### Canobbio, 14.11.2018
 
 ## Lavori svolti
-Durante questa giornata ci è stato consegnato il QdC del secondo progetto. Abbiamo dovuto scegliere tra due mandati (1 ogni 5 coppie) e noi abbiamo scelto: Sistema didattico per LEGO Mindstorms EV3 / NTX con libreria per attuatori. Mentre alcuni allievi svolgevano le presentazioni sul primo progetto appena concluso, gli altri hanno cominciato con l'analisi del QdC e scrivere eventuali domande per la lezione successiva.
+Durante questa giornata ci è stato consegnato il QdC del secondo progetto. Abbiamo dovuto scegliere tra due mandati (uno ogni 5 coppie) e noi abbiamo scelto: Sistema didattico per LEGO Mindstorms EV3 / NTX con libreria per attuatori. Mentre alcuni allievi svolgevano le presentazioni sul primo progetto appena concluso, gli altri hanno cominciato con l'analisi del QdC e scrivere eventuali domande per la lezione successiva.
 
 |Orario        |Lavoro svolto					|
 |--------------|------------------------------	|
