@@ -51,15 +51,15 @@
 
 ### Informazioni sul progetto
 
-  In questo capitolo raccogliere le informazioni relative al progetto, ad esempio:
+  -   Allievi: Gabriele Alessi, Giulio Bosco
+  
+      Docenti e supervisori: Adriano Barchi, Luca Muggiasca, Francesco Mussi
 
-  -   Allievo/i e docente/i coinvolti nel progetto e rispettivi ruoli,
+  -   Scuola d'Arti e Mestieri di Trevano, sezione Informatica, Classe 3, Modulo 306
 
-  -   scuola ,sezione, materia/e,
-
-  -   date di inizio e termine di consegna,
-
-  -   …
+  -   Data inizio: 14.11.2018
+  
+      Data fine: xx.xx.xxxx
 
 ### Abstract
 
