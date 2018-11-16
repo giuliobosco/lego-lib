@@ -21,4 +21,4 @@ Gabriele Alessi & Giulio Bosco
 5. documentazione
     1. Guida brick
     2. codice commentato e documentato
-    3. 
+    3. valutazione fra linguaggi (Java vs RoboC vs Mindstrom)
