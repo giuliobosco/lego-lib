@@ -134,6 +134,8 @@
 
 ### Pianificazione
 
+![Diagramma di gantt](img/gantt.png)
+
 Prima di stabilire una pianificazione bisogna avere almeno una vaga idea
 del modello di sviluppo che si intende adottare. In questa sezione
 bisognerà inserire il modello concettuale di sviluppo che si seguirà
