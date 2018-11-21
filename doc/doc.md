@@ -1,4 +1,4 @@
-# Lego Lib
+# Libreria Lego
 
 1. [Introduzione](#introduzione)
     - [Informazioni sul progetto](#informazioni-sul-progetto)
@@ -9,7 +9,6 @@
     - [Analisi del dominio](#analisi-del-dominio)
     - [Analisi dei mezzi](#analisi-dei-mezzi)
     - [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
-    - [Use case](#use-case)
     - [Pianificazione](#pianificazione)
 
 1. [Progettazione](#progettazione)
@@ -46,7 +45,7 @@
 
   -   Data inizio: 14.11.2018
 
-      Data fine: xx.xx.xxxx
+      Data fine: 25.01.2019
 
 ### Abstract
 
