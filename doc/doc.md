@@ -1,46 +1,33 @@
+# Lego Lib
+
 1. [Introduzione](#introduzione)
-
-  - [Informazioni sul progetto](#informazioni-sul-progetto)
-
-  - [Abstract](#abstract)
-
-  - [Scopo](#scopo)
+    - [Informazioni sul progetto](#informazioni-sul-progetto)
+    - [Abstract](#abstract)
+    - [Scopo](#scopo)
 
 1. [Analisi](#analisi)
-
-  - [Analisi del dominio](#analisi-del-dominio)
-  
-  - [Analisi dei mezzi](#analisi-dei-mezzi)
-
-  - [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
-
-  - [Use case](#use-case)
-
-  - [Pianificazione](#pianificazione)
+    - [Analisi del dominio](#analisi-del-dominio)
+    - [Analisi dei mezzi](#analisi-dei-mezzi)
+    - [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
+    - [Use case](#use-case)
+    - [Pianificazione](#pianificazione)
 
 1. [Progettazione](#progettazione)
-
-  - [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
-
-  - [Design dei dati e database](#design-dei-dati-e-database)
+    - [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
+    - [Design dei dati e database](#design-dei-dati-e-database)
 
 1. [Implementazione](#implementazione)
 
 1. [Test](#test)
-
-  - [Protocollo di test](#protocollo-di-test)
-
-  - [Risultati test](#risultati-test)
-
-  - [Mancanze/limitazioni conosciute](#mancanze/limitazioni-conosciute)
+    - [Protocollo di test](#protocollo-di-test)
+    - [Risultati test](#risultati-test)
+    - [Mancanze/limitazioni conosciute](#mancanze/limitazioni-conosciute)
 
 1. [Consuntivo](#consuntivo)
 
 1. [Conclusioni](#conclusioni)
-
-  - [Sviluppi futuri](#sviluppi-futuri)
-
-  - [Considerazioni personali](#considerazioni-personali)
+    - [Sviluppi futuri](#sviluppi-futuri)
+    - [Considerazioni personali](#considerazioni-personali)
 
 1. [Sitografia](#sitografia)
 
@@ -52,13 +39,13 @@
 ### Informazioni sul progetto
 
   -   Allievi: Gabriele Alessi, Giulio Bosco
-  
+
       Docenti e supervisori: Adriano Barchi, Luca Muggiasca, Francesco Mussi
 
   -   Scuola d'Arti e Mestieri di Trevano, sezione Informatica, Classe 3, Modulo 306
 
   -   Data inizio: 14.11.2018
-  
+
       Data fine: xx.xx.xxxx
 
 ### Abstract
@@ -149,6 +136,12 @@
   |**001**      | Si necessita una maschera di login|
   |**002**      | Si dovranno poter immettere nuovi allievi|
   |**003**      | Dovrà essere possibile la ricerca di allievi|
+  |            |**Sotto requisiti** |
+  |**001**      | Si necessita una maschera di login  |
+  |**002**      | Si dovranno poter immettere nuovi allievi                 |
+  |**003**      | Dovrà essere possibile la ricerca di allievi                   |
+
+
 
 **Spiegazione elementi tabella dei requisiti:**
 
