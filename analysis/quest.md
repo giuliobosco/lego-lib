@@ -1,4 +1,0 @@
-    -   Come vedere se modelli sono compatibili con i linguaggi
-    -   Quante combinazioni escono
-    -   Come deve essere formata la giuda di utilizzo
-    -   Come deve essere formata la valutazione di confronto
