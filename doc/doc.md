@@ -1,4 +1,4 @@
-# Libreria Lego
+# Libreria LEGO
 
 1. [Introduzione](#introduzione)
     - [Informazioni sul progetto](#informazioni-sul-progetto)
