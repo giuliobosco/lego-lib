@@ -126,6 +126,20 @@ in questo capitolo.
 
 ### Analisi dei mezzi
 
+Per questo progetto abbiamo a disposizione 1 brick Lego NXT e un brick Lego EV3, sui quali verranno istallati i firmware di RobotC e LeJOS.
+
+- **RobotC** è una versione di C semplificata ed adattata per la programmazione dei
+Robot.  
+*Link:* [http://www.robotc.net/download/lego/](http://www.robotc.net/download/lego/)  
+*Versione:* 4.56
+- **LeJOS** è una Java Virtual Machine adattata per i brick NXT e EVT3.  
+*Link:* [http://www.lejos.org/](http://www.lejos.org/)
+*Versione:* NXJ 0.9.1
+
+Per la realizazione del progetto usufruiremo dei nostri computer portatili:
+- Apple MacBookPro 15" 2018, Processore Intel&reg; Core I7, RAM 16GB, Disk 1TB SSD, Mac OS X 10.14.1
+- HP ENVY Notebook, Intel&reg; CORE&tm; I7, RAM 16GB, Windows 10 Home 64bit
+
 Elencare e *descrivere* i mezzi disponibili per la realizzazione del
 progetto. Ricordarsi di sempre descrivere nel dettaglio le versioni e il
 modello di riferimento.
