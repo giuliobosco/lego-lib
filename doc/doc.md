@@ -146,26 +146,34 @@
 
 ### Pianificazione
 
-La pianificazione può essere rappresentata mediante un diagramma di
-Gantt.
+La pianificazione del progetto è stata effettuata mediante la realizzazione di un diagramma di Gantt.
 
 ![Diagramma di gantt](img/gantt.png)
 
 ### Analisi dei mezzi
 
-Per questo progetto abbiamo a disposizione un brick LEGO&reg; NXT e un brick LEGO&reg; EV3, sui quali verranno installati i firmware di ROBOTC e leJOS.
+#### Software
 
-- **ROBOTC** è una versione di C semplificata e adattata per la programmazione dei
+I software usati comprendono quelli presenti sui nostri PC e i firmware per i brick:
+
+- ROBOTC: è una versione di C semplificata e adattata per la programmazione dei
 robot.  
 *Link:* [http://www.robotc.net/download/lego/](http://www.robotc.net/download/lego/)  
 *Versione:* 4.56
-- **leJOS** è una Java Virtual Machine adattata per i brick NXT e EV3.  
-*Link:* [http://www.lejos.org/](http://www.lejos.org/)
+- leJOS: è una Java Virtual Machine adattata per i brick NXT e EV3.  
+*Link:* [http://www.lejos.org/](http://www.lejos.org/)  
 *Versione:* NXJ 0.9.1
+- Visual Studio Code 1.29.1
+- GitHub Desktop 1.5.0
+- GanttProject 2.8.9 Pilsen
 
-Per la realizzazione del prodotto ci serviremo dei nostri computer portatili:
+#### Hardware
+
+Per la realizzazione del prodotto ci siamo serviti dei nostri computer portatili e i brick:
 - Apple MacBook Pro 15" 2018, Processore Intel&reg; Core I7, RAM 16GB, Disk 1TB SSD, Mac OS X 10.14.1
 - HP ENVY Notebook, Intel&reg; Core I7, RAM 16GB, Windows 10 Home 64 bit
+- Brick LEGO&reg; EV3
+- Brick LEGO&reg; NXT
 
 ## Progettazione
 
