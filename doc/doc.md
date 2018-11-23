@@ -105,7 +105,7 @@
   |**Nome**    |Installazione dei firmware   |
   |**Priorità**|1                     |
   |**Versione**|1.0                   |
-  |**Note**    | Per ogninua di queste installazioni ci vuole una guida completa. |
+  |**Note**    |Per ognuna di queste installazioni ci vuole una guida dettagliata.|
   | *Sub-req 1* |Installare firmware RoboC su NXT|
   | *Sub-req 2* |Installare firmware RoboC su EV3|
   | *Sub-req 3* |Installare firmware leJOS su NXT|
@@ -116,7 +116,7 @@
   |**Nome**    | Verifica componenti   |
   |**Priorità**|1                     |
   |**Versione**|1.0                   |
-  |**Note**    |È necessario testare ogni componente utilizzato durante la realizzazione del progetto|
+  |**Note**    |È necessario testare ogni componente utilizzato durante la realizzazione del progetto.|
   | *Sub-req 1* |Testare componenti su NXT con RoboC|
   | *Sub-req 2* |Testare componenti su EV3 con RoboC|
   | *Sub-req 3* |Testare componenti su NXT con leJOS|
@@ -146,20 +146,10 @@
 
 ### Pianificazione
 
-![Diagramma di gantt](img/gantt.png)
-
-Prima di stabilire una pianificazione bisogna avere almeno una vaga idea
-del modello di sviluppo che si intende adottare. In questa sezione
-bisognerà inserire il modello concettuale di sviluppo che si seguirà
-durante il progetto. Gli elementi di riferimento per una buona
-pianificazione derivano da una scomposizione top-down della problematica
-del progetto.
-
 La pianificazione può essere rappresentata mediante un diagramma di
 Gantt.
 
-Se si usano altri metodi di pianificazione (es scrum), dovranno apparire
-in questo capitolo.
+![Diagramma di gantt](img/gantt.png)
 
 ### Analisi dei mezzi
 
