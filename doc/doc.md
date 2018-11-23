@@ -104,10 +104,25 @@
 
   |ID  |REQ-01                                          |
   |----|------------------------------------------------|
-  |**Nome**    |Verifica componenti   |
+  |**Nome**    |Installazione dei firmware   |
+  |**Priorità**|1                     |
+  |**Versione**|1.0                   |
+  |**Note**    | Per ogninua di queste installazioni ci vuole una guida completa. |
+  | *Sub-req 1* |Installare firmware RoboC su NXT|
+  | *Sub-req 2* |Installare firmware RoboC su EV3|
+  | *Sub-req 3* |Installare firmware leJOS su NXT|
+  | *Sub-req 4* |Installare firmware leJOS su EV3|
+
+  |ID  |REQ-02                                          |
+  |----|------------------------------------------------|
+  |**Nome**    | Verifica componenti   |
   |**Priorità**|1                     |
   |**Versione**|1.0                   |
   |**Note**    |È necessario testare ogni componente utilizzato durante la realizzazione del progetto|
+  | *Sub-req 1* |Testare componenti su NXT con RoboC|
+  | *Sub-req 2* |Testare componenti su EV3 con RoboC|
+  | *Sub-req 3* |Testare componenti su NXT con leJOS|
+  | *Sub-req 4* |Testare componenti su EV3 con leJOS|
 
 ### Pianificazione
 
