@@ -187,7 +187,8 @@ src
  |       |    |- Touch
  |       |
  |       |- Attuators
- |              |- Large Motor
+ |              |- LargeMotor
+ |              |- MediumMotor
  |
  |- Libreries
         |- LineFollower
@@ -196,6 +197,7 @@ src
         |- StopOnLine
         |- Rotations
         |- LCD
+        |- Navigation
 ```
 
 
