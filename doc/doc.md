@@ -72,8 +72,6 @@
 
 ### Analisi e specifica dei requisiti
 
-  La specifica dei requisiti del progetto può essere rappresentata tramite tabelle che definiscono le basi del prodotto. Le tabelle vengono elencate in base alla priorità e all'importanza del requisito.
-
   |ID  |REQ-01                                          |
   |----|------------------------------------------------|
   |**Nome**    |Installazione dei firmware   |
