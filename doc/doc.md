@@ -155,7 +155,7 @@ Gantt.
 
 Per questo progetto abbiamo a disposizione un brick LEGO&reg; NXT e un brick LEGO&reg; EV3, sui quali verranno installati i firmware di ROBOTC e leJOS.
 
-- **ROBOTC** è una versione di C semplificata ea adattata per la programmazione dei
+- **ROBOTC** è una versione di C semplificata e adattata per la programmazione dei
 robot.  
 *Link:* [http://www.robotc.net/download/lego/](http://www.robotc.net/download/lego/)  
 *Versione:* 4.56
@@ -163,8 +163,8 @@ robot.
 *Link:* [http://www.lejos.org/](http://www.lejos.org/)
 *Versione:* NXJ 0.9.1
 
-Per la realizazione del progetto usufruiremo dei nostri computer portatili:
-- Apple MacBookPro 15" 2018, Processore Intel&reg; Core I7, RAM 16GB, Disk 1TB SSD, Mac OS X 10.14.1
+Per la realizzazione del prodotto ci serviremo dei nostri computer portatili:
+- Apple MacBook Pro 15" 2018, Processore Intel&reg; Core I7, RAM 16GB, Disk 1TB SSD, Mac OS X 10.14.1
 - HP ENVY Notebook, Intel&reg; Core I7, RAM 16GB, Windows 10 Home 64 bit
 
 ## Progettazione
