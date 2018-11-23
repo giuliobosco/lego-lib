@@ -142,17 +142,6 @@ Per la realizazione del progetto usufruiremo dei nostri computer portatili:
 - Apple MacBookPro 15" 2018, Processore Intel&reg; Core I7, RAM 16GB, Disk 1TB SSD, Mac OS X 10.14.1
 - HP ENVY Notebook, Intel&reg; CORE&tm; I7, RAM 16GB, Windows 10 Home 64bit
 
-Elencare e *descrivere* i mezzi disponibili per la realizzazione del
-progetto. Ricordarsi di sempre descrivere nel dettaglio le versioni e il
-modello di riferimento.
-
-SDK, librerie, tools utilizzati per la realizzazione del progetto e
-eventuali dipendenze.
-
-Su quale piattaforma dovrà essere eseguito il prodotto? Che hardware
-particolare è coinvolto nel progetto? Che particolarità e limitazioni
-presenta? Che hw sarà disponibile durante lo sviluppo?
-
 ## Progettazione
 
 Questo capitolo descrive esaustivamente come deve essere realizzato il
