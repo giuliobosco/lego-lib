@@ -50,10 +50,11 @@
 ### Abstract
 
   > *In questo documento è descritto come abbiamo sviluppato il prodotto "Libreria
-  > LEGO", cioè delle librerie utili per automatizzare le operazioni più comuni. Ad
-  > esempio la lettura dei dati ricevuti da un sensore, oppure le operazioni di
+  > LEGO": delle librerie utili per automatizzare le operazioni più comuni durante la
+  > programmazione di robot LEGO&reg;.  
+  > Ad esempio la lettura dei dati ricevuti da un sensore o le operazioni di
   > movimento con degli attuatori.  
-  > Queste librerie verranno utilizzate principalmente dagli aglievi della classe
+  > Queste librerie verranno utilizzate principalmente dagli informatici della classe
   > seconda della Scuola d'Arti e Mestieri di Trevano per sviluppare i programmi per la
   > WRO (World Robot Olympiad) e FLL (First LEGO League). Questa raccolta di funzioni
   > permetterà agli utenti di focalizzarsi
@@ -120,26 +121,34 @@
 
 ### Pianificazione
 
-La pianificazione può essere rappresentata mediante un diagramma di
-Gantt.
+La pianificazione del progetto è stata effettuata mediante la realizzazione di un diagramma di Gantt.
 
 ![Diagramma di gantt](img/gantt.png)
 
 ### Analisi dei mezzi
 
-Per questo progetto abbiamo a disposizione 1 brick Lego NXT e un brick Lego EV3, sui quali verranno istallati i firmware di RobotC e LeJOS.
+#### Software
 
-- **RobotC** è una versione di C semplificata ed adattata per la programmazione dei
-Robot.  
+I software usati comprendono quelli presenti sui nostri PC e i firmware per i brick:
+
+- ROBOTC: è una versione di C semplificata e adattata per la programmazione dei
+robot.  
 *Link:* [http://www.robotc.net/download/lego/](http://www.robotc.net/download/lego/)  
 *Versione:* 4.56
-- **LeJOS** è una Java Virtual Machine adattata per i brick NXT e EVT3.  
-*Link:* [http://www.lejos.org/](http://www.lejos.org/)
+- leJOS: è una Java Virtual Machine adattata per i brick NXT e EV3.  
+*Link:* [http://www.lejos.org/](http://www.lejos.org/)  
 *Versione:* NXJ 0.9.1
+- Visual Studio Code 1.29.1
+- GitHub Desktop 1.5.0
+- GanttProject 2.8.9 Pilsen
 
-Per la realizazione del progetto usufruiremo dei nostri computer portatili:
-- Apple MacBookPro 15" 2018, Processore Intel&reg; Core I7, RAM 16GB, Disk 1TB SSD, Mac OS X 10.14.1
-- HP ENVY Notebook, Intel&reg; CORE&tm; I7, RAM 16GB, Windows 10 Home 64bit
+#### Hardware
+
+Per la realizzazione del prodotto ci siamo serviti dei nostri computer portatili e i brick:
+- Apple MacBook Pro 15" 2018, Processore Intel&reg; Core I7, RAM 16GB, Disk 1TB SSD, Mac OS X 10.14.1
+- HP ENVY Notebook, Intel&reg; Core I7, RAM 16GB, Windows 10 Home 64 bit
+- Brick LEGO&reg; EV3
+- Brick LEGO&reg; NXT
 
 ## Progettazione
 
