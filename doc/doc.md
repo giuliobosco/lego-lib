@@ -62,24 +62,26 @@
 
 ### Scopo
 
-  Questo prodotto ha l'obiettivo di semplificare la parte di implementazione quando si sta sviluppando un progetto con dei robot LEGO&reg; Mindstorms. Il frutto del mandato comprende delle librerie in grado di eseguire le funzioni più basilari e fondamentali che un robot deve svolgere durante una missione.
+  Questo prodotto ha l'obiettivo di semplificare la parte di implementazione quando si sta sviluppando un progetto con dei robot LEGO&#174; Mindstorms. Il frutto del mandato comprende delle librerie in grado di eseguire le funzioni più basilari e fondamentali che un robot deve svolgere durante una missione.
 
 ## Analisi
 
 ### Analisi del dominio
 
-  Fino a ora, gli allievi della sezione Informatica delle classi prima e seconda, implementavano manualmente anche le più semplici attività (seguire una linea, fermarsi di fronte a un ostacolo, ...) che i robot LEGO&reg; Mindstorms dovessero compiere. Quindi lo scopo di questo prodotto sarebbe quello di offrire una libreria che agevoli il lavoro degli utenti eliminando le parti di realizzazione più semplici e ripetitive. Il risultato sarà facile da utilizzare e lo sarà in varie situazioni, in quanto è sviluppato in due linguaggi ed è compatibile sia con EV3 che con NXT.
+  Fino a ora, gli allievi della sezione Informatica delle classi prima e seconda, implementavano manualmente anche le più semplici attività (seguire una linea, fermarsi di fronte a un ostacolo, ...) che i robot LEGO&#174; Mindstorms dovessero compiere. Quindi lo scopo di questo prodotto sarebbe quello di offrire una libreria che agevoli il lavoro degli utenti eliminando le parti di realizzazione più semplici e ripetitive. Il risultato sarà facile da utilizzare e lo sarà in varie situazioni, in quanto è sviluppato in due linguaggi ed è compatibile sia con EV3 che con NXT.
 
 ### Analisi e specifica dei requisiti
+
+  La specifica dei requisiti del progetto può essere rappresentata tramite tabelle che definiscono le basi del prodotto. Le tabelle vengono elencate in base alla priorità e all'importanza del requisito.
 
   |ID  |REQ-01                                          |
   |----|------------------------------------------------|
   |**Nome**    |Installazione dei firmware   |
   |**Priorità**|1                     |
-  |**Versione**|1.1                   |
+  |**Versione**|1.0                   |
   |**Note**    |Per ognuna di queste installazioni ci vuole una guida dettagliata.|
-  | *Sub-req 1* |Installare firmware ROBOTC su NXT|
-  | *Sub-req 2* |Installare firmware ROBOTC su EV3|
+  | *Sub-req 1* |Installare firmware RoboC su NXT|
+  | *Sub-req 2* |Installare firmware RoboC su EV3|
   | *Sub-req 3* |Installare firmware leJOS su NXT|
   | *Sub-req 4* |Installare firmware leJOS su EV3|
 
@@ -87,10 +89,10 @@
   |----|------------------------------------------------|
   |**Nome**    | Verifica componenti   |
   |**Priorità**|1                     |
-  |**Versione**|2.0                   |
+  |**Versione**|1.0                   |
   |**Note**    |È necessario testare ogni componente utilizzato durante la realizzazione del progetto.|
-  | *Sub-req 1* |Testare componenti su NXT con ROBOTC|
-  | *Sub-req 2* |Testare componenti su EV3 con ROBOTC|
+  | *Sub-req 1* |Testare componenti su NXT con RoboC|
+  | *Sub-req 2* |Testare componenti su EV3 con RoboC|
   | *Sub-req 3* |Testare componenti su NXT con leJOS|
   | *Sub-req 4* |Testare componenti su EV3 con leJOS|
 
@@ -98,16 +100,16 @@
   |----|------------------------------------------------|
   |**Nome**    | Metodi componenti  |
   |**Priorità**|1                     |
-  |**Versione**|1.1                   |
-  |**Note**    | Ogni componente deve avere un metodo per utilizzarlo. |
+  |**Versione**|1.0                   |
+  |**Note**    | Ogni componente deve avere un metodo per utilizzarlo |
   | *Sub-req 1* | Metodo di calibrazione |
-  | *Sub-req 2* | Metodo di controllo componente |
+  | *Sub-req 1* | Metodo di controllo componente |
 
   |ID  |REQ-04                                          |
   |----|------------------------------------------------|
-  |**Nome**    | Combinazioni componenti  |
+  |**Nome**    | Combinazioni Componenti  |
   |**Priorità**|1                     |
-  |**Versione**|1.1                   |
+  |**Versione**|1.0                   |
   |**Note**    | Sono necessarie le combinazioni maggiormente utilizzate. |
   | *Sub-req 1* | LineFollower |
   | *Sub-req 2* | Explorer |
@@ -125,19 +127,19 @@ Gantt.
 
 ### Analisi dei mezzi
 
-Per questo progetto abbiamo a disposizione un brick LEGO&reg; NXT e un brick LEGO&reg; EV3, sui quali verranno installati i firmware di ROBOTC e leJOS.
+Per questo progetto abbiamo a disposizione 1 brick Lego NXT e un brick Lego EV3, sui quali verranno istallati i firmware di RobotC e LeJOS.
 
-- **ROBOTC** è una versione di C semplificata e adattata per la programmazione dei
-robot.  
+- **RobotC** è una versione di C semplificata ed adattata per la programmazione dei
+Robot.  
 *Link:* [http://www.robotc.net/download/lego/](http://www.robotc.net/download/lego/)  
 *Versione:* 4.56
-- **leJOS** è una Java Virtual Machine adattata per i brick NXT e EV3.  
+- **LeJOS** è una Java Virtual Machine adattata per i brick NXT e EVT3.  
 *Link:* [http://www.lejos.org/](http://www.lejos.org/)
 *Versione:* NXJ 0.9.1
 
-Per la realizzazione del prodotto ci serviremo dei nostri computer portatili:
-- Apple MacBook Pro 15" 2018, Processore Intel&reg; Core I7, RAM 16GB, Disk 1TB SSD, Mac OS X 10.14.1
-- HP ENVY Notebook, Intel&reg; Core I7, RAM 16GB, Windows 10 Home 64 bit
+Per la realizazione del progetto usufruiremo dei nostri computer portatili:
+- Apple MacBookPro 15" 2018, Processore Intel&reg; Core I7, RAM 16GB, Disk 1TB SSD, Mac OS X 10.14.1
+- HP ENVY Notebook, Intel&reg; CORE&tm; I7, RAM 16GB, Windows 10 Home 64bit
 
 ## Progettazione
 
@@ -160,10 +162,34 @@ Descrive:
 
 -   Eventuale sitemap
 
-### Design dei dati e database
+### Design dei dati
 
-Descrizione delle strutture di dati utilizzate dal programma in base
-agli attributi e le relazioni degli oggetti in uso.
+In questa sezione è descritto come abbiamo strutturate le cartelle contententi le librerie che abbiamo sviluppato.
+
+```
+src
+ |- Components
+ |       |- Sensor
+ |       |    |- Light
+ |       |    |- Color
+ |       |    |- Accellerometer
+ |       |    |- DistanceSensor
+ |       |    |- MotorDegree
+ |       |    |- Touch
+ |       |
+ |       |- Attuators
+ |              |- Large Motor
+ |
+ |- Libreries
+        |- LineFollower
+        |- Explorer
+        |- KeepDistance
+        |- StopOnLine
+        |- Rotations
+        |- LCD
+```
+
+
 
 ### Schema E-R, schema logico e descrizione.
 
