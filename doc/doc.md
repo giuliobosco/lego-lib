@@ -122,6 +122,28 @@
   | *Sub-req 3* |Testare componenti su NXT con leJOS|
   | *Sub-req 4* |Testare componenti su EV3 con leJOS|
 
+  |ID  |REQ-03                                          |
+  |----|------------------------------------------------|
+  |**Nome**    | Metodi componenti  |
+  |**Priorità**|1                     |
+  |**Versione**|1.0                   |
+  |**Note**    | Ogni componente deve avere un metodo per utilizzarlo |
+  | *Sub-req 1* | Metodo di calibrazione |
+  | *Sub-req 1* | Metodo di controllo componente |
+
+  |ID  |REQ-04                                          |
+  |----|------------------------------------------------|
+  |**Nome**    | Combinazioni Componenti  |
+  |**Priorità**|1                     |
+  |**Versione**|1.0                   |
+  |**Note**    | Sono necessarie le combinazioni maggiormente utilizzate. |
+  | *Sub-req 1* | LineFollower |
+  | *Sub-req 2* | Explorer |
+  | *Sub-req 3* | KeepDistance |
+  | *Sub-req 4* | StopOnLine |
+  | *Sub-req 5* | Rotations |
+  | *Sub-req 6* | LCD |
+
 ### Pianificazione
 
 ![Diagramma di gantt](img/gantt.png)
