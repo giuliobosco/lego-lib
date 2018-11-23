@@ -173,7 +173,7 @@ Descrive:
 
 ### Design dei dati
 
-In questa sezione è descritto come abbiamo strutturate le cartelle contententi le librerie che abbiamo sviluppato.
+In questa sezione è descritto come abbiamo strutturato le cartelle contententi le librerie che abbiamo sviluppato.
 
 ```
 src
@@ -200,10 +200,7 @@ src
 
 
 
-### Schema E-R, schema logico e descrizione.
-
-Se il diagramma E-R viene modificato, sulla doc dovrà apparire l’ultima
-versione, mentre le vecchie saranno sui diari.
+### Diagramma delle classi.
 
 ### Design delle interfacce
 
