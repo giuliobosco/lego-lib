@@ -50,10 +50,11 @@
 ### Abstract
 
   > *In questo documento è descritto come abbiamo sviluppato il prodotto "Libreria
-  > LEGO", cioè delle librerie utili per automatizzare le operazioni più comuni. Ad
-  > esempio la lettura dei dati ricevuti da un sensore, oppure le operazioni di
+  > LEGO": delle librerie utili per automatizzare le operazioni più comuni durante la
+  > programmazione di robot LEGO&reg;.  
+  > Ad esempio la lettura dei dati ricevuti da un sensore o le operazioni di
   > movimento con degli attuatori.  
-  > Queste librerie verranno utilizzate principalmente dagli aglievi della classe
+  > Queste librerie verranno utilizzate principalmente dagli informatici della classe
   > seconda della Scuola d'Arti e Mestieri di Trevano per sviluppare i programmi per la
   > WRO (World Robot Olympiad) e FLL (First LEGO League). Questa raccolta di funzioni
   > permetterà agli utenti di focalizzarsi
