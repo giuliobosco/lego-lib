@@ -159,6 +159,12 @@ nell’implementazione del prodotto.
 
 ### Design dell’architettura del sistema
 
+#### Componenti
+
+I componenti possono essere di due tipi, sensori ed attuatori.  
+Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sensore. Mentre gli attuatori devono avere dei metodi per il controllo degli attuatori e dei metodi per la lettura dei dati, per esempio i motori per leggere le rotazioni del motore.
+
+
 Descrive:
 
 -   La struttura del programma/sistema lo schema di rete...
