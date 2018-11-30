@@ -80,11 +80,8 @@
   |**Nome**    |Installazione dei firmware   |
   |**Priorità**|1                     |
   |**Versione**|1.0                   |
-  |**Note**    |Per ognuna di queste installazioni ci vuole una guida dettagliata.|
-  | *Sub-req 1* |Installare firmware RoboC su NXT|
-  | *Sub-req 2* |Installare firmware RoboC su EV3|
-  | *Sub-req 3* |Installare firmware leJOS su NXT|
-  | *Sub-req 4* |Installare firmware leJOS su EV3|
+  |**Note**    |È richiesta una guida completa del processo di installazione|
+  | *Sub-req 1* |Installare firmware leJOS su NXT|
 
   |ID  |REQ-02                                          |
   |----|------------------------------------------------|
@@ -92,21 +89,30 @@
   |**Priorità**|1                     |
   |**Versione**|1.0                   |
   |**Note**    |È necessario testare ogni componente utilizzato durante la realizzazione del progetto.|
-  | *Sub-req 1* |Testare componenti su NXT con RoboC|
-  | *Sub-req 2* |Testare componenti su EV3 con RoboC|
-  | *Sub-req 3* |Testare componenti su NXT con leJOS|
-  | *Sub-req 4* |Testare componenti su EV3 con leJOS|
+  | *Sub-req 1* |Testare componenti su NXT con leJOS|
 
   |ID  |REQ-03                                          |
   |----|------------------------------------------------|
-  |**Nome**    | Metodi componenti  |
+  |**Nome**    | Componenti - Sensori  |
   |**Priorità**|1                     |
   |**Versione**|1.0                   |
-  |**Note**    | Ogni componente deve avere un metodo per utilizzarlo |
-  | *Sub-req 1* | Metodo di calibrazione |
-  | *Sub-req 1* | Metodo di controllo componente |
+  |**Note**    | Ogni sensore deve avere un metodo per la lettura del valore ed uno per calibrarlo se è posssibile. |
+  | *Sub-req 1* | Sensore di luce |
+  | *Sub-req 2* | Sensore di distanza |
+  | *Sub-req 3* | Microfono |
+  | *Sub-req 4* | Touch |
+  | *Sub-req 5* | Lettura dei valori dei bottoni presenti sul brick |
 
   |ID  |REQ-04                                          |
+  |----|------------------------------------------------|
+  |**Nome**    | Attuatori  |
+  |**Priorità**|1                     |
+  |**Versione**|1.0                   |
+  |**Note**    | Ogni attuatore deve avere dei metodi per controllarlo |
+  | *Sub-req 1* | Motore Grande |
+  | *Sub-req 1* | Schermo LCD |
+
+  |ID  |REQ-05                                          |
   |----|------------------------------------------------|
   |**Nome**    | Combinazioni Componenti  |
   |**Priorità**|1                     |
@@ -118,6 +124,7 @@
   | *Sub-req 4* | StopOnLine |
   | *Sub-req 5* | Rotations |
   | *Sub-req 6* | LCD |
+  | *Sub-req 1* | Calibrazione dei sensori |
 
 ### Pianificazione
 
