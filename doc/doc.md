@@ -186,15 +186,12 @@ src
  |- Components
  |       |- Sensor
  |       |    |- Light
- |       |    |- Color
- |       |    |- Accellerometer
- |       |    |- DistanceSensor
- |       |    |- MotorDegree
+ |       |    |- Distance
+ |       |    |- Microphone
  |       |    |- Touch
  |       |
  |       |- Attuators
  |              |- LargeMotor
- |              |- MediumMotor
  |
  |- Libreries
         |- LineFollower
