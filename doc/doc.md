@@ -216,17 +216,17 @@ In questa sezione è descritto come abbiamo strutturato le cartelle contententi 
 
 ```
 src
- |- Components
- |       |- Sensor
+ |- components
+ |       |- sensor
  |       |    |- Light
  |       |    |- Distance
  |       |    |- Microphone
  |       |    |- Touch
  |       |
- |       |- Attuators
+ |       |- attuators
  |              |- LargeMotor
  |
- |- Libreries
+ |- libreries
         |- LineFollower
         |- Explorer
         |- KeepDistance
