@@ -110,7 +110,7 @@
   |**Versione**|1.0                   |
   |**Note**    | Ogni attuatore deve avere dei metodi per controllarlo |
   | *Sub-req 1* | Motore Grande |
-  | *Sub-req 1* | Schermo LCD |
+  | *Sub-req 2* | Schermo LCD |
 
   |ID  |REQ-05                                          |
   |----|------------------------------------------------|
@@ -124,7 +124,7 @@
   | *Sub-req 4* | StopOnLine |
   | *Sub-req 5* | Rotations |
   | *Sub-req 6* | LCD |
-  | *Sub-req 1* | Calibrazione dei sensori |
+  | *Sub-req 7* | Calibrazione dei sensori |
 
 ### Pianificazione
 
