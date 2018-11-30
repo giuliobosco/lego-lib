@@ -164,6 +164,39 @@ nell’implementazione del prodotto.
 I componenti possono essere di due tipi, sensori ed attuatori.  
 Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sensore. Mentre gli attuatori devono avere dei metodi per il controllo degli attuatori e dei metodi per la lettura dei dati, per esempio i motori per leggere le rotazioni del motore.
 
+**Sensori**:
+- Light  
+Sensore di luce, misura l'intensità di luce riflessa
+    - calibrateWhite()  
+    questo metodo calibra il bianco all'intensità di luce riflessa in quell'instante
+    - calibrateBlack()  
+    questo metodo calibra il nero all'intensità di luce riflessa in quell'instante
+    - getValue()  
+    ritorna il valore di luce riflessa, un valore fra 0 e 100, 0 sarebbe bainco e 100 nero
+- Distance  
+Misura la distanza fra il sensore e l'ostacolo davanti ad esso.
+    - getValue()  
+    ritorna il valore letto dal sensore.
+- Microphone
+
+- Touch  
+Sensore di contatto, controlla semplicemente se è premuto il sensore.
+    - getValue()  
+    Ritorna `true` se è premuto, altrimenti `false`.
+
+**Attuatori**:
+- LargeMotor  
+È il motore "grosso", cioè il motore più potente per i Mindstorms NXT.
+    - forward()  
+    Fa girare il motore in avanti
+    - reverse()
+    Fa girare il motore indietro
+    - stop()
+    Ferma il motore.
+    - invert()
+    Invertice il senso dei motori (avanti <=> indietro).
+    - getValue()
+    Ritorna i gradi a cui è posto.
 
 Descrive:
 
