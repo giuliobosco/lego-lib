@@ -159,17 +159,12 @@ Per la realizzazione del prodotto ci siamo serviti dei nostri computer portatili
 
 ## Progettazione
 
-Questo capitolo descrive esaustivamente come deve essere realizzato il
-prodotto fin nei suoi dettagli. Una buona progettazione permette
-all’esecutore di evitare fraintendimenti e imprecisioni
-nell’implementazione del prodotto.
-
 ### Design dell’architettura del sistema
 
 #### Componenti
 
 I componenti possono essere di due tipi, sensori ed attuatori.  
-Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sensore. Mentre gli attuatori devono avere dei metodi per il controllo degli attuatori e dei metodi per la lettura dei dati, per esempio i motori per leggere le rotazioni del motore.
+Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sensore. Mentre gli attuatori devono avere dei metodi per il loro controllo e delle funzioni che ricavano dei dati in base ai movimenti effettuati. Per esempio il conteggio di rotazioni del motore durante un'azione.
 
 **Sensori**:
 - Light  
