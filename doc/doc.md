@@ -184,8 +184,10 @@ Sensore di luce, misura l'intensità di luce riflessa
 Misura la distanza fra il sensore e l'ostacolo davanti ad esso.
     - getValue()  
     ritorna il valore letto dal sensore.
-- Microphone
-
+- Microphone  
+Misura il suono,
+    - getValue()  
+    Ritorna il valore registrato dal microfono.
 - Touch  
 Sensore di contatto, controlla semplicemente se è premuto il sensore.
     - getValue()  
@@ -245,6 +247,7 @@ src
         |- Calibrator
 ```
 
+**LineFollower**
 
 
 ### Diagramma delle classi.
