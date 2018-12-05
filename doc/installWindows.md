@@ -3,10 +3,15 @@ Questa è una guida per installare e configurare il firmware leJOS NXJ su Window
 
 ## Indice
 1. [Java](#java)
+    - [Java Runtime Environment](#java-runtime-environment)
+    - [Java Development Kit](#java-development-kit)
+    - [Variabili d'ambiente](#variabili-d'ambiente)
 2. [Driver USB](#driver-usb)
-3. [Installazione leJOS](#installazione-lejos)
-4. [Configurazione leJOS](#configurazione-lejos)
-5. [Esempio - HelloWorld](#esempio-helloWorld)
+3. [leJOS](#lejos)
+    - [Installazione](#installazione)
+    - [Configurazione](#configurazione)
+5. [Utilizzo](#utilizzo)
+    - [HelloWorld](#helloworld)
 
 ## Java
 
@@ -36,15 +41,14 @@ Dopo di che rieseguire il test.
 
 ### Java Development Kit
 
-
 ## Driver USB
 
-## LeJOS sul computer
+## leJOS
 
-## Variabili d'ambiente
+### Installazione
 
-## LeJOS sul brick NXT
+### Configurazione
 
-## IDE - Eclipse
+## Utilizzo
 
-## HelloWorld
+### HelloWorld
