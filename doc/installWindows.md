@@ -1,20 +1,18 @@
-# LeJOS on Windows
-Guida per installazione dell'ambiente di sviluppo di leJOS su windows. LeJOS è basato su Java, quindi servirà un ambiente di sviluppo Java con la Java Runtime Environment, Java Development Kit ed un IDE adatto.
+# Installare leJOS su Windows
+Questa è una guida per installare e configurare il firmware leJOS NXJ su Windows. LeJOS è basato su Java, quindi servirà un ambiente di sviluppo Java (Java Runtime Environment e Java Development Kit).
 
 ## Indice
-1. [Java](Java)
-2. [Driver USB**](Driver USB)
-3. [LeJOS sul computer](LeJOS sul computer)
-4. [Variabili d'ambiente](Variabili d'ambiente)
-5. [LeJOS sul brick NXT](LeJOS sul brick NXT)
-6. [IDE - Eclipse](IDE - Eclipse)
-7. [HelloWorld](HelloWorld)
+1. [Java](#java)
+2. [Driver USB](#driver-usb)
+3. [Installazione leJOS](#installazione-lejos)
+4. [Configurazione leJOS](#configurazione-lejos)
+5. [Esempio - HelloWorld](#esempio-helloWorld)
 
 ## Java
 
-### Java - Java Runtime Environment
+### Java Runtime Environment
 
-Controllare che si ha Java installato sul computer.  
+Innanzitutto controllare che Java sia già presente sul pc.  
 Aprire una finestra del promt dei comandi: premere il tasto di windows <img src="img/win-key.png" alt="Windows Key" width="20"/> (sulla tastiera) e contemporaneamente il tasto `R` il quale farà comparire una finestra in basso a sinistra.  
 Nel campo di testo della seguente digitare `cmd` e premere su invio. Comparirà una finestra nera, sulla quale digitare il seguente comando e premere invio:
 
@@ -36,7 +34,7 @@ Prima di poter utilizzare Java bisogna settare le sue Variabili d'ambiente, quin
 
 Dopo di che rieseguire il test.
 
-### Java - Java Development Kit
+### Java Development Kit
 
 
 ## Driver USB
