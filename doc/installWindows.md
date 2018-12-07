@@ -34,10 +34,23 @@ Altrimenti sarà necessario installare Java, scaricandolo dal sito ufficiale ([h
 
 ### Java Development Kit
 
+La Java Development Kit è un ambiente di sviluppo necessario se si vuole implementare in Java, quindi qui di seguito sarà spiegato come integrarlo nel computer.  
+Prima di tutto scaricare l'installer della versione a 32 bit per Windows ([https://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-windows-i586.exe](https://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-windows-i586.exe)). Successivamente aprire il file appena scaricato e seguire la procedura.
+
 ### Variabili d'ambiente
 
-Prima di poter utilizzare Java bisogna settare le sue Variabili d'ambiente, quindi andare nella cartella dove si ha installato Java, probabilmente `C:\Program Files\Java\Java-version\bin`, copiare il percorso e aprire il `Pannello di controllo`, recarsi nella sezione `sistema`, poi su `variabili d'ambiente` ed infine aggiungere quella copiata.  
-Dopodiché rieseguire il test spiegato all'inizio del capitolo ([Java Runtime Environment](#java-runtime-environment)).
+Prima di poter utilizzare Java bisogna impostare le sue `variabili d'ambiente`. Quindi andare nella cartella dove si ha installato Java (probabilmente `C:\Program Files (x86)\Java\<versione di Java>\bin`), copiare il percorso e aprire il `Pannello di controllo`, recarsi nella sezione `Sistema`, poi su `Variabili d'ambiente` che si trovano sotto le impostazioni `Avanzate` e infine aggiungere il percorso nella variabile di sistema `Path`.  
+<img src="img/variables.png" alt="Variables" width="50%"/><img src="img/path.png" alt="Path" width="50%"/>  
+Dopodiché eseguire i test aprendo la finestra come spiegato all'inizio del capitolo ([Java Runtime Environment](#java-runtime-environment)):
+```
+java -version
+javac -version
+```
+il primo comando dovrebbe far uscire una scritta come quella vista precedentemente, mentre il secondo farà apparire scritta come questa:
+```
+javac 1.8.0_161
+```
+Arrivati a questo punto, sigifica che la macchina è pronta per sviluppare in Java, ma per utilizzare un robot NXT, bisognerà procedere con la guida.
 
 ## Driver USB
 
