@@ -1,7 +1,7 @@
 {
 	"_type": "Project",
 	"_id": "AAAAAAFF+h6SjaM2Hec=",
-	"name": "Untitled",
+	"name": "Lego Lib",
 	"ownedElements": [
 		{
 			"_type": "UMLModel",
@@ -9,7 +9,7 @@
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "Model",
+			"name": "Class Diagram",
 			"ownedElements": [
 				{
 					"_type": "UMLClassDiagram",
@@ -17,7 +17,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Main",
+					"name": "Class Diagram",
 					"defaultDiagram": true,
 					"ownedViews": [
 						{
@@ -75,9 +75,9 @@
 											"font": "Arial;13;0",
 											"left": 624,
 											"top": 544,
-											"width": 73.67724609375,
+											"width": 123.5126953125,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from Class Diagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -630,9 +630,9 @@
 											"font": "Arial;13;0",
 											"left": 1296,
 											"top": 432,
-											"width": 73.67724609375,
+											"width": 123.5126953125,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from Class Diagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -900,9 +900,9 @@
 											"font": "Arial;13;0",
 											"left": -784,
 											"top": -560,
-											"width": 73.67724609375,
+											"width": 123.5126953125,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from Class Diagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1284,9 +1284,9 @@
 											"font": "Arial;13;0",
 											"left": -1104,
 											"top": 1136,
-											"width": 73.67724609375,
+											"width": 123.5126953125,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from Class Diagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1643,9 +1643,9 @@
 											"font": "Arial;13;0",
 											"left": 576,
 											"top": 368,
-											"width": 73.67724609375,
+											"width": 123.5126953125,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from Class Diagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -2087,9 +2087,9 @@
 											"font": "Arial;13;0",
 											"left": 176,
 											"top": 272,
-											"width": 73.67724609375,
+											"width": 123.5126953125,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from Class Diagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -2463,9 +2463,9 @@
 											"font": "Arial;13;0",
 											"left": 912,
 											"top": 128,
-											"width": 73.67724609375,
+											"width": 123.5126953125,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from Class Diagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -2890,9 +2890,9 @@
 											"font": "Arial;13;0",
 											"left": 256,
 											"top": -240,
-											"width": 73.67724609375,
+											"width": 123.5126953125,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from Class Diagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -3300,9 +3300,9 @@
 											"font": "Arial;13;0",
 											"left": -1040,
 											"top": 496,
-											"width": 73.67724609375,
+											"width": 123.5126953125,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from Class Diagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -4667,14 +4667,6 @@
 							]
 						}
 					]
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFniKdwX0o2uz4=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Class1"
 				},
 				{
 					"_type": "UMLClass",
