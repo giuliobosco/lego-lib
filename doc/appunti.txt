@@ -1,0 +1,3 @@
+linefollower + proporzionale + oggetto
+
+blocchetti verdi e arancioni
