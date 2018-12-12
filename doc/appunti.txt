@@ -37,3 +37,28 @@ wait - sensor
         - bigger:bool
         - value
         - inch/cm
+
+# green
+motor
+    - port
+    - direction
+        - FORWARD / STOP / BACK_WISE
+    - power
+        - increase
+        - decrease
+    - duration
+        - none
+        - seconds
+        - degree
+        - rotations
+    - next action
+        - BRAKE / COAST
+multi_motor
+    - list of motors
+
+navigation
+    - leftMotor
+    - rightMotor
+    - direction
+        - FORWARD / STOP / BACK_WISE
+    - steering
