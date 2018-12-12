@@ -5,126 +5,114 @@
     - [Abstract](#abstract)
     - [Scopo](#scopo)
 
-1. [Analisi](#analisi)
+2. [Analisi](#analisi)
     - [Analisi del dominio](#analisi-del-dominio)
     - [Analisi dei mezzi](#analisi-dei-mezzi)
     - [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
     - [Pianificazione](#pianificazione)
 
-1. [Progettazione](#progettazione)
+3. [Progettazione](#progettazione)
     - [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
     - [Design dei dati e database](#design-dei-dati-e-database)
 
-1. [Implementazione](#implementazione)
+4. [Implementazione](#implementazione)
 
-1. [Test](#test)
+5. [Test](#test)
     - [Protocollo di test](#protocollo-di-test)
     - [Risultati test](#risultati-test)
     - [Mancanze/limitazioni conosciute](#mancanze/limitazioni-conosciute)
 
-1. [Consuntivo](#consuntivo)
+6. [Consuntivo](#consuntivo)
 
-1. [Conclusioni](#conclusioni)
+7. [Conclusioni](#conclusioni)
     - [Sviluppi futuri](#sviluppi-futuri)
     - [Considerazioni personali](#considerazioni-personali)
 
-1. [Sitografia](#sitografia)
+8. [Sitografia](#sitografia)
 
-1. [Allegati](#allegati)
-
+9. [Allegati](#allegati)
 
 ## Introduzione
 
 ### Informazioni sul progetto
 
-  -   Allievi: Gabriele Alessi, Giulio Bosco
-
-      Docenti e supervisori: Adriano Barchi, Luca Muggiasca, Francesco Mussi
-
-  -   Scuola d'Arti e Mestieri di Trevano, sezione Informatica, Classe 3, Modulo 306
-
-  -   Data inizio: 14.11.2018
-
-      Data fine: 25.01.2019
+- Allievi: Gabriele Alessi, Giulio Bosco  
+Docenti e supervisori: Adriano Barchi, Luca Muggiasca, Francesco Mussi, Massimo Sartori
+- Scuola d'Arti e Mestieri di Trevano, sezione Informatica, Classe 3, Modulo 306
+- Data inizio: 14.11.2018  
+Data fine: 25.01.2019
 
 ### Abstract
 
-  > *In questo documento è descritto come abbiamo sviluppato il prodotto "Libreria
-  > LEGO": delle librerie utili per automatizzare le operazioni più comuni durante la
-  > programmazione di robot LEGO&reg;.  
-  > Ad esempio la lettura dei dati ricevuti da un sensore o le operazioni di
-  > movimento con degli attuatori.  
-  > Queste librerie verranno utilizzate principalmente dagli informatici della classe
-  > seconda della Scuola d'Arti e Mestieri di Trevano per sviluppare i programmi per la
-  > WRO (World Robot Olympiad) e FLL (First LEGO League). Questa raccolta di funzioni
-  > permetterà agli utenti di focalizzarsi
-  > sul problema principale da risolvere avendo già le operazioni di base
-  > implementate e testate.*
+> *In questo documento è descritto come abbiamo sviluppato il prodotto"Libreria LEGO":  
+> una libreria sviluppata in Java utile per automatizzare le operazionipiù comuni durante la
+> programmazione di robot LEGO&reg;.  
+> Ad esempio la lettura dei dati ricevuti da un sensore o le operazioni di
+> movimento con degli attuatori.  
+> Queste librerie verranno utilizzate principalmente dagli informaticidella classe
+> seconda della Scuola d'Arti e Mestieri di Trevano per implementare iprogrammi per la
+> WRO (World Robot Olympiad) e FLL (First LEGO League).  
+> Questa raccolta di funzioni permetterà agli utenti di focalizzarsimaggiormente
+> sul problema principale da risolvere avendo già le operazioni di base
+> implementate e testate.*
 
 ### Scopo
 
-  Questo prodotto ha l'obiettivo di semplificare la parte di implementazione quando si sta sviluppando un progetto con dei robot LEGO&#174; Mindstorms. Il frutto del mandato comprende delle librerie in grado di eseguire le funzioni più basilari e fondamentali che un robot deve svolgere durante una missione.
+Questo prodotto ha l'obiettivo di semplificare la parte di implementazionequando si sta sviluppando un progetto con dei robot LEGO&#174; Mindstorms.Il frutto del mandato comprende una libreria in grado di eseguire lefunzioni più basilari e fondamentali che un robot deve svolgere duranteuna missione.
 
 ## Analisi
 
 ### Analisi del dominio
 
-  Fino a ora, gli allievi della sezione Informatica delle classi prima e seconda, implementavano manualmente anche le più semplici attività (seguire una linea, fermarsi di fronte a un ostacolo, ...) che i robot LEGO&#174; Mindstorms dovessero compiere. Quindi lo scopo di questo prodotto sarebbe quello di offrire una libreria che agevoli il lavoro degli utenti eliminando le parti di realizzazione più semplici e ripetitive. Il risultato sarà facile da utilizzare e lo sarà in varie situazioni, in quanto è sviluppato in due linguaggi ed è compatibile sia con EV3 che con NXT.
+Fino a ora, gli allievi della sezione Informatica delle classi prima eseconda, implementavano manualmente anche le più semplici attività(seguire una linea, fermarsi di fronte a un ostacolo, ...) che i robotLEGO&#174; Mindstorms dovessero compiere. Quindi lo scopo di questoprodotto sarebbe quello di offrire una libreria che agevoli il lavorodegli utenti eliminando le parti di realizzazione più semplici eripetitive. Il risultato sarà facile da utilizzare e lo sarà in variesituazioni, in quanto è sviluppato nel linguaggio Java.
 
 ### Analisi e specifica dei requisiti
 
-  La specifica dei requisiti del progetto può essere rappresentata tramite tabelle che definiscono le basi del prodotto. Le tabelle vengono elencate in base alla priorità e all'importanza del requisito.
+La specifica dei requisiti del progetto è rappresentata tramite tabelleche definiscono le basi del prodotto. Le tabelle vengono elencate in basealla priorità e all'importanza del requisito.
 
-  |ID  |REQ-01                                          |
-  |----|------------------------------------------------|
-  |**Nome**    |Installazione dei firmware   |
-  |**Priorità**|1                     |
-  |**Versione**|1.0                   |
-  |**Note**    |È richiesta una guida completa del processo di installazione|
-  | *Sub-req 1* |Installare firmware leJOS su NXT|
+|ID  |REQ-01                                          |
+|----|------------------------------------------------|
+|**Nome**    |Installazione del firmware|
+|**Priorità**|1                     |
+|**Versione**|2.0                   |
+|**Note**    |È necessario installare il firmware leJOS (Java) su NXT.|
+| *Sub-req 1* |Produrre una guida per l'installazione del firmware|
 
-  |ID  |REQ-02                                          |
-  |----|------------------------------------------------|
-  |**Nome**    | Verifica componenti   |
-  |**Priorità**|1                     |
-  |**Versione**|1.0                   |
-  |**Note**    |È necessario testare ogni componente utilizzato durante la realizzazione del progetto.|
-  | *Sub-req 1* |Testare componenti su NXT con leJOS|
+|ID  |REQ-02                                          |
+|----|------------------------------------------------|
+|**Nome**    |Verifica componenti|
+|**Priorità**|1                     |
+|**Versione**|2.0                   |
+|**Note**    |È necessario testare ogni componente utilizzato durante la realizzazione del progetto.|
+| *Sub-req 1* |Testare componenti (8 tra sensori e attuatori) su NXT con leJOS|
 
-  |ID  |REQ-03                                          |
-  |----|------------------------------------------------|
-  |**Nome**    | Componenti - Sensori  |
-  |**Priorità**|1                     |
-  |**Versione**|1.0                   |
-  |**Note**    | Ogni sensore deve avere un metodo per la lettura del valore ed uno per calibrarlo se è posssibile. |
-  | *Sub-req 1* | Sensore di luce |
-  | *Sub-req 2* | Sensore di distanza |
-  | *Sub-req 3* | Microfono |
-  | *Sub-req 4* | Touch |
-  | *Sub-req 5* | Lettura dei valori dei bottoni presenti sul brick |
+|ID  |REQ-03                                          |
+|----|------------------------------------------------|
+|**Nome**    |Componenti - Sensori|
+|**Priorità**|1                     |
+|**Versione**|2.0                   |
+|**Note**    |Ogni sensore deve avere un metodo per la lettura del valore e se è possibile uno per calibrarlo.|
+| *Sub-req 1* |Sensore di luce |
+| *Sub-req 2* |Sensore tattile |
+| *Sub-req 3* |Sensore Ultrasuoni (distanza) |
+| *Sub-req 4* |Microfono |
+| *Sub-req 5* |Pulsanti del brick |
 
-  |ID  |REQ-04                                          |
-  |----|------------------------------------------------|
-  |**Nome**    | Attuatori  |
-  |**Priorità**|1                     |
-  |**Versione**|1.0                   |
-  |**Note**    | Ogni attuatore deve avere dei metodi per controllarlo |
-  | *Sub-req 1* | Motore Grande |
-  | *Sub-req 2* | Schermo LCD |
+|ID  |REQ-04                                          |
+|----|------------------------------------------------|
+|**Nome**    |Componenti - Attuatori|
+|**Priorità**|1                     |
+|**Versione**|2.0                   |
+|**Note**    |Ogni attuatore deve avere dei metodi per controllarlo.|
+| *Sub-req 1* |Motore Grande |
+| *Sub-req 2* |Schermo LCD del brick |
 
-  |ID  |REQ-05                                          |
-  |----|------------------------------------------------|
-  |**Nome**    | Combinazioni Componenti  |
-  |**Priorità**|1                     |
-  |**Versione**|1.0                   |
-  |**Note**    | Sono necessarie le combinazioni maggiormente utilizzate. |
-  | *Sub-req 1* | LineFollower |
-  | *Sub-req 2* | Explorer |
-  | *Sub-req 3* | KeepDistance |
-  | *Sub-req 4* | StopOnLine |
-  | *Sub-req 5* | Rotations |
-  | *Sub-req 6* | LCD |
-  | *Sub-req 7* | Calibrazione dei sensori |
+|ID  |REQ-05                                          |
+|----|------------------------------------------------|
+|**Nome**    |LineFollower proporzionale|
+|**Priorità**|1                     |
+|**Versione**|2.0                   |
+|**Note**    |È necessario implementare la funzione "LineFollower" in modo proporzionale e facile da utilizzare.|
 
 ### Pianificazione
 
@@ -136,12 +124,7 @@ La pianificazione del progetto è stata effettuata mediante la realizzazione di 
 
 #### Software
 
-I software usati comprendono quelli presenti sui nostri PC e i firmware per i brick:
-
-- ROBOTC: è una versione di C semplificata e adattata per la programmazione dei
-robot.  
-*Link:* [http://www.robotc.net/download/lego/](http://www.robotc.net/download/lego/)  
-*Versione:* 4.56
+I software usati comprendono quelli presenti sui nostri PC e il firmware per il brick:
 - leJOS: è una Java Virtual Machine adattata per i brick NXT e EV3.  
 *Link:* [http://www.lejos.org/](http://www.lejos.org/)  
 *Versione:* NXJ 0.9.1
@@ -151,10 +134,9 @@ robot.
 
 #### Hardware
 
-Per la realizzazione del prodotto ci siamo serviti dei nostri computer portatili e i brick:
+Per la realizzazione del prodotto ci siamo serviti dei nostri computer portatili e di un brick:
 - Apple MacBook Pro 15" 2018, Processore Intel&reg; Core I7, RAM 16GB, Disk 1TB SSD, Mac OS X 10.14.1
 - HP ENVY Notebook, Intel&reg; Core I7, RAM 16GB, Windows 10 Home 64 bit
-- Brick LEGO&reg; EV3
 - Brick LEGO&reg; NXT
 
 ## Progettazione
@@ -166,86 +148,63 @@ Per la realizzazione del prodotto ci siamo serviti dei nostri computer portatili
 I componenti possono essere di due tipi, sensori ed attuatori.  
 Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sensore. Mentre gli attuatori devono avere dei metodi per il loro controllo e delle funzioni che ricavano dei dati in base ai movimenti effettuati. Per esempio il conteggio di rotazioni del motore durante un'azione.
 
-**Sensori**:
-- Light  
-Sensore di luce, misura l'intensità di luce riflessa
+##### Sensori
+
+- Light, misura l'intensità di luce riflessa:
     - calibrateWhite()  
-    questo metodo calibra il bianco all'intensità di luce riflessa in quell'instante
+    questo metodo calibra il bianco all'intensità di luce riflessa in quell'instante.
     - calibrateBlack()  
-    questo metodo calibra il nero all'intensità di luce riflessa in quell'instante
+    questo metodo calibra il nero all'intensità di luce riflessa in quell'instante.
     - getValue()  
-    ritorna il valore di luce riflessa, un valore fra 0 e 100, 0 sarebbe bainco e 100 nero
-- Distance  
-Misura la distanza fra il sensore e l'ostacolo davanti ad esso.
+    ritorna il valore di luce riflessa, un valore fra 0 e 100, 0 sarebbe bainco e 100 nero.
+- Distance, misura la distanza fra il sensore e l'ostacolo davanti a esso:
     - getValue()  
     ritorna il valore letto dal sensore.
-- Microphone  
-Misura il suono,
+- Microphone, misura il suono:
     - getValue()  
     Ritorna il valore registrato dal microfono.
-- Touch  
-Sensore di contatto, controlla semplicemente se è premuto il sensore.
+- Touch, controlla semplicemente se è premuto il sensore:
     - getValue()  
     Ritorna `true` se è premuto, altrimenti `false`.
+- BrickButtons, legge i pulsanti presenti sul brick:
 
-**Attuatori**:
-- LargeMotor  
-È il motore "grosso", cioè il motore più potente per i Mindstorms NXT.
+##### Attuatori
+
+- LargeMotor, il motore più potente per i LEGO&reg; Mindstorms:
     - forward()  
-    Fa girare il motore in avanti
-    - reverse()
-    Fa girare il motore indietro
-    - stop()
+    Fa girare il motore in avanti.
+    - reverse()  
+    Fa girare il motore indietro.
+    - stop()  
     Ferma il motore.
-    - invert()
-    Invertice il senso dei motori (avanti <=> indietro).
-    - getValue()
-    Ritorna i gradi a cui è posto.
-
-Descrive:
-
--   La struttura del programma/sistema lo schema di rete...
-
--   Gli oggetti/moduli/componenti che lo compongono.
-
--   I flussi di informazione in ingresso ed in uscita e le
-    relative elaborazioni. Può utilizzare *diagrammi di flusso dei
-    dati* (DFD).
-
--   Eventuale sitemap
+    - invert()  
+    Inverte il senso dei motori (avanti <=> indietro).
+    - getValue()  
+    Ritorna i gradi di rotazione attuale (0 - 360).
+- LCD, è lo schermino che si trova sul brick:
 
 ### Design dei dati
 
-In questa sezione è descritto come abbiamo strutturato le cartelle contententi le librerie che abbiamo sviluppato.
+In questa sezione è descritto come sono strutturate le cartelle contententi la libreria sviluppata.
 
 ```
 src
  |- components
- |       |- sensor
+ |       |- sensors
  |       |    |- Light
  |       |    |- Distance
  |       |    |- Microphone
  |       |    |- Touch
  |       |    |- BrickButtons
  |       |
- |       |- attuators
+ |       |- actuators
  |              |- LargeMotor
- |
- |- libreries
+ |              |- LCD
+ |- library
         |- LineFollower
-        |- Explorer
-        |- KeepDistance
-        |- StopOnLine
-        |- Rotations
-        |- LCD
-        |- Navigation
-        |- Calibrator
 ```
 
-**LineFollower**
-
-
-### Diagramma delle classi.
+### Diagramma delle classi
 
 ### Design delle interfacce
 
