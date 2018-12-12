@@ -1,3 +1,39 @@
 linefollower + proporzionale + oggetto
 
 blocchetti verdi e arancioni
+
+
+wait - time
+    - time - seconds
+
+wait - motor
+    - rotations
+        - port
+        - direction
+        - degree / rotations
+        - value
+wait - sensor
+    - port
+    - color
+        - inRange:bool
+        - min
+        - max
+    - light
+        - bigger:bool
+        - value
+        - generate light
+    - nxt button
+        - button
+        - LEFT / ENTER / RIGHT
+        - action
+        - PRESSED / RELEASED / CLICKED
+    - sound
+        - bigger:bool
+        - value
+    - touch
+        - action
+        - PRESSED / RELEASED / CLiCKED
+    - Ultrasonic
+        - bigger:bool
+        - value
+        - inch/cm
