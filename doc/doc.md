@@ -7,13 +7,19 @@
 
 2. [Analisi](#analisi)
     - [Analisi del dominio](#analisi-del-dominio)
-    - [Analisi dei mezzi](#analisi-dei-mezzi)
     - [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
+    - [Analisi dei mezzi](#analisi-dei-mezzi)
+        - [Software](#software)
+        - [Hardware](#hardware)
     - [Pianificazione](#pianificazione)
 
 3. [Progettazione](#progettazione)
     - [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
-    - [Design dei dati e database](#design-dei-dati-e-database)
+        - [Componenti](#componenti)
+            - [Sensori](#sensori)
+            - [Attuatori](#attuatori)
+    - [Design procedurale](#design-procedurale)
+        - [Diagramma delle classi](#diagramma-delle-classi)
 
 4. [Implementazione](#implementazione)
 
@@ -64,7 +70,7 @@ Questo prodotto ha l'obiettivo di semplificare la parte di implementazione quand
 
 ### Analisi del dominio
 
-Fino a ora, gli allievi della sezione Informatica delle classi prima e seconda, implementavano manualmente anche le più semplici attività (seguire una linea, fermarsi di fronte a un ostacolo, ...) che i robotLEGO&#174; Mindstorms dovessero compiere. Quindi lo scopo di questo prodotto sarebbe quello di offrire una libreria che agevoli il lavoro degli utenti eliminando le parti di realizzazione più semplici e ripetitive. Il risultato sarà facile da utilizzare e lo sarà in varie situazioni, in quanto è sviluppato nel linguaggio Java.
+Fino a ora, gli allievi della sezione Informatica delle classi prima e seconda, implementavano manualmente anche le più semplici attività (seguire una linea, fermarsi di fronte a un ostacolo, ...) che i robot LEGO&#174; Mindstorms dovessero compiere. Quindi lo scopo di questo prodotto sarebbe quello di offrire una libreria che agevoli il lavoro degli utenti eliminando le parti di realizzazione più semplici e ripetitive. Il risultato sarà facile da utilizzare e lo sarà in varie situazioni, in quanto è sviluppato nel linguaggio Java.
 
 ### Analisi e specifica dei requisiti
 
@@ -82,19 +88,19 @@ La specifica dei requisiti del progetto è rappresentata tramite tabelle che def
 |----|------------------------------------------------|
 |**Nome**    |Verifica componenti|
 |**Priorità**|1                     |
-|**Versione**|2.0                   |
+|**Versione**|2.1                   |
 |**Note**    |È necessario testare ogni componente utilizzato durante la realizzazione del progetto.|
-| *Sub-req 1* |Testare componenti (8 tra sensori e attuatori) su NXT con leJOS|
+| *Sub-req 1* |Testare componenti (7 tra sensori e attuatori) su NXT con leJOS|
 
 |ID  |REQ-03                                          |
 |----|------------------------------------------------|
 |**Nome**    |Componenti - Sensori|
 |**Priorità**|1                     |
-|**Versione**|2.0                   |
+|**Versione**|2.1                   |
 |**Note**    |Ogni sensore deve avere un metodo per la lettura del valore e se è possibile uno per calibrarlo.|
 | *Sub-req 1* |Sensore di luce |
 | *Sub-req 2* |Sensore tattile |
-| *Sub-req 3* |Sensore Ultrasuoni (distanza) |
+| *Sub-req 3* |Sensore a ultrasuoni (distanza) |
 | *Sub-req 4* |Microfono |
 | *Sub-req 5* |Pulsanti del brick |
 
@@ -114,12 +120,6 @@ La specifica dei requisiti del progetto è rappresentata tramite tabelle che def
 |**Versione**|2.0                   |
 |**Note**    |È necessario implementare la funzione "LineFollower" in modo proporzionale e facile da utilizzare.|
 
-### Pianificazione
-
-La pianificazione del progetto è stata effettuata mediante la realizzazione di un diagramma di Gantt.
-
-![Diagramma di gantt](img/gantt.png)
-
 ### Analisi dei mezzi
 
 #### Software
@@ -131,6 +131,7 @@ I software usati comprendono quelli presenti sui nostri PC e il firmware per il 
 - Visual Studio Code 1.29.1
 - GitHub Desktop 1.5.0
 - GanttProject 2.8.9 Pilsen
+- StarUML 3.0.2
 
 #### Hardware
 
@@ -138,6 +139,12 @@ Per la realizzazione del prodotto ci siamo serviti dei nostri computer portatili
 - Apple MacBook Pro 15" 2018, Processore Intel&reg; Core I7, RAM 16GB, Disk 1TB SSD, Mac OS X 10.14.1
 - HP ENVY Notebook, Intel&reg; Core I7, RAM 16GB, Windows 10 Home 64 bit
 - Brick LEGO&reg; NXT
+
+### Pianificazione
+
+La pianificazione del progetto è stata effettuata mediante la realizzazione di un diagramma di Gantt.
+
+![Diagramma di gantt](img/gantt.png)
 
 ## Progettazione
 
@@ -183,7 +190,7 @@ Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sens
     Ritorna i gradi di rotazione attuale (0 - 360).
 - LCD, è lo schermino che si trova sul brick:
 
-### Design dei dati
+### Design procedurale
 
 In questa sezione è descritto come sono strutturate le cartelle contententi la libreria sviluppata.
 
@@ -204,32 +211,7 @@ src
         |- LineFollower
 ```
 
-### Diagramma delle classi
-
-### Design delle interfacce
-
-Descrizione delle interfacce interne ed esterne del sistema e
-dell’interfaccia utente. La progettazione delle interfacce è basata
-sulle informazioni ricavate durante la fase di analisi e realizzata
-tramite mockups.
-
-### Design procedurale
-
-Descrive i concetti dettagliati dell’architettura/sviluppo utilizzando
-ad esempio:
-
--   Diagrammi di flusso e Nassi.
-
--   Tabelle.
-
--   Classi e metodi.
-
--   Tabelle di routing
-
--   Diritti di accesso a condivisioni …
-
-Questi documenti permetteranno di rappresentare i dettagli procedurali
-per la realizzazione del prodotto.
+#### Diagramma delle classi
 
 ## Implementazione
 
