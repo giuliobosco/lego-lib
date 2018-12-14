@@ -194,45 +194,26 @@ Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sens
 
 In questa sezione è descritto come sono strutturate le cartelle contententi la libreria sviluppata.
 
-```
-src
- |- components
- |       |- sensors
- |       |    |- Light
- |       |    |- Distance
- |       |    |- Microphone
- |       |    |- Touch
- |       |    |- BrickButtons
- |       |
- |       |- actuators
- |              |- LargeMotor
- |              |- LCD
- |- library
-        |- LineFollower
-```
+- src
+    -
+    - test
+        - HelloWorld.java
 
 #### Diagramma delle classi
 
+![Diagramma delle classi](img/lego-lib-uml.png)
+
 ## Implementazione
 
-In questo capitolo dovrà essere mostrato come è stato realizzato il
-lavoro. Questa parte può differenziarsi dalla progettazione in quanto il
-risultato ottenuto non per forza può essere come era stato progettato.
+Il capitolo di implementazione mostra in poche parole la messa in atto della progettazione. Tutte le classi presenti nel diagramma vengono qui spiegate più nel dettaglio illustrando i metodi e le parti di codice tramite screenshots o rappresentazioni o schemi e tabelle.
 
-Sulla base di queste informazioni il lavoro svolto dovrà essere
-riproducibile.
+### Classi
 
-In questa parte è richiesto l’inserimento di codice sorgente/print
-screen di maschere solamente per quei passaggi particolarmente
-significativi e/o critici.
+#### Class1
 
-Inoltre dovranno essere descritte eventuali varianti di soluzione o
-scelte di prodotti con motivazione delle scelte.
+#### Class2
 
-Non deve apparire nessuna forma di guida d’uso di librerie o di
-componenti utilizzati. Eventualmente questa va allegata.
-
-Per eventuali dettagli si possono inserire riferimenti ai diari.
+#### Class3
 
 ## Test
 
