@@ -40,35 +40,35 @@
 Docenti e supervisori: Adriano Barchi, Luca Muggiasca, Francesco Mussi, Massimo Sartori
 - Scuola d'Arti e Mestieri di Trevano, sezione Informatica, Classe 3, Modulo 306
 - Data inizio: 14.11.2018  
-Data fine: 25.01.2019
+Data fine: 01.02.2019
 
 ### Abstract
 
 > *In questo documento è descritto come abbiamo sviluppato il prodotto"Libreria LEGO":  
-> una libreria sviluppata in Java utile per automatizzare le operazionipiù comuni durante la
+> una libreria sviluppata in Java utile per automatizzare le operazioni più comuni durante la
 > programmazione di robot LEGO&reg;.  
 > Ad esempio la lettura dei dati ricevuti da un sensore o le operazioni di
 > movimento con degli attuatori.  
-> Queste librerie verranno utilizzate principalmente dagli informaticidella classe
-> seconda della Scuola d'Arti e Mestieri di Trevano per implementare iprogrammi per la
+> Queste librerie verranno utilizzate principalmente dagli informatici della classe
+> seconda della Scuola d'Arti e Mestieri di Trevano per implementare i programmi per la
 > WRO (World Robot Olympiad) e FLL (First LEGO League).  
-> Questa raccolta di funzioni permetterà agli utenti di focalizzarsimaggiormente
+> Questa raccolta di funzioni permetterà agli utenti di focalizzarsi maggiormente
 > sul problema principale da risolvere avendo già le operazioni di base
 > implementate e testate.*
 
 ### Scopo
 
-Questo prodotto ha l'obiettivo di semplificare la parte di implementazionequando si sta sviluppando un progetto con dei robot LEGO&#174; Mindstorms.Il frutto del mandato comprende una libreria in grado di eseguire lefunzioni più basilari e fondamentali che un robot deve svolgere duranteuna missione.
+Questo prodotto ha l'obiettivo di semplificare la parte di implementazione quando si sta sviluppando un progetto con dei robot LEGO&#174; Mindstorms. Il frutto del mandato comprende una libreria in grado di eseguire le funzioni più basilari e fondamentali che un robot deve svolgere durante una missione.
 
 ## Analisi
 
 ### Analisi del dominio
 
-Fino a ora, gli allievi della sezione Informatica delle classi prima eseconda, implementavano manualmente anche le più semplici attività(seguire una linea, fermarsi di fronte a un ostacolo, ...) che i robotLEGO&#174; Mindstorms dovessero compiere. Quindi lo scopo di questoprodotto sarebbe quello di offrire una libreria che agevoli il lavorodegli utenti eliminando le parti di realizzazione più semplici eripetitive. Il risultato sarà facile da utilizzare e lo sarà in variesituazioni, in quanto è sviluppato nel linguaggio Java.
+Fino a ora, gli allievi della sezione Informatica delle classi prima e seconda, implementavano manualmente anche le più semplici attività (seguire una linea, fermarsi di fronte a un ostacolo, ...) che i robotLEGO&#174; Mindstorms dovessero compiere. Quindi lo scopo di questo prodotto sarebbe quello di offrire una libreria che agevoli il lavoro degli utenti eliminando le parti di realizzazione più semplici e ripetitive. Il risultato sarà facile da utilizzare e lo sarà in varie situazioni, in quanto è sviluppato nel linguaggio Java.
 
 ### Analisi e specifica dei requisiti
 
-La specifica dei requisiti del progetto è rappresentata tramite tabelleche definiscono le basi del prodotto. Le tabelle vengono elencate in basealla priorità e all'importanza del requisito.
+La specifica dei requisiti del progetto è rappresentata tramite tabelle che definiscono le basi del prodotto. Le tabelle vengono elencate in base alla priorità e all'importanza del requisito.
 
 |ID  |REQ-01                                          |
 |----|------------------------------------------------|
