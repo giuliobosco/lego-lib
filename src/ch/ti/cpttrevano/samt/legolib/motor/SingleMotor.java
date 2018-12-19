@@ -56,4 +56,50 @@ public class SingleMotor {
      * Maximum motor power.
      */
     public final static byte MAX_POWER = 100;
+
+    /**
+     * Port on the NXT brick of the single motor.
+     */
+    private char port;
+
+    /**
+     * Power of the motor.
+     */
+    private byte power;
+
+    /**
+     * Get the port on the NXT brick of the single motor.
+     *
+     * @return Port on the NXT brick of the single motor.
+     */
+    public char getPort() {
+        return this.port;
+    }
+
+    /**
+     * Setter the port on the NXT brick of the single motor.
+     *
+     * @param port Port on the NXT brick of the single motor.
+     */
+    public void setPort(char port) {
+        this.port = port;
+    }
+
+    /**
+     * Get the power of the motor.
+     *
+     * @return Power of the motor
+     */
+    public byte getPower() {
+        return this.power;
+    }
+
+    /**
+     * Set the power of the motor.
+     * 
+     * @param power Power of the motor.
+     */
+    public void setPower(byte power) {
+        this.power = power;
+    }
 }
