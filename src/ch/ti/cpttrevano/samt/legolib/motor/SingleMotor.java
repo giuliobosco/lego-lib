@@ -22,3 +22,38 @@
  * THE SOFTWARE.
  */
 package ch.ti.cpttrevano.samt.legolib.motor;
+
+/**
+ * Class for manage a single motor of the NXT brick.
+ * In the Lego Mindstorm Environment is rappresented by the green block "Motor".
+ *
+ * @author giuliobosco
+ * @version 1.0
+ */
+public class SingleMotor {
+
+    /**
+     * Mindstorm NXT motor port A.
+     */
+    public final static char PORT_A = 'A';
+
+    /**
+     * Mindstorm NXT motor port B.
+     */
+    public final static char PORT_B = 'B';
+
+    /**
+     * Mindstorm NXT motor port C.
+     */
+    public final static char PORT_C = 'C';
+
+    /**
+     * Minimum motor power.
+     */
+    public final static byte MIN_POWER = 0;
+
+    /**
+     * Maximum motor power.
+     */
+    public final static byte MAX_POWER = 100;
+}
