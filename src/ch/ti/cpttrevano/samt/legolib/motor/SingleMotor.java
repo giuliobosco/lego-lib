@@ -91,6 +91,7 @@ public class SingleMotor {
     private void setMotorPort(char motorPort) {
         if (this.isMotorPort(motorPort)) {
             this.motorPort = motorPort;
+            this.setMotor(this.motorPort);
         }
     }
 
