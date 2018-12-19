@@ -25,8 +25,6 @@
     - [Classi](#classi)
         - [HelloWorld](#helloworld)
             - [Test](#test)
-        - [LineFollower](#linefollower)
-            - [Test](#test)
 
 5. [Test](#test)
     - [Protocollo di test](#protocollo-di-test)
@@ -245,10 +243,6 @@ Per verificare il giusto funzionamento della classe l'abbiamo caricata sul brick
 Questo è il risultato ottenuto:
 
 <img src="img/helloworld_test.png" width=200>
-
-#### LineFollower
-
-##### Test
 
 ## Test
 
