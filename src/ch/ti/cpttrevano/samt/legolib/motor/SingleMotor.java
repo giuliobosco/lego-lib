@@ -81,7 +81,7 @@ public class SingleMotor {
      *
      * @param port Port on the NXT brick of the single motor.
      */
-    public void setPort(char port) {
+    private void setPort(char port) {
         if (this.isPort(port)) {
             this.port = port;
         }
