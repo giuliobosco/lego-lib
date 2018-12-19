@@ -6000,13 +6000,30 @@
 											"height": 13,
 											"text": "-time: long",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFnxtPp7u8lDgE=",
+											"_parent": {
+												"$ref": "AAAAAAFnonJpDmRZhFk="
+											},
+											"model": {
+												"$ref": "AAAAAAFnxtPp1e8ix0Y="
+											},
+											"font": "Arial;13;0",
+											"left": 413,
+											"top": 389,
+											"width": 149.43017578125,
+											"height": 13,
+											"text": "-startTime: long",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 408,
 									"top": 369,
 									"width": 159.43017578125,
-									"height": 23
+									"height": 38
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -6029,7 +6046,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 413,
-											"top": 397,
+											"top": 412,
 											"width": 149.43017578125,
 											"height": 13,
 											"text": "+setTime(time: long): void",
@@ -6046,10 +6063,27 @@
 											},
 											"font": "Arial;13;0",
 											"left": 413,
-											"top": 412,
+											"top": 427,
 											"width": 149.43017578125,
 											"height": 13,
 											"text": "+getTime(): long",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFnxtQLDO/+YSc=",
+											"_parent": {
+												"$ref": "AAAAAAFnonJpDmRaMfs="
+											},
+											"model": {
+												"$ref": "AAAAAAFnxtQK+u/70zw="
+											},
+											"font": "Arial;13;0",
+											"left": 413,
+											"top": 442,
+											"width": 149.43017578125,
+											"height": 13,
+											"text": "+getStartTime(): long",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6063,7 +6097,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 413,
-											"top": 427,
+											"top": 457,
 											"width": 149.43017578125,
 											"height": 13,
 											"text": "+WaitTime(time: long)",
@@ -6080,7 +6114,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 413,
-											"top": 442,
+											"top": 472,
 											"width": 149.43017578125,
 											"height": 13,
 											"text": "+wait(): void",
@@ -6097,7 +6131,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 413,
-											"top": 457,
+											"top": 487,
 											"width": 149.43017578125,
 											"height": 13,
 											"text": "+isFinished(): boolean",
@@ -6114,7 +6148,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 413,
-											"top": 472,
+											"top": 502,
 											"width": 149.43017578125,
 											"height": 13,
 											"text": "+beginWait(): void",
@@ -6123,9 +6157,9 @@
 									],
 									"font": "Arial;13;0",
 									"left": 408,
-									"top": 392,
+									"top": 407,
 									"width": 159.43017578125,
-									"height": 98
+									"height": 113
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -6165,7 +6199,7 @@
 							"left": 408,
 							"top": 344,
 							"width": 159.43017578125,
-							"height": 146,
+							"height": 176,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnonJpDmRU1go="
 							},
@@ -14726,6 +14760,16 @@
 							"name": "time",
 							"visibility": "private",
 							"type": "long"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFnxtPp1e8ix0Y=",
+							"_parent": {
+								"$ref": "AAAAAAFnonJpDmRRtJM="
+							},
+							"name": "startTime",
+							"visibility": "private",
+							"type": "long"
 						}
 					],
 					"operations": [
@@ -14770,6 +14814,25 @@
 									"_id": "AAAAAAFnonUodGTUl0M=",
 									"_parent": {
 										"$ref": "AAAAAAFnonUDHWTNSTE="
+									},
+									"type": "long",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFnxtQK+u/70zw=",
+							"_parent": {
+								"$ref": "AAAAAAFnonJpDmRRtJM="
+							},
+							"name": "getStartTime",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFnxtQ+qfBr5mI=",
+									"_parent": {
+										"$ref": "AAAAAAFnxtQK+u/70zw="
 									},
 									"type": "long",
 									"direction": "return"
