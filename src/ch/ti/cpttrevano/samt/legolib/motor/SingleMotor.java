@@ -187,4 +187,19 @@ public class SingleMotor {
         this.motorPort(port);
         this.setPower(power);
     }
+
+    /**
+     * Start the motor.
+     */
+    public void start() {
+        this.motor.forward();
+        this.motor.setSpeed(this.speed);
+    }
+
+    /**
+     * Stop the motor.
+     */
+    public void sto() {
+        this.motor.stop();
+    }
 }
