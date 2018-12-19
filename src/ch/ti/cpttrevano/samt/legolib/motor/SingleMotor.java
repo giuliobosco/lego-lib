@@ -65,6 +65,11 @@ public class SingleMotor {
     private char motorPort;
 
     /**
+     * Motor connected to the brick.
+     */
+    private NXTRegulatedMotor motor;
+
+    /**
      * Power of the motor.
      */
     private byte power;
@@ -86,6 +91,41 @@ public class SingleMotor {
     private void setMotorPort(char motorPort) {
         if (this.isMotorPort(motorPort)) {
             this.motorPort = motorPort;
+        }
+    }
+
+    /**
+     * Get the motor connected to the brick.
+     *
+     * @return Motor connected to the brick.
+     */
+    public NXTRegulatedMotor getMotor() {
+        return this.motor;
+    }
+
+    /**
+     * Set the motor connected to the brick.
+     *
+     * @param motor Motor connected to the brick.
+     */
+    public void setMotor(NXTRegulatedMotor motor) {
+        this.motor = motor;
+    }
+
+    /**
+     * Set the motor connected to the brick.
+     *
+     * @param motorPort Motor port on the NXT brick of the single motor.
+     */
+    public void setMotor(char motorPort) {
+        this.motorPort = motorPort;
+
+        if (motorPort == PORT_A) {
+            this.setMotor(Motor.A);
+        } else if (motorPort == PORT_B) {
+            this.setMotor(Motor.B);
+        } else if (motorPort == PORT_C) {
+            this.setMotor(Motor.C);
         }
     }
 
