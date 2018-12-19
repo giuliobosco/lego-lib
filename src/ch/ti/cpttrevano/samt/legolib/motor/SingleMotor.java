@@ -23,6 +23,8 @@
  */
 package ch.ti.cpttrevano.samt.legolib.motor;
 
+import legos.nxt.NXTRegulatedMotor;
+
 /**
  * Class for manage a single motor of the NXT brick.
  * In the Lego Mindstorm Environment is rappresented by the green block "Motor".
@@ -58,9 +60,9 @@ public class SingleMotor {
     public final static byte MAX_POWER = 100;
 
     /**
-     * Port on the NXT brick of the single motor.
+     * Motor port on the NXT brick of the single motor.
      */
-    private char port;
+    private char motorPort;
 
     /**
      * Power of the motor.
@@ -68,22 +70,22 @@ public class SingleMotor {
     private byte power;
 
     /**
-     * Get the port on the NXT brick of the single motor.
+     * Get the Motor port on the NXT brick of the single motor.
      *
-     * @return Port on the NXT brick of the single motor.
+     * @return Motor port on the NXT brick of the single motor.
      */
-    public char getPort() {
-        return this.port;
+    public char getMotorPort() {
+        return this.motorPort;
     }
 
     /**
-     * Setter the port on the NXT brick of the single motor.
+     * Setter the motor port on the NXT brick of the single motor.
      *
-     * @param port Port on the NXT brick of the single motor.
+     * @param motorPort Motor port on the NXT brick of the single motor.
      */
-    private void setPort(char port) {
-        if (this.isPort(port)) {
-            this.port = port;
+    private void setMotorPort(char motorPort) {
+        if (this.isMotorPort(motorPort)) {
+            this.motorPort = motorPort;
         }
     }
 
@@ -108,13 +110,13 @@ public class SingleMotor {
     }
 
     /**
-     * Check if the port passed as parameter exists on the NXT brick.
+     * Check if the motor port passed as parameter exists on the NXT brick.
      *
-     * @param port Port on the NXT brick to check if exists.
-     * @return True if the port exists on the NXT brick, otherwise false.
+     * @param motorPort Motor port on the NXT brick to check if exists.
+     * @return True if the motor port exists on the NXT brick, otherwise false.
      */
-    public boolean isPort(char port) {
-        if (port == PORT_A || port == PORT_B || port == PORT_C) {
+    public boolean isMotorPort(char motorPort) {
+        if (motorPort == PORT_A || motorPort == PORT_B || motorPort == PORT_C) {
             return true;
         }
 
@@ -136,13 +138,13 @@ public class SingleMotor {
     }
 
     /**
-     * Initialize the single motor with the port and power.
+     * Initialize the single motor with the motor port and power.
      *
-     * @param port Port on the NXT brick of the single motor.
+     * @param motorPort$ Motor port on the NXT brick of the single motor.
      * @param power Power of the motor.
      */
     public SingleMotor(char port, byte power) {
-        this.setPort(port);
+        this.motorPort(port);
         this.setPower(power);
     }
 }
