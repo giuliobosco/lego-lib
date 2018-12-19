@@ -134,4 +134,15 @@ public class SingleMotor {
 
         return false;
     }
+
+    /**
+     * Initialize the single motor with the port and power.
+     *
+     * @param port Port on the NXT brick of the single motor.
+     * @param power Power of the motor.
+     */
+    public SingleMotor(char port, byte power) {
+        this.setPort(port);
+        this.setPower(power);
+    }
 }
