@@ -26,6 +26,7 @@
         - [HelloWorld](#helloworld)
             - [Test](#test)
         - [LineFollower](#linefollower)
+            - [Test](#test)
 
 5. [Test](#test)
     - [Protocollo di test](#protocollo-di-test)
@@ -240,11 +241,14 @@ public class HelloWorld {
 
 ##### Test
 
-Per verificare il giusto funzionamento della classe l'abbiamo caricata sul brick e l'abbiamo avviata attraverso i comandi spiegati nella guida [InstallWindows](#installWindows.md).
+Per verificare il giusto funzionamento della classe l'abbiamo caricata sul brick e l'abbiamo avviata attraverso i comandi spiegati nella guida [InstallWindows](installWindows.md).  
+Questo è il risultato ottenuto:
+
+<img src="img/helloworld_test.png" width=200>
 
 #### LineFollower
 
-#### Class3
+##### Test
 
 ## Test
 
