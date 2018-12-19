@@ -108,7 +108,7 @@ public class SingleMotor {
      *
      * @param motor Motor connected to the brick.
      */
-    public void setMotor(NXTRegulatedMotor motor) {
+    private void setMotor(NXTRegulatedMotor motor) {
         this.motor = motor;
     }
 
@@ -117,7 +117,7 @@ public class SingleMotor {
      *
      * @param motorPort Motor port on the NXT brick of the single motor.
      */
-    public void setMotor(char motorPort) {
+    private void setMotor(char motorPort) {
         this.motorPort = motorPort;
 
         if (motorPort == PORT_A) {
