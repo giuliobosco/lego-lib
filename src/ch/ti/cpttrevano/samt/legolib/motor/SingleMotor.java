@@ -82,7 +82,9 @@ public class SingleMotor {
      * @param port Port on the NXT brick of the single motor.
      */
     public void setPort(char port) {
-        this.port = port;
+        if (this.isPort(port)) {
+            this.port = port;
+        }
     }
 
     /**
@@ -96,10 +98,40 @@ public class SingleMotor {
 
     /**
      * Set the power of the motor.
-     * 
+     *
      * @param power Power of the motor.
      */
     public void setPower(byte power) {
-        this.power = power;
+        if (this.isPower(power)) {
+            this.power = power;
+        }
+    }
+
+    /**
+     * Check if the port passed as parameter exists on the NXT brick.
+     *
+     * @param port Port on the NXT brick to check if exists.
+     * @return True if the port exists on the NXT brick, otherwise false.
+     */
+    public boolean isPort(char port) {
+        if (port == PORT_A || port == PORT_B || port == PORT_C) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Check if the power passed as parameter is in the range for the motor.
+     *
+     * @param power Power to check if is in the range of the motor.
+     * @return True if the power is in the range, otherwise false.
+     */
+    public boolean isPower(byte power) {
+        if (power > MIN_POWER && power < MAX_POWER) {
+            return true;
+        }
+
+        return false;
     }
 }
