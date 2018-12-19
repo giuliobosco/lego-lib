@@ -22,6 +22,10 @@
         - [Diagramma delle classi](#diagramma-delle-classi)
 
 4. [Implementazione](#implementazione)
+    - [Classi](#classi)
+        - [HelloWorld](#helloworld)
+            - [Test](#test)
+        - [LineFollower](#linefollower)
 
 5. [Test](#test)
     - [Protocollo di test](#protocollo-di-test)
@@ -195,9 +199,20 @@ Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sens
 In questa sezione è descritto come sono strutturate le cartelle contententi la libreria sviluppata.
 
 - src
-    -
+    - ch
+        - ti
+            - cpttrevano
+                - samt
+                    - legolib
+                        - examples
+                            - LineFollower.java
+                        - motor
+                            - Motor.java
+                        - wait
+                            - Wait.java
     - test
         - HelloWorld.java
+        - LineFollower.java
 
 #### Diagramma delle classi
 
@@ -209,9 +224,25 @@ Il capitolo di implementazione mostra in poche parole la messa in atto della pro
 
 ### Classi
 
-#### Class1
+#### HelloWorld
 
-#### Class2
+Questa classe è stata usata come test per iniziare a capire come implementare un programma Java in un brick NXT e per essere usata come esempio nella guida per configurare leJOS su Windows. È presente solo il metodo `main` con due classiche funzioni che insieme formano semplicemente l'output "Hello World".
+```
+import lejos.nxt.Button;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Button.waitForAnyPress();
+	}
+}
+```
+
+##### Test
+
+Per verificare il giusto funzionamento della classe l'abbiamo caricata sul brick e l'abbiamo avviata attraverso i comandi spiegati nella guida [InstallWindows](#installWindows.md).
+
+#### LineFollower
 
 #### Class3
 
