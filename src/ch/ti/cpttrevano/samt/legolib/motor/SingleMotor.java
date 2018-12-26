@@ -200,7 +200,7 @@ public class SingleMotor {
     /**
      * Stop the motor.
      */
-    public void sto() {
+    public void stop() {
         this.motor.stop();
     }
 }
