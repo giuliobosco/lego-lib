@@ -71,6 +71,17 @@ public class WaitTime extends Wait {
     }
 
     /**
+     * Se the start time, if the wait is finished.
+     *
+     * @param startTime Start time.
+     */
+    protected void setStartTime(long startTime) {
+        if (startTime >  System.currentTimeMillis() && this.isFinished()) {
+            this.startTime = startTime;
+        }
+    }
+
+    /**
      * Initialize the WaitTime with the time to wait.
      */
     public WaitTime(long time) {
