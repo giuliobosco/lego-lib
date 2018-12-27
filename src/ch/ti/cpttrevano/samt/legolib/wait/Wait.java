@@ -38,17 +38,22 @@ public class Wait extends Thread {
     Wait() {}
 
     /**
-     * Empty wait method.
+     * Synchron wait.
      */
-    public void wait() {}
+    public void wait() {
+        this.beginWait();
+        while(!this.isFinished()) {
+
+        }
+    }
 
     /**
-     * Empty begin wait method.
+     * Begin asynchron wait.
      */
     public void beginWait() {}
 
     /**
-     * Is finished method, returns always true.
+     * Is finished method, for asynchron wait. Returns always true.
      */
     public boolean isFinished() {
         return true;

@@ -97,14 +97,4 @@ public class WaitTime extends Wait {
 
         return false;
     }
-
-    /**
-     * Wait the time, use synchron.
-     */
-    public void wait() {
-        this.beginWait();
-        while (!this.isFinished()) {
-
-        }
-    }
 }
