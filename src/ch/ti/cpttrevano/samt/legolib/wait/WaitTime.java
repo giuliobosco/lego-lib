@@ -34,12 +34,12 @@ public class WaitTime extends Wait {
     /**
      * Time to wait.
      */
-    private long time;
+    protected long time;
 
     /**
      * Start time.
      */
-    private long startTime;
+    protected long startTime;
 
     /**
      * Get the time to wait.
