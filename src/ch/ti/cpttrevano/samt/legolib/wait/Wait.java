@@ -28,7 +28,7 @@ package ch.ti.cpttrevano.samt.legolib.wait;
  * In the Lego Mindstorm Environment is rappresented by the orange block "Wait".
  *
  * @author giuliobosco
- * @version 1.0
+ * @version 1.0.1
  */
 public class Wait extends Thread {
 
