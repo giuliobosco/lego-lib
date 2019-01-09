@@ -23,55 +23,63 @@
  */
 package ch.ti.cpttrevano.samt.legolib.wait;
 
+import ch.ti.cpttrevano.samt.legolib.motor.SingleMotor;
+
 /**
- * WaitMotor, used for waiting a motor action. 
+ * WaitMotor, used for waiting a motor action.
  * In the Lego Mindstorm Environment is rappresented by the orange block "Wait".
  *
  * @author gabrialessi
- * @version 1.0
+ * @version 1.1.0
  */
 public class WaitMotor extends Wait {
 
-    private SingleMotor motor = new SingleMotor();
-    
+    /**
+     * The single motor.
+     */
+    private SingleMotor motor;
+
+    /**
+     *
+     */
     private byte value;
-    
+
     private boolean rotations;
 
     /**
-     * Empty constructor.
+     * Set the single motor.
+     *
+     * @param motor The single motor.
      */
-    public WaitMotor (SingleMotor motor) {
-        setMotor(motor);
-    }
-    
     private void setMotor(SingleMotor motor) {
         this.motor = motor;
     }
-    
+
     public SingleMotor getMotor() {
         return this.motor;
     }
-    
+
     public byte getValue() {
         return this.value;
     }
 
     /**
-     * Empty wait method.
+     * Empty constructor.
+     *
+     * @param motor The single motor.
      */
-    public void wait() {
+    public WaitMotor(SingleMotor motor) {
+        setMotor(motor);
     }
 
     /**
      * Empty begin wait method.
      */
+    @Override
     public void beginWait() {
     }
 
-    /**
-     * Is finished method, returns always true.
-     */
+    @Override
     public boolean isFinished() {
         return true;
     }
