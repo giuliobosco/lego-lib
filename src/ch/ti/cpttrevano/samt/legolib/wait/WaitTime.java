@@ -91,18 +91,12 @@ public class WaitTime extends Wait {
         setTime(time);
     }
 
-    /**
-     * Begin the time to wait.
-     */
+    @Override
     public void beginWait() {
         setStartTime(System.currentTimeMillis());
     }
 
-    /**
-     * Check if the time to wait is finished.
-     *
-     * @return True if is finished.
-     */
+    @Override
     public boolean isFinished() {
         if (getStartTime() + getTime() >= System.currentTimeMillis()) {
             setTime(Long.MAX_VALUE - getStartTime());
