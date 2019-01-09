@@ -5,3 +5,6 @@
 .idea/*
 lego-lib.iml
 out/*
+nbproject/*
+build.xml
+manifest.mf
