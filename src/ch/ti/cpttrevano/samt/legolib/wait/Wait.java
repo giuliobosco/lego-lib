@@ -66,9 +66,10 @@ public class Wait extends Thread {
     public void waiter() {
         this.beginWait();
         try {
-            while (!this.isFinished()) Thread.sleep(50);
+            while (!this.isFinished()) {
+                sleep(50);
+            }
         } catch (InterruptedException ignored) {
-
         }
     }
 
