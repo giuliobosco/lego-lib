@@ -33,9 +33,32 @@ package ch.ti.cpttrevano.samt.legolib.wait;
 public class Wait extends Thread {
 
     /**
+     * Wait finished.
+     */
+    private boolean finished;
+
+    /**
+     * Set the wait finished.
+     *
+     * @param finished Wait finished.
+     */
+    protected void setFinished(boolean finished) {
+        this.finished = finished;
+    }
+
+    /**
+     * Is finished method, for asynchron wait. Returns always true.
+     */
+    public boolean isFinished() {
+        return this.finished;
+    }
+
+    /**
      * Empty constructor.
      */
-    Wait() {}
+    Wait() {
+        this.finished = true;
+    }
 
     /**
      * Synchron wait.
@@ -52,12 +75,6 @@ public class Wait extends Thread {
     /**
      * Begin asynchron wait.
      */
-    public void beginWait() {}
-
-    /**
-     * Is finished method, for asynchron wait. Returns always true.
-     */
-    public boolean isFinished() {
-        return true;
+    public void beginWait() {
     }
 }
