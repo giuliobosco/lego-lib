@@ -23,14 +23,15 @@
  */
 package ch.ti.cpttrevano.samt.legolib.motor;
 
-import legos.nxt.NXTRegulatedMotor;
+import lejos.nxt.NXTRegulatedMotor;
+import lejos.nxt.Motor;
 
 /**
  * Class for manage a single motor of the NXT brick.
  * In the Lego Mindstorm Environment is rappresented by the green block "Motor".
  *
  * @author giuliobosco
- * @version 1.0
+ * @version 1.0.1
  */
 public class SingleMotor {
 
@@ -181,11 +182,11 @@ public class SingleMotor {
     /**
      * Initialize the single motor with the motor port and power.
      *
-     * @param motorPort$ Motor port on the NXT brick of the single motor.
+     * @param power Motor port on the NXT brick of the single motor.
      * @param power Power of the motor.
      */
     public SingleMotor(char port, byte power) {
-        this.motorPort(port);
+        this.setMotorPort(port);
         this.setPower(power);
     }
 
@@ -194,7 +195,7 @@ public class SingleMotor {
      */
     public void start() {
         this.motor.forward();
-        this.motor.setSpeed(this.speed);
+        this.motor.setSpeed(this.power);
     }
 
     /**
