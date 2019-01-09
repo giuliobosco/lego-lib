@@ -35,7 +35,8 @@ public class Wait extends Thread {
     /**
      * Empty constructor.
      */
-    Wait() {}
+    Wait() {
+    }
 
     /**
      * Synchron wait.
@@ -43,19 +44,23 @@ public class Wait extends Thread {
     public void waiter() {
         this.beginWait();
         try {
-            while (!this.isFinished()) Thread.sleep(50);
+            while (!this.isFinished()) {
+                sleep(50);
+            }
         } catch (InterruptedException ignored) {
-
         }
     }
 
     /**
      * Begin asynchron wait.
      */
-    public void beginWait() {}
+    public void beginWait() {
+    }
 
     /**
      * Is finished method, for asynchron wait. Returns always true.
+     *
+     * @return True if is finished.
      */
     public boolean isFinished() {
         return true;
