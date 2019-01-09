@@ -27,7 +27,8 @@ package ch.ti.cpttrevano.samt.legolib.wait;
  * WaitTime, wait milliseconds.
  *
  * @author giuliobosco
- * @version 1.0.1
+ * @author gabrialessi
+ * @version 1.1.0
  */
 public class WaitTime extends Wait {
 
@@ -51,11 +52,11 @@ public class WaitTime extends Wait {
     }
 
     /**
-     * Set the time to wait, it will be setted only if isFinished returns true.
+     * Set the time to wait.
      *
      * @param time Time to wait.
      */
-    public long setTime(long time) {
+    protected void setTime(long time) {
         if (this.isFinished()) {
             this.time = time;
         }
@@ -71,41 +72,43 @@ public class WaitTime extends Wait {
     }
 
     /**
-     * Se the start time, if the wait is finished.
+     * Set the start time.
      *
      * @param startTime Start time.
      */
     protected void setStartTime(long startTime) {
-        if (startTime >  System.currentTimeMillis() && this.isFinished()) {
+        if (getStartTime() > System.currentTimeMillis() && this.isFinished()) {
             this.startTime = startTime;
         }
     }
 
     /**
      * Initialize the WaitTime with the time to wait.
+     *
+     * @param time Time to wait.
      */
     public WaitTime(long time) {
-        this.setTime(time);
+        setTime(time);
     }
 
     /**
      * Begin the time to wait.
      */
     public void beginWait() {
-        this.startTime = System.currentTimeMillis();
+        setStartTime(System.currentTimeMillis());
     }
 
     /**
-     * Check if the time to wait is finished, use asynchron.
+     * Check if the time to wait is finished.
      *
      * @return True if is finished.
      */
     public boolean isFinished() {
-        if (startTime + time >= System.currentTimeMillis()) {
-            this.time = Long.MAX_VALUE - this.startTime;
+        if (getStartTime() + getTime() >= System.currentTimeMillis()) {
+            setTime(Long.MAX_VALUE - getStartTime());
             return true;
+        } else {
+            return false;
         }
-
-        return false;
     }
 }
