@@ -40,7 +40,7 @@ public class Wait extends Thread {
     /**
      * Synchron wait.
      */
-    public void wait() {
+    public void waiter() {
         this.beginWait();
         while(!this.isFinished()) {
 
