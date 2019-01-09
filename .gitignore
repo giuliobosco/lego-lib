@@ -1,2 +1,7 @@
 *.class
 *.nxj
+
+
+.idea/*
+lego-lib.iml
+out/*
