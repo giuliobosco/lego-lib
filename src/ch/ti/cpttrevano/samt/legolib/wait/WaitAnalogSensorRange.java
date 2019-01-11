@@ -28,58 +28,107 @@ package ch.ti.cpttrevano.samt.legolib.wait;
  * In the Lego Mindstorm Environment is rappresented by the orange block "Wait".
  *
  * @author gabrialessi
- * @version 1.0
+ * @author giuliobosco
+ * @version 2.0
  */
 public class WaitAnalogSensorRange extends WaitSensor {
 
-    protected boolean inRange;
+    // ------------------------------------------------------------------------------------ Costants
+    // ---------------------------------------------------------------------------------- Attributes
 
-    protected byte minValue;
+    /**
+     * Inside range.
+     * The value must be in the range in between the minimum value and the maximum value.
+     */
+    private boolean inRange;
 
-    protected byte maxValue;
+    /**
+     * Minimum range value
+     */
+    private byte minValue;
 
+    /**
+     * Maximum range value.
+     */
+    private byte maxValue;
+
+    // --------------------------------------------------------------------------- Getters & Setters
+
+    /**
+     * Is inside range.
+     *
+     * @return Inside range.
+     */
+    public boolean isInRange() {
+        return this.inRange;
+    }
+
+    /**
+     * Set is inside range.
+     *
+     * @param inRange Inside range.
+     */
+    public void setInRange(boolean inRange) {
+        if (this.isFinished()) {
+            this.inRange = inRange;
+        }
+    }
+
+    /**
+     * Get the minimum range value.
+     *
+     * @return Minimum range value.
+     */
+    public byte getMinValue() {
+        return this.minValue;
+    }
+
+    /**
+     * Set the minimum range value.
+     *
+     * @param minValue Minimum range value.
+     */
+    public void setMinValue(byte minValue) {
+        if (this.isFinished()) {
+            this.minValue = minValue;
+        }
+    }
+
+    /**
+     * Get the maximum range value.
+     *
+     * @return Maximum range value.
+     */
+    public byte getMaxValue() {
+        return this.maxValue;
+    }
+
+    /**
+     * Set the maximum range value.
+     *
+     * @param maxValue Maximum range value.
+     */
+    public void setMaxValue(byte maxValue) {
+        this.maxValue = maxValue;
+    }
+
+    // -------------------------------------------------------------------------------- Constructors
+
+    /**
+     * Create the analog wait sensor with the inside range, minimum range value and maximum range
+     * value.
+     *
+     * @param inRange  Inside range.
+     * @param minValue Minimum range value.
+     * @param maxValue Maximum range value.
+     */
     public WaitAnalogSensorRange(boolean inRange, byte minValue, byte maxValue) {
         setInRange(inRange);
         setMinValue(minValue);
         setMaxValue(maxValue);
     }
 
-    public boolean isInRange() {
-        return this.inRange;
-    }
-
-    public void setInRange(boolean inRange) {
-        this.inRange = inRange;
-    }
-
-    public byte getMinValue() {
-        return this.minValue;
-    }
-
-    public void setMinValue(byte minValue) {
-        this.minValue = minValue;
-    }
-
-    public byte getMaxValue() {
-        return this.maxValue;
-    }
-
-    public void setMaxValue(byte maxValue) {
-        this.maxValue = maxValue;
-    }
-
-    @Override
-    public void waiter() {
-        super.waiter();
-    }
-
-    @Override
-    public boolean isFinished() {
-        return super.isFinished();
-    }
-
-    @Override
-    public void beginWait() {
-        super.beginWait();
-    }
+    // -------------------------------------------------------------------------------- Help Methods
+    // ----------------------------------------------------------------------------- General Methods
+    // --------------------------------------------------------------------------- Static Components
 }
