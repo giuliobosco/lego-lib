@@ -32,18 +32,76 @@ package ch.ti.cpttrevano.samt.legolib.wait;
  */
 public class WaitDigitalSensor extends WaitSensor {
 
+    // ------------------------------------------------------------------------------------ Costants
+
+    /**
+     * Button action.
+     */
     public final byte PRESSED = 0;
 
+    /**
+     * Button released.
+     */
     public final byte RELEASED = 1;
 
+    /**
+     * Button pressed than released.
+     */
     public final byte CLICKED = 2;
 
+    // ---------------------------------------------------------------------------------- Attributes
+
+    /**
+     * Comparison wait action.
+     */
     protected byte waitAction;
 
+    // --------------------------------------------------------------------------- Getters & Setters
+
+    /**
+     * Get the comparison wait action.
+     *
+     * @return Comparison wait action.
+     */
+    public byte getWaitAction() {
+        return this.waitAction;
+    }
+
+    /**
+     * Set the comparison wait action.
+     * Check that the wait action is valid with the isWaitAction method and that the waiter is not
+     * running.
+     *
+     * @param waitAction Comparison wait action.
+     */
+    public void setWaitAction(byte waitAction) {
+        if (this.isFinished()) {
+            if (this.isWaitAction(waitAction)) {
+                this.waitAction = waitAction;
+            }
+        }
+    }
+
+    // -------------------------------------------------------------------------------- Constructors
+
+    /**
+     * Create the wait digital sensor with the comparison wait action.
+     *
+     * @param waitAction Comparison wait action.
+     */
     public WaitDigitalSensor(byte waitAction) {
         setWaitAction(waitAction);
     }
 
+    // -------------------------------------------------------------------------------- Help Methods
+
+    /**
+     * Is wait action.
+     * Check if the value is equals the pressed or released or clicked value.
+     *
+     * @param waitAction Wait action to check.
+     * @return True if the value is a waitAction.
+     */
     public boolean isWaitAction(byte waitAction) {
         if (waitAction == PRESSED || waitAction == RELEASED || waitAction == CLICKED) {
             return true;
@@ -51,27 +109,7 @@ public class WaitDigitalSensor extends WaitSensor {
         return false;
     }
 
-    public byte getWaitAction() {
-        return this.waitAction;
-    }
-
-    public void setWaitAction(byte waitAction) {
-        this.waitAction = waitAction;
-    }
-
-    @Override
-    public void waiter() {
-        super.waiter();
-    }
-
-    @Override
-    public boolean isFinished() {
-        return super.isFinished();
-    }
-
-    @Override
-    public void beginWait() {
-        super.beginWait();
-    }
-
+    // ----------------------------------------------------------------------------- General Methods
+    // --------------------------------------------------------------------------- Static Components
+    
 }
