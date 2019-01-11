@@ -30,18 +30,20 @@ import lejos.nxt.TouchSensor;
  * Wait the touch sensor.
  *
  * @author gabrialessi
- * @version 2.0
+ * @version 2.1
  */
 public class WaitTouchSensor extends WaitDigitalSensor {
 
     // ------------------------------------------------------------------------------------ Costants
     // ---------------------------------------------------------------------------------- Attributes
+
     /**
      * Touch sensor.
      */
     private TouchSensor touchSensor;
 
     // --------------------------------------------------------------------------- Getters & Setters
+
     /**
      * Set the touch sensor.
      *
@@ -63,8 +65,9 @@ public class WaitTouchSensor extends WaitDigitalSensor {
     }
 
     // -------------------------------------------------------------------------------- Constructors
+
     /**
-     *
+     * Create the wait touch sensor with the touch sensor and the waited action.
      *
      * @param waitAction Wait action.
      * @param touchSensor Touch sensor.
@@ -75,8 +78,7 @@ public class WaitTouchSensor extends WaitDigitalSensor {
     }
 
     /**
-     * Create the waiter with the bigger than comparison value, the comparison
-     * value and the touch sensor port.
+     * Create the wait touch sensor with the touch sensor port and the waited action.
      *
      * @param waitAction Wait action.
      * @param sensorPort Touch sensor port.
@@ -87,13 +89,12 @@ public class WaitTouchSensor extends WaitDigitalSensor {
 
     // -------------------------------------------------------------------------------- Help Methods
     // ----------------------------------------------------------------------------- General Methods
+
     /**
      * Run the wait touch sensor.
      */
     @Override
     public void run() {
-        this.setFinished(false);
-
         while (this.isFinished()) {
             try {
                 this.setFinished(this.getTouchSensor().isPressed());
@@ -103,5 +104,6 @@ public class WaitTouchSensor extends WaitDigitalSensor {
             }
         }
     }
+
     // --------------------------------------------------------------------------- Static Components
 }
