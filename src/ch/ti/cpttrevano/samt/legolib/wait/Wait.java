@@ -72,7 +72,7 @@ public class Wait extends Thread {
         this.beginWait();
         try {
             while (!this.isFinished()) {
-                sleep(50);
+                sleep(WAIT_TIME);
             }
         } catch (InterruptedException ignored) {
         }
