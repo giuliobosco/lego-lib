@@ -97,8 +97,6 @@ public class WaitUltrasonicSensor extends WaitAnalogSensor {
      */
     @Override
     public void run() {
-        this.setFinished(false);
-
         while (this.isFinished()) {
             try {
                 if (this.isBigger()) {
@@ -112,14 +110,6 @@ public class WaitUltrasonicSensor extends WaitAnalogSensor {
 
             }
         }
-    }
-
-    /**
-     * Begin the wait of the ultrasonic sensor.
-     */
-    @Override
-    public void beginWait() {
-        this.start();
     }
 
     // --------------------------------------------------------------------------- Static Components

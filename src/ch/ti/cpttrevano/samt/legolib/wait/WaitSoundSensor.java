@@ -100,8 +100,6 @@ public class WaitSoundSensor extends WaitAnalogSensor {
      */
     @Override
     public void run() {
-        this.setFinished(false);
-
         while (this.isFinished()) {
             try {
                 if (this.isBigger()) {
