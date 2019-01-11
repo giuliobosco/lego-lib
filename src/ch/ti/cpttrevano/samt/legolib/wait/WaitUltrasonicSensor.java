@@ -91,6 +91,30 @@ public class WaitUltrasonicSensor extends WaitAnalogSensor {
 
     // -------------------------------------------------------------------------------- Help Methods
     // ----------------------------------------------------------------------------- General Methods
+
+    /**
+     * Run the wait ultrasonic sensor.
+     */
+    @Override
+    public void run() {
+        this.setFinished(false);
+
+        while (dthis.isFinished()) {
+            try {
+                if (this.isBigger()) {
+                    this.setFinished(this.ultrasonicSensor.getDistance() > this.getValue());
+                } else {
+                    this.setFinished(this.ultrasonicSensor.getDistance() < this.getValue());
+                }
+
+                Thread.sleep(WAIT_TIME);
+            } catch (InterruptedException ignored) {
+
+            }
+        }
+    }
+
+
     // --------------------------------------------------------------------------- Static Components
 
 }
