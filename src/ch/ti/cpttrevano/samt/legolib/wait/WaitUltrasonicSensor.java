@@ -99,7 +99,7 @@ public class WaitUltrasonicSensor extends WaitAnalogSensor {
     public void run() {
         this.setFinished(false);
 
-        while (dthis.isFinished()) {
+        while (this.isFinished()) {
             try {
                 if (this.isBigger()) {
                     this.setFinished(this.ultrasonicSensor.getDistance() > this.getValue());
