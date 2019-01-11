@@ -30,57 +30,89 @@ import ch.ti.cpttrevano.samt.legolib.motor.SingleMotor;
  * In the Lego Mindstorm Environment is rappresented by the orange block "Wait".
  *
  * @author gabrialessi
- * @version 1.1.0
+ * @author giuliobosco
+ * @version 2.0
  */
 public class WaitMotor extends Wait {
 
     /**
-     * The single motor.
+     * Single motor.
      */
     private SingleMotor motor;
 
     /**
-     *
+     * Comparison value.
      */
-    private byte value;
-
-    private boolean rotations;
+    private int value;
 
     /**
      * Set the single motor.
      *
-     * @param motor The single motor.
+     * @param motor Single motor.
      */
     private void setMotor(SingleMotor motor) {
-        this.motor = motor;
+        if (this.isFinished()) {
+            this.motor = motor;
+        }
     }
 
+    /**
+     * Get the single motor.
+     *
+     * @return Single Motor
+     */
     public SingleMotor getMotor() {
         return this.motor;
     }
 
-    public byte getValue() {
+    /**
+     * Set the comparison value.
+     *
+     * @param value Comparison value.
+     */
+    public void setValue(int value) {
+        if (this.isFinished()) {
+            this.value = value;
+        }
+    }
+
+    /**
+     * Get the comparison value.
+     *
+     * @return Comparison value.
+     */
+    public int getValue() {
         return this.value;
     }
 
     /**
-     * Empty constructor.
+     * Create the wait motor with the motor and the comparison value.
      *
-     * @param motor The single motor.
+     * @param motor Single motor.
+     * @param value Comparison value.
      */
-    public WaitMotor(SingleMotor motor) {
-        setMotor(motor);
+    public WaitMotor(SingleMotor motor, int value) {
+        this.setMotor(motor);
+        this.setValue(value);
     }
 
     /**
-     * Empty begin wait method.
+     * Run the wait motor.
      */
     @Override
-    public void beginWait() {
-    }
+    public void run() {
+        while (this.isFinished()) {
+            try {
+                int initialRotations = motor.getMotor().getTachoCount();
 
-    @Override
-    public boolean isFinished() {
-        return true;
+                while (!(initialRotations + value == motor.getMotor().getTachoCount())) {
+                    Thread.sleep(WAIT_TIME);
+                }
+
+                this.setFinished(true);
+            } catch (InterruptedException ignored) {
+
+            }
+        }
     }
 }
