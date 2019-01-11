@@ -114,6 +114,13 @@ public class WaitUltrasonicSensor extends WaitAnalogSensor {
         }
     }
 
+    /**
+     * Begin the wait of the ultrasonic sensor.
+     */
+    @Override
+    public void beginWait() {
+        this.start();
+    }
 
     // --------------------------------------------------------------------------- Static Components
 
