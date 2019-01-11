@@ -74,7 +74,7 @@ public class WaitUltrasonicSensor extends WaitAnalogSensor {
     public WaitUltrasonicSensor(boolean bigger, byte value, UltrasonicSensor ultrasonicSensor) {
         super(bigger, value);
 
-        this.ultrasonicSensor = ultrasonicSensor;
+        this.setUltrasonicSensor(ultrasonicSensor);
     }
 
     /**
