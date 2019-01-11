@@ -204,4 +204,13 @@ public class SingleMotor {
     public void stop() {
         this.motor.stop();
     }
+
+    /**
+     * Rotate of angle.
+     *
+     * @param angle Angle
+     */
+    public void rotate(int angle) {
+        this.getMotor().rotate(angle);
+    }
 }
