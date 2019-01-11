@@ -29,7 +29,7 @@ package ch.ti.cpttrevano.samt.legolib.wait;
  * In the Lego Mindstorm Environment is rappresented by the orange block "Wait".
  *
  * @author giuliobosco
- * @version 1.0
+ * @version 1.0.1
  */
 public class WaitAnalogSensor extends WaitSensor {
     // ------------------------------------------------------------------------------------ Costants
@@ -47,7 +47,7 @@ public class WaitAnalogSensor extends WaitSensor {
     // ---------------------------------------------------------------------------------- Attributes
 
     /**
-     * Bigger than value.
+     * Bigger than comparision value.
      * If is true the requested value must be bigger than the value, other ways the requested value
      * must be smaller than the value.
      */
@@ -61,31 +61,36 @@ public class WaitAnalogSensor extends WaitSensor {
     // --------------------------------------------------------------------------- Getters & Setters
 
     /**
-     * Set the bigger than value.
+     * Set the bigger than comparison value, checks that the wait is finished.
      *
-     * @param bigger Bigger than value.
+     * @param bigger Bigger than comparison value.
      */
     public void setBigger(boolean bigger) {
-        this.bigger = bigger;
+        if (this.isFinished()) {
+            this.bigger = bigger;
+        }
     }
 
     /**
-     * Get the bigger than value.
+     * Get the bigger comparison than value.
      *
-     * @return Bigger than value.
+     * @return Bigger than comparison value.
      */
     public boolean isBigger() {
         return this.bigger;
     }
 
     /**
-     * Set the comparison value, checks that the value is in the range of valid analog sensor.
+     * Set the comparison value, checks that the value is in the range of valid analog sensor and
+     * that the wait is finished.
      *
      * @param value Comparison value.
      */
     public void setValue(byte value) {
-        if (value >= SENSOR_MIN_VALUE && value <= SENSOR_MAX_VALUE) {
-            this.value = value;
+        if (this.isFinished()) {
+            if (value >= SENSOR_MIN_VALUE && value <= SENSOR_MAX_VALUE) {
+                this.value = value;
+            }
         }
     }
 
@@ -104,7 +109,7 @@ public class WaitAnalogSensor extends WaitSensor {
      * Create the wait analog sensor, with bigger than value and comparison value.
      *
      * @param bigger Bigger than value.
-     * @param value Comparison value.
+     * @param value  Comparison value.
      */
     WaitAnalogSensor(boolean bigger, byte value) {
         this.setBigger(bigger);
