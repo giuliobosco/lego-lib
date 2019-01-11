@@ -24,26 +24,33 @@
 package ch.ti.cpttrevano.samt.legolib.wait;
 
 /**
- * WaitDigitalSensor, used to wait a digital sensor.
- * In the Lego Mindstorm Environment is rappresented by the orange block "Wait".
+ * WaitDigitalSensor, used to wait a digital sensor. In the Lego Mindstorm
+ * Environment is rappresented by the orange block "Wait".
  *
  * @author gabrialessi
- * @version 1.0
+ * @version 1.1
  */
 public class WaitDigitalSensor extends WaitSensor {
-    
+
     public final byte PRESSED = 0;
-    
+
     public final byte RELEASED = 1;
-    
+
     public final byte CLICKED = 2;
-    
+
     protected byte waitAction;
 
     public WaitDigitalSensor(byte waitAction) {
         setWaitAction(waitAction);
     }
-    
+
+    public boolean isWaitAction(byte waitAction) {
+        if (waitAction == PRESSED || waitAction == RELEASED || waitAction == CLICKED) {
+            return true;
+        }
+        return false;
+    }
+
     public byte getWaitAction() {
         return this.waitAction;
     }
@@ -66,5 +73,5 @@ public class WaitDigitalSensor extends WaitSensor {
     public void beginWait() {
         super.beginWait();
     }
-    
+
 }
