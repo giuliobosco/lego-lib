@@ -55,7 +55,7 @@ public class WaitMotor extends Wait {
      *
      * @param motor Single motor.
      */
-    private void setMotor(SingleMotor motor) {
+    public void setMotor(SingleMotor motor) {
         if (this.isFinished()) {
             this.motor = motor;
         }
