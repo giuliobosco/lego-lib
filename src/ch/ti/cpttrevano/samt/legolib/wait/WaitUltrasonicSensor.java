@@ -28,8 +28,10 @@ import lejos.nxt.SensorPort;
 import lejos.nxt.UltrasonicSensor;
 
 /**
+ * Wait the ultrasonic sensor.¨
+ *
  * @author giuliobosco
- * @version 1.0
+ * @version 1.0.1
  */
 public class WaitUltrasonicSensor extends WaitAnalogSensor {
     // ------------------------------------------------------------------------------------ Costants
@@ -65,7 +67,8 @@ public class WaitUltrasonicSensor extends WaitAnalogSensor {
     // -------------------------------------------------------------------------------- Constructors
 
     /**
-     * Create the waiter with the bigger than value, the comparison value and the ultrasonic sensor.
+     * Create the waiter with the bigger than comparision value, the comparison value and the
+     * ultrasonic sensor.
      *
      * @param bigger           Bigger than comparison value.
      * @param value            Comparison value.
