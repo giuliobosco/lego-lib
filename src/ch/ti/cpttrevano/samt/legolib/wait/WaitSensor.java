@@ -23,15 +23,22 @@
  */
 package ch.ti.cpttrevano.samt.legolib.wait;
 
-import lejos.nxt.*;
-
 /**
  * WaitSensor, used for generalization of all waiting sensor class.
  * In the Lego Mindstorm Environment is rappresented by the orange block "Wait".
  *
  * @author giuliobosco
- * @version 1.0
+ * @version 1.0.1
  */
 public class WaitSensor extends Wait {
+
+    /**
+     * Begin the wait of the ultrasonic sensor, sets false the finished variable.
+     */
+    @Override
+    public void beginWait() {
+        this.setFinished(false);
+        this.start();
+    }
     
 }
