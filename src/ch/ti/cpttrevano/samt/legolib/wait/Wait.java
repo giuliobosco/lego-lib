@@ -62,7 +62,7 @@ public class Wait extends Thread {
      * Empty constructor.
      */
     Wait() {
-        this.finished = true;
+        this.finished = false;
     }
 
     /**
@@ -82,5 +82,6 @@ public class Wait extends Thread {
      * Begin asynchron wait.
      */
     public void beginWait() {
+        this.setFinished(true);
     }
 }
