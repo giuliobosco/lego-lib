@@ -32,6 +32,10 @@ package ch.ti.cpttrevano.samt.legolib.wait;
  */
 public class WaitTime extends Wait {
 
+
+    // ------------------------------------------------------------------------------------ Costants
+    // ---------------------------------------------------------------------------------- Attributes
+
     /**
      * Time to wait.
      */
@@ -41,6 +45,8 @@ public class WaitTime extends Wait {
      * Start time.
      */
     protected long startTime;
+
+    // --------------------------------------------------------------------------- Getters & Setters
 
     /**
      * Get the time to wait.
@@ -82,6 +88,8 @@ public class WaitTime extends Wait {
         }
     }
 
+    // -------------------------------------------------------------------------------- Constructors
+
     /**
      * Initialize the WaitTime with the time to wait.
      *
@@ -90,6 +98,9 @@ public class WaitTime extends Wait {
     public WaitTime(long time) {
         setTime(time);
     }
+
+    // -------------------------------------------------------------------------------- Help Methods
+    // ----------------------------------------------------------------------------- General Methods
 
     @Override
     public void beginWait() {
@@ -105,4 +116,7 @@ public class WaitTime extends Wait {
             return false;
         }
     }
+
+    // --------------------------------------------------------------------------- Static Components
+
 }

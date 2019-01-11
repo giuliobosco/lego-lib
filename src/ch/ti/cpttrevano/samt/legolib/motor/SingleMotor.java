@@ -35,6 +35,8 @@ import lejos.nxt.Motor;
  */
 public class SingleMotor {
 
+    // ------------------------------------------------------------------------------------ Costants
+
     /**
      * Mindstorm NXT motor port A.
      */
@@ -60,6 +62,8 @@ public class SingleMotor {
      */
     public final static byte MAX_POWER = 100;
 
+    // ---------------------------------------------------------------------------------- Attributes
+
     /**
      * Motor port on the NXT brick of the single motor.
      */
@@ -74,6 +78,8 @@ public class SingleMotor {
      * Power of the motor.
      */
     private byte power;
+
+    // --------------------------------------------------------------------------- Getters & Setters
 
     /**
      * Get the Motor port on the NXT brick of the single motor.
@@ -179,6 +185,8 @@ public class SingleMotor {
         return false;
     }
 
+    // -------------------------------------------------------------------------------- Constructors
+
     /**
      * Initialize the single motor with the motor port and power.
      *
@@ -189,6 +197,9 @@ public class SingleMotor {
         this.setMotorPort(port);
         this.setPower(power);
     }
+
+    // -------------------------------------------------------------------------------- Help Methods
+    // ----------------------------------------------------------------------------- General Methods
 
     /**
      * Start the motor.
@@ -213,4 +224,7 @@ public class SingleMotor {
     public void rotate(int angle) {
         this.getMotor().rotate(angle);
     }
+
+    // --------------------------------------------------------------------------- Static Components
+
 }

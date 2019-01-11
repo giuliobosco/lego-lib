@@ -32,6 +32,13 @@ package ch.ti.cpttrevano.samt.legolib.wait;
  */
 public class WaitSensor extends Wait {
 
+    // ------------------------------------------------------------------------------------ Costants
+    // ---------------------------------------------------------------------------------- Attributes
+    // --------------------------------------------------------------------------- Getters & Setters
+    // -------------------------------------------------------------------------------- Constructors
+    // -------------------------------------------------------------------------------- Help Methods
+    // ----------------------------------------------------------------------------- General Methods
+
     /**
      * Begin the wait of the ultrasonic sensor, sets false the finished variable.
      */
@@ -40,5 +47,7 @@ public class WaitSensor extends Wait {
         this.setFinished(false);
         this.start();
     }
+
+    // --------------------------------------------------------------------------- Static Components
     
 }

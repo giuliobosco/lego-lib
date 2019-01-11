@@ -32,9 +32,17 @@ package ch.ti.cpttrevano.samt.legolib.wait;
  */
 public class WaitColorSensor extends WaitAnalogSensorRange {
 
+    // ------------------------------------------------------------------------------------ Costants
+    // ---------------------------------------------------------------------------------- Attributes
+    // --------------------------------------------------------------------------- Getters & Setters
+    // -------------------------------------------------------------------------------- Constructors
+
     public WaitColorSensor(boolean inRange, byte minValue, byte maxValue) {
         super(inRange, minValue, maxValue);
     }
+
+    // -------------------------------------------------------------------------------- Help Methods
+    // ----------------------------------------------------------------------------- General Methods
 
     @Override
     public void waiter() {
@@ -50,4 +58,6 @@ public class WaitColorSensor extends WaitAnalogSensorRange {
     public void beginWait() {
         super.beginWait();
     }
+
+    // --------------------------------------------------------------------------- Static Components
 }

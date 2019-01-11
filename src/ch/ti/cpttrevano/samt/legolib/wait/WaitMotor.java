@@ -35,6 +35,9 @@ import ch.ti.cpttrevano.samt.legolib.motor.SingleMotor;
  */
 public class WaitMotor extends Wait {
 
+    // ------------------------------------------------------------------------------------ Costants
+    // ---------------------------------------------------------------------------------- Attributes
+
     /**
      * Single motor.
      */
@@ -44,6 +47,8 @@ public class WaitMotor extends Wait {
      * Comparison value.
      */
     private int value;
+
+    // --------------------------------------------------------------------------- Getters & Setters
 
     /**
      * Set the single motor.
@@ -85,6 +90,8 @@ public class WaitMotor extends Wait {
         return this.value;
     }
 
+    // -------------------------------------------------------------------------------- Constructors
+
     /**
      * Create the wait motor with the motor and the comparison value.
      *
@@ -95,6 +102,9 @@ public class WaitMotor extends Wait {
         this.setMotor(motor);
         this.setValue(value);
     }
+
+    // -------------------------------------------------------------------------------- Help Methods
+    // ----------------------------------------------------------------------------- General Methods
 
     /**
      * Run the wait motor.
@@ -115,4 +125,7 @@ public class WaitMotor extends Wait {
             }
         }
     }
+
+    // --------------------------------------------------------------------------- Static Components
+
 }
