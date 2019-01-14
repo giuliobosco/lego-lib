@@ -223,6 +223,8 @@ Il capitolo di implementazione mostra in poche parole la messa in atto della pro
 
 ### Classi
 
+Le classi del prodotto sono suddivise da dei package definiti in base alle convenzioni di Java (`lego-lib/src/ch/ti/cpttrevano/samt/legolib/`), quindi ci sono i package `motor` e `wait` che sono utili per rispettivamente per il movimento del motore e la lettura di un sensore.
+
 #### HelloWorld
 
 Questa classe è stata usata come test per iniziare a capire come implementare un programma Java in un brick NXT e per essere usata come esempio nella guida per configurare leJOS su Windows. È presente solo il metodo `main` con due classiche funzioni che insieme formano semplicemente l'output "Hello World".
