@@ -246,6 +246,18 @@ Questo è il risultato ottenuto:
 
 <img src="img/helloworld_test.png" width=200>
 
+#### WaitTouchSensor
+
+Classe figlia di `WaitDigitalSensor` che serve per aspettare durante la pressione di un sensore di tocco.
+
+- touchSensor: È l'attributo che rappresenta il Sensore di tocco.
+- setTouchSensor(): Metodo utile per impostare il sensore di tocco.
+- getTouchSensor(): Metodo che serve per ottenere il sensore di tocco.
+- Costruttori: Istanziano un nuovo `WaitTouchSensor` impostando l'azione (premuto, rilasciato, cliccato) e il sensore o la porta.
+- run(): È il metodo principale in cui si aspetta quando il sensore viene cliccato.
+
+##### Test
+
 ## Test
 
 ### Protocollo di test
