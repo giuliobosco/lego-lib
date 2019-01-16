@@ -24,9 +24,13 @@
 4. [Implementazione](#implementazione)
     - [Classi](#classi)
         - [HelloWorld](#helloworld)
-            - [Test](#test)
+            - [Test HelloWorld](#test-helloworld)
+        - [WaitDigitalSensor](#waitdigitalsensor)
+            - [Test WaitDigitalSensor](#test-waitdigitalsensor)
+        - [WaitTouchSensor](#waittouchsensor)
+            - [Test WaitTouchSensor](#test-waittouchsensor)
 
-5. [Test](#test)
+5. [Test di sistema](#test-di-sistema)
     - [Protocollo di test](#protocollo-di-test)
     - [Risultati test](#risultati-test)
     - [Mancanze/limitazioni conosciute](#mancanze/limitazioni-conosciute)
@@ -239,26 +243,50 @@ public class HelloWorld {
 }
 ```
 
-##### Test
+##### Test HelloWorld
 
 Per verificare il giusto funzionamento della classe l'abbiamo caricata sul brick e l'abbiamo avviata attraverso i comandi spiegati nella guida [InstallWindows](installWindows.md).  
 Questo è il risultato ottenuto:
 
 <img src="img/helloworld_test.png" width=200>
 
+#### WaitDigitalSensor
+
+Classe figlia di `WaitSensor` che serve per aspettare durante l'interazione con un sensore digitale (pulsanti).
+
+<img src="img/waitdigitalsensor.png" width=400>
+
+- PRESSED: È una costante che indica la pressione di un pulsante.
+- RELEASED: È una costante che indica il rilascio di un pulsante.
+- CLICKED: È una costante che indica il click di un pulsante.
+- waitAction: Attributo che rappresenta l'azione eseguita sul pulsante (PRESSED, RELEASED, CLICKED).
+- isWaitAction(): Metodo che indica se l'azione fatta sul pulsante è valida.
+- getWaitAction(): Metodo che serve per ottenere l'azione sul pulsante.
+- setWaitAction(): Metodo utile per impostare l'azione.
+- Costruttore: Istanzia un nuovo `WaitDigitalSensor` impostando l'azione.
+- isPressedButton(): Metodo che ritorna `true` se il pulsante è premuto.
+- buttonPressedAction(): Metodo che aspetta quando un pulsante è premuto.
+- buttonReleasedAction(): Metodo che aspetta quando un pulsante è rilasciato.
+- buttonClickedAction(): Metodo che aspetta quando un pulsante è cliccato (premuto e rilasciato).
+- run(): È il metodo principale in cui si aspetta quando il pulsante viene cliccato.
+
+##### Test WaitTouchSensor
+
 #### WaitTouchSensor
 
 Classe figlia di `WaitDigitalSensor` che serve per aspettare durante la pressione di un sensore di tocco.
 
-- touchSensor: È l'attributo che rappresenta il Sensore di tocco.
+<img src="img/waittouchsensor.png" width=400>
+
+- touchSensor: È l'attributo che rappresenta il sensore di tocco.
 - setTouchSensor(): Metodo utile per impostare il sensore di tocco.
 - getTouchSensor(): Metodo che serve per ottenere il sensore di tocco.
 - Costruttori: Istanziano un nuovo `WaitTouchSensor` impostando l'azione (premuto, rilasciato, cliccato) e il sensore o la porta.
 - run(): È il metodo principale in cui si aspetta quando il sensore viene cliccato.
 
-##### Test
+##### Test WaitTouchSensor
 
-## Test
+## Test di sistema
 
 ### Protocollo di test
 
