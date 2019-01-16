@@ -23,7 +23,6 @@
  */
 package ch.ti.cpttrevano.samt.legolib.wait;
 
-import lejos.nxt.SensorPort;
 import lejos.nxt.Button;
 
 /**
@@ -36,12 +35,14 @@ public class WaitNxtButton extends WaitDigitalSensor {
 
     // ------------------------------------------------------------------------------------ Costants
     // ---------------------------------------------------------------------------------- Attributes
+
     /**
      * Button.
      */
     private Button button;
 
     // --------------------------------------------------------------------------- Getters & Setters
+
     /**
      * Set the button.
      *
@@ -63,6 +64,7 @@ public class WaitNxtButton extends WaitDigitalSensor {
     }
 
     // -------------------------------------------------------------------------------- Constructors
+
     /**
      * Create the wait NXT button with the comparison wait action and button.
      *
@@ -76,6 +78,7 @@ public class WaitNxtButton extends WaitDigitalSensor {
 
     // -------------------------------------------------------------------------------- Help Methods
     // ----------------------------------------------------------------------------- General Methods
+
     /**
      * Run the wait button.
      */
@@ -108,5 +111,6 @@ public class WaitNxtButton extends WaitDigitalSensor {
             }
         }
     }
+    
     // --------------------------------------------------------------------------- Static Components
 }
