@@ -51,12 +51,12 @@ public class Navigation extends Thread {
     /**
      * Navigation left motor.
      */
-    SingleMotor leftMotor;
+    private SingleMotor leftMotor;
 
     /**
      * Navigation right motor.
      */
-    SingleMotor rightMotor;
+    private SingleMotor rightMotor;
 
     // --------------------------------------------------------------------------- Getters & Setters
 
