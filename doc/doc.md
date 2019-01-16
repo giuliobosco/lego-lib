@@ -210,12 +210,25 @@ In questa sezione è descritto come sono strutturate le cartelle contententi la 
                         - examples
                             - LineFollower.java
                         - motor
-                            - Motor.java
+                            - SingleMotor.java
                         - wait
                             - Wait.java
+                            - WaitAnalogSensor.java
+                            - WaitAnalogSensorRange.java
+                            - WaitColorSensor.java
+                            - WaitDigitalSensor.java
+                            - WaitLightSensor.java
+                            - WaitMotor.java
+                            - WaitNxtButton.java
+                            - WaitSensor.java
+                            - WaitSoundSensor.java
+                            - WaitTime.java
+                            - WaitTouchSensor.java
+                            - WaitUltrasonicSensor.java
     - test
         - HelloWorld.java
         - LineFollower.java
+    - classes.jar
 
 #### Diagramma delle classi
 
