@@ -31,7 +31,7 @@ import lejos.nxt.Motor;
  * In the Lego Mindstorm Environment is rappresented by the green block "Motor".
  *
  * @author giuliobosco
- * @version 1.0.1
+ * @version 1.1
  */
 public class SingleMotor {
 
@@ -199,6 +199,25 @@ public class SingleMotor {
     }
 
     // -------------------------------------------------------------------------------- Help Methods
+
+    /**
+     * Increase the power of the value.
+     *
+     * @param value Value to increase the power.
+     */
+    public void increasePower(byte value) {
+        this.setPower((byte) (this.getPower() + value));
+    }
+
+    /**
+     * Decrease the power of the value.
+     *
+     * @param value Value to decrease the power.
+     */
+    public void decreasePower(byte value) {
+        this.setPower((byte) (this.getPower() - value));
+    }
+
     // ----------------------------------------------------------------------------- General Methods
 
     /**
