@@ -84,7 +84,7 @@ public class WaitNxtButton extends WaitDigitalSensor {
      *
      * @return True if the button is pressed.
      */
-    public boolean isPressedButton() {
+    public boolean isPressedSensor() {
         return this.getButton().isDown();
     }
 

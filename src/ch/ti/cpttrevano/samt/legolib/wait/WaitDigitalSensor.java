@@ -115,7 +115,7 @@ public class WaitDigitalSensor extends WaitSensor {
      *
      * @return True if button is pressed.
      */
-    public boolean isPressedButton() {
+    public boolean isPressedSensor() {
         return true;
     }
 
@@ -143,8 +143,8 @@ public class WaitDigitalSensor extends WaitSensor {
      * Button pressed action.
      */
     protected void buttonPressedAction() throws InterruptedException {
-        if (!this.isPressedButton()) {
-            while (!this.isPressedButton()) {
+        if (!this.isPressedSensor()) {
+            while (!this.isPressedSensor()) {
                 Thread.sleep(WAIT_TIME);
             }
 
@@ -156,8 +156,8 @@ public class WaitDigitalSensor extends WaitSensor {
      * Button released action.
      */
     protected void buttonReleasedAction() throws InterruptedException {
-        if (this.isPressedButton()) {
-            while (this.isPressedButton()) {
+        if (this.isPressedSensor()) {
+            while (this.isPressedSensor()) {
                 Thread.sleep(WAIT_TIME);
             }
 

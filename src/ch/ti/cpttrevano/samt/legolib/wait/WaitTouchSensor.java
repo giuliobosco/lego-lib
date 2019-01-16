@@ -96,7 +96,7 @@ public class WaitTouchSensor extends WaitDigitalSensor {
      * @return True if the touch sensor is pressed.
      */
     @Override
-    public boolean isPressedButton() {
+    public boolean isPressedSensor() {
         return this.getTouchSensor().isPressed();
     }
 
