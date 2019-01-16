@@ -30,7 +30,8 @@ import lejos.nxt.TouchSensor;
  * Wait the touch sensor.
  *
  * @author gabrialessi
- * @version 2.2
+ * @author giuliobosco
+ * @version 3.0
  */
 public class WaitTouchSensor extends WaitDigitalSensor {
 
@@ -88,40 +89,17 @@ public class WaitTouchSensor extends WaitDigitalSensor {
     }
 
     // -------------------------------------------------------------------------------- Help Methods
-    // ----------------------------------------------------------------------------- General Methods
 
     /**
-     * Run the wait touch sensor.
+     * Is the touch sensor pressed.
+     *
+     * @return True if the touch sensor is pressed.
      */
     @Override
-    public void run() {
-        while (this.isFinished()) {
-            try {
-                if (this.getWaitAction() == PRESSED) {
-                    this.setFinished(this.getTouchSensor().isPressed());
-                } else if (this.getWaitAction() == RELEASED) {
-                    if (this.getTouchSensor().isPressed()) {
-                        while (this.getTouchSensor().isPressed()) {
-                            Thread.sleep(WAIT_TIME);
-                        }
-
-                        this.setFinished(true);
-                    }
-                } else if (this.getWaitAction() == CLICKED) {
-                    if (!this.getTouchSensor().isPressed()) {
-                        while (this.getTouchSensor().isPressed()) {
-                            Thread.sleep(WAIT_TIME);
-                        }
-
-                        this.setFinished(true);
-                    }
-                }
-                Thread.sleep(WAIT_TIME);
-            } catch (InterruptedException ignored) {
-
-            }
-        }
+    public boolean isPressedButton() {
+        return this.getTouchSensor().isPressed();
     }
 
+    // ----------------------------------------------------------------------------- General Methods
     // --------------------------------------------------------------------------- Static Components
 }

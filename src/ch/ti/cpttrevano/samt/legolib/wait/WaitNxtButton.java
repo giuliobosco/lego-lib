@@ -29,7 +29,8 @@ import lejos.nxt.Button;
  * Wait the NXT button.
  *
  * @author gabrialessi
- * @version 1.0
+ * @author giuliobosco
+ * @version 2.0
  */
 public class WaitNxtButton extends WaitDigitalSensor {
 
@@ -77,40 +78,16 @@ public class WaitNxtButton extends WaitDigitalSensor {
     }
 
     // -------------------------------------------------------------------------------- Help Methods
-    // ----------------------------------------------------------------------------- General Methods
 
     /**
-     * Run the wait button.
+     * Is the button pressed.
+     *
+     * @return True if the button is pressed.
      */
-    @Override
-    public void run() {
-        while (this.isFinished()) {
-            try {
-                if (this.getWaitAction() == PRESSED) {
-                    this.setFinished(this.getButton().isDown());
-                } else if (this.getWaitAction() == RELEASED) {
-                    if (this.getButton().isDown()) {
-                        while (this.getButton().isDown()) {
-                            Thread.sleep(WAIT_TIME);
-                        }
-
-                        this.setFinished(true);
-                    }
-                } else if (this.getWaitAction() == CLICKED) {
-                    if (this.getButton().isUp()) {
-                        while (this.getButton().isDown()) {
-                            Thread.sleep(WAIT_TIME);
-                        }
-
-                        this.setFinished(true);
-                    }
-                }
-                Thread.sleep(WAIT_TIME);
-            } catch (InterruptedException ignored) {
-
-            }
-        }
+    public boolean isPressedButton() {
+        return this.getButton().isDown();
     }
-    
+
+    // ----------------------------------------------------------------------------- General Methods
     // --------------------------------------------------------------------------- Static Components
 }

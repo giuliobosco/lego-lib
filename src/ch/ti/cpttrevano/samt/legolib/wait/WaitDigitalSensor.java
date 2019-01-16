@@ -28,7 +28,8 @@ package ch.ti.cpttrevano.samt.legolib.wait;
  * Environment is rappresented by the orange block "Wait".
  *
  * @author gabrialessi
- * @version 1.1
+ * @author giuliobosco
+ * @version 2.0
  */
 public class WaitDigitalSensor extends WaitSensor {
 
@@ -109,7 +110,69 @@ public class WaitDigitalSensor extends WaitSensor {
         return false;
     }
 
+    /**
+     * Is button pressed.
+     *
+     * @return True if button is pressed.
+     */
+    public boolean isPressedButton() {
+        return true;
+    }
+
     // ----------------------------------------------------------------------------- General Methods
+
+    @Override
+    public void run() {
+        while (this.isFinished()) {
+            try {
+                if (this.getWaitAction() == PRESSED) {
+                    this.buttonPressedAction();
+                } else if (this.getWaitAction() == RELEASED) {
+                    this.buttonReleasedAction();
+                } else if (this.getWaitAction() == CLICKED) {
+                    this.buttonClickedAction();
+                }
+                Thread.sleep(WAIT_TIME);
+            } catch (InterruptedException ignored) {
+
+            }
+        }
+    }
+
+    /**
+     * Button pressed action.
+     */
+    protected void buttonPressedAction() throws InterruptedException {
+        if (!this.isPressedButton()) {
+            while (!this.isPressedButton()) {
+                Thread.sleep(WAIT_TIME);
+            }
+
+            this.setFinished(true);
+        }
+    }
+
+    /**
+     * Button released action.
+     */
+    protected void buttonReleasedAction() throws InterruptedException {
+        if (this.isPressedButton()) {
+            while (this.isPressedButton()) {
+                Thread.sleep(WAIT_TIME);
+            }
+
+            this.setFinished(true);
+        }
+    }
+
+    /**
+     * Button clicked aciton.
+     */
+    protected void buttonClickedAction() throws InterruptedException {
+        this.buttonPressedAction();
+        this.buttonReleasedAction();
+    }
+
     // --------------------------------------------------------------------------- Static Components
 
 }
