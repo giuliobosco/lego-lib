@@ -152,7 +152,11 @@ public class SingleMotor {
      * @param power Power of the motor.
      */
     public void setPower(byte power) {
-        if (this.isPower(power)) {
+        if (power > MAX_POWER) {
+            this.power = MAX_POWER;
+        } else if (power < MIN_POWER) {
+            this.power = MIN_POWER;
+        } else {
             this.power = power;
         }
     }
@@ -165,20 +169,6 @@ public class SingleMotor {
      */
     public boolean isMotorPort(char motorPort) {
         if (motorPort == PORT_A || motorPort == PORT_B || motorPort == PORT_C) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Check if the power passed as parameter is in the range for the motor.
-     *
-     * @param power Power to check if is in the range of the motor.
-     * @return True if the power is in the range, otherwise false.
-     */
-    public boolean isPower(byte power) {
-        if (power > MIN_POWER && power < MAX_POWER) {
             return true;
         }
 
