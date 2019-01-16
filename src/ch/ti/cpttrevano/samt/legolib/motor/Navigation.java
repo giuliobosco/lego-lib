@@ -24,11 +24,9 @@
 
 package ch.ti.cpttrevano.samt.legolib.motor;
 
-import lejos.nxt.Motor;
-
 /**
  * @author giuliobosco
- * @version 1.0
+ * @version 1.1
  */
 public class Navigation extends Thread {
     // ------------------------------------------------------------------------------------ Costants
@@ -69,6 +67,8 @@ public class Navigation extends Thread {
      */
     public void setPower(byte power) {
         this.power = power;
+
+        this.updatePowerMotors();
     }
 
     /**
@@ -87,6 +87,8 @@ public class Navigation extends Thread {
      */
     public void setTurning(byte turning) {
         this.turning = turning;
+
+        this.updateTurningMotors();
     }
 
     /**
@@ -112,6 +114,30 @@ public class Navigation extends Thread {
     }
 
     // -------------------------------------------------------------------------------- Help Methods
+
+    /**
+     * Update the power to the navigation motors and also update the motors.
+     */
+    protected void updatePowerMotors() {
+        this.leftMotor.setPower(this.getPower());
+        this.rightMotor.setPower(this.getPower());
+
+        this.updateTurningMotors();
+    }
+
+    /**
+     * Update the turning to the navigation motors.
+     */
+    protected void updateTurningMotors() {
+        if (this.getTurning() > 0) {
+            this.leftMotor.decreasePower(this.getTurning());
+            this.rightMotor.increasePower(this.getTurning());
+        } else {
+            this.leftMotor.increasePower(this.getTurning());
+            this.rightMotor.decreasePower(this.getTurning());
+        }
+    }
+
     // ----------------------------------------------------------------------------- General Methods
     // --------------------------------------------------------------------------- Static Components
 
