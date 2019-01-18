@@ -26,7 +26,7 @@ package ch.ti.cpttrevano.samt.legolib.motor;
 
 /**
  * @author giuliobosco
- * @version 1.1
+ * @version 1.4
  */
 public class Navigation extends Thread {
     // ------------------------------------------------------------------------------------ Costants
@@ -215,6 +215,25 @@ public class Navigation extends Thread {
     }
 
     // ----------------------------------------------------------------------------- General Methods
+
+    /**
+     * Start the navigation.
+     */
+    public void startNavigation() {
+        this.leftMotor.start();
+        this.rightMotor.start();
+
+        this.setPower((byte) 0);
+    }
+
+    /**
+     * Stop the navigation.
+     */
+    public void stopNavigation() {
+        this.leftMotor.start();
+        this.rightMotor.start();
+    }
+
     // --------------------------------------------------------------------------- Static Components
 
 }
