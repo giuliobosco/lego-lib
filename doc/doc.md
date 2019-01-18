@@ -242,9 +242,21 @@ Il capitolo di implementazione mostra in poche parole la messa in atto della pro
 
 ### Classi
 
-Le classi del prodotto sono suddivise da dei package definiti in base alle convenzioni di Java (`lego-lib/src/ch/ti/cpttrevano/samt/legolib/`), quindi ci sono i package `motor` e `wait` che sono utili per rispettivamente per il movimento del motore e la lettura di un sensore.
+Le classi del prodotto sono suddivise da dei package definiti in base alle convenzioni di Java (`lego-lib/src/ch/ti/cpttrevano/samt/legolib/`), quindi ci sono i package `motor` e `wait` che sono utili rispettivamente per il movimento del motore e la lettura di un sensore.
 
 #### Wait
+
+Classe `Thread` usata per generalizzare tutte le classi `Wait`. Queste classi sono rappresentate tramite il blocco arancione in LEGO&reg; Mindstorms e servono per aspettare che succeda qualcosa prima di continuare la sequenza di azioni (ad esempio aspettare del tempo o un sensore che legga un certo valore o che cambi valore).
+
+<img src="img/wait.png" width=400>
+
+- WAIT_TIME: Costante che rappresenta il tempo (in millisecondi) da aspettare.
+- finished: Attributo che indica se l'attesa è finita.
+- isFinished(): Metodo utile per ottenere lo stato dell'attesa (finito/non finito).
+- setFinished(): Metodo che serve per impostare lo stato dell'attesa.
+- Costruttore: Istanzia una nuova attesa.
+- beginWait(): Imposta il valore dello stato dell'attesa a `true`.
+- waiter(): Metodo principale utile per iniziare l'attesa.
 
 ##### Test Wait
 
