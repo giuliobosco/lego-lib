@@ -31,7 +31,7 @@ import lejos.nxt.Motor;
  * In the Lego Mindstorm Environment is rappresented by the green block "Motor".
  *
  * @author giuliobosco
- * @version 1.1
+ * @version 1.2
  */
 public class SingleMotor {
 
@@ -159,6 +159,8 @@ public class SingleMotor {
         } else {
             this.power = power;
         }
+
+        this.getMotor().setSpeed(this.getPower());
     }
 
     /**
