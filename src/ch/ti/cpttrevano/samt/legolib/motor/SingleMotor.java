@@ -31,7 +31,7 @@ import lejos.nxt.Motor;
  * In the Lego Mindstorm Environment is rappresented by the green block "Motor".
  *
  * @author giuliobosco
- * @version 1.2
+ * @version 1.3
  */
 public class SingleMotor {
 
@@ -180,14 +180,12 @@ public class SingleMotor {
     // -------------------------------------------------------------------------------- Constructors
 
     /**
-     * Initialize the single motor with the motor port and power.
+     * Initialize the single motor with the motor port.
      *
-     * @param power Motor port on the NXT brick of the single motor.
-     * @param power Power of the motor.
+     * @param port Single motor port.
      */
-    public SingleMotor(char port, byte power) {
+    public SingleMotor(char port) {
         this.setMotorPort(port);
-        this.setPower(power);
     }
 
     // -------------------------------------------------------------------------------- Help Methods
