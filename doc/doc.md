@@ -15,11 +15,11 @@
 
 3. [Progettazione](#progettazione)
     - [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
-        - [Componenti](#componenti)
-            - [Sensori](#sensori)
-            - [Attuatori](#attuatori)
-    - [Design procedurale](#design-procedurale)
+        - [Design procedurale](#design-procedurale)
         - [Diagramma delle classi](#diagramma-delle-classi)
+    - [Componenti](#componenti)
+        - [Sensori](#sensori)
+        - [Attuatori](#attuatori)
 
 4. [Implementazione](#implementazione)
     - [Classi](#classi)
@@ -157,27 +157,11 @@ La pianificazione del progetto è stata effettuata mediante la realizzazione di 
 
 ### Design dell’architettura del sistema
 
-#### Componenti
+In questo settore viene spiegato come è stata ideata la struttura del sistema e in che modo i singoli componenti e moduli sono legati tra loro.
 
-I componenti possono essere di due tipi, sensori ed attuatori.  
-Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sensore. Mentre gli attuatori devono avere dei metodi per il loro controllo e delle funzioni che ricavano dei dati in base ai movimenti effettuati. Per esempio il conteggio di rotazioni del motore durante un'azione.
+#### Design procedurale
 
-##### Sensori
-
-- *LightSensor*, misura l'intensità di luce riflessa.
-- *UltrasonicSensor*, misura la distanza fra il sensore e l'ostacolo davanti a esso.
-- *SoundSensor*, misura il suono (microfono).
-- *TouchSensor*, controlla semplicemente se è premuto il sensore.
-- *NxtButton*, legge i pulsanti presenti sul brick.
-
-##### Attuatori
-
-- *SingleMotor*, il motore più potente per i LEGO&reg; Mindstorms.
-- *LCD*, è lo schermino che si trova sul brick.
-
-### Design procedurale
-
-In questa sezione è descritto come sono strutturate le cartelle contententi la libreria sviluppata.
+Qui è descritto come sono strutturate le cartelle contententi la libreria sviluppata.
 
 - src
     - ch
@@ -211,6 +195,24 @@ In questa sezione è descritto come sono strutturate le cartelle contententi la 
 #### Diagramma delle classi
 
 ![Diagramma delle classi](img/lego-lib-uml.png)
+
+#### Componenti
+
+I componenti possono essere di due tipi, sensori ed attuatori.  
+Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sensore. Mentre gli attuatori devono avere dei metodi per il loro controllo e delle funzioni che ricavano dei dati in base ai movimenti effettuati. Per esempio il conteggio di rotazioni del motore durante un'azione.
+
+##### Sensori
+
+- *LightSensor*, misura l'intensità di luce riflessa.
+- *UltrasonicSensor*, misura la distanza fra il sensore e l'ostacolo davanti a esso.
+- *SoundSensor*, misura il suono (microfono).
+- *TouchSensor*, controlla semplicemente se è premuto il sensore.
+- *NxtButton*, legge i pulsanti presenti sul brick.
+
+##### Attuatori
+
+- *SingleMotor*, il motore più potente per i LEGO&reg; Mindstorms.
+- *LCD*, è lo schermino che si trova sul brick.
 
 ## Implementazione
 
