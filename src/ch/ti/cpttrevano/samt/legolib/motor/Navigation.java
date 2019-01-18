@@ -160,6 +160,42 @@ public class Navigation extends Thread {
         }
     }
 
+    /**
+     * Increase the power of the navigation.
+     *
+     * @param value Value to increase the power of the navigation.
+     */
+    public void increasePower(byte value) {
+        this.setPower((byte) (this.getPower() + value));
+    }
+
+    /**
+     * Decrease the power of the navigation.
+     *
+     * @param value Value to decrease the power of the navigation.
+     */
+    public void decreasePower(byte value) {
+        this.setPower((byte) (this.getPower() - value));
+    }
+
+    /**
+     * Increase the turning of the navigation.
+     *
+     * @param value Value to increase the turning of the navigation.
+     */
+    public void increaseTurning(byte value) {
+        this.setTurning((byte) (this.getTurning() + value));
+    }
+
+    /**
+     * Decrease the turning of the navigation.
+     *
+     * @param value Value to decrease the turning of the navigation.
+     */
+    public void decreaseTurning(byte value) {
+        this.setTurning((byte) (this.getTurning() - value));
+    }
+
     // ----------------------------------------------------------------------------- General Methods
     // --------------------------------------------------------------------------- Static Components
 
