@@ -196,6 +196,24 @@ public class Navigation extends Thread {
         this.setTurning((byte) (this.getTurning() - value));
     }
 
+    /**
+     * Turn the navigation left.
+     *
+     * @param turning Value to turn left.
+     */
+    public void left(byte turning) {
+        this.decreasePower(turning);
+    }
+
+    /**
+     * Turn the navigation right.
+     *
+     * @param turning Value to turn right.
+     */
+    public void right(byte turning) {
+        this.increasePower(turning);
+    }
+
     // ----------------------------------------------------------------------------- General Methods
     // --------------------------------------------------------------------------- Static Components
 
