@@ -36,6 +36,16 @@ public class Navigation extends Thread {
      */
     public static final byte TURNING = 10;
 
+    /**
+     * Minimum navigation turning.
+     */
+    public static final byte MIN_TURNING = SingleMotor.MIN_POWER;
+
+    /**
+     * Maximum navigation turning.
+     */
+    public static final byte MAX_TURNING = SingleMotor.MAX_POWER;
+
     // ---------------------------------------------------------------------------------- Attributes
 
     /**
@@ -92,7 +102,13 @@ public class Navigation extends Thread {
      * @param turning Turning of the navigation.
      */
     public void setTurning(byte turning) {
-        this.turning = turning;
+        if (turning > MAX_TURNING) {
+            this.turning = MAX_TURNING;
+        } else if (turning < MIN_TURNING) {
+            this.turning = MIN_TURNING;
+        } else {
+            this.turning = turning;
+        }
 
         this.updateTurningMotors();
     }
