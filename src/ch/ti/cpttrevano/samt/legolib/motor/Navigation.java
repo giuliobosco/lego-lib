@@ -25,6 +25,9 @@
 package ch.ti.cpttrevano.samt.legolib.motor;
 
 /**
+ * Navigation with NXT brick.
+ * In the Lego Mindstorm Environment is rappresented by the green block "Move".
+ * 
  * @author giuliobosco
  * @version 1.5
  */
