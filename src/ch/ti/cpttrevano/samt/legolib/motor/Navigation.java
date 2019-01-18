@@ -165,8 +165,8 @@ public class Navigation extends Thread {
             this.leftMotor.decreasePower(this.getTurning());
             this.rightMotor.increasePower(this.getTurning());
         } else {
-            this.leftMotor.increasePower(this.getTurning());
-            this.rightMotor.decreasePower(this.getTurning());
+            this.leftMotor.increasePower((byte) -this.getTurning());
+            this.rightMotor.decreasePower((byte) -this.getTurning());
         }
     }
 
