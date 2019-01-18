@@ -26,7 +26,7 @@ package ch.ti.cpttrevano.samt.legolib.motor;
 
 /**
  * @author giuliobosco
- * @version 1.4
+ * @version 1.5
  */
 public class Navigation extends Thread {
     // ------------------------------------------------------------------------------------ Costants
@@ -133,6 +133,16 @@ public class Navigation extends Thread {
     public Navigation(SingleMotor leftMotor, SingleMotor rightMotor) {
         this.leftMotor = leftMotor;
         this.rightMotor = rightMotor;
+    }
+
+    /**
+     * Create the navigation with the left and right motors ports.
+     *
+     * @param leftMotor  Navigation left motor port.
+     * @param rightMotor Navigation right motor port.
+     */
+    public Navigation(char leftMotor, char rightMotor) {
+        this(new SingleMotor(leftMotor), new SingleMotor(rightMotor));
     }
 
     // -------------------------------------------------------------------------------- Help Methods
