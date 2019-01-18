@@ -66,7 +66,13 @@ public class Navigation extends Thread {
      * @param power Power of the navigation.
      */
     public void setPower(byte power) {
-        this.power = power;
+        if (power > SingleMotor.MAX_POWER) {
+            this.power = SingleMotor.MAX_POWER;
+        } else if (power < SingleMotor.MIN_POWER) {
+            this.power = SingleMotor.MIN_POWER;
+        } else {
+            this.power = power;
+        }
 
         this.updatePowerMotors();
     }
