@@ -29,6 +29,8 @@ import ch.ti.cpttrevano.samt.legolib.motor.SingleMotor;
 import lejos.nxt.LightSensor;
 
 /**
+ * Proportional line follower.
+ *
  * @author giuliobosco
  * @version 1.0
  */
