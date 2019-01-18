@@ -140,7 +140,7 @@ public class Navigation extends Thread {
     /**
      * Update the power to the navigation motors and also update the motors.
      */
-    protected void updatePowerMotors() {
+    private void updatePowerMotors() {
         this.leftMotor.setPower(this.getPower());
         this.rightMotor.setPower(this.getPower());
 
@@ -150,7 +150,7 @@ public class Navigation extends Thread {
     /**
      * Update the turning to the navigation motors.
      */
-    protected void updateTurningMotors() {
+    private void updateTurningMotors() {
         if (this.getTurning() > 0) {
             this.leftMotor.decreasePower(this.getTurning());
             this.rightMotor.increasePower(this.getTurning());
