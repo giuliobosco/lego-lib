@@ -244,26 +244,21 @@ Il capitolo di implementazione mostra in poche parole la messa in atto della pro
 
 Le classi del prodotto sono suddivise da dei package definiti in base alle convenzioni di Java (`lego-lib/src/ch/ti/cpttrevano/samt/legolib/`), quindi ci sono i package `motor` e `wait` che sono utili per rispettivamente per il movimento del motore e la lettura di un sensore.
 
-#### HelloWorld
+#### Wait
 
-Questa classe è stata usata come test per iniziare a capire come implementare un programma Java in un brick NXT e per essere usata come esempio nella guida per configurare leJOS su Windows. È presente solo il metodo `main` con due classiche funzioni che insieme formano semplicemente l'output "Hello World".
-```
-import lejos.nxt.Button;
+##### Test Wait
 
-public class HelloWorld {
-	public static void main(String[] args) {
-		System.out.println("Hello World");
-		Button.waitForAnyPress();
-	}
-}
-```
+#### WaitAnalogSensor
 
-##### Test HelloWorld
+##### Test WaitAnalogSensor
 
-Per verificare il giusto funzionamento della classe l'abbiamo caricata sul brick e l'abbiamo avviata attraverso i comandi spiegati nella guida [InstallWindows](installWindows.md).  
-Questo è il risultato ottenuto:
+#### WaitAnalogSensorRange
 
-<img src="img/helloworld_test.png" width=200>
+##### Test WaitAnalogSensorRange
+
+#### WaitColorSensor
+
+##### Test WaitColorSensor
 
 #### WaitDigitalSensor
 
@@ -285,7 +280,31 @@ Classe figlia di `WaitSensor` che serve per aspettare durante l'interazione con 
 - buttonClickedAction(): Metodo che aspetta quando un pulsante è cliccato (premuto e rilasciato).
 - run(): È il metodo principale in cui si aspetta quando il pulsante viene cliccato.
 
-##### Test WaitTouchSensor
+##### Test WaitDigitalSensor
+
+#### WaitLightSensor
+
+##### Test WaitLightSensor
+
+#### WaitMotor.java
+
+##### Test WaitMotor
+
+#### WaitNxtButton.java
+
+##### Test WaitNxtButton
+
+#### WaitSensor.java
+
+##### Test WaitSensor
+
+#### WaitSoundSensor.java
+
+##### Test WaitSoundSensor
+
+#### WaitTime.java
+
+##### Test WaitTime
 
 #### WaitTouchSensor
 
@@ -300,6 +319,31 @@ Classe figlia di `WaitDigitalSensor` che serve per aspettare durante la pression
 - run(): È il metodo principale in cui si aspetta quando il sensore viene cliccato.
 
 ##### Test WaitTouchSensor
+
+#### WaitUltrasonicSensor.java
+
+##### Test WaitUltrasonicSensor
+
+#### HelloWorld
+
+Questa classe è stata usata come test per iniziare a capire come implementare un programma Java in un brick NXT e per essere usata come esempio nella guida per configurare leJOS su Windows. È presente solo il metodo `main` con due classiche funzioni che insieme formano semplicemente l'output "Hello World".
+```
+import lejos.nxt.Button;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Button.waitForAnyPress();
+	}
+}
+```
+
+##### Test HelloWorld
+
+Per verificare il giusto funzionamento della classe l'abbiamo caricata sul brick e l'abbiamo avviata attraverso i comandi spiegati nella guida [InstallWindows](installWindows.md).  
+Questo è il risultato ottenuto:
+
+<img src="img/helloworld_test.png" width=200>
 
 ## Test di sistema
 
