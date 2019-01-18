@@ -29,17 +29,19 @@ import ch.ti.cpttrevano.samt.legolib.motor.SingleMotor;
 import ch.ti.cpttrevano.samt.legolib.wait.WaitLightSensor;
 
 /**
+ * Line follower.
+ *
  * @author giuliobosco
- * @version 1.0
+ * @version 1.1
  */
 public class LineFollower extends Navigation {
     // ------------------------------------------------------------------------------------ Costants
 
     /**
-     * Default vaue for light on the left.
+     * Default value for line on the left.
      * Value: true.
      */
-    public static final boolean DEFAULT_LIGHT_ON_LEFT = true;
+    public static final boolean DEFAULT_LINE_ON_LEFT = true;
 
     // ---------------------------------------------------------------------------------- Attributes
 
@@ -89,7 +91,7 @@ public class LineFollower extends Navigation {
     public LineFollower(SingleMotor leftMotor, SingleMotor rightMotor, WaitLightSensor waitLightSensor) {
         super(leftMotor, rightMotor);
 
-        this.lineOnLeft = DEFAULT_LIGHT_ON_LEFT;
+        this.lineOnLeft = DEFAULT_LINE_ON_LEFT;
     }
 
     // -------------------------------------------------------------------------------- Help Methods
