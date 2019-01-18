@@ -104,6 +104,8 @@ public class LineFollower extends Navigation {
     public void run() {
         waitLightSensor.setValue((byte) 50);
         waitLightSensor.setBigger(this.isLineOnLeft());
+
+        this.startNavigation();
         while (!isAlive()) {
             waitLightSensor.waiter();
 
