@@ -164,38 +164,16 @@ Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sens
 
 ##### Sensori
 
-- Light, misura l'intensità di luce riflessa:
-    - calibrateWhite()  
-    questo metodo calibra il bianco all'intensità di luce riflessa in quell'instante.
-    - calibrateBlack()  
-    questo metodo calibra il nero all'intensità di luce riflessa in quell'instante.
-    - getValue()  
-    ritorna il valore di luce riflessa, un valore fra 0 e 100, 0 sarebbe bainco e 100 nero.
-- Distance, misura la distanza fra il sensore e l'ostacolo davanti a esso:
-    - getValue()  
-    ritorna il valore letto dal sensore.
-- Microphone, misura il suono:
-    - getValue()  
-    Ritorna il valore registrato dal microfono.
-- Touch, controlla semplicemente se è premuto il sensore:
-    - getValue()  
-    Ritorna `true` se è premuto, altrimenti `false`.
-- BrickButtons, legge i pulsanti presenti sul brick:
+- *LightSensor*, misura l'intensità di luce riflessa.
+- *UltrasonicSensor*, misura la distanza fra il sensore e l'ostacolo davanti a esso.
+- *SoundSensor*, misura il suono (microfono).
+- *TouchSensor*, controlla semplicemente se è premuto il sensore.
+- *NxtButton*, legge i pulsanti presenti sul brick.
 
 ##### Attuatori
 
-- LargeMotor, il motore più potente per i LEGO&reg; Mindstorms:
-    - forward()  
-    Fa girare il motore in avanti.
-    - reverse()  
-    Fa girare il motore indietro.
-    - stop()  
-    Ferma il motore.
-    - invert()  
-    Inverte il senso dei motori (avanti <=> indietro).
-    - getValue()  
-    Ritorna i gradi di rotazione attuale (0 - 360).
-- LCD, è lo schermino che si trova sul brick:
+- *SingleMotor*, il motore più potente per i LEGO&reg; Mindstorms.
+- *LCD*, è lo schermino che si trova sul brick.
 
 ### Design procedurale
 
