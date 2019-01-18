@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 SAMT.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,50 +21,68 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package ch.ti.cpttrevano.samt.legolib.wait;
 
 /**
- * Wait, used for generalization of all waiting class.
- * In the Lego Mindstorm Environment is rappresented by the orange block "Wait".
+ * Wait class, used to generalize all waiting classes.
+ * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author giuliobosco
- * @version 1.0.3
+ * @author gabrialessi
+ * @version 1.1
  */
 public class Wait extends Thread {
+    
+    // ------------------------------------------------------------------------- Costants
 
     /**
-     * Wait loop time.
+     * Constant that defines the time to wait (in milliseconds).
      */
     protected static final long WAIT_TIME = 100;
 
+    // ------------------------------------------------------------------------- Fields
+    
     /**
-     * Wait finished.
+     * Field that tell if the wait is over.
      */
     private boolean finished;
 
+    // ------------------------------------------------------------------------- Getters
+    
     /**
-     * Set the wait finished.
+     * Get the finished value.
+     * 
+     * @return The state of waiting (finished/not finished).
+     */
+    public boolean isFinished() {
+        return this.finished;
+    }
+    
+    // ------------------------------------------------------------------------- Setters
+    
+    /**
+     * Set the finished value.
      *
-     * @param finished Wait finished.
+     * @param finished The state of waiting.
      */
     protected void setFinished(boolean finished) {
         this.finished = finished;
     }
 
+    // ------------------------------------------------------------------------- Constructors
+    
     /**
-     * Is finished method, for asynchron wait. Returns always true.
-     */
-    public boolean isFinished() {
-        return this.finished;
-    }
-
-    /**
-     * Empty constructor.
+     * Constructor method, the wait is not over.
      */
     Wait() {
         this.finished = false;
     }
 
+    // ------------------------------------------------------------------------- Help Methods
+    
+    // ------------------------------------------------------------------------- General Methods
+    
     /**
      * Synchron wait.
      */
