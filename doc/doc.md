@@ -248,7 +248,7 @@ Le classi del prodotto sono suddivise da dei package definiti in base alle conve
 
 Classe `Thread` usata per generalizzare tutte le classi `Wait`. Queste classi sono rappresentate tramite il blocco arancione in LEGO&reg; Mindstorms e servono per aspettare che succeda qualcosa prima di continuare la sequenza di azioni (ad esempio aspettare del tempo o un sensore che legga un certo valore o che cambi valore).
 
-<img src="img/wait.png" width=400>
+<img src="img/classes/wait.png" width=400>
 
 - WAIT_TIME: Costante che rappresenta il tempo (in millisecondi) da aspettare.
 - finished: Attributo che indica se l'attesa è finita.
@@ -261,6 +261,21 @@ Classe `Thread` usata per generalizzare tutte le classi `Wait`. Queste classi so
 ##### Test Wait
 
 #### WaitAnalogSensor
+
+Classe figlia di `WaitSensor` che serve per aspettare durante l'interazione con un sensore analogico (microfono, sensore di luce, sensore a ultrasuoni). Questi sensori si distinguono perché hanno il compito di leggere un valore a dipendenza del sensore in questione.  
+Inoltre è presente un valore che viene usato per compararlo con quello letto dal sensore. Il programma si comporta in un certo modo se il valore è maggiore e in un altro modo se invece è minore.
+
+<img src="img/classes/waitanalogsensor.png" width=400>
+
+- SENSOR_MIN_VALUE: Costante che definisce il minimo valore che un sensore può leggere.
+- SENSOR_MAX_VALUE: Costante che definisce il massimo valore che un sensore può leggere.
+- bigger: Attributo che indica se il valore letto deve essere maggiore o minore di quello di comparare.
+- value: Attributo che rappresenta il valore da comparare con quello letto dal sensore.
+- isBigger(): Metodo utile per sapere il valore dell'attributo `bigger`.
+- setBigger(): Metodo che serve per impostare il valore dell'attributo `bigger`.
+- getValue(): Metodo utile per ottenere il valore di confronto.
+- setValue(): Metodo utile per impostare il valore di confronto.
+- Costruttore: Istanzia un nuovo `WaitAnalogSensor`, defininendo il campo `bigger` e il valore per comparare.
 
 ##### Test WaitAnalogSensor
 
@@ -276,7 +291,7 @@ Classe `Thread` usata per generalizzare tutte le classi `Wait`. Queste classi so
 
 Classe figlia di `WaitSensor` che serve per aspettare durante l'interazione con un sensore digitale (pulsanti).
 
-<img src="img/waitdigitalsensor.png" width=400>
+<img src="img/classes/waitdigitalsensor.png" width=400>
 
 - PRESSED: È una costante che indica la pressione di un pulsante.
 - RELEASED: È una costante che indica il rilascio di un pulsante.
@@ -322,7 +337,7 @@ Classe figlia di `WaitSensor` che serve per aspettare durante l'interazione con 
 
 Classe figlia di `WaitDigitalSensor` che serve per aspettare durante la pressione di un sensore di tocco.
 
-<img src="img/waittouchsensor.png" width=400>
+<img src="img/classes/waittouchsensor.png" width=400>
 
 - touchSensor: È l'attributo che rappresenta il sensore di tocco.
 - setTouchSensor(): Metodo utile per impostare il sensore di tocco.
