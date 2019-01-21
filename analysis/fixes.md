@@ -11,3 +11,4 @@
     - Help Methods (private methods)
     - General Methods
 - Rename some fields and methods
+- Fields and methods accessibility (private, public, ...)
