@@ -34,7 +34,7 @@ package ch.ti.cpttrevano.samt.legolib.wait;
  */
 public class Wait extends Thread {
     
-    // ------------------------------------------------------------------------- Costants
+    // ------------------------------------------------------------------------- Constants
 
     /**
      * Constant that defines the time to wait (in milliseconds).
@@ -53,7 +53,7 @@ public class Wait extends Thread {
     /**
      * Get the finished value.
      * 
-     * @return The state of waiting (finished/not finished).
+     * @return The state of waiting (finished or not finished).
      */
     public boolean isFinished() {
         return this.finished;
@@ -73,7 +73,7 @@ public class Wait extends Thread {
     // ------------------------------------------------------------------------- Constructors
     
     /**
-     * Constructor method, the wait is not over.
+     * Constructor method, creates a new wait where the wait is not over.
      */
     Wait() {
         this.finished = false;
@@ -84,7 +84,7 @@ public class Wait extends Thread {
     // ------------------------------------------------------------------------- General Methods
     
     /**
-     * Synchron wait.
+     * Main synchron wait method, where it waits until it's finished.
      */
     public void waiter() {
         this.beginWait();
@@ -97,9 +97,10 @@ public class Wait extends Thread {
     }
 
     /**
-     * Begin asynchron wait.
+     * Begin the asynchron wait.
      */
     public void beginWait() {
         this.setFinished(true);
     }
+    
 }
