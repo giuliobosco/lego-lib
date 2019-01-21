@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 giuliobosco.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,66 +25,68 @@
 package ch.ti.cpttrevano.samt.legolib.wait;
 
 /**
- * WaitAnalogSensor, used for generalization of all waiting analog sensor class.
- * In the Lego Mindstorm Environment is rappresented by the orange block "Wait".
+ * WaitAnalogSensor, used to generalize all analog sensor waiting classes.
+ * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author giuliobosco
- * @version 1.0.1
+ * @author gabrialessi
+ * @version 1.1
  */
 public class WaitAnalogSensor extends WaitSensor {
-    // ------------------------------------------------------------------------------------ Costants
+    
+    // ------------------------------------------------------------------------- Constants
 
     /**
-     * Analog sensor minimum value.
+     * Defines the minimum value that an analog sensor can read.
      */
     public static final byte SENSOR_MIN_VALUE = 0;
 
     /**
-     * Analog sensor maximum value.
+     * Defines the minimum value that an analog sensor can read.
      */
     public static final byte SENSOR_MAX_VALUE = 100;
 
-    // ---------------------------------------------------------------------------------- Attributes
+    // ------------------------------------------------------------------------- Fields
 
     /**
-     * Bigger than comparision value.
-     * If is true the requested value must be bigger than the value, other ways the requested value
-     * must be smaller than the value.
+     * Value chosen by the user that is compared with the one read by the 
+     * sensor.
+     */
+    private byte value;
+    
+    /**
+     * If this is true, the comparison value must be bigger than the read value.
+     * Otherwise the comparison value must be smaller than the read value.
      */
     private boolean bigger;
 
-    /**
-     * Comparison value.
-     */
-    private byte value;
-
-    // --------------------------------------------------------------------------- Getters & Setters
+    // ------------------------------------------------------------------------- Getters
 
     /**
-     * Set the bigger than comparison value, checks that the wait is finished.
+     * Get the comparison value chosen by the user.
      *
-     * @param bigger Bigger than comparison value.
+     * @return The comparison value.
      */
-    public void setBigger(boolean bigger) {
-        if (this.isFinished()) {
-            this.bigger = bigger;
-        }
+    public byte getValue() {
+        return this.value;
     }
-
+    
     /**
-     * Get the bigger comparison than value.
+     * To know if the read values is bigger than the comparison value.
      *
-     * @return Bigger than comparison value.
+     * @return The bigger value.
      */
     public boolean isBigger() {
         return this.bigger;
     }
-
+    
+    // ------------------------------------------------------------------------- Setters
+    
     /**
-     * Set the comparison value, checks that the value is in the range of valid analog sensor and
-     * that the wait is finished.
+     * Set the comparison value, checks that the value is in the range of an
+     * analog sensor and that the wait is finished.
      *
-     * @param value Comparison value.
+     * @param value The comparison value.
      */
     public void setValue(byte value) {
         if (this.isFinished()) {
@@ -93,31 +95,34 @@ public class WaitAnalogSensor extends WaitSensor {
             }
         }
     }
-
+    
     /**
-     * Get the comparison value.
+     * Set the bigger field, checks that the wait is finished.
      *
-     * @return Comparison value.
+     * @param bigger If is bigger than the comparison value.
      */
-    public byte getValue() {
-        return this.value;
+    public void setBigger(boolean bigger) {
+        if (this.isFinished()) {
+            this.bigger = bigger;
+        }
     }
 
     // -------------------------------------------------------------------------------- Constructors
 
     /**
-     * Create the wait analog sensor, with bigger than value and comparison value.
+     * Constructor method, creates a new wait by setting the fields bigger and
+     * the comparison value.
      *
-     * @param bigger Bigger than value.
-     * @param value  Comparison value.
+     * @param bigger If is bigger than the comparison value.
+     * @param value The comparison value.
      */
     WaitAnalogSensor(boolean bigger, byte value) {
         this.setBigger(bigger);
         this.setValue(value);
     }
 
-    // -------------------------------------------------------------------------------- Help Methods
-    // ----------------------------------------------------------------------------- General Methods
-    // --------------------------------------------------------------------------- Static Components
+    // ------------------------------------------------------------------------- Help Methods
+    
+    // ------------------------------------------------------------------------- General Methods
 
 }
