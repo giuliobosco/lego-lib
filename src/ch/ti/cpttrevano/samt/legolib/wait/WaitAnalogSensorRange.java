@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 SAMT.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,49 +24,70 @@
 package ch.ti.cpttrevano.samt.legolib.wait;
 
 /**
- * WaitAnalogSensorRange, used to wait an analog sensor range.
- * In the Lego Mindstorm Environment is rappresented by the orange block "Wait".
+ * WaitAnalogSensorRange, used to wait an analog sensor with range.
+ * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 2.0
+ * @version 2.1
  */
 public class WaitAnalogSensorRange extends WaitSensor {
 
-    // ------------------------------------------------------------------------------------ Costants
-    // ---------------------------------------------------------------------------------- Attributes
+    // ------------------------------------------------------------------------- Constants
+    
+    // ------------------------------------------------------------------------- Flieds
 
     /**
-     * Inside range.
-     * The value must be in the range in between the minimum value and the maximum value.
+     * Indicates if the value read by the sensor is in range 
+     * (between the minimum and the maximum value).
      */
     private boolean inRange;
 
     /**
-     * Minimum range value
+     * The minimum value of the range.
      */
     private byte minValue;
 
     /**
-     * Maximum range value.
+     * The maximum value of the range.
      */
     private byte maxValue;
 
-    // --------------------------------------------------------------------------- Getters & Setters
+    // ------------------------------------------------------------------------- Getters
 
     /**
-     * Is inside range.
+     * To know if the value is in the range.
      *
-     * @return Inside range.
+     * @return The inRange value.
      */
     public boolean isInRange() {
         return this.inRange;
     }
+    
+    /**
+     * Get the minimum value of the range.
+     *
+     * @return The minimum range value.
+     */
+    public byte getMinValue() {
+        return this.minValue;
+    }
+    
+    /**
+     * Get the maximum value of the range.
+     *
+     * @return The maximum range value.
+     */
+    public byte getMaxValue() {
+        return this.maxValue;
+    }
+    
+    // ------------------------------------------------------------------------- Setters
 
     /**
-     * Set is inside range.
+     * Set the inRange field.
      *
-     * @param inRange Inside range.
+     * @param inRange If is inside the range.
      */
     public void setInRange(boolean inRange) {
         if (this.isFinished()) {
@@ -75,18 +96,9 @@ public class WaitAnalogSensorRange extends WaitSensor {
     }
 
     /**
-     * Get the minimum range value.
+     * Set the minimum value of the range.
      *
-     * @return Minimum range value.
-     */
-    public byte getMinValue() {
-        return this.minValue;
-    }
-
-    /**
-     * Set the minimum range value.
-     *
-     * @param minValue Minimum range value.
+     * @param minValue The minimum range value.
      */
     public void setMinValue(byte minValue) {
         if (this.isFinished()) {
@@ -95,32 +107,23 @@ public class WaitAnalogSensorRange extends WaitSensor {
     }
 
     /**
-     * Get the maximum range value.
+     * Set the maximum value of the range.
      *
-     * @return Maximum range value.
-     */
-    public byte getMaxValue() {
-        return this.maxValue;
-    }
-
-    /**
-     * Set the maximum range value.
-     *
-     * @param maxValue Maximum range value.
+     * @param maxValue The maximum range value.
      */
     public void setMaxValue(byte maxValue) {
         this.maxValue = maxValue;
     }
 
-    // -------------------------------------------------------------------------------- Constructors
+    // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Create the analog wait sensor with the inside range, minimum range value and maximum range
-     * value.
+     * Constructor method, creates a new wait by setting the fields inRange, 
+     * minValue and maxValue.
      *
-     * @param inRange  Inside range.
-     * @param minValue Minimum range value.
-     * @param maxValue Maximum range value.
+     * @param inRange If is inside the range.
+     * @param minValue The minimum range value.
+     * @param maxValue The maximum range value.
      */
     public WaitAnalogSensorRange(boolean inRange, byte minValue, byte maxValue) {
         setInRange(inRange);
@@ -128,7 +131,8 @@ public class WaitAnalogSensorRange extends WaitSensor {
         setMaxValue(maxValue);
     }
 
-    // -------------------------------------------------------------------------------- Help Methods
-    // ----------------------------------------------------------------------------- General Methods
-    // --------------------------------------------------------------------------- Static Components
+    // ------------------------------------------------------------------------- Help Methods
+    
+    // ------------------------------------------------------------------------- General Methods
+    
 }
