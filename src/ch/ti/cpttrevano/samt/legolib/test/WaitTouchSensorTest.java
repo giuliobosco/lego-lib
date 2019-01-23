@@ -25,7 +25,6 @@ package ch.ti.cpttrevano.samt.legolib.test;
 
 import ch.ti.cpttrevano.samt.legolib.wait.WaitTouchSensor;
 import lejos.nxt.SensorPort;
-import lejos.nxt.SensorPortListener;
 import lejos.nxt.TouchSensor;
 
 /**
@@ -33,21 +32,22 @@ import lejos.nxt.TouchSensor;
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 1.0
+ * @version 1.1
  */
 public class WaitTouchSensorTest {
-    
+
     public static void main(String[] args) {
-        
+
         // Set a new touch sensor on port 1
         TouchSensor touch = new TouchSensor(SensorPort.S1);
-        
+
         // Set the wait action to 2 (CLICKED)
         byte action = 2;
-        
+
         // New wait for the touch sensor
         WaitTouchSensor wait = new WaitTouchSensor(touch, action);
-        
+
+        // Start the wait
         wait.start();
     }
 }
