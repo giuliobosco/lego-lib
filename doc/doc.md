@@ -297,6 +297,14 @@ Classe figlia di `WaitSensor` che serve per aspettare l'interazione di un sensor
 
 #### WaitLightSensor
 
+Classe figlia di `WaitAnalogSensor` utile per aspettare fino a quando si legge un certo valore con un sensore di luce. L'implementazione della classe non ha molte differenze rispetto alla sua classe superiore, infatti bisogna leggere un valore che va comparato con quello impostato dall'utente e si decide se deve essere maggiore o minore.
+
+- lightSensor: Attributo che rappresenta il sensore di luce.
+- getLightSensor(): Metodo utile per ottenere il sensore di luce.
+- setLightSensor(): Metodo che serve per impostare il sensore di luce.
+- WaitLightSensor(): Metodo costruttore, istanzia un nuovo `WaitLightSensor` impostando se il valore letto deve essere maggiore di quello inserito (`bigger`), il valore da comparare (`value`) e il sensore o la porta del brick in cui è inserito il sensore.
+- run(): Metodo principale in cui si aspetta il giusto valore letto dal sensore di luce.
+
 ##### Test WaitLightSensor
 
 #### WaitMotor.java
