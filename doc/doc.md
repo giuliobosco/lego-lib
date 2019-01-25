@@ -1,4 +1,4 @@
-# Libreria LEGO
+# Sistema didattico per LEGO EV3/NTX con libreria e documentazione
 
 1. [Introduzione](#introduzione)
     - [Informazioni sul progetto](#informazioni-sul-progetto)
@@ -75,7 +75,7 @@
 Docenti e supervisori: Adriano Barchi, Luca Muggiasca, Francesco Mussi, Massimo Sartori
 - Scuola d'Arti e Mestieri di Trevano, sezione Informatica, Classe 3, Modulo 306
 - Data inizio: 14.11.2018  
-Data fine: 01.02.2019
+Data fine: 08.02.2019
 
 ### Abstract
 
