@@ -281,6 +281,19 @@ Inoltre è presente un valore che viene usato per compararlo con quello letto da
 
 #### WaitAnalogSensorRange
 
+Classe figlia di `WaitSensor` che serve per aspettare durante l'interazione con un sensore analogico che funziona in base a un intervallo (sensore di colore).  
+
+- inRange: Attributo che indica se il valore letto dal sensore è nell'intervallo.
+- minValue: Attributo che definisce il valore minimo dell'intervallo.
+- maxValue: Attributo che definisce il valore massimo dell'intervallo.
+- isInRange(): Metodo utile per sapere se il valore letto dal sensore è nell'intervallo.
+- getMinValue(): Metodo utile per ottenere il valore minimo dell'intervallo.
+- getMaxValue(): Metodo utile per ottenere il valore massimo dell'intervallo.
+- setInRange(): Metodo che imposta il valore del campo `inRange`.
+- setMinValue(): Metodo che imposta il valore minimo dell'intervallo.
+- setMaxValue(): Metodo che imposta il valore massimo dell'intervallo.
+- WaitAnalogSensorRange(): Metodo costruttore, si crea una nuova attesa stabilendo `inRange`, `minValue` e `maxValue`.
+
 ##### Test WaitAnalogSensorRange
 
 #### WaitColorSensor
