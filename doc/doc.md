@@ -246,7 +246,7 @@ Le classi del prodotto sono suddivise da dei package definiti in base alle conve
 
 #### Wait
 
-Classe `Thread` usata per generalizzare tutte le classi `Wait`. Queste classi sono rappresentate tramite il blocco arancione in LEGO&reg; Mindstorms e servono per aspettare che succeda qualcosa prima di continuare la sequenza di azioni (ad esempio aspettare del tempo o un sensore che legga un certo valore o che cambi valore).
+Classe `Thread` usata per generalizzare tutte le classi `Wait`. Queste classi sono rappresentate dal blocco arancione in LEGO&reg; Mindstorms e servono per aspettare che succeda qualcosa prima di continuare la sequenza di azioni (ad esempio aspettare del tempo o un sensore che legga un certo valore o che il valore che si sta leggendo cambi).
 
 <img src="img/classes/wait.png" width=400>
 
@@ -254,15 +254,15 @@ Classe `Thread` usata per generalizzare tutte le classi `Wait`. Queste classi so
 - finished: Attributo che indica se l'attesa è finita.
 - isFinished(): Metodo utile per ottenere lo stato dell'attesa (finito/non finito).
 - setFinished(): Metodo che serve per impostare lo stato dell'attesa.
-- Costruttore: Istanzia una nuova attesa.
+- Wait(): Metodo costruttore, istanzia una nuova attesa generale.
 - beginWait(): Imposta il valore dello stato dell'attesa a `true`.
-- waiter(): Metodo principale utile per iniziare l'attesa.
+- waiter(): Metodo principale per iniziare l'attesa.
 
 ##### Test Wait
 
 #### WaitAnalogSensor
 
-Classe figlia di `WaitSensor` che serve per aspettare durante l'interazione con un sensore analogico (microfono, sensore di luce, sensore a ultrasuoni). Questi sensori si distinguono perché hanno il compito di leggere un valore a dipendenza del sensore in questione.  
+Classe figlia di `WaitSensor` che serve per aspettare l'interazione di un sensore analogico (microfono, sensore di luce, sensore a ultrasuoni). Questi sensori si distinguono perché hanno il compito di leggere un valore a dipendenza del sensore in questione.  
 Inoltre è presente un valore che viene usato per compararlo con quello letto dal sensore. Il programma si comporta in un certo modo se il valore è maggiore e in un altro modo se invece è minore.
 
 <img src="img/classes/waitanalogsensor.png" width=400>
@@ -272,16 +272,16 @@ Inoltre è presente un valore che viene usato per compararlo con quello letto da
 - bigger: Attributo che indica se il valore letto deve essere maggiore o minore di quello di comparare.
 - value: Attributo che rappresenta il valore da comparare con quello letto dal sensore.
 - isBigger(): Metodo utile per sapere il valore dell'attributo `bigger`.
-- setBigger(): Metodo che serve per impostare il valore dell'attributo `bigger`.
 - getValue(): Metodo utile per ottenere il valore di confronto.
+- setBigger(): Metodo che serve per impostare il valore dell'attributo `bigger`.
 - setValue(): Metodo utile per impostare il valore di confronto.
-- Costruttore: Istanzia un nuovo `WaitAnalogSensor`, defininendo il campo `bigger` e il valore per comparare.
+- WaitAnalogSensor(): Metodo costruttore, istanzia un nuovo `WaitAnalogSensor`, defininendo il campo `bigger` e il valore per comparare.
 
 ##### Test WaitAnalogSensor
 
 #### WaitAnalogSensorRange
 
-Classe figlia di `WaitSensor` che serve per aspettare durante l'interazione con un sensore analogico che funziona in base a un intervallo (sensore di colore).  
+Classe figlia di `WaitSensor` che serve per aspettare l'interazione di un sensore analogico che funziona in base a un intervallo (sensore di colore).  
 
 - inRange: Attributo che indica se il valore letto dal sensore è nell'intervallo.
 - minValue: Attributo che definisce il valore minimo dell'intervallo.
@@ -302,7 +302,7 @@ Classe figlia di `WaitSensor` che serve per aspettare durante l'interazione con 
 
 #### WaitDigitalSensor
 
-Classe figlia di `WaitSensor` che serve per aspettare durante l'interazione con un sensore digitale (pulsanti).
+Classe figlia di `WaitSensor` che serve per aspettare l'interazione di un sensore digitale (pulsanti).
 
 <img src="img/classes/waitdigitalsensor.png" width=400>
 
@@ -313,12 +313,12 @@ Classe figlia di `WaitSensor` che serve per aspettare durante l'interazione con 
 - isWaitAction(): Metodo che indica se l'azione fatta sul pulsante è valida.
 - getWaitAction(): Metodo che serve per ottenere l'azione sul pulsante.
 - setWaitAction(): Metodo utile per impostare l'azione.
-- Costruttore: Istanzia un nuovo `WaitDigitalSensor` impostando l'azione.
+- WaitDigitalSensor(): Metodo costruttore, istanzia un nuovo `WaitDigitalSensor` impostando l'azione.
 - isPressedButton(): Metodo che ritorna `true` se il pulsante è premuto.
-- buttonPressedAction(): Metodo che aspetta quando un pulsante è premuto.
-- buttonReleasedAction(): Metodo che aspetta quando un pulsante è rilasciato.
-- buttonClickedAction(): Metodo che aspetta quando un pulsante è cliccato (premuto e rilasciato).
-- run(): È il metodo principale in cui si aspetta quando il pulsante viene cliccato.
+- buttonPressedAction(): Metodo che aspetta la pressione di un pulsante.
+- buttonReleasedAction(): Metodo che aspetta il rilascio di un pulsante.
+- buttonClickedAction(): Metodo che aspetta il click di un pulsante (premuto e rilasciato).
+- run(): È il metodo principale in cui si aspetta la pressione di un pulsante.
 
 ##### Test WaitDigitalSensor
 
@@ -348,15 +348,15 @@ Classe figlia di `WaitSensor` che serve per aspettare durante l'interazione con 
 
 #### WaitTouchSensor
 
-Classe figlia di `WaitDigitalSensor` che serve per aspettare durante la pressione di un sensore di tocco.
+Classe figlia di `WaitDigitalSensor` che serve per aspettare la pressione di un sensore di tocco.
 
 <img src="img/classes/waittouchsensor.png" width=400>
 
-- touchSensor: È l'attributo che rappresenta il sensore di tocco.
-- setTouchSensor(): Metodo utile per impostare il sensore di tocco.
+- touchSensor: Attributo che rappresenta il sensore di tocco.
 - getTouchSensor(): Metodo che serve per ottenere il sensore di tocco.
-- Costruttori: Istanziano un nuovo `WaitTouchSensor` impostando l'azione (premuto, rilasciato, cliccato) e il sensore o la porta.
-- run(): È il metodo principale in cui si aspetta quando il sensore viene cliccato.
+- setTouchSensor(): Metodo utile per impostare il sensore di tocco.
+- WaitTouchSensor(): Metodo costruttore, istanzia un nuovo `WaitTouchSensor` impostando l'azione (premuto, rilasciato, cliccato) e il sensore o la porta del brick in cui è inserito il sensore.
+- run(): È il metodo principale in cui si aspetta la pressione di un sensore di tocco.
 
 ##### Test WaitTouchSensor
 
