@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 SAMT.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,102 +21,104 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package ch.ti.cpttrevano.samt.legolib.wait;
 
 /**
- * WaitTime, wait milliseconds.
+ * WaitTime, used to wait time (milliseconds).
+ * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 1.1.0
+ * @version 2.0
  */
 public class WaitTime extends Wait {
 
-
-    // ------------------------------------------------------------------------------------ Costants
-    // ---------------------------------------------------------------------------------- Attributes
-
-    /**
-     * Time to wait.
-     */
-    protected long time;
+    // ------------------------------------------------------------------------- Constants
+    
+    // ------------------------------------------------------------------------- Fields
 
     /**
-     * Start time.
+     * The time to wait (in milliseconds).
      */
-    protected long startTime;
+    private long waitTime;
 
-    // --------------------------------------------------------------------------- Getters & Setters
+    /**
+     * The starting time.
+     */
+    private long startTime;
+
+    // ------------------------------------------------------------------------- Getters
 
     /**
      * Get the time to wait.
      *
-     * @return Time to wait.
+     * @return The time to wait.
      */
-    public long getTime() {
-        return this.time;
-    }
-
-    /**
-     * Set the time to wait.
-     *
-     * @param time Time to wait.
-     */
-    protected void setTime(long time) {
-        if (this.isFinished()) {
-            this.time = time;
-        }
+    public long getWaitTime() {
+        return this.waitTime;
     }
 
     /**
      * Get the start time.
      *
-     * @return Start time.
+     * @return The start time.
      */
     public long getStartTime() {
         return this.startTime;
     }
+    
+    // ------------------------------------------------------------------------- Setters
+    
+    /**
+     * Set the time to wait checking that the wait is finished.
+     *
+     * @param waitTime The time to wait.
+     */
+    protected void setWaitTime(long waitTime) {
+        if (this.isFinished()) {
+            this.waitTime = waitTime;
+        }
+    }
 
     /**
-     * Set the start time.
+     * Set the start time after doing checks.
      *
-     * @param startTime Start time.
+     * @param startTime The start time.
      */
     protected void setStartTime(long startTime) {
-        if (getStartTime() > System.currentTimeMillis() && this.isFinished()) {
+        if (this.getStartTime() > System.currentTimeMillis() && this.isFinished()) {
             this.startTime = startTime;
         }
     }
 
-    // -------------------------------------------------------------------------------- Constructors
+    // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Initialize the WaitTime with the time to wait.
+     * Constructor method, defines the time to wait.
      *
-     * @param time Time to wait.
+     * @param waitTime The time to wait.
      */
-    public WaitTime(long time) {
-        setTime(time);
+    public WaitTime(long waitTime) {
+        setWaitTime(waitTime);
     }
 
-    // -------------------------------------------------------------------------------- Help Methods
-    // ----------------------------------------------------------------------------- General Methods
+    // ------------------------------------------------------------------------- Help Methods
+    
+    // ------------------------------------------------------------------------- General Methods
 
     @Override
-    public void beginWait() {
-        setStartTime(System.currentTimeMillis());
+    public void startWait() {
+        this.setStartTime(System.currentTimeMillis());
     }
 
     @Override
     public boolean isFinished() {
-        if (getStartTime() + getTime() >= System.currentTimeMillis()) {
-            setTime(Long.MAX_VALUE - getStartTime());
+        if (this.getStartTime() + this.getWaitTime() >= System.currentTimeMillis()) {
+            this.setWaitTime(Long.MAX_VALUE - getStartTime());
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
-
-    // --------------------------------------------------------------------------- Static Components
 
 }
