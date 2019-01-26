@@ -115,7 +115,7 @@ public class WaitDigitalSensor extends WaitSensor {
      *
      * @return True if the button is pressed.
      */
-    private boolean isPressedButton() {
+    protected boolean isPressedButton() {
         return true;
     }
     
