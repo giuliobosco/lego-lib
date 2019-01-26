@@ -28,7 +28,8 @@ import lejos.nxt.LightSensor;
 import lejos.nxt.SensorPort;
 
 /**
- * Wait light sensor.
+ * WaitAnalogSensor, used to wait a light sensor.
+ * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author giuliobosco
  * @author gabrialessi
