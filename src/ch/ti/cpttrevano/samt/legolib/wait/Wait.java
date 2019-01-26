@@ -37,7 +37,8 @@ public class Wait extends Thread {
     // ------------------------------------------------------------------------- Constants
 
     /**
-     * Constant that defines the time to wait (in milliseconds).
+     * Constant that defines the time to wait (in milliseconds) before making a 
+     * new check to finish the wait.
      */
     protected static final long WAIT_TIME = 100;
 
@@ -75,7 +76,7 @@ public class Wait extends Thread {
     /**
      * Constructor method, creates a new wait where the wait is not over.
      */
-    Wait() {
+    public Wait() {
         this.finished = false;
     }
 
@@ -87,7 +88,7 @@ public class Wait extends Thread {
      * Main synchron wait method, where it waits until it's finished.
      */
     public void waiter() {
-        this.beginWait();
+        this.startWait();
         try {
             while (!this.isFinished()) {
                 sleep(WAIT_TIME);
@@ -99,8 +100,8 @@ public class Wait extends Thread {
     /**
      * Begin the asynchron wait.
      */
-    public void beginWait() {
-        this.setFinished(true);
+    public void startWait() {
+        this.setFinished(false);
     }
     
 }
