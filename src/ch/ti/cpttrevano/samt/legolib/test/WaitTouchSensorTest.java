@@ -45,7 +45,7 @@ public class WaitTouchSensorTest {
         byte action = 2;
 
         // New wait for the touch sensor
-        WaitTouchSensor wait = new WaitTouchSensor(touch, action);
+        WaitTouchSensor wait = new WaitTouchSensor(action, touch);
 
         // Start the wait
         wait.start();
