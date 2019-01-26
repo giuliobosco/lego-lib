@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 SAMT.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,111 +21,109 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package ch.ti.cpttrevano.samt.legolib.wait;
 
 import ch.ti.cpttrevano.samt.legolib.motor.SingleMotor;
 
 /**
- * WaitMotor, used for waiting a motor action.
- * In the Lego Mindstorm Environment is rappresented by the orange block "Wait".
+ * WaitMotor, used to wait a motor action.
+ * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 2.0
+ * @version 3.0
  */
 public class WaitMotor extends Wait {
 
-    // ------------------------------------------------------------------------------------ Costants
-    // ---------------------------------------------------------------------------------- Attributes
+    // ------------------------------------------------------------------------- Constants
+    
+    // ------------------------------------------------------------------------- Fields
 
     /**
-     * Single motor.
+     * The single motor.
      */
-    private SingleMotor motor;
+    private SingleMotor singleMotor;
 
     /**
-     * Comparison value.
+     * User-defined value that is compared with the one got by the motor.
      */
-    private int value;
+    private int checkValue;
 
-    // --------------------------------------------------------------------------- Getters & Setters
+    // ------------------------------------------------------------------------- Getters
+    
+    /**
+     * Get the single motor.
+     *
+     * @return The single Motor.
+     */
+    public SingleMotor getSingleMotor() {
+        return this.singleMotor;
+    }
+    
+    /**
+     * Get the comparison value.
+     *
+     * @return The comparison value.
+     */
+    public int getCheckValue() {
+        return this.checkValue;
+    }
+    
+    // ------------------------------------------------------------------------- Setters
 
     /**
      * Set the single motor.
      *
-     * @param motor Single motor.
+     * @param singleMotor The single motor.
      */
-    public void setMotor(SingleMotor motor) {
+    public void setSingleMotor(SingleMotor singleMotor) {
         if (this.isFinished()) {
-            this.motor = motor;
+            this.singleMotor = singleMotor;
         }
-    }
-
-    /**
-     * Get the single motor.
-     *
-     * @return Single Motor
-     */
-    public SingleMotor getMotor() {
-        return this.motor;
     }
 
     /**
      * Set the comparison value.
      *
-     * @param value Comparison value.
+     * @param checkValue The comparison value.
      */
-    public void setValue(int value) {
+    public void setCheckValue(int checkValue) {
         if (this.isFinished()) {
-            this.value = value;
+            this.checkValue = checkValue;
         }
     }
 
+    // ------------------------------------------------------------------------- Constructors
+
     /**
-     * Get the comparison value.
+     * Constructor method, creates the wait by setting the motor and the 
+     * comparison value.
      *
-     * @return Comparison value.
+     * @param singleMotor The single motor.
+     * @param checkValue The comparison value.
      */
-    public int getValue() {
-        return this.value;
+    public WaitMotor(SingleMotor singleMotor, int checkValue) {
+        this.setSingleMotor(singleMotor);
+        this.setCheckValue(checkValue);
     }
 
-    // -------------------------------------------------------------------------------- Constructors
+    // ------------------------------------------------------------------------- Help Methods
+    
+    // ------------------------------------------------------------------------- General Methods
 
-    /**
-     * Create the wait motor with the motor and the comparison value.
-     *
-     * @param motor Single motor.
-     * @param value Comparison value.
-     */
-    public WaitMotor(SingleMotor motor, int value) {
-        this.setMotor(motor);
-        this.setValue(value);
-    }
-
-    // -------------------------------------------------------------------------------- Help Methods
-    // ----------------------------------------------------------------------------- General Methods
-
-    /**
-     * Run the wait motor.
-     */
     @Override
     public void run() {
         while (this.isFinished()) {
             try {
-                int initialRotations = motor.getMotor().getTachoCount();
-
-                while (!(initialRotations + value == motor.getMotor().getTachoCount())) {
-                    Thread.sleep(WAIT_TIME);
+                int earlyRotations = this.getSingleMotor().getMotor().getTachoCount();
+                while (!(earlyRotations + this.getCheckValue() == earlyRotations)) {
+                    sleep(WAIT_TIME);
                 }
-
                 this.setFinished(true);
             } catch (InterruptedException ignored) {
-
             }
         }
     }
-
-    // --------------------------------------------------------------------------- Static Components
 
 }
