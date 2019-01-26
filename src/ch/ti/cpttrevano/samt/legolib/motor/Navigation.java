@@ -76,21 +76,6 @@ public class Navigation extends Thread {
     // ------------------------------------------------------------------------- Getters
 
     /**
-     * Set the power of the navigation.
-     *
-     * @param power The power of the navigation.
-     */
-    public void setPower(byte power) {
-        if (power > MAX_TURNING) {
-            power = MAX_TURNING;
-        } else if (power < MIN_TURNING) {
-            power = MIN_TURNING;
-        }
-        this.power = power;
-        this.updatePowerMotors();
-    }
-
-    /**
      * Get the power of the navigation.
      *
      * @return Power of the navigation.
@@ -98,31 +83,46 @@ public class Navigation extends Thread {
     public byte getPower() {
         return this.power;
     }
+    
+    /**
+     * Get the turning of the navigation.
+     *
+     * @return The turning of the navigation.
+     */
+    public byte getTurning() {
+        return this.turning;
+    }
+    
+    // ------------------------------------------------------------------------- Setters
+    
+    /**
+     * Set the power of the navigation.
+     *
+     * @param power The power of the navigation.
+     */
+    public void setPower(byte power) {
+        if (power > SingleMotor.MAX_POWER) {
+            power = SingleMotor.MAX_POWER;
+        } else if (power < SingleMotor.MIN_POWER) {
+            power = SingleMotor.MIN_POWER;
+        }
+        this.power = power;
+        this.updatePowerMotors();
+    }
 
     /**
      * Set the turning of the navigation.
      *
-     * @param turning Turning of the navigation.
+     * @param turning The turning of the navigation.
      */
     public void setTurning(byte turning) {
         if (turning > MAX_TURNING) {
-            this.turning = MAX_TURNING;
+            turning = MAX_TURNING;
         } else if (turning < MIN_TURNING) {
-            this.turning = MIN_TURNING;
-        } else {
-            this.turning = turning;
+            turning = MIN_TURNING;
         }
-
-        this.updateTurningMotors();
-    }
-
-    /**
-     * Get the turning of the navigation.
-     *
-     * @return Turning of the navigation.
-     */
-    public byte getTurning() {
-        return this.turning;
+        this.turning = turning;
+        this.updatePowerMotors();
     }
 
     // -------------------------------------------------------------------------------- Constructors
