@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 giuliobosco.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -31,23 +31,37 @@ import lejos.nxt.SensorPort;
  * Wait light sensor.
  *
  * @author giuliobosco
- * @version 1.0
+ * @author gabrialessi
+ * @version 2.0
  */
 public class WaitLightSensor extends WaitAnalogSensor {
-    // ------------------------------------------------------------------------------------ Costants
-    // ---------------------------------------------------------------------------------- Attributes
+    
+    // ------------------------------------------------------------------------- Constants
+    
+    // ------------------------------------------------------------------------- Fields
 
     /**
-     * Light sensor.
+     * The light sensor
      */
     private LightSensor lightSensor;
 
-    // --------------------------------------------------------------------------- Getters & Setters
+    // ------------------------------------------------------------------------- Getters
 
+    /**
+     * Get the light sensor.
+     *
+     * @return The light sensor.
+     */
+    public LightSensor getLightSensor() {
+        return this.lightSensor;
+    }
+    
+    // ------------------------------------------------------------------------- Setters
+    
     /**
      * Set the light sensor.
      *
-     * @param lightSensor Light sensor.
+     * @param lightSensor The light sensor.
      */
     public void setLightSensor(LightSensor lightSensor) {
         if (this.isFinished()) {
@@ -55,63 +69,50 @@ public class WaitLightSensor extends WaitAnalogSensor {
         }
     }
 
-    /**
-     * Get the light sensor.
-     *
-     * @return Light sensor.
-     */
-    public LightSensor getLightSensor() {
-        return this.lightSensor;
-    }
-
-    // -------------------------------------------------------------------------------- Constructors
+    // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Create the waiter with the bigger value that comparison value, the comparison value and the
-     * light sensor.
+     * Constructor method, defines the sensor, the comparison value and if it 
+     * must be bigger than the value read by the sensor.
      *
-     * @param bigger      Bigger than comparison value.
-     * @param value       Comparison value.
-     * @param lightSensor Light sensor.
+     * @param bigger If is bigger than the comparison value.
+     * @param checkValue The comparison value.
+     * @param lightSensor The light sensor.
      */
-    public WaitLightSensor(boolean bigger, byte value, LightSensor lightSensor) {
-        super(bigger, value);
-
+    public WaitLightSensor(boolean bigger, byte checkValue, LightSensor lightSensor) {
+        super(bigger, checkValue);
         this.setLightSensor(lightSensor);
     }
 
     /**
-     * Create the waiter with the bigger value that comparison value, the comparison value and the
-     * light sensor port.
+     * Constructor method, defines the sensor port, the comparison value and if 
+     * it must be bigger than the value read by the sensor.
      *
-     * @param bigger     Bigger than comparison value.
-     * @param value      Comparison value.
-     * @param sensorPort Light sensor port.
+     * @param bigger If is bigger than the comparison value.
+     * @param checkValue The comparison value.
+     * @param sensorPort The port where the sensor is connected.
      */
-    public WaitLightSensor(boolean bigger, byte value, SensorPort sensorPort) {
-        this(bigger, value, new LightSensor(sensorPort));
+    public WaitLightSensor(boolean bigger, byte checkValue, SensorPort sensorPort) {
+        this(bigger, checkValue, new LightSensor(sensorPort));
     }
 
-    // -------------------------------------------------------------------------------- Help Methods
-    // ----------------------------------------------------------------------------- General Methods
+    // ------------------------------------------------------------------------- Help Methods
+    
+    // ------------------------------------------------------------------------- General Methods
 
     @Override
     public void run() {
         while (this.isFinished()) {
             try {
                 if (this.isBigger()) {
-                    this.setFinished(this.lightSensor.getLightValue() > this.getValue());
+                    this.setFinished(this.getLightSensor().getLightValue() > this.getCheckValue());
                 } else {
-                    this.setFinished(this.lightSensor.getLightValue() < this.getValue());
+                    this.setFinished(this.getLightSensor().getLightValue() < this.getCheckValue());
                 }
-
-                Thread.sleep(WAIT_TIME);
+                sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {
-
             }
         }
     }
-
-    // --------------------------------------------------------------------------- Static Components
 
 }
