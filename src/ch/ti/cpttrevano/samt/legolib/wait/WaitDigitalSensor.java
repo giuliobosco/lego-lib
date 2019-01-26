@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 SAMT.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,56 +24,57 @@
 package ch.ti.cpttrevano.samt.legolib.wait;
 
 /**
- * WaitDigitalSensor, used to wait a digital sensor. In the Lego Mindstorm
- * Environment is rappresented by the orange block "Wait".
+ * WaitDigitalSensor, used to wait a digital sensor (usually buttons).
+ * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 2.0
+ * @version 3.0
  */
 public class WaitDigitalSensor extends WaitSensor {
 
-    // ------------------------------------------------------------------------------------ Costants
+    // ------------------------------------------------------------------------- Constants
 
     /**
-     * Button action.
+     * Identifies the pressed button action.
      */
-    public final byte PRESSED = 0;
+    public static final byte PRESSED = 0;
 
     /**
-     * Button released.
+     * Identifies the released button action.
      */
-    public final byte RELEASED = 1;
+    public static final byte RELEASED = 1;
 
     /**
-     * Button pressed than released.
+     * Identifies the clicked button action (pressed and released).
      */
-    public final byte CLICKED = 2;
+    public static final byte CLICKED = 2;
 
-    // ---------------------------------------------------------------------------------- Attributes
+    // ------------------------------------------------------------------------- Fields
 
     /**
-     * Comparison wait action.
+     * The action on the button to wait (pressed, released or clicked).
      */
-    protected byte waitAction;
+    private byte waitAction;
 
-    // --------------------------------------------------------------------------- Getters & Setters
+    // ------------------------------------------------------------------------- Getters
 
     /**
-     * Get the comparison wait action.
+     * Get the wait action.
      *
-     * @return Comparison wait action.
+     * @return The comparison wait action.
      */
     public byte getWaitAction() {
         return this.waitAction;
     }
+    
+    // ------------------------------------------------------------------------- Setters
 
     /**
-     * Set the comparison wait action.
-     * Check that the wait action is valid with the isWaitAction method and that the waiter is not
-     * running.
+     * Set the comparison wait action checking that the wait action is valid and 
+     * that the waiter is not running.
      *
-     * @param waitAction Comparison wait action.
+     * @param waitAction The comparison wait action.
      */
     public void setWaitAction(byte waitAction) {
         if (this.isFinished()) {
@@ -83,27 +84,26 @@ public class WaitDigitalSensor extends WaitSensor {
         }
     }
 
-    // -------------------------------------------------------------------------------- Constructors
+    // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Create the wait digital sensor with the comparison wait action.
+     * Constructor method, creates the wait with the comparison wait action.
      *
-     * @param waitAction Comparison wait action.
+     * @param waitAction The comparison wait action.
      */
     public WaitDigitalSensor(byte waitAction) {
         setWaitAction(waitAction);
     }
 
-    // -------------------------------------------------------------------------------- Help Methods
+    // ------------------------------------------------------------------------- Help Methods
 
     /**
-     * Is wait action.
-     * Check if the value is equals the pressed or released or clicked value.
+     * Checks that the comparison wait action is valid.
      *
-     * @param waitAction Wait action to check.
-     * @return True if the value is a waitAction.
+     * @param waitAction The wait action to check.
+     * @return True if the value is a valid action.
      */
-    public boolean isWaitAction(byte waitAction) {
+    private boolean isWaitAction(byte waitAction) {
         if (waitAction == PRESSED || waitAction == RELEASED || waitAction == CLICKED) {
             return true;
         }
@@ -111,16 +111,54 @@ public class WaitDigitalSensor extends WaitSensor {
     }
 
     /**
-     * Is button pressed.
+     * Pressed button, used to return true when the button is pressed.
      *
-     * @return True if button is pressed.
+     * @return True if the button is pressed.
      */
-    public boolean isPressedSensor() {
+    private boolean isPressedButton() {
         return true;
     }
+    
+    /**
+     * Method that wait for the pression of the button.
+     * 
+     * @throws InterruptedException If an interrupted exception occurred.
+     */
+    protected void buttonPressedAction() throws InterruptedException {
+        if (!this.isPressedButton()) {
+            while (!this.isPressedButton()) {
+                sleep(WAIT_TIME);
+            }
+            this.setFinished(true);
+        }
+    }
 
-    // ----------------------------------------------------------------------------- General Methods
+    /**
+     * Method that wait for the release of the button.
+     * 
+     * @throws InterruptedException If an interrupted exception occurred.
+     */
+    protected void buttonReleasedAction() throws InterruptedException {
+        if (this.isPressedButton()) {
+            while (this.isPressedButton()) {
+                Thread.sleep(WAIT_TIME);
+            }
+            this.setFinished(true);
+        }
+    }
 
+    /**
+     * Method that wait for the click of the button (pressed and released).
+     * 
+     * @throws InterruptedException If an interrupted exception occurred.
+     */
+    protected void buttonClickedAction() throws InterruptedException {
+        this.buttonPressedAction();
+        this.buttonReleasedAction();
+    }
+
+    // ------------------------------------------------------------------------- General Methods
+    
     @Override
     public void run() {
         while (this.isFinished()) {
@@ -132,47 +170,10 @@ public class WaitDigitalSensor extends WaitSensor {
                 } else if (this.getWaitAction() == CLICKED) {
                     this.buttonClickedAction();
                 }
-                Thread.sleep(WAIT_TIME);
+                sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {
-
             }
         }
     }
-
-    /**
-     * Button pressed action.
-     */
-    protected void buttonPressedAction() throws InterruptedException {
-        if (!this.isPressedSensor()) {
-            while (!this.isPressedSensor()) {
-                Thread.sleep(WAIT_TIME);
-            }
-
-            this.setFinished(true);
-        }
-    }
-
-    /**
-     * Button released action.
-     */
-    protected void buttonReleasedAction() throws InterruptedException {
-        if (this.isPressedSensor()) {
-            while (this.isPressedSensor()) {
-                Thread.sleep(WAIT_TIME);
-            }
-
-            this.setFinished(true);
-        }
-    }
-
-    /**
-     * Button clicked aciton.
-     */
-    protected void buttonClickedAction() throws InterruptedException {
-        this.buttonPressedAction();
-        this.buttonReleasedAction();
-    }
-
-    // --------------------------------------------------------------------------- Static Components
 
 }
