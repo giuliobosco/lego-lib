@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 SAMT.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,79 +21,102 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package ch.ti.cpttrevano.samt.legolib.motor;
 
 import lejos.nxt.NXTRegulatedMotor;
 import lejos.nxt.Motor;
 
 /**
- * Class for manage a single motor of the NXT brick.
- * In the Lego Mindstorm Environment is rappresented by the green block "Motor".
+ * Management of a motor in a NXT brick.
+ * In the LEGO Mindstorms environment is represented by the green block "Motor".
  *
  * @author giuliobosco
- * @version 1.3
+ * @author gabrialessi
+ * @version 2.0
  */
 public class SingleMotor {
 
-    // ------------------------------------------------------------------------------------ Costants
-
+    // ------------------------------------------------------------------------- Constants
+    
+    
     /**
-     * Mindstorm NXT motor port A.
+     * NXT brick motor port A.
      */
     public final static char PORT_A = 'A';
 
     /**
-     * Mindstorm NXT motor port B.
+     * NXT brick motor port B.
      */
     public final static char PORT_B = 'B';
 
     /**
-     * Mindstorm NXT motor port C.
+     * NXT brick motor port C.
      */
     public final static char PORT_C = 'C';
 
     /**
-     * Minimum motor power.
+     * Defines the minimum motor power.
      */
     public final static byte MIN_POWER = 0;
 
     /**
-     * Maximum motor power.
+     * Defines the maximum motor power.
      */
     public final static byte MAX_POWER = 100;
 
-    // ---------------------------------------------------------------------------------- Attributes
+    // ------------------------------------------------------------------------- Fields
 
     /**
-     * Motor port on the NXT brick of the single motor.
+     * The port on the NXT brick of the single motor.
      */
     private char motorPort;
 
     /**
-     * Motor connected to the brick.
+     * The motor connected to the brick.
      */
     private NXTRegulatedMotor motor;
 
     /**
-     * Power of the motor.
+     * The power of the motor.
      */
     private byte power;
 
-    // --------------------------------------------------------------------------- Getters & Setters
+    // ------------------------------------------------------------------------- Getters
 
     /**
-     * Get the Motor port on the NXT brick of the single motor.
+     * Get the motor port on the NXT brick of the single motor.
      *
-     * @return Motor port on the NXT brick of the single motor.
+     * @return The port where the motor is connected.
      */
     public char getMotorPort() {
         return this.motorPort;
     }
+    
+    /**
+     * Get the motor connected to the brick.
+     *
+     * @return The motor connected to the brick.
+     */
+    public NXTRegulatedMotor getMotor() {
+        return this.motor;
+    }
 
     /**
-     * Setter the motor port on the NXT brick of the single motor.
+     * Get the power of the motor.
      *
-     * @param motorPort Motor port on the NXT brick of the single motor.
+     * @return The power of the motor.
+     */
+    public byte getPower() {
+        return this.power;
+    }
+    
+    // ------------------------------------------------------------------------- Setters
+
+    /**
+     * Set the motor port on the NXT brick of the single motor.
+     *
+     * @param motorPort The port where the motor is connected.
      */
     private void setMotorPort(char motorPort) {
         if (this.isMotorPort(motorPort)) {
@@ -103,18 +126,9 @@ public class SingleMotor {
     }
 
     /**
-     * Get the motor connected to the brick.
-     *
-     * @return Motor connected to the brick.
-     */
-    public NXTRegulatedMotor getMotor() {
-        return this.motor;
-    }
-
-    /**
      * Set the motor connected to the brick.
      *
-     * @param motor Motor connected to the brick.
+     * @param motor The motor connected to the brick.
      */
     private void setMotor(NXTRegulatedMotor motor) {
         this.motor = motor;
@@ -123,11 +137,10 @@ public class SingleMotor {
     /**
      * Set the motor connected to the brick.
      *
-     * @param motorPort Motor port on the NXT brick of the single motor.
+     * @param motorPort The port where the motor is connected.
      */
     private void setMotor(char motorPort) {
         this.motorPort = motorPort;
-
         if (motorPort == PORT_A) {
             this.setMotor(Motor.A);
         } else if (motorPort == PORT_B) {
@@ -138,102 +151,88 @@ public class SingleMotor {
     }
 
     /**
-     * Get the power of the motor.
-     *
-     * @return Power of the motor
-     */
-    public byte getPower() {
-        return this.power;
-    }
-
-    /**
      * Set the power of the motor.
      *
-     * @param power Power of the motor.
+     * @param power The power of the motor.
      */
     public void setPower(byte power) {
         if (power > MAX_POWER) {
-            this.power = MAX_POWER;
+            power = MAX_POWER;
         } else if (power < MIN_POWER) {
-            this.power = MIN_POWER;
-        } else {
-            this.power = power;
+            power = MIN_POWER;
         }
-
+        this.power = power;
         this.getMotor().setSpeed(this.getPower());
     }
+
+    // ------------------------------------------------------------------------- Constructors
+
+    /**
+     * Constructor method, creates the single motor with the motor port.
+     *
+     * @param port The single motor port.
+     */
+    public SingleMotor(char port) {
+        this.setMotorPort(port);
+    }
+
+    // ------------------------------------------------------------------------- Help Methods
 
     /**
      * Check if the motor port passed as parameter exists on the NXT brick.
      *
-     * @param motorPort Motor port on the NXT brick to check if exists.
+     * @param motorPort The motor port on the NXT brick to check if exists.
      * @return True if the motor port exists on the NXT brick, otherwise false.
      */
     public boolean isMotorPort(char motorPort) {
         if (motorPort == PORT_A || motorPort == PORT_B || motorPort == PORT_C) {
             return true;
         }
-
         return false;
     }
 
-    // -------------------------------------------------------------------------------- Constructors
-
     /**
-     * Initialize the single motor with the motor port.
+     * Increases the power of the motor.
      *
-     * @param port Single motor port.
-     */
-    public SingleMotor(char port) {
-        this.setMotorPort(port);
-    }
-
-    // -------------------------------------------------------------------------------- Help Methods
-
-    /**
-     * Increase the power of the value.
-     *
-     * @param value Value to increase the power.
+     * @param value The value to increase the power.
      */
     public void increasePower(byte value) {
         this.setPower((byte) (this.getPower() + value));
     }
 
     /**
-     * Decrease the power of the value.
+     * Decreases the power of the motor.
      *
-     * @param value Value to decrease the power.
+     * @param value The value to decrease the power.
      */
     public void decreasePower(byte value) {
         this.setPower((byte) (this.getPower() - value));
     }
 
-    // ----------------------------------------------------------------------------- General Methods
+    // ------------------------------------------------------------------------- General Methods
 
     /**
-     * Start the motor.
+     * Starts the motor.
      */
     public void start() {
-        this.motor.forward();
-        this.motor.setSpeed(this.power);
+        this.getMotor().forward();
+        this.getMotor().setSpeed(this.getPower());
     }
 
     /**
-     * Stop the motor.
+     * Stops the motor.
      */
     public void stop() {
-        this.motor.stop();
+        this.getMotor().stop();
     }
 
     /**
-     * Rotate of angle.
+     * Rotate the motor by an angle.
      *
-     * @param angle Angle
+     * @param angle The angle of the rotation.
      */
     public void rotate(int angle) {
         this.getMotor().rotate(angle);
     }
-
-    // --------------------------------------------------------------------------- Static Components
 
 }
