@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 SAMT.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,33 +21,37 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package ch.ti.cpttrevano.samt.legolib.wait;
 
 /**
- * WaitSensor, used for generalization of all waiting sensor class.
- * In the Lego Mindstorm Environment is rappresented by the orange block "Wait".
+ * WaitSensor, used to generalize all sensor waiting classes.
+ * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author giuliobosco
- * @version 1.0.1
+ * @author gabrialessi
+ * @version 2.0
  */
 public class WaitSensor extends Wait {
 
-    // ------------------------------------------------------------------------------------ Costants
-    // ---------------------------------------------------------------------------------- Attributes
-    // --------------------------------------------------------------------------- Getters & Setters
-    // -------------------------------------------------------------------------------- Constructors
-    // -------------------------------------------------------------------------------- Help Methods
-    // ----------------------------------------------------------------------------- General Methods
+    // ------------------------------------------------------------------------- Constants
+    
+    // ------------------------------------------------------------------------- Fields
+    
+    // ------------------------------------------------------------------------- Getters
+    
+    // ------------------------------------------------------------------------- Setters
+    
+    // ------------------------------------------------------------------------- Constructors
+    
+    // ------------------------------------------------------------------------- Help Methods
+    
+    // ------------------------------------------------------------------------- General Methods
 
-    /**
-     * Begin the wait of the ultrasonic sensor, sets false the finished variable.
-     */
     @Override
-    public void beginWait() {
+    public void startWait() {
         this.setFinished(false);
         this.start();
     }
-
-    // --------------------------------------------------------------------------- Static Components
     
 }
