@@ -30,7 +30,7 @@ package ch.ti.cpttrevano.samt.legolib.wait;
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 1.1
+ * @version 2.0
  */
 public class WaitAnalogSensor extends WaitSensor {
     
