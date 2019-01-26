@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 giuliobosco.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,67 +26,67 @@ package ch.ti.cpttrevano.samt.legolib.motor;
 
 /**
  * Navigation with NXT brick.
- * In the Lego Mindstorm Environment is rappresented by the green block "Move".
+ * In the LEGO Mindstorms environment is represented by the green block "Move".
  *
  * @author giuliobosco
- * @version 1.5
+ * @author gabrialessi
+ * @version 2.0
  */
 public class Navigation extends Thread {
-    // ------------------------------------------------------------------------------------ Costants
+    
+    // ------------------------------------------------------------------------- Constants
 
     /**
-     * Turning of the navigation.
+     * The default turning of the navigation.
      */
     public static final byte TURNING = 10;
 
     /**
-     * Minimum navigation turning.
+     * The minimum navigation turning.
      */
     public static final byte MIN_TURNING = SingleMotor.MIN_POWER;
 
     /**
-     * Maximum navigation turning.
+     * The maximum navigation turning.
      */
     public static final byte MAX_TURNING = SingleMotor.MAX_POWER;
 
-    // ---------------------------------------------------------------------------------- Attributes
+    // ------------------------------------------------------------------------- Fields
 
     /**
-     * Power of the navigation.
+     * The power of the navigation.
      */
     private byte power;
 
     /**
-     * Turning of the navigation.
+     * The turning of the navigation.
      */
     private byte turning;
 
     /**
-     * Navigation left motor.
+     * The left motor of the navigation.
      */
     private SingleMotor leftMotor;
 
     /**
-     * Navigation right motor.
+     * The right motor of the navigation.
      */
     private SingleMotor rightMotor;
 
-    // --------------------------------------------------------------------------- Getters & Setters
+    // ------------------------------------------------------------------------- Getters
 
     /**
      * Set the power of the navigation.
      *
-     * @param power Power of the navigation.
+     * @param power The power of the navigation.
      */
     public void setPower(byte power) {
-        if (power > SingleMotor.MAX_POWER) {
-            this.power = SingleMotor.MAX_POWER;
-        } else if (power < SingleMotor.MIN_POWER) {
-            this.power = SingleMotor.MIN_POWER;
-        } else {
-            this.power = power;
+        if (power > MAX_TURNING) {
+            power = MAX_TURNING;
+        } else if (power < MIN_TURNING) {
+            power = MIN_TURNING;
         }
-
+        this.power = power;
         this.updatePowerMotors();
     }
 
