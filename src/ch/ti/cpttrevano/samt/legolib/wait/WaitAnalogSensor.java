@@ -42,17 +42,16 @@ public class WaitAnalogSensor extends WaitSensor {
     public static final byte SENSOR_MIN_VALUE = 0;
 
     /**
-     * Defines the minimum value that an analog sensor can read.
+     * Defines the maximum value that an analog sensor can read.
      */
     public static final byte SENSOR_MAX_VALUE = 100;
 
     // ------------------------------------------------------------------------- Fields
 
     /**
-     * Value chosen by the user that is compared with the one read by the 
-     * sensor.
+     * User-defined value that is compared with the one read by the sensor.
      */
-    private byte value;
+    private byte checkValue;
     
     /**
      * If this is true, the comparison value must be bigger than the read value.
@@ -63,18 +62,18 @@ public class WaitAnalogSensor extends WaitSensor {
     // ------------------------------------------------------------------------- Getters
 
     /**
-     * Get the comparison value chosen by the user.
+     * Get the comparison value.
      *
      * @return The comparison value.
      */
-    public byte getValue() {
-        return this.value;
+    public byte getCheckValue() {
+        return this.checkValue;
     }
     
     /**
-     * To know if the read values is bigger than the comparison value.
+     * To know if the read value must be bigger than the comparison value.
      *
-     * @return The bigger value.
+     * @return The bigger field.
      */
     public boolean isBigger() {
         return this.bigger;
@@ -86,18 +85,18 @@ public class WaitAnalogSensor extends WaitSensor {
      * Set the comparison value, checks that the value is in the range of an
      * analog sensor and that the wait is finished.
      *
-     * @param value The comparison value.
+     * @param checkValue The comparison value.
      */
-    public void setValue(byte value) {
+    public void setCheckValue(byte checkValue) {
         if (this.isFinished()) {
-            if (value >= SENSOR_MIN_VALUE && value <= SENSOR_MAX_VALUE) {
-                this.value = value;
+            if (checkValue >= SENSOR_MIN_VALUE && checkValue <= SENSOR_MAX_VALUE) {
+                this.checkValue = checkValue;
             }
         }
     }
     
     /**
-     * Set the bigger field, checks that the wait is finished.
+     * Set the bigger field checking that the wait is finished.
      *
      * @param bigger If is bigger than the comparison value.
      */
@@ -107,18 +106,18 @@ public class WaitAnalogSensor extends WaitSensor {
         }
     }
 
-    // -------------------------------------------------------------------------------- Constructors
+    // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, creates a new wait by setting the fields bigger and
-     * the comparison value.
+     * Constructor method, creates a new wait by setting the comparison value 
+     * and if it must be bigger than the value read by the sensor.
      *
      * @param bigger If is bigger than the comparison value.
-     * @param value The comparison value.
+     * @param checkValue The comparison value.
      */
-    WaitAnalogSensor(boolean bigger, byte value) {
+    WaitAnalogSensor(boolean bigger, byte checkValue) {
         this.setBigger(bigger);
-        this.setValue(value);
+        this.setCheckValue(checkValue);
     }
 
     // ------------------------------------------------------------------------- Help Methods
