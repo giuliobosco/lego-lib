@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 gabrialessi.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,73 +21,74 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package ch.ti.cpttrevano.samt.legolib.wait;
 
 import lejos.nxt.Button;
 
 /**
- * Wait the NXT button.
+ * WaitNxtButton, used to wait for a button pressing.
+ * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 2.0
+ * @version 3.0
  */
 public class WaitNxtButton extends WaitDigitalSensor {
 
-    // ------------------------------------------------------------------------------------ Costants
-    // ---------------------------------------------------------------------------------- Attributes
+    // ------------------------------------------------------------------------- Constants
+    
+    // ------------------------------------------------------------------------- Fields
 
     /**
-     * Button.
+     * The button of a NXT brick.
      */
-    private Button button;
+    private Button nxtButton;
 
-    // --------------------------------------------------------------------------- Getters & Setters
+    // ------------------------------------------------------------------------- Getters
 
     /**
-     * Set the button.
+     * Get the NXT button.
      *
-     * @param button Button.
+     * @return The NXT button.
      */
-    public void setButton(Button button) {
+    public Button getNxtButton() {
+        return this.nxtButton;
+    }
+    
+    // ------------------------------------------------------------------------- Setters
+    
+    /**
+     * Set the NXT button.
+     *
+     * @param nxtButton The NXT button.
+     */
+    public void setNxtButton(Button nxtButton) {
         if (this.isFinished()) {
-            this.button = button;
+            this.nxtButton = nxtButton;
         }
     }
 
-    /**
-     * Get the button.
-     *
-     * @return Button.
-     */
-    public Button getButton() {
-        return this.button;
-    }
-
-    // -------------------------------------------------------------------------------- Constructors
+    // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Create the wait NXT button with the comparison wait action and button.
+     * Constructor method, defines the action to wait and the NXT button.
      *
-     * @param waitAction Wait action.
-     * @param button Button.
+     * @param waitAction The wait action.
+     * @param nxtButton The NXT button.
      */
-    public WaitNxtButton(byte waitAction, Button button) {
+    public WaitNxtButton(byte waitAction, Button nxtButton) {
         super(waitAction);
-        setButton(button);
+        this.setNxtButton(nxtButton);
     }
 
-    // -------------------------------------------------------------------------------- Help Methods
+    // ------------------------------------------------------------------------- Help Methods
 
-    /**
-     * Is the button pressed.
-     *
-     * @return True if the button is pressed.
-     */
-    public boolean isPressedSensor() {
-        return this.getButton().isDown();
+    // ------------------------------------------------------------------------- General Methods
+    
+    @Override
+    protected boolean isPressedButton() {
+        return this.getNxtButton().isDown();
     }
-
-    // ----------------------------------------------------------------------------- General Methods
-    // --------------------------------------------------------------------------- Static Components
+    
 }
