@@ -125,13 +125,13 @@ public class Navigation extends Thread {
         this.updatePowerMotors();
     }
 
-    // -------------------------------------------------------------------------------- Constructors
+    // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Create the navigation with the left and right motor.
+     * Constructor method, creates the navigation with the left and right motor.
      *
-     * @param leftMotor  Navigation left motor.
-     * @param rightMotor Navigation right motor.
+     * @param leftMotor The left motor.
+     * @param rightMotor The right motor.
      */
     public Navigation(SingleMotor leftMotor, SingleMotor rightMotor) {
         this.leftMotor = leftMotor;
@@ -139,114 +139,110 @@ public class Navigation extends Thread {
     }
 
     /**
-     * Create the navigation with the left and right motors ports.
+     * Constructor method, creates the navigation with the ports of the motors.
      *
-     * @param leftMotor  Navigation left motor port.
-     * @param rightMotor Navigation right motor port.
+     * @param leftMotor The port of the left motor.
+     * @param rightMotor The port of the right motor.
      */
     public Navigation(char leftMotor, char rightMotor) {
         this(new SingleMotor(leftMotor), new SingleMotor(rightMotor));
     }
 
-    // -------------------------------------------------------------------------------- Help Methods
+    // ------------------------------------------------------------------------- Help Methods
 
     /**
-     * Update the power to the navigation motors and also update the motors.
+     * Updates the power and consequently the turning of the motors.
      */
     private void updatePowerMotors() {
         this.leftMotor.setPower(this.getPower());
         this.rightMotor.setPower(this.getPower());
-
         this.updateTurningMotors();
     }
 
     /**
-     * Update the turning to the navigation motors.
+     * Updates the turning of the motors.
      */
     private void updateTurningMotors() {
         if (this.getTurning() > 0) {
             this.leftMotor.decreasePower(this.getTurning());
             this.rightMotor.increasePower(this.getTurning());
         } else {
-            this.leftMotor.increasePower((byte) -this.getTurning());
-            this.rightMotor.decreasePower((byte) -this.getTurning());
+            this.leftMotor.increasePower((byte) - this.getTurning());
+            this.rightMotor.decreasePower((byte) - this.getTurning());
         }
     }
 
     /**
-     * Increase the power of the navigation.
+     * Increases the power of the navigation.
      *
-     * @param value Value to increase the power of the navigation.
+     * @param value The increase power value.
      */
     public void increasePower(byte value) {
         this.setPower((byte) (this.getPower() + value));
     }
 
     /**
-     * Decrease the power of the navigation.
+     * Decreases the power of the navigation.
      *
-     * @param value Value to decrease the power of the navigation.
+     * @param value The decrease power value.
      */
     public void decreasePower(byte value) {
         this.setPower((byte) (this.getPower() - value));
     }
 
     /**
-     * Increase the turning of the navigation.
+     * Increases the turning of the navigation.
      *
-     * @param value Value to increase the turning of the navigation.
+     * @param value The increase turning value.
      */
     public void increaseTurning(byte value) {
         this.setTurning((byte) (this.getTurning() + value));
     }
 
     /**
-     * Decrease the turning of the navigation.
+     * Decreases the turning of the navigation.
      *
-     * @param value Value to decrease the turning of the navigation.
+     * @param value The increase turning value.
      */
     public void decreaseTurning(byte value) {
         this.setTurning((byte) (this.getTurning() - value));
     }
 
     /**
-     * Turn the navigation left.
+     * Turn the navigation to left.
      *
-     * @param turning Value to turn left.
+     * @param turning The value to turn to left.
      */
     public void left(byte turning) {
         this.decreasePower(turning);
     }
 
     /**
-     * Turn the navigation right.
+     * Turn the navigation to right.
      *
-     * @param turning Value to turn right.
+     * @param turning The value to turn to right.
      */
     public void right(byte turning) {
         this.increasePower(turning);
     }
 
-    // ----------------------------------------------------------------------------- General Methods
+    // ------------------------------------------------------------------------- General Methods
 
     /**
-     * Start the navigation.
+     * Starts the navigation.
      */
     public void startNavigation() {
         this.leftMotor.start();
         this.rightMotor.start();
-
         this.setPower((byte) 0);
     }
 
     /**
-     * Stop the navigation.
+     * Stops the navigation.
      */
     public void stopNavigation() {
         this.leftMotor.start();
         this.rightMotor.start();
     }
-
-    // --------------------------------------------------------------------------- Static Components
 
 }
