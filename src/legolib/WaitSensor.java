@@ -21,36 +21,37 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package ch.ti.cpttrevano.samt.legolib.test;
 
-import ch.ti.cpttrevano.samt.legolib.wait.WaitUltrasonicSensor;
-import lejos.nxt.SensorPort;
-import lejos.nxt.UltrasonicSensor;
+package legolib;
 
 /**
- * Test the wait of the ultrasonic sensor.
+ * WaitSensor, used to generalize all sensor waiting classes.
+ * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
- * @author gabrialessi
  * @author giuliobosco
- * @version 1.0
+ * @author gabrialessi
+ * @version 2.0
  */
-public class WaitUltrasonicSensorTest {
+public class WaitSensor extends Wait {
 
-    public static void main(String[] args) {
+    // ------------------------------------------------------------------------- Constants
+    
+    // ------------------------------------------------------------------------- Fields
+    
+    // ------------------------------------------------------------------------- Getters
+    
+    // ------------------------------------------------------------------------- Setters
+    
+    // ------------------------------------------------------------------------- Constructors
+    
+    // ------------------------------------------------------------------------- Help Methods
+    
+    // ------------------------------------------------------------------------- General Methods
 
-        // Set a new ultrasonic sensor on port 1
-        UltrasonicSensor ultrasonic = new UltrasonicSensor(SensorPort.S1);
-
-        // Set the value to read to 50
-        byte value = 50;
-
-        // The value must be bigger
-        boolean bigger = true;
-
-        // New wait for the ultrasonic sensor
-        WaitUltrasonicSensor wait = new WaitUltrasonicSensor(bigger, value, ultrasonic);
-
-        // Start the wait
-        wait.start();
+    @Override
+    public void startWait() {
+        this.setFinished(false);
+        this.start();
     }
+    
 }

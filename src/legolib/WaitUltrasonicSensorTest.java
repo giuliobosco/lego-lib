@@ -21,31 +21,33 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package ch.ti.cpttrevano.samt.legolib.test;
+package legolib;
 
-import ch.ti.cpttrevano.samt.legolib.wait.WaitTouchSensor;
 import lejos.nxt.SensorPort;
-import lejos.nxt.TouchSensor;
+import lejos.nxt.UltrasonicSensor;
 
 /**
- * Test the wait of the touch sensor.
+ * Test the wait of the ultrasonic sensor.
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 1.1
+ * @version 1.0
  */
-public class WaitTouchSensorTest {
+public class WaitUltrasonicSensorTest {
 
     public static void main(String[] args) {
 
-        // Set a new touch sensor on port 1
-        TouchSensor touch = new TouchSensor(SensorPort.S1);
+        // Set a new ultrasonic sensor on port 1
+        UltrasonicSensor ultrasonic = new UltrasonicSensor(SensorPort.S1);
 
-        // Set the wait action to 2 (CLICKED)
-        byte action = 2;
+        // Set the value to read to 50
+        byte value = 50;
 
-        // New wait for the touch sensor
-        WaitTouchSensor wait = new WaitTouchSensor(action, touch);
+        // The value must be bigger
+        boolean bigger = true;
+
+        // New wait for the ultrasonic sensor
+        WaitUltrasonicSensor wait = new WaitUltrasonicSensor(bigger, value, ultrasonic);
 
         // Start the wait
         wait.start();

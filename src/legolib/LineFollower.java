@@ -22,11 +22,7 @@
  * THE SOFTWARE.
  */
 
-package ch.ti.cpttrevano.samt.legolib.linefollower;
-
-import ch.ti.cpttrevano.samt.legolib.motor.Navigation;
-import ch.ti.cpttrevano.samt.legolib.motor.SingleMotor;
-import ch.ti.cpttrevano.samt.legolib.wait.WaitLightSensor;
+package legolib;
 
 /**
  * LineFollower, uses a motor and a light sensor to follow a line.

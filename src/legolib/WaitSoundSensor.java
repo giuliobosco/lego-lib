@@ -22,106 +22,98 @@
  * THE SOFTWARE.
  */
 
-package ch.ti.cpttrevano.samt.legolib.wait;
+package legolib;
+
+import lejos.nxt.SensorPort;
+import lejos.nxt.SoundSensor;
 
 /**
- * WaitAnalogSensor, used to generalize all analog sensor waiting classes.
+ * WaitAnalogSensor, used to wait a sound sensor (microphone).
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author giuliobosco
  * @author gabrialessi
  * @version 2.0
  */
-public class WaitAnalogSensor extends WaitSensor {
+public class WaitSoundSensor extends WaitAnalogSensor {
     
     // ------------------------------------------------------------------------- Constants
-
-    /**
-     * Defines the minimum value that an analog sensor can read.
-     */
-    public static final byte SENSOR_MIN_VALUE = 0;
-
-    /**
-     * Defines the maximum value that an analog sensor can read.
-     */
-    public static final byte SENSOR_MAX_VALUE = 100;
-
+    
     // ------------------------------------------------------------------------- Fields
 
     /**
-     * User-defined value that is compared with the one read by the sensor.
+     * The sound sensor.
      */
-    private byte checkValue;
-    
-    /**
-     * If this is true, the comparison value must be bigger than the read value.
-     * Otherwise the comparison value must be smaller than the read value.
-     */
-    private boolean bigger;
+    private SoundSensor soundSensor;
 
     // ------------------------------------------------------------------------- Getters
-
-    /**
-     * Get the comparison value.
-     *
-     * @return The comparison value.
-     */
-    public byte getCheckValue() {
-        return this.checkValue;
-    }
     
     /**
-     * To know if the read value must be bigger than the comparison value.
+     * Get the sound sensor.
      *
-     * @return The bigger field.
+     * @return The sound sensor.
      */
-    public boolean isBigger() {
-        return this.bigger;
+    public SoundSensor getSoundSensor() {
+        return this.soundSensor;
     }
     
     // ------------------------------------------------------------------------- Setters
-    
+
     /**
-     * Set the comparison value, checks that the value is in the range of an
-     * analog sensor and that the wait is finished.
+     * Set the sound sensor.
      *
-     * @param checkValue The comparison value.
+     * @param soundSensor The suond sensor.
      */
-    public void setCheckValue(byte checkValue) {
+    public void setSoundSensor(SoundSensor soundSensor) {
         if (this.isFinished()) {
-            if (checkValue >= SENSOR_MIN_VALUE && checkValue <= SENSOR_MAX_VALUE) {
-                this.checkValue = checkValue;
-            }
-        }
-    }
-    
-    /**
-     * Set the bigger field checking that the wait is finished.
-     *
-     * @param bigger If is bigger than the comparison value.
-     */
-    public void setBigger(boolean bigger) {
-        if (this.isFinished()) {
-            this.bigger = bigger;
+            this.soundSensor = soundSensor;
         }
     }
 
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, creates a new wait by setting the comparison value 
-     * and if it must be bigger than the value read by the sensor.
+     * Constructor method, defines the sensor, the comparison value and if it 
+     * must be bigger than the value read by the sensor.
      *
      * @param bigger If is bigger than the comparison value.
      * @param checkValue The comparison value.
+     * @param soundSensor The sound sensor.
      */
-    WaitAnalogSensor(boolean bigger, byte checkValue) {
-        this.setBigger(bigger);
-        this.setCheckValue(checkValue);
+    public WaitSoundSensor(boolean bigger, byte checkValue, SoundSensor soundSensor) {
+        super(bigger, checkValue);
+        this.setSoundSensor(soundSensor);
+    }
+
+    /**
+     * Constructor method, defines the sensor port, the comparison value and if 
+     * it must be bigger than the value read by the sensor.
+     *
+     * @param bigger If is bigger than the comparison value.
+     * @param checkValue The comparison value.
+     * @param sensorPort The port where the sensor is connected.
+     */
+    public WaitSoundSensor(boolean bigger, byte checkValue, SensorPort sensorPort) {
+        this(bigger, checkValue, new SoundSensor(sensorPort));
     }
 
     // ------------------------------------------------------------------------- Help Methods
     
     // ------------------------------------------------------------------------- General Methods
+
+    @Override
+    public void run() {
+        while (this.isFinished()) {
+            try {
+                if (this.isBigger()) {
+                    this.setFinished(this.getSoundSensor().readValue() > this.getCheckValue());
+                } else {
+                    this.setFinished(this.getSoundSensor().readValue() < this.getCheckValue());
+                }
+                sleep(WAIT_TIME);
+            } catch (InterruptedException ignored) {
+            }
+        }
+    }
 
 }

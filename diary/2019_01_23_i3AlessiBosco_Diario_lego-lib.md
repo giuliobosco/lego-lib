@@ -16,7 +16,7 @@ Il seguente è lo stile adottato per il codice e la Javadoc:
  * ...
  */
 
-package ch.ti.cpttrevano.samt.legolib.wait;
+package legolib.wait;
 
 /**
  * Wait class, used to generalize all waiting classes.

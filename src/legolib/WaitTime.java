@@ -22,36 +22,103 @@
  * THE SOFTWARE.
  */
 
-package ch.ti.cpttrevano.samt.legolib.wait;
+package legolib;
 
 /**
- * WaitSensor, used to generalize all sensor waiting classes.
+ * WaitTime, used to wait time (milliseconds).
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author giuliobosco
  * @author gabrialessi
  * @version 2.0
  */
-public class WaitSensor extends Wait {
+public class WaitTime extends Wait {
 
     // ------------------------------------------------------------------------- Constants
     
     // ------------------------------------------------------------------------- Fields
-    
+
+    /**
+     * The time to wait (in milliseconds).
+     */
+    private long waitTime;
+
+    /**
+     * The starting time.
+     */
+    private long startTime;
+
     // ------------------------------------------------------------------------- Getters
+
+    /**
+     * Get the time to wait.
+     *
+     * @return The time to wait.
+     */
+    public long getWaitTime() {
+        return this.waitTime;
+    }
+
+    /**
+     * Get the start time.
+     *
+     * @return The start time.
+     */
+    public long getStartTime() {
+        return this.startTime;
+    }
     
     // ------------------------------------------------------------------------- Setters
     
+    /**
+     * Set the time to wait checking that the wait is finished.
+     *
+     * @param waitTime The time to wait.
+     */
+    protected void setWaitTime(long waitTime) {
+        if (this.isFinished()) {
+            this.waitTime = waitTime;
+        }
+    }
+
+    /**
+     * Set the start time after doing checks.
+     *
+     * @param startTime The start time.
+     */
+    protected void setStartTime(long startTime) {
+        if (this.getStartTime() > System.currentTimeMillis() && this.isFinished()) {
+            this.startTime = startTime;
+        }
+    }
+
     // ------------------------------------------------------------------------- Constructors
-    
+
+    /**
+     * Constructor method, defines the time to wait.
+     *
+     * @param waitTime The time to wait.
+     */
+    public WaitTime(long waitTime) {
+        setWaitTime(waitTime);
+    }
+
     // ------------------------------------------------------------------------- Help Methods
     
     // ------------------------------------------------------------------------- General Methods
 
     @Override
     public void startWait() {
-        this.setFinished(false);
-        this.start();
+        this.setStartTime(System.currentTimeMillis());
     }
-    
+
+    @Override
+    public boolean isFinished() {
+        if (this.getStartTime() + this.getWaitTime() >= System.currentTimeMillis()) {
+            this.setWaitTime(Long.MAX_VALUE - getStartTime());
+            return true;
+        }
+        return false;
+    }
+
 }

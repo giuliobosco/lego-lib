@@ -22,85 +22,73 @@
  * THE SOFTWARE.
  */
 
-package ch.ti.cpttrevano.samt.legolib.wait;
+package legolib;
 
-import lejos.nxt.SensorPort;
-import lejos.nxt.TouchSensor;
+import lejos.nxt.Button;
 
 /**
- * WaitTouchSensor, used to wait the press of a touch sensor.
+ * WaitNxtButton, used to wait for a button pressing.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 4.0
+ * @version 3.0
  */
-public class WaitTouchSensor extends WaitDigitalSensor {
+public class WaitNxtButton extends WaitDigitalSensor {
 
     // ------------------------------------------------------------------------- Constants
     
     // ------------------------------------------------------------------------- Fields
-    
+
     /**
-     * The touch sensor.
+     * The button of a NXT brick.
      */
-    private TouchSensor touchSensor;
+    private Button nxtButton;
 
     // ------------------------------------------------------------------------- Getters
 
     /**
-     * Get the touch sensor.
+     * Get the NXT button.
      *
-     * @return The touch sensor.
+     * @return The NXT button.
      */
-    public TouchSensor getTouchSensor() {
-        return this.touchSensor;
+    public Button getNxtButton() {
+        return this.nxtButton;
     }
     
     // ------------------------------------------------------------------------- Setters
-
+    
     /**
-     * Set the touch sensor.
+     * Set the NXT button.
      *
-     * @param touchSensor The touch sensor.
+     * @param nxtButton The NXT button.
      */
-    public void setTouchSensor(TouchSensor touchSensor) {
+    public void setNxtButton(Button nxtButton) {
         if (this.isFinished()) {
-            this.touchSensor = touchSensor;
+            this.nxtButton = nxtButton;
         }
     }
 
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, defines the action to wait and the touch sensor.
+     * Constructor method, defines the action to wait and the NXT button.
      *
      * @param waitAction The wait action.
-     * @param touchSensor The touch sensor.
+     * @param nxtButton The NXT button.
      */
-    public WaitTouchSensor(byte waitAction, TouchSensor touchSensor) {
+    public WaitNxtButton(byte waitAction, Button nxtButton) {
         super(waitAction);
-        setTouchSensor(touchSensor);
-    }
-
-    /**
-     * Constructor method, defines the action to wait and the port where the 
-     * touch sensor is connected.
-     *
-     * @param waitAction The wait action.
-     * @param sensorPort The port of the touch sensor.
-     */
-    public WaitTouchSensor(byte waitAction, SensorPort sensorPort) {
-        this(waitAction, new TouchSensor(sensorPort));
+        this.setNxtButton(nxtButton);
     }
 
     // ------------------------------------------------------------------------- Help Methods
 
-    @Override
-    public boolean isPressedButton() {
-        return this.getTouchSensor().isPressed();
-    }
-
     // ------------------------------------------------------------------------- General Methods
+    
+    @Override
+    protected boolean isPressedButton() {
+        return this.getNxtButton().isDown();
+    }
     
 }

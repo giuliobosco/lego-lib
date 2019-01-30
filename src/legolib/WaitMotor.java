@@ -22,79 +22,88 @@
  * THE SOFTWARE.
  */
 
-package ch.ti.cpttrevano.samt.legolib.wait;
-
-import lejos.nxt.LightSensor;
-import lejos.nxt.SensorPort;
+package legolib;
 
 /**
- * WaitLightSensor, used to wait a light sensor.
+ * WaitMotor, used to wait a motor action.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
- * @author giuliobosco
  * @author gabrialessi
- * @version 2.0
+ * @author giuliobosco
+ * @version 3.0
  */
-public class WaitLightSensor extends WaitAnalogSensor {
-    
+public class WaitMotor extends Wait {
+
     // ------------------------------------------------------------------------- Constants
     
     // ------------------------------------------------------------------------- Fields
 
     /**
-     * The light sensor
+     * The single motor.
      */
-    private LightSensor lightSensor;
-
-    // ------------------------------------------------------------------------- Getters
+    private SingleMotor singleMotor;
 
     /**
-     * Get the light sensor.
-     *
-     * @return The light sensor.
+     * User-defined value that is compared with the one got by the motor.
      */
-    public LightSensor getLightSensor() {
-        return this.lightSensor;
+    private int checkValue;
+
+    // ------------------------------------------------------------------------- Getters
+    
+    /**
+     * Get the single motor.
+     *
+     * @return The single Motor.
+     */
+    public SingleMotor getSingleMotor() {
+        return this.singleMotor;
+    }
+    
+    /**
+     * Get the comparison value.
+     *
+     * @return The comparison value.
+     */
+    public int getCheckValue() {
+        return this.checkValue;
     }
     
     // ------------------------------------------------------------------------- Setters
-    
+
     /**
-     * Set the light sensor.
+     * Set the single motor.
      *
-     * @param lightSensor The light sensor.
+     * @param singleMotor The single motor.
      */
-    public void setLightSensor(LightSensor lightSensor) {
+    public void setSingleMotor(SingleMotor singleMotor) {
         if (this.isFinished()) {
-            this.lightSensor = lightSensor;
+            this.singleMotor = singleMotor;
+        }
+    }
+
+    /**
+     * Set the comparison value.
+     *
+     * @param checkValue The comparison value.
+     */
+    public void setCheckValue(int checkValue) {
+        if (this.isFinished()) {
+            this.checkValue = checkValue;
         }
     }
 
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, defines the sensor, the comparison value and if it 
-     * must be bigger than the value read by the sensor.
+     * Constructor method, creates the wait by setting the motor and the 
+     * comparison value.
      *
-     * @param bigger If is bigger than the comparison value.
+     * @param singleMotor The single motor.
      * @param checkValue The comparison value.
-     * @param lightSensor The light sensor.
      */
-    public WaitLightSensor(boolean bigger, byte checkValue, LightSensor lightSensor) {
-        super(bigger, checkValue);
-        this.setLightSensor(lightSensor);
-    }
-
-    /**
-     * Constructor method, defines the sensor port, the comparison value and if 
-     * it must be bigger than the value read by the sensor.
-     *
-     * @param bigger If is bigger than the comparison value.
-     * @param checkValue The comparison value.
-     * @param sensorPort The port where the sensor is connected.
-     */
-    public WaitLightSensor(boolean bigger, byte checkValue, SensorPort sensorPort) {
-        this(bigger, checkValue, new LightSensor(sensorPort));
+    public WaitMotor(SingleMotor singleMotor, int checkValue) {
+        this.setSingleMotor(singleMotor);
+        this.setCheckValue(checkValue);
     }
 
     // ------------------------------------------------------------------------- Help Methods
@@ -105,12 +114,11 @@ public class WaitLightSensor extends WaitAnalogSensor {
     public void run() {
         while (this.isFinished()) {
             try {
-                if (this.isBigger()) {
-                    this.setFinished(this.getLightSensor().getLightValue() > this.getCheckValue());
-                } else {
-                    this.setFinished(this.getLightSensor().getLightValue() < this.getCheckValue());
+                int earlyRotations = this.getSingleMotor().getMotor().getTachoCount();
+                while (!(earlyRotations + this.getCheckValue() == earlyRotations)) {
+                    sleep(WAIT_TIME);
                 }
-                sleep(WAIT_TIME);
+                this.setFinished(true);
             } catch (InterruptedException ignored) {
             }
         }

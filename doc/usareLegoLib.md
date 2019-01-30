@@ -75,7 +75,7 @@ Il diagramma UML della classe:
 Esempio di utilizzo della classe in maniera **asincrona**:
 
 ```java
-import ch.ti.cpttrevano.samt.legolib.wait.WaitTime;
+import legolib.WaitTime;
 import lejos.nxt.Button;
 
 /**
@@ -85,6 +85,9 @@ import lejos.nxt.Button;
  * time. Sfurtta la funzione asincrona del classe.
  */
 public class UseWaitTimeAsynchron {
+    /**
+     * Metodo main della classe, avvia il programma
+     */
     public static void main(String[] args) {
         // creo il wait time con 2000 millisecondi di attesa
         WaitTime wt = new WaitTime(2000);
@@ -170,8 +173,8 @@ Il diagramma UML della classe:
 Esempio di utlizzo della classe in maniera **asincrona**:
 
 ```java
-import ch.ti.cpttrevano.samt.legolib.wait.WaitMotor;
-import ch.ti.cpttrevano.samt.legolib.motor.SingleMotor;
+import legolib.WaitMotor;
+import legolib.SingleMotor;
 import lejos.nxt.Button;
 
 /**

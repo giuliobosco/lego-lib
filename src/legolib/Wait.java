@@ -22,73 +22,86 @@
  * THE SOFTWARE.
  */
 
-package ch.ti.cpttrevano.samt.legolib.wait;
-
-import lejos.nxt.Button;
+package legolib;
 
 /**
- * WaitNxtButton, used to wait for a button pressing.
+ * Wait class, used to generalize all waiting classes.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
- * @author gabrialessi
  * @author giuliobosco
- * @version 3.0
+ * @author gabrialessi
+ * @version 2.0
  */
-public class WaitNxtButton extends WaitDigitalSensor {
-
-    // ------------------------------------------------------------------------- Constants
+public class Wait extends Thread {
     
-    // ------------------------------------------------------------------------- Fields
+    // ------------------------------------------------------------------------- Constants
 
     /**
-     * The button of a NXT brick.
+     * Constant that defines the time to wait (in milliseconds) before making a 
+     * new check to finish the wait.
      */
-    private Button nxtButton;
+    protected static final long WAIT_TIME = 100;
+
+    // ------------------------------------------------------------------------- Fields
+    
+    /**
+     * Field that tell if the wait is over.
+     */
+    private boolean finished;
 
     // ------------------------------------------------------------------------- Getters
-
+    
     /**
-     * Get the NXT button.
-     *
-     * @return The NXT button.
+     * Get the finished value.
+     * 
+     * @return The state of waiting (finished or not finished).
      */
-    public Button getNxtButton() {
-        return this.nxtButton;
+    public boolean isFinished() {
+        return this.finished;
     }
     
     // ------------------------------------------------------------------------- Setters
     
     /**
-     * Set the NXT button.
+     * Set the finished value.
      *
-     * @param nxtButton The NXT button.
+     * @param finished The state of waiting.
      */
-    public void setNxtButton(Button nxtButton) {
-        if (this.isFinished()) {
-            this.nxtButton = nxtButton;
-        }
+    protected void setFinished(boolean finished) {
+        this.finished = finished;
     }
 
     // ------------------------------------------------------------------------- Constructors
-
+    
     /**
-     * Constructor method, defines the action to wait and the NXT button.
-     *
-     * @param waitAction The wait action.
-     * @param nxtButton The NXT button.
+     * Constructor method, creates a new wait where the wait is not over.
      */
-    public WaitNxtButton(byte waitAction, Button nxtButton) {
-        super(waitAction);
-        this.setNxtButton(nxtButton);
+    public Wait() {
+        this.finished = false;
     }
 
     // ------------------------------------------------------------------------- Help Methods
-
+    
     // ------------------------------------------------------------------------- General Methods
     
-    @Override
-    protected boolean isPressedButton() {
-        return this.getNxtButton().isDown();
+    /**
+     * Main synchron wait method, where it waits until it's finished.
+     */
+    public void waiter() {
+        this.startWait();
+        try {
+            while (!this.isFinished()) {
+                sleep(WAIT_TIME);
+            }
+        } catch (InterruptedException ignored) {
+        }
+    }
+
+    /**
+     * Begin the asynchron wait.
+     */
+    public void startWait() {
+        this.setFinished(false);
     }
     
 }

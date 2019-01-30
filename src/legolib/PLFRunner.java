@@ -22,11 +22,8 @@
  * THE SOFTWARE.
  */
  
-package ch.ti.cpttrevano.samt.legolib.examples;
+package legolib;
 
-import ch.ti.cpttrevano.samt.legolib.linefollower.ProportionalLineFollower;
-import ch.ti.cpttrevano.samt.legolib.motor.SingleMotor;
-import ch.ti.cpttrevano.samt.legolib.wait.WaitTime;
 import lejos.nxt.LightSensor;
 import lejos.nxt.SensorPort;
 

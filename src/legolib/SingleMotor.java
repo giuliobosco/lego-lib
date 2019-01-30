@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package ch.ti.cpttrevano.samt.legolib.motor;
+package legolib;
 
 import lejos.nxt.NXTRegulatedMotor;
 import lejos.nxt.Motor;

@@ -22,10 +22,8 @@
  * THE SOFTWARE.
  */
 
-package ch.ti.cpttrevano.samt.legolib.linefollower;
+package legolib;
 
-import ch.ti.cpttrevano.samt.legolib.motor.Navigation;
-import ch.ti.cpttrevano.samt.legolib.motor.SingleMotor;
 import lejos.nxt.LightSensor;
 
 /**
