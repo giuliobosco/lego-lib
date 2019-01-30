@@ -16,6 +16,8 @@ verdi del'ambiente sviluppo Mindstorm NXT.
 
 # Installazione
 
+<div class="page-break"></div>
+
 # Com&apos;&egrave; strutturato
 
 Lego lib, principalmente è compreso di una libreria che rappresentano i blocchi arancioni e quelli
@@ -48,13 +50,16 @@ metodo il programma si ferma finch&eacute; la condizione non si avvera. (Richiam
 
 ![NXT Blocks](img/nxt-blocks/nxt-blocks.png)
 
+
+<div class="page-break"></div>
+
 ##### Wait Time
 
 <div class="clearfix">
     <div style="float:left">
-        <img width="120" src="img/nxt-blocks/wait-time.png">
+        <img style="width:65px" src="img/nxt-blocks/wait-time.png">
     </div>
-    <div style="float:left;; padding: 35px 0 0 30px; max-width:600px">
+    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
         Il blocco wait time dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
         classe&nbsp;`WaitTime`, la quale permette di aspettare del tempo, in millisecondi.
     </div>
@@ -62,20 +67,22 @@ metodo il programma si ferma finch&eacute; la condizione non si avvera. (Richiam
 
 <br>
 Il diagramma UML della classe:
-![WaitTime UML diagram](img/classes/WaitTime.png)
+
+<img src="img/classes/WaitTime.png">
 
 <br>
+
 Esempio di utilizzo della classe in maniera **asincrona**:
+
 ```java
 import ch.ti.cpttrevano.samt.legolib.wait.WaitTime;
 import lejos.nxt.Button;
 
 /**
  * Wait time example class.
- * Questa classe crea un wait time con 2000 millisecondi di
- * attesa, poi stampa ogni 100 millisecondi "Aspetto..."
- * finché non finisce il tempo della wait time. Sfurtta la
- * funzione asincrona del classe.
+ * Questa classe crea un wait time con 2000 millisecondi di attesa, poi stampa
+ * ogni 100 millisecondi "Aspetto..." finché non finisce il tempo della wait
+ * time. Sfurtta la funzione asincrona del classe.
  */
 public class UseWaitTimeAsynchron {
     public static void main(String[] args) {
@@ -102,18 +109,17 @@ public class UseWaitTimeAsynchron {
         // Stampo "finito"
         System.out.println("finito");
 
-        // aspetto che venga cliccato un qualunque tasto del
-        // blocco NXT, questo perchè altrimenti il programma
-        // terminerebbe subito e non si riuscirebbe a leggere
-        // l'ultima cosa stampata.
+        // aspetto che venga cliccato un qualunque tasto del blocco NXT,
+        // questo perchè altrimenti il programma terminerebbe subito e non
+        // si riuscirebbe a leggere l'ultima cosa stampata.
 		Button.waitForAnyPress();
-
     }
 }
 ```
 
 <br>
-Esempio di utilizzo della classe in maniera **sincrona**:
+Esempio di utilizzo della classe in maniera <b>sincrona</b>:
+
 ```java
 /**
  * Wait time example class.
@@ -167,10 +173,9 @@ Esempio di utilizzo della classe in maniera **sincrona**:
     <div style="float:left">
         <img width="80" src="img/nxt-blocks/if.png">
     </div>
-    <div style="float:left; padding: 40px 0 0 30px; max-width:600px">
+    <div style="float:left; padding: 40px 0 0 30px">
         <p>
-            La struttura di controllo del switch o selezione &egrave; in programmazione
-            &egrave; rappresentata dalla struttura di controllo `if (...) { ... }`
+            La struttura di controllo del switch o selezione &egrave; in programmazione &egrave;<br> rappresentata dalla struttura di controllo `if (...) { ... }`
         </p>
     </div>
 </div>
