@@ -29,7 +29,7 @@ strutture di controllo di programmazione sequenziale.
 Per esempio aspettare che il sensore di luce riflessa legga un valore più alto del 50%.
 
 I blocchi arancioni rappresentano i blcochi blocchi Wait, che in lego lib sono rappresentati dalle
- classi contenute nel package`legolib` che cominciano il loro nome con `Wait`.
+ classi contenute nel package `legolib` che cominciano il loro nome con `Wait`.
 
 Nei blocchi arancioni sono compresi anche le selezioni e i cicli, i quali sono implementati dalle
 strutture di controllo `if (...) { ... }` e `while` o `do { ... } while` oppure `for (...) { ... }`.
@@ -85,7 +85,10 @@ import lejos.nxt.Button;
  */
 public class UseWaitTimeAsynchron {
     /**
-     * Metodo main della classe, avvia il programma
+     * Metodo main della classe, avvia il programma di test della classe
+     * WaitTime in maniera asincrona.
+     *
+     * @param args Argomenti da linea di comando.
      */
     public static void main(String[] args) {
         // creo il wait time con 2000 millisecondi di attesa
@@ -132,6 +135,13 @@ import lejos.nxt.Button;
  * e stampa "finito".
  */
  public class UseWaitTimeSynchron {
+
+     /**
+      * Metodo main della classe, avvia il programma di test della classe
+      * WaitTime in maniera sincrona.
+      *
+      * @param args Argomenti da linea di comando.
+      */
      public static void main(String[] args) {
          // creo il wait time con 2000 millisecondi di attesa
          WaitTime wt = new WaitTime(2000);
@@ -184,6 +194,13 @@ import lejos.nxt.Button;
  * asincrona della classe.
  */
 public class UseWaitMotorAsynchron {
+
+    /**
+     * Metodo main della classe, avvia il programma di test della classe
+     * WaitMotor in maniera asincrona.
+     *
+     * @param args Argomenti da linea di comando.
+     */
     public static void main(String[] args) {
         // Creo lo waiter settato per le 5 rotazioni ed il motore sulla
         // porta A
@@ -217,14 +234,23 @@ public class UseWaitMotorAsynchron {
 Esempio di utlizzo della classe in maniera **sincrona**:
 
 ```java
+import lejos.nxt.Button;
+
 /**
  * Wait motor example class.
  * Questa classe crea uno wait con l'attesa di 5 roatazioni del motore sulla
  * porta A, poi stampa inizio e poi finito quando il motore ha eseguito 5
  * rotazioni.
  */
-public class UseWaitMotorAsynchron {
-    public static void main(String[] args) {
+public class UseWaitMotorSynchron {
+
+    /**
+     * Metodo main della classe, avvia il programma di test della classe
+     * WaitMotor in maniera sincrona.
+     *
+     * @param args Argomenti da linea di comando.
+     */
+    public static void main(String[] args) {}
         // Creo lo waiter settato per le 5 rotazioni ed il motore sulla
         // porta A
         WaitMotor wm = new WaitMotor(new SingleMotor('A'), 5);
