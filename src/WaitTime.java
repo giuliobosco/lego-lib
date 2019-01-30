@@ -106,7 +106,7 @@ public class WaitTime extends Wait {
     // ------------------------------------------------------------------------- General Methods
 
     @Override
-    public void startWait() {
+    public void beginWait() {
         this.setStartTime(System.currentTimeMillis());
     }
 

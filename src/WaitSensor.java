@@ -47,7 +47,7 @@ public class WaitSensor extends Wait {
     // ------------------------------------------------------------------------- General Methods
 
     @Override
-    public void startWait() {
+    public void beginWait() {
         this.setFinished(false);
         this.start();
     }

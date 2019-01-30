@@ -86,7 +86,7 @@ public class Wait extends Thread {
      * Main synchron wait method, where it waits until it's finished.
      */
     public void waiter() {
-        this.startWait();
+        this.beginWait();
         try {
             while (!this.isFinished()) {
                 sleep(WAIT_TIME);
@@ -98,7 +98,7 @@ public class Wait extends Thread {
     /**
      * Begin the asynchron wait.
      */
-    public void startWait() {
+    public void beginWait() {
         this.setFinished(false);
     }
     
