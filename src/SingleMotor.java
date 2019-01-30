@@ -22,8 +22,6 @@
  * THE SOFTWARE.
  */
 
-package legolib;
-
 import lejos.nxt.NXTRegulatedMotor;
 import lejos.nxt.Motor;
 

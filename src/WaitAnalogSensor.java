@@ -22,98 +22,104 @@
  * THE SOFTWARE.
  */
 
-package legolib;
-
-import lejos.nxt.LightSensor;
-import lejos.nxt.SensorPort;
-
 /**
- * WaitLightSensor, used to wait a light sensor.
+ * WaitAnalogSensor, used to generalize all analog sensor waiting classes.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author giuliobosco
  * @author gabrialessi
  * @version 2.0
  */
-public class WaitLightSensor extends WaitAnalogSensor {
+public class WaitAnalogSensor extends WaitSensor {
     
     // ------------------------------------------------------------------------- Constants
-    
+
+    /**
+     * Defines the minimum value that an analog sensor can read.
+     */
+    public static final byte SENSOR_MIN_VALUE = 0;
+
+    /**
+     * Defines the maximum value that an analog sensor can read.
+     */
+    public static final byte SENSOR_MAX_VALUE = 100;
+
     // ------------------------------------------------------------------------- Fields
 
     /**
-     * The light sensor
+     * User-defined value that is compared with the one read by the sensor.
      */
-    private LightSensor lightSensor;
+    private byte checkValue;
+    
+    /**
+     * If this is true, the comparison value must be bigger than the read value.
+     * Otherwise the comparison value must be smaller than the read value.
+     */
+    private boolean bigger;
 
     // ------------------------------------------------------------------------- Getters
 
     /**
-     * Get the light sensor.
+     * Get the comparison value.
      *
-     * @return The light sensor.
+     * @return The comparison value.
      */
-    public LightSensor getLightSensor() {
-        return this.lightSensor;
+    public byte getCheckValue() {
+        return this.checkValue;
+    }
+    
+    /**
+     * To know if the read value must be bigger than the comparison value.
+     *
+     * @return The bigger field.
+     */
+    public boolean isBigger() {
+        return this.bigger;
     }
     
     // ------------------------------------------------------------------------- Setters
     
     /**
-     * Set the light sensor.
+     * Set the comparison value, checks that the value is in the range of an
+     * analog sensor and that the wait is finished.
      *
-     * @param lightSensor The light sensor.
+     * @param checkValue The comparison value.
      */
-    public void setLightSensor(LightSensor lightSensor) {
+    public void setCheckValue(byte checkValue) {
         if (this.isFinished()) {
-            this.lightSensor = lightSensor;
+            if (checkValue >= SENSOR_MIN_VALUE && checkValue <= SENSOR_MAX_VALUE) {
+                this.checkValue = checkValue;
+            }
+        }
+    }
+    
+    /**
+     * Set the bigger field checking that the wait is finished.
+     *
+     * @param bigger If is bigger than the comparison value.
+     */
+    public void setBigger(boolean bigger) {
+        if (this.isFinished()) {
+            this.bigger = bigger;
         }
     }
 
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, defines the sensor, the comparison value and if it 
-     * must be bigger than the value read by the sensor.
+     * Constructor method, creates a new wait by setting the comparison value 
+     * and if it must be bigger than the value read by the sensor.
      *
      * @param bigger If is bigger than the comparison value.
      * @param checkValue The comparison value.
-     * @param lightSensor The light sensor.
      */
-    public WaitLightSensor(boolean bigger, byte checkValue, LightSensor lightSensor) {
-        super(bigger, checkValue);
-        this.setLightSensor(lightSensor);
-    }
-
-    /**
-     * Constructor method, defines the sensor port, the comparison value and if 
-     * it must be bigger than the value read by the sensor.
-     *
-     * @param bigger If is bigger than the comparison value.
-     * @param checkValue The comparison value.
-     * @param sensorPort The port where the sensor is connected.
-     */
-    public WaitLightSensor(boolean bigger, byte checkValue, SensorPort sensorPort) {
-        this(bigger, checkValue, new LightSensor(sensorPort));
+    WaitAnalogSensor(boolean bigger, byte checkValue) {
+        this.setBigger(bigger);
+        this.setCheckValue(checkValue);
     }
 
     // ------------------------------------------------------------------------- Help Methods
     
     // ------------------------------------------------------------------------- General Methods
-
-    @Override
-    public void run() {
-        while (this.isFinished()) {
-            try {
-                if (this.isBigger()) {
-                    this.setFinished(this.getLightSensor().getLightValue() > this.getCheckValue());
-                } else {
-                    this.setFinished(this.getLightSensor().getLightValue() < this.getCheckValue());
-                }
-                sleep(WAIT_TIME);
-            } catch (InterruptedException ignored) {
-            }
-        }
-    }
 
 }

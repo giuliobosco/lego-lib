@@ -21,33 +21,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package legolib;
 
 import lejos.nxt.SensorPort;
-import lejos.nxt.UltrasonicSensor;
+import lejos.nxt.TouchSensor;
 
 /**
- * Test the wait of the ultrasonic sensor.
+ * Test the wait of the touch sensor.
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 1.0
+ * @version 1.1
  */
-public class WaitUltrasonicSensorTest {
+public class WaitTouchSensorTest {
 
     public static void main(String[] args) {
 
-        // Set a new ultrasonic sensor on port 1
-        UltrasonicSensor ultrasonic = new UltrasonicSensor(SensorPort.S1);
+        // Set a new touch sensor on port 1
+        TouchSensor touch = new TouchSensor(SensorPort.S1);
 
-        // Set the value to read to 50
-        byte value = 50;
+        // Set the wait action to 2 (CLICKED)
+        byte action = 2;
 
-        // The value must be bigger
-        boolean bigger = true;
-
-        // New wait for the ultrasonic sensor
-        WaitUltrasonicSensor wait = new WaitUltrasonicSensor(bigger, value, ultrasonic);
+        // New wait for the touch sensor
+        WaitTouchSensor wait = new WaitTouchSensor(action, touch);
 
         // Start the wait
         wait.start();

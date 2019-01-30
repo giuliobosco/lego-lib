@@ -22,73 +22,101 @@
  * THE SOFTWARE.
  */
 
-package legolib;
-
-import lejos.nxt.Button;
-
 /**
- * WaitNxtButton, used to wait for a button pressing.
+ * WaitTime, used to wait time (milliseconds).
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
- * @author gabrialessi
  * @author giuliobosco
- * @version 3.0
+ * @author gabrialessi
+ * @version 2.0
  */
-public class WaitNxtButton extends WaitDigitalSensor {
+public class WaitTime extends Wait {
 
     // ------------------------------------------------------------------------- Constants
     
     // ------------------------------------------------------------------------- Fields
 
     /**
-     * The button of a NXT brick.
+     * The time to wait (in milliseconds).
      */
-    private Button nxtButton;
+    private long waitTime;
+
+    /**
+     * The starting time.
+     */
+    private long startTime;
 
     // ------------------------------------------------------------------------- Getters
 
     /**
-     * Get the NXT button.
+     * Get the time to wait.
      *
-     * @return The NXT button.
+     * @return The time to wait.
      */
-    public Button getNxtButton() {
-        return this.nxtButton;
+    public long getWaitTime() {
+        return this.waitTime;
+    }
+
+    /**
+     * Get the start time.
+     *
+     * @return The start time.
+     */
+    public long getStartTime() {
+        return this.startTime;
     }
     
     // ------------------------------------------------------------------------- Setters
     
     /**
-     * Set the NXT button.
+     * Set the time to wait checking that the wait is finished.
      *
-     * @param nxtButton The NXT button.
+     * @param waitTime The time to wait.
      */
-    public void setNxtButton(Button nxtButton) {
+    protected void setWaitTime(long waitTime) {
         if (this.isFinished()) {
-            this.nxtButton = nxtButton;
+            this.waitTime = waitTime;
+        }
+    }
+
+    /**
+     * Set the start time after doing checks.
+     *
+     * @param startTime The start time.
+     */
+    protected void setStartTime(long startTime) {
+        if (this.getStartTime() > System.currentTimeMillis() && this.isFinished()) {
+            this.startTime = startTime;
         }
     }
 
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, defines the action to wait and the NXT button.
+     * Constructor method, defines the time to wait.
      *
-     * @param waitAction The wait action.
-     * @param nxtButton The NXT button.
+     * @param waitTime The time to wait.
      */
-    public WaitNxtButton(byte waitAction, Button nxtButton) {
-        super(waitAction);
-        this.setNxtButton(nxtButton);
+    public WaitTime(long waitTime) {
+        setWaitTime(waitTime);
     }
 
     // ------------------------------------------------------------------------- Help Methods
-
+    
     // ------------------------------------------------------------------------- General Methods
-    
+
     @Override
-    protected boolean isPressedButton() {
-        return this.getNxtButton().isDown();
+    public void startWait() {
+        this.setStartTime(System.currentTimeMillis());
     }
-    
+
+    @Override
+    public boolean isFinished() {
+        if (this.getStartTime() + this.getWaitTime() >= System.currentTimeMillis()) {
+            this.setWaitTime(Long.MAX_VALUE - getStartTime());
+            return true;
+        }
+        return false;
+    }
+
 }

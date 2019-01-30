@@ -22,85 +22,84 @@
  * THE SOFTWARE.
  */
 
-package legolib;
-
-import lejos.nxt.SensorPort;
-import lejos.nxt.TouchSensor;
-
 /**
- * WaitTouchSensor, used to wait the press of a touch sensor.
+ * Wait class, used to generalize all waiting classes.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
- * @author gabrialessi
  * @author giuliobosco
- * @version 4.0
+ * @author gabrialessi
+ * @version 2.0
  */
-public class WaitTouchSensor extends WaitDigitalSensor {
-
-    // ------------------------------------------------------------------------- Constants
+public class Wait extends Thread {
     
+    // ------------------------------------------------------------------------- Constants
+
+    /**
+     * Constant that defines the time to wait (in milliseconds) before making a 
+     * new check to finish the wait.
+     */
+    protected static final long WAIT_TIME = 100;
+
     // ------------------------------------------------------------------------- Fields
     
     /**
-     * The touch sensor.
+     * Field that tell if the wait is over.
      */
-    private TouchSensor touchSensor;
+    private boolean finished;
 
     // ------------------------------------------------------------------------- Getters
-
+    
     /**
-     * Get the touch sensor.
-     *
-     * @return The touch sensor.
+     * Get the finished value.
+     * 
+     * @return The state of waiting (finished or not finished).
      */
-    public TouchSensor getTouchSensor() {
-        return this.touchSensor;
+    public boolean isFinished() {
+        return this.finished;
     }
     
     // ------------------------------------------------------------------------- Setters
-
+    
     /**
-     * Set the touch sensor.
+     * Set the finished value.
      *
-     * @param touchSensor The touch sensor.
+     * @param finished The state of waiting.
      */
-    public void setTouchSensor(TouchSensor touchSensor) {
-        if (this.isFinished()) {
-            this.touchSensor = touchSensor;
-        }
+    protected void setFinished(boolean finished) {
+        this.finished = finished;
     }
 
     // ------------------------------------------------------------------------- Constructors
-
+    
     /**
-     * Constructor method, defines the action to wait and the touch sensor.
-     *
-     * @param waitAction The wait action.
-     * @param touchSensor The touch sensor.
+     * Constructor method, creates a new wait where the wait is not over.
      */
-    public WaitTouchSensor(byte waitAction, TouchSensor touchSensor) {
-        super(waitAction);
-        setTouchSensor(touchSensor);
-    }
-
-    /**
-     * Constructor method, defines the action to wait and the port where the 
-     * touch sensor is connected.
-     *
-     * @param waitAction The wait action.
-     * @param sensorPort The port of the touch sensor.
-     */
-    public WaitTouchSensor(byte waitAction, SensorPort sensorPort) {
-        this(waitAction, new TouchSensor(sensorPort));
+    public Wait() {
+        this.finished = false;
     }
 
     // ------------------------------------------------------------------------- Help Methods
-
-    @Override
-    public boolean isPressedButton() {
-        return this.getTouchSensor().isPressed();
+    
+    // ------------------------------------------------------------------------- General Methods
+    
+    /**
+     * Main synchron wait method, where it waits until it's finished.
+     */
+    public void waiter() {
+        this.startWait();
+        try {
+            while (!this.isFinished()) {
+                sleep(WAIT_TIME);
+            }
+        } catch (InterruptedException ignored) {
+        }
     }
 
-    // ------------------------------------------------------------------------- General Methods
+    /**
+     * Begin the asynchron wait.
+     */
+    public void startWait() {
+        this.setFinished(false);
+    }
     
 }

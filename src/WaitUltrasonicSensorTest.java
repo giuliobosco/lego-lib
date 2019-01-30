@@ -22,36 +22,33 @@
  * THE SOFTWARE.
  */
 
-package legolib;
+import lejos.nxt.SensorPort;
+import lejos.nxt.UltrasonicSensor;
 
 /**
- * WaitSensor, used to generalize all sensor waiting classes.
- * In the LEGO Mindstorms environment is represented by the orange block "Wait".
+ * Test the wait of the ultrasonic sensor.
  *
- * @author giuliobosco
  * @author gabrialessi
- * @version 2.0
+ * @author giuliobosco
+ * @version 1.0
  */
-public class WaitSensor extends Wait {
+public class WaitUltrasonicSensorTest {
 
-    // ------------------------------------------------------------------------- Constants
-    
-    // ------------------------------------------------------------------------- Fields
-    
-    // ------------------------------------------------------------------------- Getters
-    
-    // ------------------------------------------------------------------------- Setters
-    
-    // ------------------------------------------------------------------------- Constructors
-    
-    // ------------------------------------------------------------------------- Help Methods
-    
-    // ------------------------------------------------------------------------- General Methods
+    public static void main(String[] args) {
 
-    @Override
-    public void startWait() {
-        this.setFinished(false);
-        this.start();
+        // Set a new ultrasonic sensor on port 1
+        UltrasonicSensor ultrasonic = new UltrasonicSensor(SensorPort.S1);
+
+        // Set the value to read to 50
+        byte value = 50;
+
+        // The value must be bigger
+        boolean bigger = true;
+
+        // New wait for the ultrasonic sensor
+        WaitUltrasonicSensor wait = new WaitUltrasonicSensor(bigger, value, ultrasonic);
+
+        // Start the wait
+        wait.start();
     }
-    
 }

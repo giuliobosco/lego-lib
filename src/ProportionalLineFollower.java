@@ -22,8 +22,6 @@
  * THE SOFTWARE.
  */
 
-package legolib;
-
 import lejos.nxt.LightSensor;
 
 /**

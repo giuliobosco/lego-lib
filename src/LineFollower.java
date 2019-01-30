@@ -22,8 +22,6 @@
  * THE SOFTWARE.
  */
 
-package legolib;
-
 /**
  * LineFollower, uses a motor and a light sensor to follow a line.
  *

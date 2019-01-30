@@ -22,52 +22,48 @@
  * THE SOFTWARE.
  */
 
-package legolib;
-
 import lejos.nxt.SensorPort;
-import lejos.nxt.SoundSensor;
+import lejos.nxt.UltrasonicSensor;
 
 /**
- * WaitAnalogSensor, used to wait a sound sensor (microphone).
+ * WaitUltrasonicSensor, used to wait an ultrasonic sensor.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 2.0
+ * @version 2.0.
  */
-public class WaitSoundSensor extends WaitAnalogSensor {
+public class WaitUltrasonicSensor extends WaitAnalogSensor {
     
     // ------------------------------------------------------------------------- Constants
     
     // ------------------------------------------------------------------------- Fields
 
     /**
-     * The sound sensor.
+     * The ultrasonic sensor.
      */
-    private SoundSensor soundSensor;
+    private UltrasonicSensor ultrasonicSensor;
 
     // ------------------------------------------------------------------------- Getters
-    
-    /**
-     * Get the sound sensor.
-     *
-     * @return The sound sensor.
-     */
-    public SoundSensor getSoundSensor() {
-        return this.soundSensor;
-    }
-    
-    // ------------------------------------------------------------------------- Setters
 
     /**
-     * Set the sound sensor.
+     * Set the ultrasonic sensor.
      *
-     * @param soundSensor The suond sensor.
+     * @param ultrasonicSensor The ultrasonic sensor.
      */
-    public void setSoundSensor(SoundSensor soundSensor) {
+    public void setUltrasonicSensor(UltrasonicSensor ultrasonicSensor) {
         if (this.isFinished()) {
-            this.soundSensor = soundSensor;
+            this.ultrasonicSensor = ultrasonicSensor;
         }
+    }
+
+    /**
+     * Get the ultrasonic sensor.
+     *
+     * @return The ultrasonic sensor.
+     */
+    public UltrasonicSensor getUltrasonicSensor() {
+        return this.ultrasonicSensor;
     }
 
     // ------------------------------------------------------------------------- Constructors
@@ -78,11 +74,11 @@ public class WaitSoundSensor extends WaitAnalogSensor {
      *
      * @param bigger If is bigger than the comparison value.
      * @param checkValue The comparison value.
-     * @param soundSensor The sound sensor.
+     * @param ultrasonicSensor The ultrasonic sensor.
      */
-    public WaitSoundSensor(boolean bigger, byte checkValue, SoundSensor soundSensor) {
+    public WaitUltrasonicSensor(boolean bigger, byte checkValue, UltrasonicSensor ultrasonicSensor) {
         super(bigger, checkValue);
-        this.setSoundSensor(soundSensor);
+        this.setUltrasonicSensor(ultrasonicSensor);
     }
 
     /**
@@ -93,8 +89,8 @@ public class WaitSoundSensor extends WaitAnalogSensor {
      * @param checkValue The comparison value.
      * @param sensorPort The port where the sensor is connected.
      */
-    public WaitSoundSensor(boolean bigger, byte checkValue, SensorPort sensorPort) {
-        this(bigger, checkValue, new SoundSensor(sensorPort));
+    public WaitUltrasonicSensor(boolean bigger, byte checkValue, SensorPort sensorPort) {
+        this(bigger, checkValue, new UltrasonicSensor(sensorPort));
     }
 
     // ------------------------------------------------------------------------- Help Methods
@@ -106,9 +102,9 @@ public class WaitSoundSensor extends WaitAnalogSensor {
         while (this.isFinished()) {
             try {
                 if (this.isBigger()) {
-                    this.setFinished(this.getSoundSensor().readValue() > this.getCheckValue());
+                    this.setFinished(this.getUltrasonicSensor().getDistance() > this.getCheckValue());
                 } else {
-                    this.setFinished(this.getSoundSensor().readValue() < this.getCheckValue());
+                    this.setFinished(this.getUltrasonicSensor().getDistance() < this.getCheckValue());
                 }
                 sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {

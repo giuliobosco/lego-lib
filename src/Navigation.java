@@ -22,8 +22,6 @@
  * THE SOFTWARE.
  */
 
-package legolib;
-
 /**
  * Navigation with NXT brick.
  * In the LEGO Mindstorms environment is represented by the green block "Move".

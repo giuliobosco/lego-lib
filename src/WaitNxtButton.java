@@ -22,106 +22,71 @@
  * THE SOFTWARE.
  */
 
-package legolib;
+import lejos.nxt.Button;
 
 /**
- * WaitMotor, used to wait a motor action.
+ * WaitNxtButton, used to wait for a button pressing.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author gabrialessi
  * @author giuliobosco
  * @version 3.0
  */
-public class WaitMotor extends Wait {
+public class WaitNxtButton extends WaitDigitalSensor {
 
     // ------------------------------------------------------------------------- Constants
     
     // ------------------------------------------------------------------------- Fields
 
     /**
-     * The single motor.
+     * The button of a NXT brick.
      */
-    private SingleMotor singleMotor;
-
-    /**
-     * User-defined value that is compared with the one got by the motor.
-     */
-    private int checkValue;
+    private Button nxtButton;
 
     // ------------------------------------------------------------------------- Getters
-    
+
     /**
-     * Get the single motor.
+     * Get the NXT button.
      *
-     * @return The single Motor.
+     * @return The NXT button.
      */
-    public SingleMotor getSingleMotor() {
-        return this.singleMotor;
-    }
-    
-    /**
-     * Get the comparison value.
-     *
-     * @return The comparison value.
-     */
-    public int getCheckValue() {
-        return this.checkValue;
+    public Button getNxtButton() {
+        return this.nxtButton;
     }
     
     // ------------------------------------------------------------------------- Setters
-
+    
     /**
-     * Set the single motor.
+     * Set the NXT button.
      *
-     * @param singleMotor The single motor.
+     * @param nxtButton The NXT button.
      */
-    public void setSingleMotor(SingleMotor singleMotor) {
+    public void setNxtButton(Button nxtButton) {
         if (this.isFinished()) {
-            this.singleMotor = singleMotor;
-        }
-    }
-
-    /**
-     * Set the comparison value.
-     *
-     * @param checkValue The comparison value.
-     */
-    public void setCheckValue(int checkValue) {
-        if (this.isFinished()) {
-            this.checkValue = checkValue;
+            this.nxtButton = nxtButton;
         }
     }
 
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, creates the wait by setting the motor and the 
-     * comparison value.
+     * Constructor method, defines the action to wait and the NXT button.
      *
-     * @param singleMotor The single motor.
-     * @param checkValue The comparison value.
+     * @param waitAction The wait action.
+     * @param nxtButton The NXT button.
      */
-    public WaitMotor(SingleMotor singleMotor, int checkValue) {
-        this.setSingleMotor(singleMotor);
-        this.setCheckValue(checkValue);
+    public WaitNxtButton(byte waitAction, Button nxtButton) {
+        super(waitAction);
+        this.setNxtButton(nxtButton);
     }
 
     // ------------------------------------------------------------------------- Help Methods
-    
+
     // ------------------------------------------------------------------------- General Methods
-
+    
     @Override
-    public void run() {
-        while (this.isFinished()) {
-            try {
-                int earlyRotations = this.getSingleMotor().getMotor().getTachoCount();
-                while (!(earlyRotations + this.getCheckValue() == earlyRotations)) {
-                    sleep(WAIT_TIME);
-                }
-                this.setFinished(true);
-            } catch (InterruptedException ignored) {
-            }
-        }
+    protected boolean isPressedButton() {
+        return this.getNxtButton().isDown();
     }
-
+    
 }

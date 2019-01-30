@@ -22,106 +22,104 @@
  * THE SOFTWARE.
  */
 
-package legolib;
-
 /**
- * WaitAnalogSensor, used to generalize all analog sensor waiting classes.
+ * WaitMotor, used to wait a motor action.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
- * @author giuliobosco
  * @author gabrialessi
- * @version 2.0
+ * @author giuliobosco
+ * @version 3.0
  */
-public class WaitAnalogSensor extends WaitSensor {
-    
+public class WaitMotor extends Wait {
+
     // ------------------------------------------------------------------------- Constants
-
-    /**
-     * Defines the minimum value that an analog sensor can read.
-     */
-    public static final byte SENSOR_MIN_VALUE = 0;
-
-    /**
-     * Defines the maximum value that an analog sensor can read.
-     */
-    public static final byte SENSOR_MAX_VALUE = 100;
-
+    
     // ------------------------------------------------------------------------- Fields
 
     /**
-     * User-defined value that is compared with the one read by the sensor.
+     * The single motor.
      */
-    private byte checkValue;
-    
+    private SingleMotor singleMotor;
+
     /**
-     * If this is true, the comparison value must be bigger than the read value.
-     * Otherwise the comparison value must be smaller than the read value.
+     * User-defined value that is compared with the one got by the motor.
      */
-    private boolean bigger;
+    private int checkValue;
 
     // ------------------------------------------------------------------------- Getters
-
+    
+    /**
+     * Get the single motor.
+     *
+     * @return The single Motor.
+     */
+    public SingleMotor getSingleMotor() {
+        return this.singleMotor;
+    }
+    
     /**
      * Get the comparison value.
      *
      * @return The comparison value.
      */
-    public byte getCheckValue() {
+    public int getCheckValue() {
         return this.checkValue;
     }
     
-    /**
-     * To know if the read value must be bigger than the comparison value.
-     *
-     * @return The bigger field.
-     */
-    public boolean isBigger() {
-        return this.bigger;
-    }
-    
     // ------------------------------------------------------------------------- Setters
-    
+
     /**
-     * Set the comparison value, checks that the value is in the range of an
-     * analog sensor and that the wait is finished.
+     * Set the single motor.
+     *
+     * @param singleMotor The single motor.
+     */
+    public void setSingleMotor(SingleMotor singleMotor) {
+        if (this.isFinished()) {
+            this.singleMotor = singleMotor;
+        }
+    }
+
+    /**
+     * Set the comparison value.
      *
      * @param checkValue The comparison value.
      */
-    public void setCheckValue(byte checkValue) {
+    public void setCheckValue(int checkValue) {
         if (this.isFinished()) {
-            if (checkValue >= SENSOR_MIN_VALUE && checkValue <= SENSOR_MAX_VALUE) {
-                this.checkValue = checkValue;
-            }
-        }
-    }
-    
-    /**
-     * Set the bigger field checking that the wait is finished.
-     *
-     * @param bigger If is bigger than the comparison value.
-     */
-    public void setBigger(boolean bigger) {
-        if (this.isFinished()) {
-            this.bigger = bigger;
+            this.checkValue = checkValue;
         }
     }
 
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, creates a new wait by setting the comparison value 
-     * and if it must be bigger than the value read by the sensor.
+     * Constructor method, creates the wait by setting the motor and the 
+     * comparison value.
      *
-     * @param bigger If is bigger than the comparison value.
+     * @param singleMotor The single motor.
      * @param checkValue The comparison value.
      */
-    WaitAnalogSensor(boolean bigger, byte checkValue) {
-        this.setBigger(bigger);
+    public WaitMotor(SingleMotor singleMotor, int checkValue) {
+        this.setSingleMotor(singleMotor);
         this.setCheckValue(checkValue);
     }
 
     // ------------------------------------------------------------------------- Help Methods
     
     // ------------------------------------------------------------------------- General Methods
+
+    @Override
+    public void run() {
+        while (this.isFinished()) {
+            try {
+                int earlyRotations = this.getSingleMotor().getMotor().getTachoCount();
+                while (!(earlyRotations + this.getCheckValue() == earlyRotations)) {
+                    sleep(WAIT_TIME);
+                }
+                this.setFinished(true);
+            } catch (InterruptedException ignored) {
+            }
+        }
+    }
 
 }
