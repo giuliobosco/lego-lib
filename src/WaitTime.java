@@ -104,9 +104,10 @@ public class WaitTime extends Wait {
     // ------------------------------------------------------------------------- Help Methods
     
     // ------------------------------------------------------------------------- General Methods
-
+/*
     @Override
     public void beginWait() {
+
         this.setStartTime(System.currentTimeMillis());
     }
 
@@ -118,5 +119,19 @@ public class WaitTime extends Wait {
         }
         return false;
     }
+*/
+    public void run() {
+        this.setStartTime(System.currentTimeMillis());
+        this.setFinished(false);
 
+        while (this.isFinished()) {
+            try {
+                this.setFinished(
+                        this.getStartTime() + this.getWaitTime() >= System.currentTimeMillis());
+                Thread.sleep(WAIT_TIME);
+            } catch (InterruptedException ignored) {
+
+            }
+        }
+    }
 }

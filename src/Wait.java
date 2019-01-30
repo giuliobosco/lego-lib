@@ -100,6 +100,7 @@ public class Wait extends Thread {
      */
     public void beginWait() {
         this.setFinished(false);
+        this.start();
     }
     
 }
