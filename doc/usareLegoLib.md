@@ -150,6 +150,99 @@ Esempio di utilizzo della classe in maniera <b>sincrona</b>:
  }
 ```
 
+##### Wait Motor
+
+<div class="clearfix">
+    <div style="float:left">
+        <img style="width:65px" src="img/nxt-blocks/wait-motor.png">
+    </div>
+    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
+        Il blocco wait motor dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
+        classe&nbsp;`WaitMotor`, la quale permette di aspettare del che il motore abbia effettuato
+        un determinato numbero di rotazioni.
+    </div>
+</div>
+
+Il diagramma UML della classe:
+
+<img src="img/classes/WaitMotor.png">
+
+Esempio di utlizzo della classe in maniera **asincrona**:
+
+```java
+import ch.ti.cpttrevano.samt.legolib.wait.WaitMotor;
+import ch.ti.cpttrevano.samt.legolib.motor.SingleMotor;
+import lejos.nxt.Button;
+
+/**
+ * Wait time example class.
+ * Questa classe crea un wait con l'attesa di 5 rotazioni del motore sulla
+ * porta A, poi stampa ogni 100 millisecondi "Aspetto..." finch&eacute; il
+ * motore esegue tutte le rotazioni che deve eseguire. Sfurtta la funzione
+ * asincrona della classe.
+ */
+public class UseWaitMotorAsynchron {
+    public static void main(String[] args) {
+        // Creo lo waiter settato per le 5 rotazioni ed il motore sulla
+        // porta A
+        WaitMotor wm = new WaitMotor(new SingleMotor('A'), 5);
+
+        // aspetto che il motore esegua le 5 rotazioni mentre
+        // stampo "Aspetto..." ogni 100 ms
+        while (!wm.isFinished()) {
+            // stampo "Aspetto..."
+            System.out.println("Aspetto...");
+
+            // aspetto 100 millisecondi
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException ignored) {
+
+            }
+        }
+
+        // Stampa "finito"
+        System.out.println("finito");
+
+        // aspetto che venga cliccato un qualunque tasto del blocco NXT,
+        // questo perchè altrimenti il programma terminerebbe subito e non
+        // si riuscirebbe a leggere l'ultima cosa stampata.
+        Button.waitForAnyPress();
+    }
+}
+```
+
+Esempio di utlizzo della classe in maniera **sincrona**:
+
+```java
+/**
+ * Wait motor example class.
+ * Questa classe crea uno wait con l'attesa di 5 roatazioni del motore sulla
+ * porta A, poi stampa inizio e poi finito quando il motore ha eseguito 5
+ * rotazioni.
+ */
+public class UseWaitMotorAsynchron {
+    public static void main(String[] args) {
+        // Creo lo waiter settato per le 5 rotazioni ed il motore sulla
+        // porta A
+        WaitMotor wm = new WaitMotor(new SingleMotor('A'), 5);
+
+        // aspetto che il motore esegua 5 rotazioni
+        wm.waiter();
+
+        // stampo "finito"
+         System.out.println("finito");
+
+         // aspetto che venga cliccato un qualunque tasto del
+         // blocco NXT, questo perchè altrimenti il programma
+         // terminerebbe subito e non si riuscirebbe a leggere
+         // l'ultima cosa stampata.
+         Button.waitForAnyPress();
+    }
+}
+```
+
+
 ### Strutture di controllo
 <div class="clearfix">
     <div style="float:left">
