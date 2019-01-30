@@ -32,7 +32,15 @@ public void run() {
 
 ##  Problemi riscontrati e soluzioni adottate
 Abbiamo risconstrato un problema riguardo i test delle classi, visto che la struttura del sistema è stata composta da vari package in modo da seguire gli standard di Java. Quindi abbiamo deciso di eliminare i package così da semplificare la procedura di test.
+
+Abbiamo riscontrato anche dei problemi nelle comparazioni, tutti i tipi di copmarazioni non lavorano correttamente
 ##  Punto della situazione rispetto alla pianificazione
 Da recuperare il tempo perso con i test, è necessario accelerare su alcune cose, quindi probabilmente si lavorerà un po' al di fuori delle ore di lavoro.
+
+
+https://stackoverflow.com/questions/29899270/java-lejos-autonomous-nxj-robot-threads-causing-trouble
+Su questa pagina abbiamo scoperto che i NXT hanno problemi usando le threads.
 ## Programma di massima per la prossima giornata di lavoro
 Documentazione e test delle classi.
+
+Provare ad eseguire del codice senza thread.
