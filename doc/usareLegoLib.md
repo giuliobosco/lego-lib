@@ -29,7 +29,7 @@ strutture di controllo di programmazione sequenziale.
 Per esempio aspettare che il sensore di luce riflessa legga un valore più alto del 50%.
 
 I blocchi arancioni rappresentano i blcochi blocchi Wait, che in lego lib sono rappresentati dalle
- classi contenute nel package`ch.ti.cpttrevano.samt.legolib.wait`.
+ classi contenute nel package`legolib` che cominciano il loro nome con `Wait`.
 
 Nei blocchi arancioni sono compresi anche le selezioni e i cicli, i quali sono implementati dalle
 strutture di controllo `if (...) { ... }` e `while` o `do { ... } while` oppure `for (...) { ... }`.
@@ -75,7 +75,6 @@ Il diagramma UML della classe:
 Esempio di utilizzo della classe in maniera **asincrona**:
 
 ```java
-import legolib.WaitTime;
 import lejos.nxt.Button;
 
 /**
@@ -124,6 +123,8 @@ public class UseWaitTimeAsynchron {
 Esempio di utilizzo della classe in maniera <b>sincrona</b>:
 
 ```java
+import lejos.nxt.Button;
+
 /**
  * Wait time example class.
  * Questa classe crea un wait time con 2000 millisecondi di
@@ -173,8 +174,6 @@ Il diagramma UML della classe:
 Esempio di utlizzo della classe in maniera **asincrona**:
 
 ```java
-import legolib.WaitMotor;
-import legolib.SingleMotor;
 import lejos.nxt.Button;
 
 /**
