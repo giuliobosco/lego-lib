@@ -75,17 +75,13 @@ Data fine: 08.02.2019
 
 ### Abstract
 
-> *In questo documento è descritto come abbiamo sviluppato il prodotto"Libreria LEGO":  
-> una libreria sviluppata in Java utile per automatizzare le operazioni più comuni durante la
-> programmazione di robot LEGO&reg;.  
-> Ad esempio la lettura dei dati ricevuti da un sensore o le operazioni di
-> movimento con degli attuatori.  
-> Queste librerie verranno utilizzate principalmente dagli informatici della classe
-> seconda della Scuola d'Arti e Mestieri di Trevano per implementare i programmi per la
-> WRO (World Robot Olympiad) e FLL (First LEGO League).  
-> Questa raccolta di funzioni permetterà agli utenti di focalizzarsi maggiormente
-> sul problema principale da risolvere avendo già le operazioni di base
-> implementate e testate.*
+> In this document we describe how we developed the "LEGO Library" product: a library developed in 
+> Java useful for automating the most common operations when programming LEGO robots. For example, 
+> reading data received from a sensor or moving operations with actuators. These libraries will be 
+> mainly used by the computer scientists of the second year class of the Trevano School of Arts and 
+> Crafts to implement the programs for the WRO (World Robot Olympiad) and FLL (First LEGO League). 
+> This collection of functions  will allow users to focus more on the main problem to be solved by 
+> already having the basic operations implemented and tested.*
 
 ### Scopo
 
