@@ -359,6 +359,14 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
 
 #### WaitUltrasonicSensor.java
 
+Classe che aspetta che il sensore a ultrasuoni percepisca un certo valore.
+
+- ultrasonicSensor: Attributo che rappresenta il sensore a ultrasuoni.
+- getUltrasonicSensor(): Metodo che serve per ottenere il sensore.
+- setUltrasonicSensor(): Metodo utile per impostare il sensore.
+- WaitUltrasonicSensor(): Metodo costruttore, istanzia un nuovo `WaitUltrasonicSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
+- waitUltrasonic(): È il metodo principale che termina l'attesa in base al valore di confronto.
+
 ##### Test WaitUltrasonicSensor
 
 #### HelloWorld
