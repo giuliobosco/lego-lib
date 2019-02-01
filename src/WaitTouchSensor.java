@@ -31,7 +31,7 @@ import lejos.nxt.TouchSensor;
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 5.1 (01.02.2019)
+ * @version 5.2 (01.02.2019)
  */
 public class WaitTouchSensor {
 
@@ -70,6 +70,9 @@ public class WaitTouchSensor {
      */
     private byte waitAction;
 
+    /**
+     * Tells if the wait is over.
+     */
     private boolean finished;
 
     // ------------------------------------------------------------------------- Getters
@@ -104,7 +107,7 @@ public class WaitTouchSensor {
     }
 
     /**
-     * Set the comparison wait action checking that the wait action is valid and.
+     * Set the comparison wait action checking that the wait action is valid.
      *
      * @param waitAction The comparison wait action.
      */
@@ -118,7 +121,7 @@ public class WaitTouchSensor {
 
     /**
      * Constructor method, defines the action to wait and the touch sensor.
-     *
+     * 
      * @param touchSensor The touch sensor.
      * @param waitAction  The wait action.
      */
@@ -154,6 +157,11 @@ public class WaitTouchSensor {
         return false;
     }
 
+    /**
+     * Method that tells if the sensor is pressed.
+     * 
+     * @return If the touch sensor is pressed.
+     */
     public boolean isPressedButton() {
         return this.getTouchSensor().isPressed();
     }
@@ -198,6 +206,9 @@ public class WaitTouchSensor {
 
     // ------------------------------------------------------------------------- General Methods
 
+    /**
+     * Main method that finishes the wait based on the wait action.
+     */
     public void waitTouchSensor() {
         while (!this.finished) {
             try {
