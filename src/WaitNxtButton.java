@@ -31,7 +31,7 @@ import lejos.nxt.Button;
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 3.0
+ * @version 4.0 (01.02.2019)
  */
 public class WaitNxtButton {
 
