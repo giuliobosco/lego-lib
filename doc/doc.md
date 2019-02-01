@@ -316,6 +316,14 @@ Classe figlia di `WaitAnalogSensor` utile per aspettare fino a quando si legge u
 
 #### WaitSoundSensor.java
 
+Classe che aspetta che il microfono percepisca un certo valore.
+
+- soundSensor: Attributo che rappresenta il sensore di suono (microfono).
+- getSoundSensor(): Metodo che serve per ottenere il microfono.
+- setSoundSensor(): Metodo utile per impostare il microfono.
+- WaitSoundSensor(): Metodo costruttore, istanzia un nuovo `WaitSoundSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
+- waitSound(): È il metodo principale che termina l'attesa in base al valore di confronto.
+
 ##### Test WaitSoundSensor
 
 #### WaitTime.java
@@ -345,7 +353,7 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
 - buttonPressedAction(): Metodo che aspetta la pressione del sensore.
 - buttonReleasedAction(): Metodo che aspetta il rilascio del sensore.
 - buttonClickedAction(): Metodo che aspetta il click (pressione e rilascio) del sensore.
-- waitTouchSensor(): È il metodo principale che termina l'attesa in base all'azione impostata.
+- waitTouch(): È il metodo principale che termina l'attesa in base all'azione impostata.
 
 ##### Test WaitTouchSensor
 
