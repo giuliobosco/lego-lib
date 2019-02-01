@@ -28,11 +28,17 @@
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 3.0 (2019-02-01)
+ * @version 3.1 (2019-02-01)
  */
 public class WaitAnalogSensor {
 
     // ------------------------------------------------------------------------- Constants
+
+    /**
+     * Constant that defines the time to wait (in milliseconds) before making a
+     * new check to finish the wait.
+     */
+    protected static final long WAIT_TIME = 100;
 
     /**
      * Defines the minimum value that an analog sensor can read.

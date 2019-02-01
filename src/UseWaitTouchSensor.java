@@ -42,7 +42,7 @@ public class UseWaitTouchSensor {
      */
     public static void main(String[] args) {
         // creo lo waiter per il touch sensor sulla porta uno, che aspetta
-        // unc click del sensore.
+        // un click del sensore.
         WaitTouchSensor wtc = new WaitTouchSensor(SensorPort.S1,
                 WaitTouchSensor.CLICKED);
 

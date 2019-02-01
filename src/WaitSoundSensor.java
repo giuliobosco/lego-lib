@@ -31,17 +31,11 @@ import lejos.nxt.SoundSensor;
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 3.0 (2019-02-01)
+ * @version 3.1 (2019-02-01)
  */
 public class WaitSoundSensor extends WaitAnalogSensor {
 
     // ------------------------------------------------------------------------- Constants
-
-    /**
-     * Constant that defines the time to wait (in milliseconds) before making a
-     * new check to finish the wait.
-     */
-    protected static final long WAIT_TIME = 100;
 
     // ------------------------------------------------------------------------- Fields
 
