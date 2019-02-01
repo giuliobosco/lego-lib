@@ -25,10 +25,11 @@
 /**
  * WaitTime, used to wait time (milliseconds).
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
+ * Instead of this class can be used the Thead.sleep(millis)
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 3.0 (2019-02-01)
+ * @version 3.1 (2019-02-01)
  */
 public class WaitTime {
 
