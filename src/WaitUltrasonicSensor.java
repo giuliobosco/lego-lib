@@ -31,12 +31,12 @@ import lejos.nxt.UltrasonicSensor;
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 2.0.
+ * @version 3.0 (2019-02-01)
  */
 public class WaitUltrasonicSensor extends WaitAnalogSensor {
-    
+
     // ------------------------------------------------------------------------- Constants
-    
+
     // ------------------------------------------------------------------------- Fields
 
     /**
@@ -52,9 +52,7 @@ public class WaitUltrasonicSensor extends WaitAnalogSensor {
      * @param ultrasonicSensor The ultrasonic sensor.
      */
     public void setUltrasonicSensor(UltrasonicSensor ultrasonicSensor) {
-        if (this.isFinished()) {
-            this.ultrasonicSensor = ultrasonicSensor;
-        }
+        this.ultrasonicSensor = ultrasonicSensor;
     }
 
     /**
@@ -69,44 +67,47 @@ public class WaitUltrasonicSensor extends WaitAnalogSensor {
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, defines the sensor, the comparison value and if it 
+     * Constructor method, defines the sensor, the comparison value and if it
      * must be bigger than the value read by the sensor.
      *
-     * @param bigger If is bigger than the comparison value.
-     * @param checkValue The comparison value.
      * @param ultrasonicSensor The ultrasonic sensor.
+     * @param comparisonValue  The comparison value.
+     * @param bigger           If is bigger than the comparison value.
      */
-    public WaitUltrasonicSensor(boolean bigger, byte checkValue, UltrasonicSensor ultrasonicSensor) {
-        super(bigger, checkValue);
+    public WaitUltrasonicSensor(UltrasonicSensor ultrasonicSensor, byte comparisonValue, boolean bigger) {
+        super(bigger, comparisonValue);
         this.setUltrasonicSensor(ultrasonicSensor);
     }
 
     /**
-     * Constructor method, defines the sensor port, the comparison value and if 
+     * Constructor method, defines the sensor port, the comparison value and if
      * it must be bigger than the value read by the sensor.
      *
-     * @param bigger If is bigger than the comparison value.
-     * @param checkValue The comparison value.
-     * @param sensorPort The port where the sensor is connected.
+     * @param sensorPort      The port where the sensor is connected.
+     * @param comparisonValue The comparison value.
+     * @param bigger          If is bigger than the comparison value.
      */
-    public WaitUltrasonicSensor(boolean bigger, byte checkValue, SensorPort sensorPort) {
-        this(bigger, checkValue, new UltrasonicSensor(sensorPort));
+    public WaitUltrasonicSensor(SensorPort sensorPort, byte comparisonValue, boolean bigger) {
+        this(new UltrasonicSensor(sensorPort), comparisonValue, bigger);
     }
 
     // ------------------------------------------------------------------------- Help Methods
-    
+
     // ------------------------------------------------------------------------- General Methods
 
-    @Override
-    public void run() {
-        while (this.isFinished()) {
+    /**
+     * Wait the ultrasonic.
+     */
+    public void waitUltrasonic() {
+        boolean finished = false;
+        while (!finished) {
             try {
                 if (this.isBigger()) {
-                    this.setFinished(this.getUltrasonicSensor().getDistance() > this.getCheckValue());
+                    finished = this.getUltrasonicSensor().getDistance() > this.getCheckValue();
                 } else {
-                    this.setFinished(this.getUltrasonicSensor().getDistance() < this.getCheckValue());
+                    finished = this.getUltrasonicSensor().getDistance() < this.getCheckValue();
                 }
-                sleep(WAIT_TIME);
+                Thread.sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {
             }
         }
