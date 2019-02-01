@@ -28,10 +28,10 @@
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 2.0
+ * @version 3.0 (2019-02-01)
  */
-public class WaitAnalogSensor extends WaitSensor {
-    
+public class WaitAnalogSensor {
+
     // ------------------------------------------------------------------------- Constants
 
     /**
@@ -49,8 +49,8 @@ public class WaitAnalogSensor extends WaitSensor {
     /**
      * User-defined value that is compared with the one read by the sensor.
      */
-    private byte checkValue;
-    
+    private byte comparisonValue;
+
     /**
      * If this is true, the comparison value must be bigger than the read value.
      * Otherwise the comparison value must be smaller than the read value.
@@ -65,9 +65,9 @@ public class WaitAnalogSensor extends WaitSensor {
      * @return The comparison value.
      */
     public byte getCheckValue() {
-        return this.checkValue;
+        return this.comparisonValue;
     }
-    
+
     /**
      * To know if the read value must be bigger than the comparison value.
      *
@@ -76,41 +76,37 @@ public class WaitAnalogSensor extends WaitSensor {
     public boolean isBigger() {
         return this.bigger;
     }
-    
+
     // ------------------------------------------------------------------------- Setters
-    
+
     /**
      * Set the comparison value, checks that the value is in the range of an
-     * analog sensor and that the wait is finished.
+     * analog sensor.
      *
      * @param checkValue The comparison value.
      */
     public void setCheckValue(byte checkValue) {
-        if (this.isFinished()) {
-            if (checkValue >= SENSOR_MIN_VALUE && checkValue <= SENSOR_MAX_VALUE) {
-                this.checkValue = checkValue;
-            }
+        if (checkValue >= SENSOR_MIN_VALUE && checkValue <= SENSOR_MAX_VALUE) {
+            this.comparisonValue = checkValue;
         }
     }
-    
+
     /**
-     * Set the bigger field checking that the wait is finished.
+     * Set the bigger field.
      *
      * @param bigger If is bigger than the comparison value.
      */
     public void setBigger(boolean bigger) {
-        if (this.isFinished()) {
-            this.bigger = bigger;
-        }
+        this.bigger = bigger;
     }
 
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, creates a new wait by setting the comparison value 
+     * Constructor method, creates a new wait by setting the comparison value
      * and if it must be bigger than the value read by the sensor.
      *
-     * @param bigger If is bigger than the comparison value.
+     * @param bigger     If is bigger than the comparison value.
      * @param checkValue The comparison value.
      */
     WaitAnalogSensor(boolean bigger, byte checkValue) {
@@ -119,7 +115,6 @@ public class WaitAnalogSensor extends WaitSensor {
     }
 
     // ------------------------------------------------------------------------- Help Methods
-    
     // ------------------------------------------------------------------------- General Methods
 
 }
