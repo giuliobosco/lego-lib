@@ -31,12 +31,18 @@ import lejos.nxt.SoundSensor;
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 2.0
+ * @version 3.0 (2019-02-01)
  */
 public class WaitSoundSensor extends WaitAnalogSensor {
-    
+
     // ------------------------------------------------------------------------- Constants
-    
+
+    /**
+     * Constant that defines the time to wait (in milliseconds) before making a
+     * new check to finish the wait.
+     */
+    protected static final long WAIT_TIME = 100;
+
     // ------------------------------------------------------------------------- Fields
 
     /**
@@ -45,7 +51,7 @@ public class WaitSoundSensor extends WaitAnalogSensor {
     private SoundSensor soundSensor;
 
     // ------------------------------------------------------------------------- Getters
-    
+
     /**
      * Get the sound sensor.
      *
@@ -54,64 +60,64 @@ public class WaitSoundSensor extends WaitAnalogSensor {
     public SoundSensor getSoundSensor() {
         return this.soundSensor;
     }
-    
+
     // ------------------------------------------------------------------------- Setters
 
     /**
      * Set the sound sensor.
      *
-     * @param soundSensor The suond sensor.
+     * @param soundSensor The sound sensor.
      */
     public void setSoundSensor(SoundSensor soundSensor) {
-        if (this.isFinished()) {
-            this.soundSensor = soundSensor;
-        }
+        this.soundSensor = soundSensor;
     }
 
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, defines the sensor, the comparison value and if it 
+     * Constructor method, defines the sensor, the comparison value and if it
      * must be bigger than the value read by the sensor.
      *
-     * @param bigger If is bigger than the comparison value.
-     * @param checkValue The comparison value.
-     * @param soundSensor The sound sensor.
+     * @param soundSensor     The sound sensor.
+     * @param comparisonValue The comparison value.
+     * @param bigger          If is bigger than the comparison value.
      */
-    public WaitSoundSensor(boolean bigger, byte checkValue, SoundSensor soundSensor) {
-        super(bigger, checkValue);
+    public WaitSoundSensor(SoundSensor soundSensor, byte comparisonValue, boolean bigger) {
+        super(bigger, comparisonValue);
         this.setSoundSensor(soundSensor);
     }
 
     /**
-     * Constructor method, defines the sensor port, the comparison value and if 
+     * Constructor method, defines the sensor port, the comparison value and if
      * it must be bigger than the value read by the sensor.
      *
-     * @param bigger If is bigger than the comparison value.
-     * @param checkValue The comparison value.
-     * @param sensorPort The port where the sensor is connected.
+     * @param sensorPort      The port where the sensor is connected.
+     * @param comparisonValue The comparison value.
+     * @param bigger          If is bigger than the comparison value.
      */
-    public WaitSoundSensor(boolean bigger, byte checkValue, SensorPort sensorPort) {
-        this(bigger, checkValue, new SoundSensor(sensorPort));
+    public WaitSoundSensor(SensorPort sensorPort, byte comparisonValue, boolean bigger) {
+        this(new SoundSensor(sensorPort), comparisonValue, bigger);
     }
 
     // ------------------------------------------------------------------------- Help Methods
-    
+
     // ------------------------------------------------------------------------- General Methods
 
-    @Override
-    public void run() {
-        while (this.isFinished()) {
+    /**
+     * Wait the sound.
+     */
+    public void waitSound() {
+        boolean finished = false;
+        while (!finished) {
             try {
                 if (this.isBigger()) {
-                    this.setFinished(this.getSoundSensor().readValue() > this.getCheckValue());
+                    finished = this.getSoundSensor().readValue() > this.getCheckValue();
                 } else {
-                    this.setFinished(this.getSoundSensor().readValue() < this.getCheckValue());
+                    finished = this.getSoundSensor().readValue() < this.getCheckValue();
                 }
-                sleep(WAIT_TIME);
+                Thread.sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {
             }
         }
     }
-
 }
