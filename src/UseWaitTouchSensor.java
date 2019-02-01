@@ -50,15 +50,13 @@ public class UseWaitTouchSensor {
         System.out.println("cliccare il touch sensor sulla porta 1");
 
         // aspetto che venga cliccato il touch sensor
-        wtc.waitTouchSensor();
+        wtc.waitTouch();
 
         // stampo messagigo finale
         System.out.println("touch sensor cliccato");
 
-        // aspetto che venga cliccato un qualunque tasto del
-        // blocco NXT, questo perchè altrimenti il programma
-        // terminerebbe subito e non si riuscirebbe a leggere
-        // l'ultima cosa stampata.
+        // aspetto che venga premuto un bottone sul brick per terminare
+        // il programma
         Button.waitForAnyPress();
     }
 }

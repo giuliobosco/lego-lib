@@ -57,10 +57,8 @@ public class UseWaitSoundSensor {
         System.out.println(
                 "Valore alto del microfono recepito");
 
-        // aspetto che venga cliccato un qualunque tasto del
-        // blocco NXT, questo perchè altrimenti il programma
-        // terminerebbe subito e non si riuscirebbe a leggere
-        // l'ultima cosa stampata.
+        // aspetto che venga premuto un bottone sul brick per terminare
+        // il programma
         Button.waitForAnyPress();
     }
 }
