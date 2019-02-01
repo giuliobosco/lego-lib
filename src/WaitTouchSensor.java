@@ -31,7 +31,7 @@ import lejos.nxt.TouchSensor;
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 5.0 (01.02.2019)
+ * @version 5.1 (01.02.2019)
  */
 public class WaitTouchSensor {
 
@@ -125,6 +125,7 @@ public class WaitTouchSensor {
     public WaitTouchSensor(TouchSensor touchSensor, byte waitAction) {
         setTouchSensor(touchSensor);
         setWaitAction(waitAction);
+        this.finished = false;
     }
 
     /**
@@ -198,7 +199,7 @@ public class WaitTouchSensor {
     // ------------------------------------------------------------------------- General Methods
 
     public void waitTouchSensor() {
-        while (this.finished) {
+        while (!this.finished) {
             try {
                 if (this.getWaitAction() == PRESSED) {
                     this.buttonPressedAction();
