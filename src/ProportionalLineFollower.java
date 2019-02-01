@@ -64,9 +64,7 @@ public class ProportionalLineFollower extends Navigation {
      * @param frontLightSensor Frontal light sensor for proportional line follower.
      */
     public void setFrontLightSensor(LightSensor frontLightSensor) {
-        if (!this.isAlive()) {
-            this.frontLightSensor = frontLightSensor;
-        }
+        this.frontLightSensor = frontLightSensor;
     }
 
     /**
@@ -84,9 +82,7 @@ public class ProportionalLineFollower extends Navigation {
      * @param backLightSensor Back light sensor for proportional line follower.
      */
     public void setBackLightSensor(LightSensor backLightSensor) {
-        if (!this.isAlive()) {
-            this.backLightSensor = backLightSensor;
-        }
+        this.backLightSensor = backLightSensor;
     }
 
     /**
@@ -104,9 +100,7 @@ public class ProportionalLineFollower extends Navigation {
      * @param followBlack Follow black.
      */
     public void setFollowBlack(boolean followBlack) {
-        if (!this.isAlive()) {
-            this.followBlack = followBlack;
-        }
+        this.followBlack = followBlack;
     }
 
     /**
@@ -147,9 +141,9 @@ public class ProportionalLineFollower extends Navigation {
      * Run the proportional line follower.
      */
     @Override
-    public void run() {
-        this.startNavigation();
-        while (!this.isAlive()) {
+    public void start() {
+        super.start();
+        while (true) {
             if (this.frontLightSensor.getLightValue() < 50) {
                 byte value = (byte) this.frontLightSensor.getLightValue();
                 value -= this.getPower();
@@ -168,8 +162,6 @@ public class ProportionalLineFollower extends Navigation {
                 }
             }
         }
-
-        this.stopNavigation();
     }
 
 
