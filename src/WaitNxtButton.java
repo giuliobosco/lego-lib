@@ -27,66 +27,42 @@ import lejos.nxt.Button;
 /**
  * WaitNxtButton, used to wait for a button pressing.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
+ * Can be used also the Button with out this.
  *
  * @author gabrialessi
  * @author giuliobosco
  * @version 3.0
  */
-public class WaitNxtButton extends WaitDigitalSensor {
-
-    // ------------------------------------------------------------------------- Constants
-    
-    // ------------------------------------------------------------------------- Fields
+public class WaitNxtButton {
 
     /**
-     * The button of a NXT brick.
-     */
-    private Button nxtButton;
-
-    // ------------------------------------------------------------------------- Getters
-
-    /**
-     * Get the NXT button.
+     * Wait a button pressed.
      *
-     * @return The NXT button.
+     * @param button Button to wait to be pressed.
      */
-    public Button getNxtButton() {
-        return this.nxtButton;
+    public void waitButton(Button button) {
+        // waiting for pressing the button.
+        button.waitForPress();
     }
-    
-    // ------------------------------------------------------------------------- Setters
-    
-    /**
-     * Set the NXT button.
-     *
-     * @param nxtButton The NXT button.
-     */
-    public void setNxtButton(Button nxtButton) {
-        if (this.isFinished()) {
-            this.nxtButton = nxtButton;
-        }
-    }
-
-    // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, defines the action to wait and the NXT button.
-     *
-     * @param waitAction The wait action.
-     * @param nxtButton The NXT button.
+     * Wait the enter button is pressed.
      */
-    public WaitNxtButton(byte waitAction, Button nxtButton) {
-        super(waitAction);
-        this.setNxtButton(nxtButton);
+    public void waitEnterButton() {
+        Button.ENTER.waitForPress();
     }
 
-    // ------------------------------------------------------------------------- Help Methods
-
-    // ------------------------------------------------------------------------- General Methods
-    
-    @Override
-    protected boolean isPressedButton() {
-        return this.getNxtButton().isDown();
+    /**
+     * Wait the right button pressed.
+     */
+    public void waitRightButton() {
+        Button.RIGHT.waitForPress();
     }
-    
+
+    /**
+     * Wait the left button pressed.
+     */
+    public void waitLeftButton() {
+        Button.LEFT.waitForPress();
+    }
 }
