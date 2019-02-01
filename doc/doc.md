@@ -251,19 +251,19 @@ Classe `Thread` usata per generalizzare tutte le classi `Wait`. Queste classi so
 
 #### WaitAnalogSensor
 
-Classe figlia di `WaitSensor` che serve per aspettare l'interazione di un sensore analogico (microfono, sensore di luce, sensore a ultrasuoni). Questi sensori si distinguono perché hanno il compito di leggere un valore a dipendenza del sensore in questione.  
-Inoltre è presente un valore che viene usato per compararlo con quello letto dal sensore. Il programma si comporta in un certo modo se il valore è maggiore e in un altro modo se invece è minore.
+Classe che serve per generalizzare le classi che aspettano un sensore analogico (microfono, tocco, ultrasuoni).
 
 <img src="img/classes/waitanalogsensor.png" width=400>
 
+- WAIT_TIME: Costante che definisce l'intervallo di tempo tra un controllo e un altro della fine dell'attesa.
 - SENSOR_MIN_VALUE: Costante che definisce il minimo valore che un sensore può leggere.
 - SENSOR_MAX_VALUE: Costante che definisce il massimo valore che un sensore può leggere.
-- bigger: Attributo che indica se il valore letto deve essere maggiore o minore di quello di comparare.
-- value: Attributo che rappresenta il valore da comparare con quello letto dal sensore.
+- comparisonValue: Attributo che rappresenta il valore da comparare con quello letto dal sensore.
+- bigger: Attributo che indica se il valore letto deve essere maggiore o minore di quello di confronto.
+- getComparisonValue(): Metodo che serve per ottenere il valore di confronto.
 - isBigger(): Metodo utile per sapere il valore dell'attributo `bigger`.
-- getValue(): Metodo utile per ottenere il valore di confronto.
-- setBigger(): Metodo che serve per impostare il valore dell'attributo `bigger`.
-- setValue(): Metodo utile per impostare il valore di confronto.
+- setComparisonValue(): Metodo utile per impostare il valore di confronto.
+- setBigger(): Metodo utile per impostare il valore dell'attributo `bigger`.
 - WaitAnalogSensor(): Metodo costruttore, istanzia un nuovo `WaitAnalogSensor`, defininendo il campo `bigger` e il valore per comparare.
 
 ##### Test WaitAnalogSensor
