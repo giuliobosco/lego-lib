@@ -292,13 +292,13 @@ Classe figlia di `WaitSensor` che serve per aspettare l'interazione di un sensor
 
 #### WaitLightSensor
 
-Classe figlia di `WaitAnalogSensor` utile per aspettare fino a quando si legge un certo valore con un sensore di luce. L'implementazione della classe non ha molte differenze rispetto alla sua classe superiore, infatti bisogna leggere un valore che va comparato con quello impostato dall'utente e si decide se deve essere maggiore o minore.
+Classe figlia di `WaitAnalogSensor` che aspetta che il sensore di luce percepisca un certo valore.
 
 - lightSensor: Attributo che rappresenta il sensore di luce.
-- getLightSensor(): Metodo utile per ottenere il sensore di luce.
-- setLightSensor(): Metodo che serve per impostare il sensore di luce.
-- WaitLightSensor(): Metodo costruttore, istanzia un nuovo `WaitLightSensor` impostando se il valore letto deve essere maggiore di quello inserito (`bigger`), il valore da comparare (`value`) e il sensore o la porta del brick in cui è inserito il sensore.
-- run(): Metodo principale in cui si aspetta il giusto valore letto dal sensore di luce.
+- getLightSensor(): Metodo che serve per ottenere il sensore.
+- setLightSensor(): Metodo utile per impostare il sensore.
+- WaitLightSensor(): Metodo costruttore, istanzia un nuovo `WaitLightSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
+- waitLight(): È il metodo principale che termina l'attesa in base al valore di confronto.
 
 ##### Test WaitLightSensor
 
@@ -316,7 +316,7 @@ Classe figlia di `WaitAnalogSensor` utile per aspettare fino a quando si legge u
 
 #### WaitSoundSensor.java
 
-Classe che aspetta che il microfono percepisca un certo valore.
+Classe figlia di `WaitAnalogSensor` che aspetta che il microfono percepisca un certo valore.
 
 - soundSensor: Attributo che rappresenta il sensore di suono (microfono).
 - getSoundSensor(): Metodo che serve per ottenere il microfono.
@@ -358,6 +358,14 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
 ##### Test WaitTouchSensor
 
 #### WaitUltrasonicSensor.java
+
+Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni percepisca un certo valore.
+
+- ultrasonicSensor: Attributo che rappresenta il sensore a ultrasuoni.
+- getUltrasonicSensor(): Metodo che serve per ottenere il sensore.
+- setUltrasonicSensor(): Metodo utile per impostare il sensore.
+- WaitUltrasonicSensor(): Metodo costruttore, istanzia un nuovo `WaitUltrasonicSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
+- waitUltrasonic(): È il metodo principale che termina l'attesa in base al valore di confronto.
 
 ##### Test WaitUltrasonicSensor
 
