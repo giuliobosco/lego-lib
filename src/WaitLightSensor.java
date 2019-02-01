@@ -105,9 +105,9 @@ public class WaitLightSensor extends WaitAnalogSensor {
         while (!finished) {
             try {
                 if (this.isBigger()) {
-                    finished = this.getLightSensor().getLightValue() > this.getCheckValue();
+                    finished = this.getLightSensor().getLightValue() > this.getComparisonValue();
                 } else {
-                    finished = this.getLightSensor().getLightValue() < this.getCheckValue();
+                    finished = this.getLightSensor().getLightValue() < this.getComparisonValue();
                 }
                 Thread.sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {

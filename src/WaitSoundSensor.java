@@ -105,9 +105,9 @@ public class WaitSoundSensor extends WaitAnalogSensor {
         while (!finished) {
             try {
                 if (this.isBigger()) {
-                    finished = this.getSoundSensor().readValue() > this.getCheckValue();
+                    finished = this.getSoundSensor().readValue() > this.getComparisonValue();
                 } else {
-                    finished = this.getSoundSensor().readValue() < this.getCheckValue();
+                    finished = this.getSoundSensor().readValue() < this.getComparisonValue();
                 }
                 Thread.sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {

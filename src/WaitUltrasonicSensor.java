@@ -103,9 +103,9 @@ public class WaitUltrasonicSensor extends WaitAnalogSensor {
         while (!finished) {
             try {
                 if (this.isBigger()) {
-                    finished = this.getUltrasonicSensor().getDistance() > this.getCheckValue();
+                    finished = this.getUltrasonicSensor().getDistance() > this.getComparisonValue();
                 } else {
-                    finished = this.getUltrasonicSensor().getDistance() < this.getCheckValue();
+                    finished = this.getUltrasonicSensor().getDistance() < this.getComparisonValue();
                 }
                 Thread.sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {
