@@ -81,7 +81,7 @@ Data fine: 08.02.2019
 > mainly used by the computer scientists of the second year class of the Trevano School of Arts and 
 > Crafts to implement the programs for the WRO (World Robot Olympiad) and FLL (First LEGO League). 
 > This collection of functions  will allow users to focus more on the main problem to be solved by 
-> already having the basic operations implemented and tested.*
+> already having the basic operations implemented and tested.
 
 ### Scopo
 
@@ -153,6 +153,8 @@ I software usati comprendono quelli presenti sui nostri PC e il firmware per il 
 - GitHub Desktop 1.5.0
 - GanttProject 2.8.9 Pilsen
 - StarUML 3.0.2
+- NetBeans IDE 8.2
+- Windows PowerShell ISE Host 5.1.17134.407
 
 #### Hardware
 
