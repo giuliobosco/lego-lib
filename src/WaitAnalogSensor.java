@@ -70,7 +70,7 @@ public class WaitAnalogSensor {
      *
      * @return The comparison value.
      */
-    public byte getCheckValue() {
+    public byte getComparisonValue() {
         return this.comparisonValue;
     }
 
@@ -89,11 +89,11 @@ public class WaitAnalogSensor {
      * Set the comparison value, checks that the value is in the range of an
      * analog sensor.
      *
-     * @param checkValue The comparison value.
+     * @param comparisonValue The comparison value.
      */
-    public void setCheckValue(byte checkValue) {
-        if (checkValue >= SENSOR_MIN_VALUE && checkValue <= SENSOR_MAX_VALUE) {
-            this.comparisonValue = checkValue;
+    public void setComparisonValue(byte comparisonValue) {
+        if (comparisonValue >= SENSOR_MIN_VALUE && comparisonValue <= SENSOR_MAX_VALUE) {
+            this.comparisonValue = comparisonValue;
         }
     }
 
@@ -113,11 +113,11 @@ public class WaitAnalogSensor {
      * and if it must be bigger than the value read by the sensor.
      *
      * @param bigger     If is bigger than the comparison value.
-     * @param checkValue The comparison value.
+     * @param comparisonValue The comparison value.
      */
-    WaitAnalogSensor(boolean bigger, byte checkValue) {
+    WaitAnalogSensor(boolean bigger, byte comparisonValue) {
         this.setBigger(bigger);
-        this.setCheckValue(checkValue);
+        this.setComparisonValue(comparisonValue);
     }
 
     // ------------------------------------------------------------------------- Help Methods
