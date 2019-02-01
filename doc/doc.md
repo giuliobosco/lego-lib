@@ -180,31 +180,28 @@ In questo settore viene spiegato come è stata ideata la struttura del sistema e
 Qui è descritto come sono strutturate le cartelle contententi la libreria sviluppata.
 
 - src
-    - ch
-        - ti
-            - cpttrevano
-                - samt
-                    - legolib
-                        - examples
-                            - LineFollower.java
-                        - motor
-                            - SingleMotor.java
-                        - wait
-                            - Wait.java
-                            - WaitAnalogSensor.java
-                            - WaitDigitalSensor.java
-                            - WaitLightSensor.java
-                            - WaitMotor.java
-                            - WaitNxtButton.java
-                            - WaitSensor.java
-                            - WaitSoundSensor.java
-                            - WaitTime.java
-                            - WaitTouchSensor.java
-                            - WaitUltrasonicSensor.java
+    - out
     - test
         - HelloWorld.java
         - LineFollower.java
     - classes.jar
+    - compile.ps1
+    - LineFollower.java
+    - Navigation.java
+    - PLFRunner.java
+    - ProportionalLineFollower.java
+    - SingleMotor.java
+    - Wait.java
+    - WaitAnalogSensor.java
+    - WaitDigitalSensor.java
+    - WaitLightSensor.java
+    - WaitMotor.java
+    - WaitNxtButton.java
+    - WaitSensor.java
+    - WaitSoundSensor.java
+    - WaitTime.java
+    - WaitTouchSensor.java
+    - WaitUltrasonicSensor.java
 
 #### Diagramma delle classi
 
