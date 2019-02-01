@@ -26,12 +26,12 @@ import lejos.nxt.SensorPort;
 import lejos.nxt.UltrasonicSensor;
 
 /**
- * WaitUltrasonicSensor, used to wait an ultrasonic sensor.
+ * WaitUltrasonicSensor, used to wait a value on an ultrasonic sensor.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 3.0 (2019-02-01)
+ * @version 3.1 (2019-02-01)
  */
 public class WaitUltrasonicSensor extends WaitAnalogSensor {
 
@@ -47,21 +47,23 @@ public class WaitUltrasonicSensor extends WaitAnalogSensor {
     // ------------------------------------------------------------------------- Getters
 
     /**
-     * Set the ultrasonic sensor.
-     *
-     * @param ultrasonicSensor The ultrasonic sensor.
-     */
-    public void setUltrasonicSensor(UltrasonicSensor ultrasonicSensor) {
-        this.ultrasonicSensor = ultrasonicSensor;
-    }
-
-    /**
      * Get the ultrasonic sensor.
      *
      * @return The ultrasonic sensor.
      */
     public UltrasonicSensor getUltrasonicSensor() {
         return this.ultrasonicSensor;
+    }
+    
+    // ------------------------------------------------------------------------- Setters
+    
+    /**
+     * Set the ultrasonic sensor.
+     *
+     * @param ultrasonicSensor The ultrasonic sensor.
+     */
+    public void setUltrasonicSensor(UltrasonicSensor ultrasonicSensor) {
+        this.ultrasonicSensor = ultrasonicSensor;
     }
 
     // ------------------------------------------------------------------------- Constructors
@@ -96,7 +98,7 @@ public class WaitUltrasonicSensor extends WaitAnalogSensor {
     // ------------------------------------------------------------------------- General Methods
 
     /**
-     * Wait the ultrasonic.
+     * Main method that finishes the wait based on the comparison value.
      */
     public void waitUltrasonic() {
         boolean finished = false;
