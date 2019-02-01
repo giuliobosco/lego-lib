@@ -30,7 +30,7 @@
  * @version 2.0
  */
 public class LineFollower extends Navigation {
-    
+
     // ------------------------------------------------------------------------- Constants
 
     /**
@@ -47,7 +47,7 @@ public class LineFollower extends Navigation {
 
     /**
      * Line on the left.
-     * If true the line follower will keep the line on the left otherwise it 
+     * If true the line follower will keep the line on the left otherwise it
      * will keep the line on the right.
      */
     private boolean lineOnLeft;
@@ -60,9 +60,7 @@ public class LineFollower extends Navigation {
      * @param lineOnLeft The line on the left.
      */
     public void setLineOnLeft(boolean lineOnLeft) {
-        if (!this.isAlive()) {
-            this.lineOnLeft = lineOnLeft;
-        }
+        this.lineOnLeft = lineOnLeft;
     }
 
     /**
@@ -77,11 +75,11 @@ public class LineFollower extends Navigation {
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, creates the line follower with the left motor, the 
+     * Constructor method, creates the line follower with the left motor, the
      * right motor and the light sensor wait.
      *
-     * @param leftMotor The left motor.
-     * @param rightMotor The right motor.
+     * @param leftMotor       The left motor.
+     * @param rightMotor      The right motor.
      * @param waitLightSensor The light sensor waiter.
      */
     public LineFollower(SingleMotor leftMotor, SingleMotor rightMotor, WaitLightSensor waitLightSensor) {
@@ -90,17 +88,18 @@ public class LineFollower extends Navigation {
     }
 
     // ------------------------------------------------------------------------- Help Methods
-    
+
     // ------------------------------------------------------------------------- General Methods
 
     @Override
-    public void run() {
-        this.waitLightSensor.setCheckValue((byte) 50);
+    public void start() {
+        this.waitLightSensor.setComparisonValue((byte) 50);
         this.waitLightSensor.setBigger(this.isLineOnLeft());
 
-        this.startNavigation();
-        while (!isAlive()) {
-            waitLightSensor.waiter();
+        super.start();
+
+        while (true) {
+            waitLightSensor.waitLight();
 
             if (this.isLineOnLeft()) {
                 this.right(TURNING);
@@ -109,7 +108,7 @@ public class LineFollower extends Navigation {
             }
 
             waitLightSensor.setBigger(!waitLightSensor.isBigger());
-            waitLightSensor.waiter();
+            waitLightSensor.waitLight();
 
             if (this.isLineOnLeft()) {
                 this.left(TURNING);
