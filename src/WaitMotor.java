@@ -28,12 +28,12 @@
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 3.0
+ * @version 4.0 (2019-02-01)
  */
-public class WaitMotor extends Wait {
+public class WaitMotor {
 
     // ------------------------------------------------------------------------- Constants
-    
+
     // ------------------------------------------------------------------------- Fields
 
     /**
@@ -44,10 +44,10 @@ public class WaitMotor extends Wait {
     /**
      * User-defined value that is compared with the one got by the motor.
      */
-    private int checkValue;
+    private int comparisonValue;
 
     // ------------------------------------------------------------------------- Getters
-    
+
     /**
      * Get the single motor.
      *
@@ -56,16 +56,16 @@ public class WaitMotor extends Wait {
     public SingleMotor getSingleMotor() {
         return this.singleMotor;
     }
-    
+
     /**
      * Get the comparison value.
      *
      * @return The comparison value.
      */
-    public int getCheckValue() {
-        return this.checkValue;
+    public int getComparisonValue() {
+        return this.comparisonValue;
     }
-    
+
     // ------------------------------------------------------------------------- Setters
 
     /**
@@ -74,49 +74,49 @@ public class WaitMotor extends Wait {
      * @param singleMotor The single motor.
      */
     public void setSingleMotor(SingleMotor singleMotor) {
-        if (this.isFinished()) {
-            this.singleMotor = singleMotor;
-        }
+        this.singleMotor = singleMotor;
     }
 
     /**
      * Set the comparison value.
      *
-     * @param checkValue The comparison value.
+     * @param comparisonValue The comparison value.
      */
-    public void setCheckValue(int checkValue) {
-        if (this.isFinished()) {
-            this.checkValue = checkValue;
-        }
+    public void setComparisonValue(int comparisonValue) {
+        this.comparisonValue = comparisonValue;
     }
 
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, creates the wait by setting the motor and the 
+     * Constructor method, creates the wait by setting the motor and the
      * comparison value.
      *
-     * @param singleMotor The single motor.
-     * @param checkValue The comparison value.
+     * @param singleMotor     The single motor.
+     * @param comparisonValue The comparison value.
      */
-    public WaitMotor(SingleMotor singleMotor, int checkValue) {
+    public WaitMotor(SingleMotor singleMotor, int comparisonValue) {
         this.setSingleMotor(singleMotor);
-        this.setCheckValue(checkValue);
+        this.setComparisonValue(comparisonValue);
     }
 
     // ------------------------------------------------------------------------- Help Methods
-    
+
     // ------------------------------------------------------------------------- General Methods
 
-    @Override
-    public void run() {
-        while (this.isFinished()) {
+    /**
+     * Wait the motor rotations.
+     */
+    public void waitMotor() {
+        boolean finished = false;
+
+        while (!finished) {
             try {
                 int earlyRotations = this.getSingleMotor().getMotor().getTachoCount();
-                while (!(earlyRotations + this.getCheckValue() == earlyRotations)) {
-                    sleep(WAIT_TIME);
+                while (!(earlyRotations + this.getComparisonValue() == earlyRotations)) {
+                    Thread.sleep(1000);
                 }
-                this.setFinished(true);
+                finished = true;
             } catch (InterruptedException ignored) {
             }
         }
