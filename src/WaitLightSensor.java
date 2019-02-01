@@ -31,12 +31,12 @@ import lejos.nxt.SensorPort;
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 2.0
+ * @version 3.0 (2019-02-01)
  */
 public class WaitLightSensor extends WaitAnalogSensor {
-    
+
     // ------------------------------------------------------------------------- Constants
-    
+
     // ------------------------------------------------------------------------- Fields
 
     /**
@@ -54,61 +54,62 @@ public class WaitLightSensor extends WaitAnalogSensor {
     public LightSensor getLightSensor() {
         return this.lightSensor;
     }
-    
+
     // ------------------------------------------------------------------------- Setters
-    
+
     /**
      * Set the light sensor.
      *
      * @param lightSensor The light sensor.
      */
     public void setLightSensor(LightSensor lightSensor) {
-        if (this.isFinished()) {
-            this.lightSensor = lightSensor;
-        }
+        this.lightSensor = lightSensor;
     }
 
     // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Constructor method, defines the sensor, the comparison value and if it 
+     * Constructor method, defines the sensor, the comparison value and if it
      * must be bigger than the value read by the sensor.
      *
-     * @param bigger If is bigger than the comparison value.
-     * @param checkValue The comparison value.
-     * @param lightSensor The light sensor.
+     * @param lightSensor     The light sensor.
+     * @param comparisonValue The comparison value.
+     * @param bigger          If is bigger than the comparison value.
      */
-    public WaitLightSensor(boolean bigger, byte checkValue, LightSensor lightSensor) {
-        super(bigger, checkValue);
+    public WaitLightSensor(LightSensor lightSensor, byte comparisonValue, boolean bigger) {
+        super(bigger, comparisonValue);
         this.setLightSensor(lightSensor);
     }
 
     /**
-     * Constructor method, defines the sensor port, the comparison value and if 
+     * Constructor method, defines the sensor port, the comparison value and if
      * it must be bigger than the value read by the sensor.
      *
-     * @param bigger If is bigger than the comparison value.
-     * @param checkValue The comparison value.
-     * @param sensorPort The port where the sensor is connected.
+     * @param sensorPort      The port where the sensor is connected.
+     * @param comparisonValue The comparison value.
+     * @param bigger          If is bigger than the comparison value.
      */
-    public WaitLightSensor(boolean bigger, byte checkValue, SensorPort sensorPort) {
-        this(bigger, checkValue, new LightSensor(sensorPort));
+    public WaitLightSensor(SensorPort sensorPort, byte comparisonValue, boolean bigger) {
+        this(new LightSensor(sensorPort), comparisonValue, bigger);
     }
 
     // ------------------------------------------------------------------------- Help Methods
-    
+
     // ------------------------------------------------------------------------- General Methods
 
-    @Override
-    public void run() {
-        while (this.isFinished()) {
+    /**
+     * Wait the light.
+     */
+    public void waitLight() {
+        boolean finished = false;
+        while (!finished) {
             try {
                 if (this.isBigger()) {
-                    this.setFinished(this.getLightSensor().getLightValue() > this.getCheckValue());
+                    finished = this.getLightSensor().getLightValue() > this.getCheckValue();
                 } else {
-                    this.setFinished(this.getLightSensor().getLightValue() < this.getCheckValue());
+                    finished = this.getLightSensor().getLightValue() < this.getCheckValue();
                 }
-                sleep(WAIT_TIME);
+                Thread.sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {
             }
         }
