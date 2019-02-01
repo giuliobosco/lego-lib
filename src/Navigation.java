@@ -28,7 +28,7 @@
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 2.0
+ * @version 3.0 (2019-02-01)
  */
 public class Navigation {
     

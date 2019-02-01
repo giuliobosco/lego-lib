@@ -29,7 +29,7 @@ import lejos.nxt.SensorPort;
  * Example of using proportional line follower.
  *
  * @author giuliobosco
- * @version 1.0
+ * @version 2.0 (2019-02-01)
  */
 public class PLFRunner {
     // ------------------------------------------------------------------------------------ Costants
@@ -55,11 +55,5 @@ public class PLFRunner {
 
         // start the line follower
         plf.start();
-
-        // wait 2 seconds
-        new WaitTime(2000).waiter();
-
-        // interrupt the proportional line follower
-        plf.interrupt();
     }
 }

@@ -28,7 +28,7 @@ import lejos.nxt.LightSensor;
  * Proportional line follower.
  *
  * @author giuliobosco
- * @version 1.0
+ * @version 2.0 (2019-02-01)
  */
 public class ProportionalLineFollower extends Navigation {
     // ------------------------------------------------------------------------------------ Costants
