@@ -26,34 +26,34 @@ import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
 /**
- * Wait time example class.
- * Questa classe crea un wait time con 2000 millisecondi di
- * attesa, stampa "inizio", poi aspetta che lo wait termini
- * e stampa "finito".
+ * Wait touch sensor example class.
+ * Aspetta che il touch sensor sulla porta 1 venga premuto.
  *
  * @author giuliobosco
- * @version 1.0 (01.02.2019)
+ * @version 1.1 (01.02.2019)
  */
 public class UseWaitTouchSensor {
 
     /**
      * Metodo main della classe, avvia il programma di test della classe
-     * WaitTime in maniera sincrona.
+     * WaitTouchSensor.
      *
      * @param args Argomenti da linea di comando.
      */
     public static void main(String[] args) {
-        // creo il wait time con 2000 millisecondi di attesa
-        WaitTouchSensor wtc = new WaitTouchSensor(SensorPort.S1, WaitTouchSensor.CLICKED);
+        // creo lo waiter per il touch sensor sulla porta uno, che aspetta
+        // unc click del sensore.
+        WaitTouchSensor wtc = new WaitTouchSensor(SensorPort.S1,
+                WaitTouchSensor.CLICKED);
 
-        // stampo inizio
-        System.out.println("inizio");
+        // stampo messaggio iniziale
+        System.out.println("cliccare il touch sensor sulla porta 1");
 
-        // aspetto i 2000 millisecondi
+        // aspetto che venga cliccato il touch sensor
         wtc.waitTouchSensor();
 
-        // stampo "finito"
-        System.out.println("finito");
+        // stampo messagigo finale
+        System.out.println("touch sensor cliccato");
 
         // aspetto che venga cliccato un qualunque tasto del
         // blocco NXT, questo perchè altrimenti il programma

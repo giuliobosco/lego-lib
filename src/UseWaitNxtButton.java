@@ -25,23 +25,42 @@
 import lejos.nxt.Button;
 
 /**
- * 
+ * Wait nxt button example class.
+ * Testa la funzionalita dell'aspettare la premuta dei bottoni sul brick
+ * nxt. Prima richiede di premere il tasto sinistro, poi quello di enter,
+ * ed infine il tasto destro.
+ *
  * @author giuliobosco
- * @version 1.0 (2019-02-01)
+ * @version 1.1 (2019-02-01)
  */
 public class UseWaitNxtButton {
 
+    /**
+     * Metodo main della classe, avvia il programma di test della classe
+     * WaitNxtButton.
+     *
+     * @param args Argomenti da linea di comando.
+     */
     public static void main(String[] args) {
+        // aspetto che il tasto sinistro venga premuto
         System.out.println("Press left button to continue");
         WaitNxtButton.leftButton();
 
-        System.out.println("Button pressed\n\nPress enter button to continue");
+        // aspetto che il tasto enter venga premuto
+        System.out.println(
+                "Button pressed\n\nPress enter button to continue");
         WaitNxtButton.enterButton();
 
-        System.out.println("Button pressed\n\nPress right button to continue");
-        WaitNxtButton.enterButton();
+        // aspetto che il tasto destro venga premuto
+        System.out.println(
+                "Button pressed\n\nPress right button to continue");
+        WaitNxtButton.rightButton();
         System.out.println("Button pressed\n\n");
 
+        // aspetto che venga cliccato un qualunque tasto del
+        // blocco NXT, questo perchè altrimenti il programma
+        // terminerebbe subito e non si riuscirebbe a leggere
+        // l'ultima cosa stampata.
         Button.waitForAnyPress();
     }
 }
