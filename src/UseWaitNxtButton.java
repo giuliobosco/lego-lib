@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 SAMT.
+ * Copyright 2019 giuliobosco.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,44 +25,23 @@
 import lejos.nxt.Button;
 
 /**
- * WaitNxtButton, used to wait for a button pressing.
- * In the LEGO Mindstorms environment is represented by the orange block "Wait".
- * Can be used also the Button with out this.
- *
- * @author gabrialessi
+ * 
  * @author giuliobosco
- * @version 4.1 (01.02.2019)
+ * @version 1.0 (2019-02-01)
  */
-public class WaitNxtButton {
+public class UseWaitNxtButton {
 
-    /**
-     * Wait a button pressed.
-     *
-     * @param button Button to wait to be pressed.
-     */
-    public static void button(Button button) {
-        // waiting for pressing the button.
-        button.waitForPress();
-    }
+    public static void main(String[] args) {
+        System.out.println("Press left button to continue");
+        WaitNxtButton.leftButton();
 
-    /**
-     * Wait the enter button is pressed.
-     */
-    public static void enterButton() {
-        button(Button.ENTER);
-    }
+        System.out.println("Button pressed\n\nPress enter button to continue");
+        WaitNxtButton.enterButton();
 
-    /**
-     * Wait the right button pressed.
-     */
-    public static void rightButton() {
-        button(Button.RIGHT);
-    }
+        System.out.println("Button pressed\n\nPress right button to continue");
+        WaitNxtButton.enterButton();
+        System.out.println("Button pressed\n\n");
 
-    /**
-     * Wait the left button pressed.
-     */
-    public static void leftButton() {
-        button(Button.LEFT);
+        Button.waitForAnyPress();
     }
 }
