@@ -324,15 +324,28 @@ Classe figlia di `WaitAnalogSensor` utile per aspettare fino a quando si legge u
 
 #### WaitTouchSensor
 
-Classe figlia di `WaitDigitalSensor` che serve per aspettare la pressione di un sensore di tocco.
+Classe utile per aspettare la pressione, il rilascio o il click di un sensore di tocco.  
 
 <img src="img/classes/waittouchsensor.png" width=400>
 
+- WAIT_TIME: Costante che definisce l'intervallo di tempo tra un controllo e un altro della fine dell'attesa.
+- PRESSED: Costante che definisce la pressione del sensore.
+- RELEASED: Costante che definisce il rilascio del sensore.
+- CLICKED: Costante che definisce il click (pressione e rilascio) del sensore.
 - touchSensor: Attributo che rappresenta il sensore di tocco.
+- waitAction: Attributo che rappresenta l'azione da aspettare (premuto, rilasciato o cliccato).
+- finished: Attributo interno che dice se l'attesa è finita.
 - getTouchSensor(): Metodo che serve per ottenere il sensore di tocco.
+- getWaitAction(): Metodo che serve per ottenere l'azione che si vuole aspettare.
 - setTouchSensor(): Metodo utile per impostare il sensore di tocco.
+- setWaitAction(): Metodo utile per impostare l'azione da aspettare.
 - WaitTouchSensor(): Metodo costruttore, istanzia un nuovo `WaitTouchSensor` impostando l'azione (premuto, rilasciato, cliccato) e il sensore o la porta del brick in cui è inserito il sensore.
-- run(): È il metodo principale in cui si aspetta la pressione di un sensore di tocco.
+- isWaitAction(): Metodo utile per verificare che l'azione da aspettare imposta sia valida.
+- isPressedButton(): Metodo che dice se il sensore è premuto.
+- buttonPressedAction(): Metodo che aspetta la pressione del sensore.
+- buttonReleasedAction(): Metodo che aspetta il rilascio del sensore.
+- buttonClickedAction(): Metodo che aspetta il click (pressione e rilascio) del sensore.
+- waitTouchSensor(): È il metodo principale che termina l'attesa in base all'azione impostata.
 
 ##### Test WaitTouchSensor
 
