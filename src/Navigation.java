@@ -30,7 +30,7 @@
  * @author gabrialessi
  * @version 2.0
  */
-public class Navigation extends Thread {
+public class Navigation {
     
     // ------------------------------------------------------------------------- Constants
 
@@ -229,7 +229,7 @@ public class Navigation extends Thread {
     /**
      * Starts the navigation.
      */
-    public void startNavigation() {
+    public void start() {
         this.leftMotor.start();
         this.rightMotor.start();
         this.setPower((byte) 0);
@@ -238,7 +238,7 @@ public class Navigation extends Thread {
     /**
      * Stops the navigation.
      */
-    public void stopNavigation() {
+    public void stop() {
         this.leftMotor.start();
         this.rightMotor.start();
     }
