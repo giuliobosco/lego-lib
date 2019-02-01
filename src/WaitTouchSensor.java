@@ -31,18 +31,46 @@ import lejos.nxt.TouchSensor;
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 4.0
+ * @version 5.0 (01.02.2019)
  */
-public class WaitTouchSensor extends WaitDigitalSensor {
+public class WaitTouchSensor {
 
     // ------------------------------------------------------------------------- Constants
-    
+
+    /**
+     * Constant that defines the time to wait (in milliseconds) before making a
+     * new check to finish the wait.
+     */
+    protected static final long WAIT_TIME = 100;
+
+    /**
+     * Identifies the pressed button action.
+     */
+    public static final byte PRESSED = 0;
+
+    /**
+     * Identifies the released button action.
+     */
+    public static final byte RELEASED = 1;
+
+    /**
+     * Identifies the clicked button action (pressed and released).
+     */
+    public static final byte CLICKED = 2;
+
     // ------------------------------------------------------------------------- Fields
-    
+
     /**
      * The touch sensor.
      */
     private TouchSensor touchSensor;
+
+    /**
+     * The action on the button to wait (pressed, released or clicked).
+     */
+    private byte waitAction;
+
+    private boolean finished;
 
     // ------------------------------------------------------------------------- Getters
 
@@ -54,7 +82,16 @@ public class WaitTouchSensor extends WaitDigitalSensor {
     public TouchSensor getTouchSensor() {
         return this.touchSensor;
     }
-    
+
+    /**
+     * Get the wait action.
+     *
+     * @return The comparison wait action.
+     */
+    public byte getWaitAction() {
+        return this.waitAction;
+    }
+
     // ------------------------------------------------------------------------- Setters
 
     /**
@@ -63,8 +100,17 @@ public class WaitTouchSensor extends WaitDigitalSensor {
      * @param touchSensor The touch sensor.
      */
     public void setTouchSensor(TouchSensor touchSensor) {
-        if (this.isFinished()) {
-            this.touchSensor = touchSensor;
+        this.touchSensor = touchSensor;
+    }
+
+    /**
+     * Set the comparison wait action checking that the wait action is valid and.
+     *
+     * @param waitAction The comparison wait action.
+     */
+    public void setWaitAction(byte waitAction) {
+        if (this.isWaitAction(waitAction)) {
+            this.waitAction = waitAction;
         }
     }
 
@@ -73,32 +119,99 @@ public class WaitTouchSensor extends WaitDigitalSensor {
     /**
      * Constructor method, defines the action to wait and the touch sensor.
      *
-     * @param waitAction The wait action.
      * @param touchSensor The touch sensor.
+     * @param waitAction  The wait action.
      */
-    public WaitTouchSensor(byte waitAction, TouchSensor touchSensor) {
-        super(waitAction);
+    public WaitTouchSensor(TouchSensor touchSensor, byte waitAction) {
         setTouchSensor(touchSensor);
+        setWaitAction(waitAction);
     }
 
     /**
-     * Constructor method, defines the action to wait and the port where the 
+     * Constructor method, defines the action to wait and the port where the
      * touch sensor is connected.
      *
-     * @param waitAction The wait action.
      * @param sensorPort The port of the touch sensor.
+     * @param waitAction The wait action.
      */
-    public WaitTouchSensor(byte waitAction, SensorPort sensorPort) {
-        this(waitAction, new TouchSensor(sensorPort));
+    public WaitTouchSensor(SensorPort sensorPort, byte waitAction) {
+        this(new TouchSensor(sensorPort), waitAction);
     }
 
     // ------------------------------------------------------------------------- Help Methods
 
-    @Override
+    /**
+     * Checks that the comparison wait action is valid.
+     *
+     * @param waitAction The wait action to check.
+     * @return True if the value is a valid action.
+     */
+    private boolean isWaitAction(byte waitAction) {
+        if (waitAction == PRESSED || waitAction == RELEASED || waitAction == CLICKED) {
+            return true;
+        }
+        return false;
+    }
+
     public boolean isPressedButton() {
         return this.getTouchSensor().isPressed();
     }
 
+    /**
+     * Method that wait for the pression of the button.
+     *
+     * @throws InterruptedException If an interrupted exception occurred.
+     */
+    protected void buttonPressedAction() throws InterruptedException {
+        if (!this.isPressedButton()) {
+            while (!this.isPressedButton()) {
+                Thread.sleep(WAIT_TIME);
+            }
+            this.finished = true;
+        }
+    }
+
+    /**
+     * Method that wait for the release of the button.
+     *
+     * @throws InterruptedException If an interrupted exception occurred.
+     */
+    protected void buttonReleasedAction() throws InterruptedException {
+        if (this.isPressedButton()) {
+            while (this.isPressedButton()) {
+                Thread.sleep(WAIT_TIME);
+            }
+            this.finished = true;
+        }
+    }
+
+    /**
+     * Method that wait for the click of the button (pressed and released).
+     *
+     * @throws InterruptedException If an interrupted exception occurred.
+     */
+    protected void buttonClickedAction() throws InterruptedException {
+        this.buttonPressedAction();
+        this.buttonReleasedAction();
+    }
+
     // ------------------------------------------------------------------------- General Methods
-    
+
+    public void waitTouchSensor() {
+        while (this.finished) {
+            try {
+                if (this.getWaitAction() == PRESSED) {
+                    this.buttonPressedAction();
+                } else if (this.getWaitAction() == RELEASED) {
+                    this.buttonReleasedAction();
+                } else if (this.getWaitAction() == CLICKED) {
+                    this.buttonClickedAction();
+                }
+                Thread.sleep(WAIT_TIME);
+            } catch (InterruptedException ignored) {
+
+            }
+        }
+    }
+
 }
