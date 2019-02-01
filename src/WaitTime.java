@@ -28,12 +28,12 @@
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 2.0
+ * @version 3.0 (2019-02-01)
  */
-public class WaitTime extends Wait {
+public class WaitTime {
 
     // ------------------------------------------------------------------------- Constants
-    
+
     // ------------------------------------------------------------------------- Fields
 
     /**
@@ -65,18 +65,16 @@ public class WaitTime extends Wait {
     public long getStartTime() {
         return this.startTime;
     }
-    
+
     // ------------------------------------------------------------------------- Setters
-    
+
     /**
      * Set the time to wait checking that the wait is finished.
      *
      * @param waitTime The time to wait.
      */
-    protected void setWaitTime(long waitTime) {
-        if (this.isFinished()) {
-            this.waitTime = waitTime;
-        }
+    public void setWaitTime(long waitTime) {
+        this.waitTime = waitTime;
     }
 
     /**
@@ -84,10 +82,8 @@ public class WaitTime extends Wait {
      *
      * @param startTime The start time.
      */
-    protected void setStartTime(long startTime) {
-        if (this.getStartTime() > System.currentTimeMillis() && this.isFinished()) {
-            this.startTime = startTime;
-        }
+    private void setStartTime(long startTime) {
+        this.startTime = startTime;
     }
 
     // ------------------------------------------------------------------------- Constructors
@@ -102,36 +98,25 @@ public class WaitTime extends Wait {
     }
 
     // ------------------------------------------------------------------------- Help Methods
-    
+
     // ------------------------------------------------------------------------- General Methods
-/*
-    @Override
-    public void beginWait() {
 
+    /**
+     * Wait the time.
+     */
+    public void waitTime() {
         this.setStartTime(System.currentTimeMillis());
-    }
 
-    @Override
-    public boolean isFinished() {
-        if (this.getStartTime() + this.getWaitTime() >= System.currentTimeMillis()) {
-            this.setWaitTime(Long.MAX_VALUE - getStartTime());
-            return true;
-        }
-        return false;
-    }
-*/
-    public void run() {
-        this.setStartTime(System.currentTimeMillis());
-        this.setFinished(false);
+        boolean finished = false;
+        try {
 
-        while (this.isFinished()) {
-            try {
-                this.setFinished(
-                        this.getStartTime() + this.getWaitTime() >= System.currentTimeMillis());
-                Thread.sleep(WAIT_TIME);
-            } catch (InterruptedException ignored) {
-
+            while (!finished) {
+                long sum = this.getStartTime() + this.getWaitTime();
+                finished = sum >= System.currentTimeMillis();
+                Thread.sleep(this.getWaitTime() / 100);
             }
+        } catch (InterruptedException ignored) {
+
         }
     }
 }
