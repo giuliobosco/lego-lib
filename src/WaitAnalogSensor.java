@@ -28,7 +28,7 @@
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 3.1 (2019-02-01)
+ * @version 3.2 (2019-02-01)
  */
 public class WaitAnalogSensor {
 
@@ -112,7 +112,7 @@ public class WaitAnalogSensor {
      * Constructor method, creates a new wait by setting the comparison value
      * and if it must be bigger than the value read by the sensor.
      *
-     * @param bigger     If is bigger than the comparison value.
+     * @param bigger          If is bigger than the comparison value.
      * @param comparisonValue The comparison value.
      */
     WaitAnalogSensor(boolean bigger, byte comparisonValue) {
@@ -121,6 +121,7 @@ public class WaitAnalogSensor {
     }
 
     // ------------------------------------------------------------------------- Help Methods
+    
     // ------------------------------------------------------------------------- General Methods
 
 }
