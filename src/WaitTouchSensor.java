@@ -26,12 +26,12 @@ import lejos.nxt.SensorPort;
 import lejos.nxt.TouchSensor;
 
 /**
- * WaitTouchSensor, used to wait the press of a touch sensor.
+ * WaitTouchSensor, used to wait an action on a touch sensor.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 5.2 (01.02.2019)
+ * @version 5.3 (2019-02-01)
  */
 public class WaitTouchSensor {
 
@@ -209,7 +209,7 @@ public class WaitTouchSensor {
     /**
      * Main method that finishes the wait based on the wait action.
      */
-    public void waitTouchSensor() {
+    public void waitTouch() {
         while (!this.finished) {
             try {
                 if (this.getWaitAction() == PRESSED) {

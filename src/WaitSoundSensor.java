@@ -26,7 +26,7 @@ import lejos.nxt.SensorPort;
 import lejos.nxt.SoundSensor;
 
 /**
- * WaitAnalogSensor, used to wait a sound sensor (microphone).
+ * WaitAnalogSensor, used to wait a value on a sound sensor (microphone).
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author giuliobosco
@@ -98,7 +98,7 @@ public class WaitSoundSensor extends WaitAnalogSensor {
     // ------------------------------------------------------------------------- General Methods
 
     /**
-     * Wait the sound.
+     * Main method that finishes the wait based on the comparison value.
      */
     public void waitSound() {
         boolean finished = false;
