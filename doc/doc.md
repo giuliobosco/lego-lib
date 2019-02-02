@@ -257,6 +257,17 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore di luce percepisc
 
 ### WaitMotor
 
+Classe che serve per aspettare che un motore faccia un certo numero di rotazioni.
+
+- singleMotor: Attributo che rappresenta il motore grande (`SingleMotor`).
+- comparisonValue: Attributo che rappresenta il valore da comparare con quello ricevuto dal motore.
+- getSingleMotor(): Metodo che serve per ottenere il motore.
+- getComparisonValue(): Metodo che serve per ottenere il valore di confronto.
+- setSingleMotor(): Metodo utile per impostare il motore.
+- setComparisonValue(): Metodo utile per impostare il valore di confronto.
+- WaitMotor(): Metodo costruttore, istanzia un nuovo `WaitMotor` impostando il motore e il valore di confronto.
+- waitMotor(): È il metodo principale che termina l'attesa quando il motore raggiunge le rotazioni determinate.
+
 #### Test WaitMotor
 
 ### WaitNxtButton
