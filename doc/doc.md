@@ -231,7 +231,7 @@ Il capitolo di implementazione mostra in poche parole la messa in atto della pro
 
 ### Classi
 
-Le classi del prodotto sono suddivise da dei package definiti in base alle convenzioni di Java (`lego-lib/src/ch/ti/cpttrevano/samt/legolib/`), quindi ci sono i package `motor` e `wait` che sono utili rispettivamente per il movimento del motore e la lettura di un sensore.
+L'implementazione del prodotto è composta da delle classi `Wait` che servono per aspettare che succeda qualcosa, ad esempio che un sensore legga un certo valore oppure aspettare del tempo. Ogni classe di questo tipo ha la sua classe di utilizzo, cioè del semplice codice utile per testare il corretto funzionamento dell'attesa. Poi ci sono le classi che permettono di controllare gli attuatori per muovere il robot (`SingleMotor`, `Navigation`). Infine ci sono le classi più importanti, dove più moduli vengono uniti per creare classi come `LineFollower` e `ProportionalLineFollower`.
 
 #### Wait
 
