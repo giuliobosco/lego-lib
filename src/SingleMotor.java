@@ -31,12 +31,11 @@ import lejos.nxt.Motor;
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 2.0
+ * @version 2.1 (2019-02-02)
  */
 public class SingleMotor {
 
     // ------------------------------------------------------------------------- Constants
-    
     
     /**
      * NXT brick motor port A.
