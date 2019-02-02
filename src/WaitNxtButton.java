@@ -78,4 +78,12 @@ public class WaitNxtButton {
     public static void leftButton() {
         button(Button.LEFT);
     }
+    
+    /**
+     * Wait the pression of the button "Escape".
+     */
+    public static void escapeButton() {
+        button(Button.ESCAPE);
+    }
+
 }
