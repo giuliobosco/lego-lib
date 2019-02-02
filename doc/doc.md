@@ -272,6 +272,14 @@ Classe che serve per aspettare che un motore faccia un certo numero di rotazioni
 
 ### WaitNxtButton
 
+Classe utile per aspettare la pressione di uno dei pulsanti presenti sul brick NXT. L'implementazione è molto semplice poiché esiste la classe `Button` che contiene il necessario per far funzionare correttamente l'attesa.
+
+- button(): Metodo che aspetta la pressione del pulsante passato.
+- enterButton(): Metodo che aspetta la pressione del pulsante centrale.
+- rightButton(): Metodo che aspetta la pressione del pulsante destro".
+- leftButton(): Metodo che aspetta la pressione del pulsante sinistro.
+- escapeButton(): Metodo che aspetta la pressione del pulsante in basso.
+
 #### Test WaitNxtButton
 
 ### WaitSoundSensor
