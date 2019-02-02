@@ -23,12 +23,12 @@
  */
 
 /**
- * WaitMotor, used to wait a motor action.
+ * WaitMotor, used to wait the rotations of a motor.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 4.0 (2019-02-01)
+ * @version 4.1 (2019-02-02)
  */
 public class WaitMotor {
 
@@ -105,15 +105,14 @@ public class WaitMotor {
     // ------------------------------------------------------------------------- General Methods
 
     /**
-     * Wait the motor rotations.
+     * Wait the motor rotations based on the comparison value.
      */
     public void waitMotor() {
         boolean finished = false;
-
         while (!finished) {
             try {
                 int earlyRotations = this.getSingleMotor().getMotor().getTachoCount();
-                while (!(earlyRotations + this.getComparisonValue() == earlyRotations)) {
+                while (earlyRotations + this.getComparisonValue() != earlyRotations) {
                     Thread.sleep(1000);
                 }
                 finished = true;
