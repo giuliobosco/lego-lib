@@ -23,13 +23,12 @@
  */
 
 /**
- * WaitTime, used to wait time (milliseconds).
+ * WaitTime, used to wait for time.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
- * Instead of this class can be used the Thead.sleep(millis)
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 3.1 (2019-02-01)
+ * @version 3.2 (2019-02-02)
  */
 public class WaitTime {
 
@@ -70,7 +69,7 @@ public class WaitTime {
     // ------------------------------------------------------------------------- Setters
 
     /**
-     * Set the time to wait checking that the wait is finished.
+     * Set the time to wait.
      *
      * @param waitTime The time to wait.
      */
@@ -79,7 +78,7 @@ public class WaitTime {
     }
 
     /**
-     * Set the start time after doing checks.
+     * Set the start time.
      *
      * @param startTime The start time.
      */
@@ -103,21 +102,19 @@ public class WaitTime {
     // ------------------------------------------------------------------------- General Methods
 
     /**
-     * Wait the time.
+     * Wait for the specified time.
      */
     public void waitTime() {
         this.setStartTime(System.currentTimeMillis());
-
         boolean finished = false;
         try {
-
             while (!finished) {
                 long sum = this.getStartTime() + this.getWaitTime();
                 finished = sum >= System.currentTimeMillis();
                 Thread.sleep(this.getWaitTime() / 100);
             }
         } catch (InterruptedException ignored) {
-
         }
     }
+    
 }
