@@ -22,31 +22,24 @@
         - [Attuatori](#attuatori)
 
 4. [Implementazione](#implementazione)
-    - [Classi](#classi)
-        - [Wait](#wait)
-            - [Test Wait](#test-wait)
-        - [WaitAnalogSensor](#waitanalogsensor)
-            - [Test WaitAnalogSensor](#test-waitanalogsensor)
-        - [WaitDigitalSensor](#waitdigitalsensor)
-            - [Test WaitDigitalSensor](#test-waitdigitalsensor)
-        - [WaitLightSensor](#waitlightsensor)
-            - [Test WaitLightSensor](#test-waitlightsensor)
-        - [WaitMotor](#waitmotor)
-            - [Test WaitMotor](#test-waitmotor)
-        - [WaitNxtButton](#waitnxtbutton)
-            - [Test WaitNxtButton](#test-waitnxtbutton)
-        - [WaitSensor](#waitsensor)
-            - [Test WaitSensor](#test-waitsensor)
-        - [WaitSoundSensor](#waitsoundsensor)
-            - [Test WaitSoundSensor](#test-waitsoundsensor)
-        - [WaitTime](#waittime)
-            - [Test WaitTime](#test-waittime)
-        - [WaitTouchSensor](#waittouchsensor)
-            - [Test WaitTouchSensor](#test-waittouchsensor)
-        - [WaitUltrasonicSensor](#waitultrasonicsensor)
-            - [Test WaitUltrasonicSensor](#test-waitultrasonicsensor)
-        - [HelloWorld](#helloworld)
-            - [Test HelloWorld](#test-helloworld)
+    - [WaitAnalogSensor](#waitanalogsensor)
+        - [Test WaitAnalogSensor](#test-waitanalogsensor)
+    - [WaitLightSensor](#waitlightsensor)
+        - [Test WaitLightSensor](#test-waitlightsensor)
+    - [WaitMotor](#waitmotor)
+        - [Test WaitMotor](#test-waitmotor)
+    - [WaitNxtButton](#waitnxtbutton)
+        - [Test WaitNxtButton](#test-waitnxtbutton)
+    - [WaitSoundSensor](#waitsoundsensor)
+        - [Test WaitSoundSensor](#test-waitsoundsensor)
+    - [WaitTime](#waittime)
+        - [Test WaitTime](#test-waittime)
+    - [WaitTouchSensor](#waittouchsensor)
+        - [Test WaitTouchSensor](#test-waittouchsensor)
+    - [WaitUltrasonicSensor](#waitultrasonicsensor)
+        - [Test WaitUltrasonicSensor](#test-waitultrasonicsensor)
+    - [HelloWorld](#helloworld)
+        - [Test HelloWorld](#test-helloworld)
 
 5. [Test di sistema](#test-di-sistema)
     - [Protocollo di test](#protocollo-di-test)
@@ -229,27 +222,9 @@ Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sens
 
 Il capitolo di implementazione mostra in poche parole la messa in atto della progettazione. Tutte le classi presenti nel diagramma vengono qui spiegate più nel dettaglio illustrando i metodi e le parti di codice tramite screenshots o rappresentazioni o schemi e tabelle.
 
-### Classi
-
 L'implementazione del prodotto è composta da delle classi `Wait` che servono per aspettare che succeda qualcosa, ad esempio che un sensore legga un certo valore oppure aspettare del tempo. Ogni classe di questo tipo ha la sua classe di utilizzo, cioè del semplice codice utile per testare il corretto funzionamento dell'attesa. Poi ci sono le classi che permettono di controllare gli attuatori per muovere il robot (`SingleMotor`, `Navigation`). Infine ci sono le classi più importanti, dove più moduli vengono uniti per creare classi come `LineFollower` e `ProportionalLineFollower`.
 
-#### Wait
-
-Classe `Thread` usata per generalizzare tutte le classi `Wait`. Queste classi sono rappresentate dal blocco arancione in LEGO&reg; Mindstorms e servono per aspettare che succeda qualcosa prima di continuare la sequenza di azioni (ad esempio aspettare del tempo o un sensore che legga un certo valore o che il valore che si sta leggendo cambi).
-
-<img src="img/classes/wait.png" width=400>
-
-- WAIT_TIME: Costante che rappresenta il tempo (in millisecondi) da aspettare.
-- finished: Attributo che indica se l'attesa è finita.
-- isFinished(): Metodo utile per ottenere lo stato dell'attesa (finito/non finito).
-- setFinished(): Metodo che serve per impostare lo stato dell'attesa.
-- Wait(): Metodo costruttore, istanzia una nuova attesa generale.
-- beginWait(): Imposta il valore dello stato dell'attesa a `true`.
-- waiter(): Metodo principale per iniziare l'attesa.
-
-##### Test Wait
-
-#### WaitAnalogSensor
+### WaitAnalogSensor
 
 Classe che serve per generalizzare le classi che aspettano un sensore analogico (microfono, tocco, ultrasuoni).
 
@@ -266,31 +241,9 @@ Classe che serve per generalizzare le classi che aspettano un sensore analogico 
 - setBigger(): Metodo utile per impostare il valore dell'attributo `bigger`.
 - WaitAnalogSensor(): Metodo costruttore, istanzia un nuovo `WaitAnalogSensor`, defininendo il campo `bigger` e il valore per comparare.
 
-##### Test WaitAnalogSensor
+#### Test WaitAnalogSensor
 
-#### WaitDigitalSensor
-
-Classe figlia di `WaitSensor` che serve per aspettare l'interazione di un sensore digitale (pulsanti).
-
-<img src="img/classes/waitdigitalsensor.png" width=400>
-
-- PRESSED: È una costante che indica la pressione di un pulsante.
-- RELEASED: È una costante che indica il rilascio di un pulsante.
-- CLICKED: È una costante che indica il click di un pulsante.
-- waitAction: Attributo che rappresenta l'azione eseguita sul pulsante (PRESSED, RELEASED, CLICKED).
-- isWaitAction(): Metodo che indica se l'azione fatta sul pulsante è valida.
-- getWaitAction(): Metodo che serve per ottenere l'azione sul pulsante.
-- setWaitAction(): Metodo utile per impostare l'azione.
-- WaitDigitalSensor(): Metodo costruttore, istanzia un nuovo `WaitDigitalSensor` impostando l'azione.
-- isPressedButton(): Metodo che ritorna `true` se il pulsante è premuto.
-- buttonPressedAction(): Metodo che aspetta la pressione di un pulsante.
-- buttonReleasedAction(): Metodo che aspetta il rilascio di un pulsante.
-- buttonClickedAction(): Metodo che aspetta il click di un pulsante (premuto e rilasciato).
-- run(): È il metodo principale in cui si aspetta la pressione di un pulsante.
-
-##### Test WaitDigitalSensor
-
-#### WaitLightSensor
+### WaitLightSensor
 
 Classe figlia di `WaitAnalogSensor` che aspetta che il sensore di luce percepisca un certo valore.
 
@@ -300,21 +253,17 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore di luce percepisc
 - WaitLightSensor(): Metodo costruttore, istanzia un nuovo `WaitLightSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
 - waitLight(): È il metodo principale che termina l'attesa in base al valore di confronto.
 
-##### Test WaitLightSensor
+#### Test WaitLightSensor
 
-#### WaitMotor.java
+### WaitMotor
 
-##### Test WaitMotor
+#### Test WaitMotor
 
-#### WaitNxtButton.java
+### WaitNxtButton
 
-##### Test WaitNxtButton
+#### Test WaitNxtButton
 
-#### WaitSensor.java
-
-##### Test WaitSensor
-
-#### WaitSoundSensor.java
+### WaitSoundSensor
 
 Classe figlia di `WaitAnalogSensor` che aspetta che il microfono percepisca un certo valore.
 
@@ -324,13 +273,13 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il microfono percepisca un c
 - WaitSoundSensor(): Metodo costruttore, istanzia un nuovo `WaitSoundSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
 - waitSound(): È il metodo principale che termina l'attesa in base al valore di confronto.
 
-##### Test WaitSoundSensor
+#### Test WaitSoundSensor
 
-#### WaitTime.java
+### WaitTime
 
-##### Test WaitTime
+#### Test WaitTime
 
-#### WaitTouchSensor
+### WaitTouchSensor
 
 Classe utile per aspettare la pressione, il rilascio o il click di un sensore di tocco.  
 
@@ -355,9 +304,9 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
 - buttonClickedAction(): Metodo che aspetta il click (pressione e rilascio) del sensore.
 - waitTouch(): È il metodo principale che termina l'attesa in base all'azione impostata.
 
-##### Test WaitTouchSensor
+#### Test WaitTouchSensor
 
-#### WaitUltrasonicSensor.java
+### WaitUltrasonicSensor
 
 Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni percepisca un certo valore.
 
@@ -367,9 +316,9 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni perc
 - WaitUltrasonicSensor(): Metodo costruttore, istanzia un nuovo `WaitUltrasonicSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
 - waitUltrasonic(): È il metodo principale che termina l'attesa in base al valore di confronto.
 
-##### Test WaitUltrasonicSensor
+#### Test WaitUltrasonicSensor
 
-#### HelloWorld
+### HelloWorld
 
 Questa classe è stata usata come test per iniziare a capire come implementare un programma Java in un brick NXT e per essere usata come esempio nella guida per configurare leJOS su Windows. È presente solo il metodo `main` con due classiche funzioni che insieme formano semplicemente l'output "Hello World".
 ```
@@ -383,7 +332,7 @@ public class HelloWorld {
 }
 ```
 
-##### Test HelloWorld
+#### Test HelloWorld
 
 Per verificare il giusto funzionamento della classe l'abbiamo caricata sul brick e l'abbiamo avviata attraverso i comandi spiegati nella guida [InstallWindows](installWindows.md).  
 Questo è il risultato ottenuto:
