@@ -296,6 +296,17 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il microfono percepisca un c
 
 ### WaitTime
 
+Classe utile per aspettare semplicemente del tempo.
+
+- waitTime: Attributo che rappresenta il tempo da aspettare (in millisecondi).
+- startTime: Attributo che rappresenta il tempo iniziale trascorso.
+- getWaitTime(): Metodo che serve per ottenere il tempo da aspettare.
+- getStartTime(): Metodo che serve per ottenere il tempo iniziale.
+- setWaitTime(): Metodo utile per impostare il tempo da aspettare.
+- setStartTime(): Metodo utile per impostare il tempo iniziale.
+- WaitTime(): Metodo costruttore, crea una nuova attesa definendo il tempo da aspettare.
+- waitTime(): È il metodo principale che aspetta il tempo definito.
+
 #### Test WaitTime
 
 ### WaitTouchSensor
