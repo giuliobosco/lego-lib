@@ -25,20 +25,33 @@
 import lejos.nxt.Button;
 
 /**
- * WaitNxtButton, used to wait for a button pressing.
+ * WaitNxtButton, used to wait the pression of a specific button on the NXT.
  * In the LEGO Mindstorms environment is represented by the orange block "Wait".
- * Can be used also the Button with out this.
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 4.1 (01.02.2019)
+ * @version 4.2 (2019-02-02)
  */
 public class WaitNxtButton {
 
+    // ------------------------------------------------------------------------- Constants
+    
+    // ------------------------------------------------------------------------- Fields
+    
+    // ------------------------------------------------------------------------- Getters
+    
+    // ------------------------------------------------------------------------- Setters
+    
+    // ------------------------------------------------------------------------- Constructors
+    
+    // ------------------------------------------------------------------------- Help Methods
+    
+    // ------------------------------------------------------------------------- General Methods
+    
     /**
-     * Wait a button pressed.
+     * Wait when a button is pressed.
      *
-     * @param button Button to wait to be pressed.
+     * @param button The button to wait to be pressed.
      */
     public static void button(Button button) {
         // waiting for pressing the button.
@@ -46,21 +59,21 @@ public class WaitNxtButton {
     }
 
     /**
-     * Wait the enter button is pressed.
+     * Wait the pression of the button "Enter".
      */
     public static void enterButton() {
         button(Button.ENTER);
     }
 
     /**
-     * Wait the right button pressed.
+     * Wait the pression of the button "Right".
      */
     public static void rightButton() {
         button(Button.RIGHT);
     }
 
     /**
-     * Wait the left button pressed.
+     * Wait the pression of the button "Left".
      */
     public static void leftButton() {
         button(Button.LEFT);
