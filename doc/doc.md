@@ -379,6 +379,30 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni perc
 
 ### SingleMotor
 
+Classe utile per gestire un motore grande LEGO.
+
+- PORT_A: Costante che definisce la porta `A` del brick.
+- PORT_B: Costante che definisce la porta `B` del brick.
+- PORT_C: Costante che definisce la porta `C` del brick.
+- MIN_POWER: Costante che definisce la potenza minima del motore.
+- MAX_POWER: Costante che definisce la potenza massima del motore.
+- motorPort: Attributo che rappresenta la porta dove è collegato il motore.
+- motor: Attributo che rappresenta il motore.
+- power: Attributo che rappresenta la potenza del motore.
+- getMotorPort(): Metodo che serve per ottenere la porta in cui è collegato il motore.
+- getMotor(): Metodo che serve per ottenere il motore.
+- getPower(): Metodo che serve per ottenere la potenza del motore.
+- setMotorPort(): Metodo utile per impostare la porta in cui è collegato il motore.
+- setMotor(): Metodo utile per impostare il motore, se non si passa il motore si può usare la porta in cui esso è collegato.
+- setPower(): Metodo utile per impostare la potenza del motore.
+- SingleMotor(): Metodo costruttore, si crea un nuovo `SingleMotor` definendo la porta in cui è collegato.
+- isMotorPort(): Metodo utile per controllare che la porta usata sia valida (`A`, `B` o `C`).
+- increasePower(): Metodo utile per aumentare la potenza del motore.
+- decreasePower(): Metodo utile per diminuire la potenza del motore.
+- start(): Metodo che serve per azionare il motore.
+- stop(): Metodo che ferma il motore.
+- rotate(): Metodo che ruota il motore dell'angolo passato.
+
 #### Test SingleMotor
 
 ### Navigation
