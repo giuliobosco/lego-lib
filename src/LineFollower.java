@@ -23,11 +23,11 @@
  */
 
 /**
- * LineFollower, uses a motor and a light sensor to follow a line.
+ * LineFollower, uses the navigation and a light sensor to follow a line.
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 3.0 (2019-02-01)
+ * @version 3.1 (2019-02-03)
  */
 public class LineFollower extends Navigation {
 
@@ -55,21 +55,23 @@ public class LineFollower extends Navigation {
     // ------------------------------------------------------------------------- Getters
 
     /**
+     * Tells if the line is on the left.
+     *
+     * @return If the line is on the left.
+     */
+    public boolean isLineOnLeft() {
+        return this.lineOnLeft;
+    }
+    
+    // ------------------------------------------------------------------------- Setters
+    
+    /**
      * Set the the line on the left.
      *
      * @param lineOnLeft The line on the left.
      */
     public void setLineOnLeft(boolean lineOnLeft) {
         this.lineOnLeft = lineOnLeft;
-    }
-
-    /**
-     * Is the line on the left.
-     *
-     * @return Line on the left.
-     */
-    public boolean isLineOnLeft() {
-        return this.lineOnLeft;
     }
 
     // ------------------------------------------------------------------------- Constructors
@@ -93,29 +95,32 @@ public class LineFollower extends Navigation {
 
     @Override
     public void start() {
-        this.waitLightSensor.setComparisonValue((byte) 50);
-        this.waitLightSensor.setBigger(this.isLineOnLeft());
-
+        WaitLightSensor wait = this.waitLightSensor;
+        // Set the comparison value of the sensor to 50 (halfway).
+        wait.setComparisonValue((byte) 50);
+        // The sensor value must be bigger depending on where the line is.
+        wait.setBigger(this.isLineOnLeft());
+        // Start of the navigation.
         super.start();
-
         while (true) {
-            waitLightSensor.waitLight();
-
+            // The sensor waits the light.
+            wait.waitLight();
+            // Turn to the left or to the right.
             if (this.isLineOnLeft()) {
                 this.right(TURNING);
             } else {
                 this.left(TURNING);
             }
-
-            waitLightSensor.setBigger(!waitLightSensor.isBigger());
-            waitLightSensor.waitLight();
-
+            // Wait for the opposite light.
+            wait.setBigger(!wait.isBigger());
+            wait.waitLight();
             if (this.isLineOnLeft()) {
                 this.left(TURNING);
             } else {
                 this.right(TURNING);
             }
-            waitLightSensor.setBigger(!waitLightSensor.isBigger());
+            // Invert the turning again.
+            wait.setBigger(!wait.isBigger());
         }
     }
 
