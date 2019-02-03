@@ -407,6 +407,31 @@ Classe utile per gestire un motore grande LEGO.
 
 ### Navigation
 
+Classe che viene usata come base per muovere il brick tramite i due motori.
+
+- TURNING: Costante che definisce il valore predefinito dello sterzo.
+- MIN_TURNING: Costante che definisce il valore minimo dell'angolo di sterzo.
+- MAX_TURNING: Costante che definisce il valore massimo dell'angolo di sterzo.
+- power: Attributo che rappresenta la potenza della navigazione.
+- turning: Attributo che rappresenta l'angolo di sterzo della navigazione.
+- leftMotor: Attributo che rappresenta il motore sinistro.
+- rightMotor: Attributo che rappresenta il motore destro.
+- getPower(): Metodo che serve per ottenere la potenza della navigazione.
+- getTurning(): Metodo che serve per ottenere l'angolo di svolta della navigazione.
+- setPower(): Metodo utile per impostare la potenza della navigazione.
+- setTurning(): Metodo utile per impostare l'angolo di svolta della navigazione.
+- Navigation(): Metodo costruttore, crea una nuova navigazione settando i motori direttamente oppure dalle porte in cui sono collegati.
+- updatePowerMotors(): Metodo utile per aggiornare la potenza dei motori e di conseguenza lo sterzo.
+- updateTurningMotors: Metodo utile per aggiornare lo sterzo dei motori.
+- increasePower(): Metodo che serve per aumentare la potenza della navigazione.
+- decreasePower(): Metodo che serve per diminuire la potenza della navigazione.
+- increaseTurning(): Metodo che serve per aumentare l'angolo di svolta della navigazione.
+- decreaseTurning(): Metodo che serve per diminuire l'angolo di svolta della navigazione.
+- left(): Metodo che permette di girare a sinistra di un certo angolo.
+- right(): Metodo che permette di girare a destra di un certo angolo.
+- start(): Metodo che fa partire la navigazione azionando i motori.
+- stop(): Metodo che ferma la navigazione arrestando i motori.
+
 #### Test Navigation
 
 ### LineFollower
