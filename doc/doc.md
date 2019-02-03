@@ -441,16 +441,29 @@ Classe figlia di `Navigation` che usa due motori e un sensore di luce per seguir
 - DEFAULT_LINE_ON_LEFT: Costante che definisce il valore predefinito per la posizione della linea rispetto al robot (destra o sinistra).
 - waitLightSensor: Attributo interno che rappresenta l'attesa del sensore di luce.
 - lineOnLeft: Attributo che rappresenta la posizione della linea rispetto al robot (come riferimento la sinistra).
-- isLineOnLeft(): Metodo che serve per ottenere la posizione della linea.
+- isLineOnLeft(): Metodo che serve per sapere la posizione della linea.
 - setLineOnLeft(): Metodo utile per impostare la posizione della linea.
 - LineFollower(): Metodo costruttore, crea un nuovo `LineFollower` definendo motore destro e sinistro e l'attesa del sensore di luce.
-- start(): È il metodo principale che unisce la navigazione dei motori con l'attesa del sensore così da creare il line follower.
+- start(): È il metodo principale che unisce la navigazione dei motori con l'attesa del sensore così da seguire la linea.
 
 #### Test LineFollower
 
 ### ProportionalLineFollower
 
+Classe figlia di `Navigation` che usa due motori e due sensori di luce per seguire una linea in maniera proporzionale.
 
+- DEFAULT_FOLLOW_BLACK: Costante che definisce il colore della linea da seguire (nera o bianca).
+- frontLightSensor: Attributo che rappresenta Il sensore di luce frontale.
+- backLightSensor: Attributo che rappresenta Il sensore di luce posteriore.
+- followBlack: Attributo che rappresenta il colore della linea da seguire (come riferimento la linea nera).
+- getFrontLightSensor(): Metodo che serve per ottenere il sensore di luce frontale.
+- getBackLightSensor(): Metodo che serve per ottenere il sensore di luce posteriore.
+- isOnBlack(): Metodo che serve per sapere il colore della linea.
+- setFrontLightSensor(): Metodo utile per impostare il sensore di luce frontale.
+- setBackLightSensor(): Metodo utile per impostare il sensore di luce posteriore.
+- setFollowBlack(): Metodo utile per impostare il colore della linea.
+- ProportionalLineFollower(): Metodo costruttore, crea un nuovo `ProportionalLineFollower` definendo motore destro e sinistro e i due sensori di luce.
+- start(): È il metodo principale che unisce la navigazione dei motori con i due sensori così da seguire la linea in modo proporzionale, quindi senza avere il riferimento della posizione della linea rispetto al robot.
 
 #### Test ProportionalLineFollower
 
