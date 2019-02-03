@@ -23,12 +23,12 @@
  */
 
 /**
- * Navigation with NXT brick.
+ * Navigation with two motors connected in a NXT brick.
  * In the LEGO Mindstorms environment is represented by the green block "Move".
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 3.0 (2019-02-01)
+ * @version 3.1 (2019-02-03)
  */
 public class Navigation {
     
@@ -128,7 +128,7 @@ public class Navigation {
     /**
      * Constructor method, creates the navigation with the left and right motor.
      *
-     * @param leftMotor The left motor.
+     * @param leftMotor  The left motor.
      * @param rightMotor The right motor.
      */
     public Navigation(SingleMotor leftMotor, SingleMotor rightMotor) {
@@ -137,9 +137,9 @@ public class Navigation {
     }
 
     /**
-     * Constructor method, creates the navigation with the ports of the motors.
+     * Constructor method, creates the navigation with the motor ports.
      *
-     * @param leftMotor The port of the left motor.
+     * @param leftMotor  The port of the left motor.
      * @param rightMotor The port of the right motor.
      */
     public Navigation(char leftMotor, char rightMotor) {
@@ -169,6 +169,8 @@ public class Navigation {
             this.rightMotor.decreasePower((byte) - this.getTurning());
         }
     }
+
+    // ------------------------------------------------------------------------- General Methods
 
     /**
      * Increases the power of the navigation.
@@ -223,11 +225,9 @@ public class Navigation {
     public void right(byte turning) {
         this.increasePower(turning);
     }
-
-    // ------------------------------------------------------------------------- General Methods
-
+    
     /**
-     * Starts the navigation.
+     * Start the navigation.
      */
     public void start() {
         this.leftMotor.start();
@@ -236,7 +236,7 @@ public class Navigation {
     }
 
     /**
-     * Stops the navigation.
+     * Stop the navigation.
      */
     public void stop() {
         this.leftMotor.start();
