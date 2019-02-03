@@ -436,9 +436,21 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
 
 ### LineFollower
 
+Classe figlia di `Navigation` che usa due motori e un sensore di luce per seguire una linea.
+
+- DEFAULT_LINE_ON_LEFT: Costante che definisce il valore predefinito per la posizione della linea rispetto al robot (destra o sinistra).
+- waitLightSensor: Attributo interno che rappresenta l'attesa del sensore di luce.
+- lineOnLeft: Attributo che rappresenta la posizione della linea rispetto al robot (come riferimento la sinistra).
+- isLineOnLeft(): Metodo che serve per ottenere la posizione della linea.
+- setLineOnLeft(): Metodo utile per impostare la posizione della linea.
+- LineFollower(): Metodo costruttore, crea un nuovo `LineFollower` definendo motore destro e sinistro e l'attesa del sensore di luce.
+- start(): È il metodo principale che unisce la navigazione dei motori con l'attesa del sensore così da creare il line follower.
+
 #### Test LineFollower
 
 ### ProportionalLineFollower
+
+
 
 #### Test ProportionalLineFollower
 

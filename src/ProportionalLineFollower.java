@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 giuliobosco.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,137 +25,138 @@
 import lejos.nxt.LightSensor;
 
 /**
- * Proportional line follower.
+ * ProportionalLineFollower, uses the navigation and two light sensors to follow 
+ * a line proportionally.
  *
  * @author giuliobosco
- * @version 2.0 (2019-02-01)
+ * @author gabrialessi
+ * @version 3.0 (2019-02-03)
  */
 public class ProportionalLineFollower extends Navigation {
-    // ------------------------------------------------------------------------------------ Costants
+    
+    // ------------------------------------------------------------------------- Constants
 
     /**
-     * Default value for follow black.
-     * Value: true.
+     * Default value for follow a black line (true).
      */
     public static final boolean DEFAULT_FOLLOW_BLACK = true;
 
-    // ---------------------------------------------------------------------------------- Attributes
+    // ------------------------------------------------------------------------- Fields
 
     /**
-     * Frontal light sensor for proportional line follower.
+     * The frontal light sensor for proportional line follower.
      */
     private LightSensor frontLightSensor;
 
     /**
-     * Back light sensor for proportional line follower.
+     * The back light sensor for proportional line follower.
      */
     private LightSensor backLightSensor;
 
     /**
-     * Follow a black line on white ground if true, other ways follow white line on black ground.
+     * Follow a black line on white ground if true. 
+     * Otherwise follow white line on black ground.
      */
     private boolean followBlack;
 
-    // --------------------------------------------------------------------------- Getters & Setters
-
-    /**
-     * Set the frontal light sensor for proportional line follower.
-     *
-     * @param frontLightSensor Frontal light sensor for proportional line follower.
-     */
-    public void setFrontLightSensor(LightSensor frontLightSensor) {
-        this.frontLightSensor = frontLightSensor;
-    }
+    // ------------------------------------------------------------------------- Getters
 
     /**
      * Get the frontal light sensor for proportional line follower.
      *
-     * @return Frontal light sensor for proportional line follower.
+     * @return The frontal light sensor.
      */
     public LightSensor getFrontLightSensor() {
         return this.frontLightSensor;
     }
+    
+    /**
+     * Get the back light sensor for proportional line follower.
+     *
+     * @return The back light sensor.
+     */
+    public LightSensor getBackLightSensor() {
+        return this.backLightSensor;
+    }
+    
+    /**
+     * Tells if it's following a black line.
+     *
+     * @return If following a black line.
+     */
+    public boolean isOnBlack() {
+        return this.followBlack;
+    }
 
+    // ------------------------------------------------------------------------- Setters
+
+    /**
+     * Set the frontal light sensor for proportional line follower.
+     *
+     * @param frontLightSensor The frontal light sensor.
+     */
+    public void setFrontLightSensor(LightSensor frontLightSensor) {
+        this.frontLightSensor = frontLightSensor;
+    }
+    
     /**
      * Set the back light sensor for proportional line follower.
      *
-     * @param backLightSensor Back light sensor for proportional line follower.
+     * @param backLightSensor The back light sensor.
      */
     public void setBackLightSensor(LightSensor backLightSensor) {
         this.backLightSensor = backLightSensor;
     }
 
     /**
-     * Get the back light sensor for proportional line follower.
+     * Set the follow of a black line.
      *
-     * @return Back light sensor for proportional line follower.
-     */
-    public LightSensor getBackLightSensor() {
-        return this.backLightSensor;
-    }
-
-    /**
-     * Set the follow black.
-     *
-     * @param followBlack Follow black.
+     * @param followBlack Follow a black line.
      */
     public void setFollowBlack(boolean followBlack) {
         this.followBlack = followBlack;
     }
 
-    /**
-     * Is follow black.
-     *
-     * @return Follow black.
-     */
-    public boolean isOnBlack() {
-        return this.followBlack;
-    }
-
-    // -------------------------------------------------------------------------------- Constructors
+    // ------------------------------------------------------------------------- Constructors
 
     /**
-     * Create the proportional line follower with the left motor, right motor, frontal light sensor
-     * and back light sensor.
+     * Constructor method, creates the proportional line follower with the left 
+     * motor, the right motor, the front light sensor and the back light sensor.
      *
-     * @param leftMotor        Left motor.
-     * @param rightMotor       Right motor.
-     * @param frontLightSensor Front light sensor.
-     * @param backLightSensor  Back light sensor.
+     * @param leftMotor        The left motor.
+     * @param rightMotor       The right motor.
+     * @param frontLightSensor The front light sensor.
+     * @param backLightSensor  The back light sensor.
      */
     public ProportionalLineFollower(SingleMotor leftMotor,
                                     SingleMotor rightMotor,
                                     LightSensor frontLightSensor,
                                     LightSensor backLightSensor) {
         super(leftMotor, rightMotor);
-
         this.setFrontLightSensor(frontLightSensor);
         this.setBackLightSensor(backLightSensor);
         this.setFollowBlack(DEFAULT_FOLLOW_BLACK);
     }
 
-    // -------------------------------------------------------------------------------- Help Methods
-    // ----------------------------------------------------------------------------- General Methods
+    // ------------------------------------------------------------------------- Help Methods
+    
+    // ------------------------------------------------------------------------- General Methods
 
-    /**
-     * Run the proportional line follower.
-     */
     @Override
     public void start() {
+        // Start of the navigation.
         super.start();
         while (true) {
-            if (this.frontLightSensor.getLightValue() < 50) {
-                byte value = (byte) this.frontLightSensor.getLightValue();
+            if (this.getFrontLightSensor().getLightValue() < 50) {
+                byte value = (byte) this.getFrontLightSensor().getLightValue();
                 value -= this.getPower();
                 value /= 1.5;
-
                 this.setTurning(value);
             } else {
-                if (this.backLightSensor.getLightValue() < 50) {
-                    byte value = (byte) this.frontLightSensor.getLightValue();
+                if (this.getBackLightSensor().getLightValue() < 50) {
+                    byte value = (byte) this.getBackLightSensor().getLightValue();
                     value -= this.getPower();
                     value /= 1.5;
-
                     this.setTurning(value);
                 } else {
                     this.setTurning((byte) 0);
@@ -163,8 +164,5 @@ public class ProportionalLineFollower extends Navigation {
             }
         }
     }
-
-
-    // --------------------------------------------------------------------------- Static Components
 
 }
