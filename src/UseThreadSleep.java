@@ -25,31 +25,35 @@
 import lejos.nxt.Button;
 
 /**
- * Using WaitTime to test it.
- * Aspetta del tempo.
+ * Using Thread.sleep(millis) for wait time.
+ * Una alternativa alla classe WaitTime.
  *
- * @author gabrialessi
  * @author giuliobosco
- * @version 1.1 (2019-02-05)
+ * @version 1.0 (2019-02-05)
  */
-public class UseWaitTime {
+public class UseThreadSleep {
 
      /**
-     * Metodo main della classe, avvia il programma di test della classe
+     * Metodo main della classe, mostra come utilizzare il metodo
+     * Thread.sleep(millis), che &egrave; una alternativa alla classe
      * WaitTime.
      *
      * @param args Argomenti da linea di comando.
      */
     public static void main(String[] args) {
-        // creo lo wait time, con una attesa di 5000 millisecondi, 
-        // 5 secondi.
-        WaitTime wt = new WaitTime(5000);
+        // per poter utilizzare il metodo Thread.sleep(millis) bisogna
+        // utilizzare la struttura try {...} catch (Exception e) {...}
+        // questo perch&eacute; la thread potrebbe venir interrotta e 
+        // provocherebbe un'eccezione.
+        try {
+            // stampo il messaggio iniziale, "aspettando..."
+            System.out.println("Aspettando...");
 
-        // stamo il messaggio iniziale, "aspettando..."
-        System.out.println("Aspettando...");
-
-        // aspetto i 5000 millisecondi
-        wt.waitTime();
+            // aspetto i 5000 millisecondi
+            Thread.sleep(5000);
+        } catch (InterruptedException ie) {
+            ie.printStackTrace();
+        }
 
         // stampo ilmessaggio finale
         System.out.println("Attesa terminata.");
