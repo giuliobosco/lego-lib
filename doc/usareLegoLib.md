@@ -7,6 +7,18 @@
 </style>
 
 # **Usare lego lib**
+
+## indice
+
+- Introduzione - pagina: 2
+- Installazione - pagina: 2
+- Com'&egrave; strutturato - pagina: 3
+- Wait - pagina: 3
+    - WaitTime - pagina: 4
+
+<div class="page-break"></div>
+
+# introduzione
 Lego lib &egrave; una libreria per controllare il brick Lego Mindstorm NXT con pi&ugrave;
 facili&agrave;. Principalmente questa libreria &egrave; composta dai blocchi arancioni e da quelli
 verdi del'ambiente sviluppo Mindstorm NXT.
@@ -36,14 +48,14 @@ strutture di controllo `if (...) { ... }` e `while` o `do { ... } while` oppure 
 
 ### Wait
 
-Tutte le classi hanno in comune hanno un costruttore che permette di inizializzare ogni wait con tutte le configurazioni possibili ed un metodo che fa eseguire lo wait. 
+Tutte le classi hanno in comune hanno un costruttore che permette di inizializzare ogni wait con tutte le configurazioni possibili ed un metodo che fa eseguire lo wait.
 
 ![NXT Blocks](img/nxt-blocks/nxt-blocks.png)
 
 
 <div class="page-break"></div>
 
-##### Wait Time
+### WaitTime
 
 <div class="clearfix">
     <div style="float:left">
@@ -86,7 +98,7 @@ public class UseWaitTime {
      * @param args Argomenti da linea di comando.
      */
     public static void main(String[] args) {
-        // creo lo wait time, con una attesa di 5000 millisecondi, 
+        // creo lo wait time, con una attesa di 5000 millisecondi,
         // 5 secondi.
         WaitTime wt = new WaitTime(5000);
 
@@ -133,7 +145,7 @@ public class UseThreadSleep {
     public static void main(String[] args) {
         // per poter utilizzare il metodo Thread.sleep(millis) bisogna
         // utilizzare la struttura try {...} catch (Exception e) {...}
-        // questo perch&eacute; la thread potrebbe venir interrotta e 
+        // questo perch&eacute; la thread potrebbe venir interrotta e
         // provocherebbe un'eccezione.
         try {
             // stampo il messaggio iniziale, "aspettando..."
