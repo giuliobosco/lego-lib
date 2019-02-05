@@ -172,91 +172,50 @@ Il diagramma UML della classe:
 
 <img src="img/classes/WaitMotor.png">
 
-Esempio di utlizzo della classe in maniera **asincrona**:
-
-```java
-import lejos.nxt.Button;
-
-/**
- * Wait time example class.
- * Questa classe crea un wait con l'attesa di 5 rotazioni del motore sulla
- * porta A, poi stampa ogni 100 millisecondi "Aspetto..." finch&eacute; il
- * motore esegue tutte le rotazioni che deve eseguire. Sfurtta la funzione
- * asincrona della classe.
- */
-public class UseWaitMotorAsynchron {
-
-    /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitMotor in maniera asincrona.
-     *
-     * @param args Argomenti da linea di comando.
-     */
-    public static void main(String[] args) {
-        // Creo lo waiter settato per le 5 rotazioni ed il motore sulla
-        // porta A
-        WaitMotor wm = new WaitMotor(new SingleMotor('A'), 5);
-
-        // aspetto che il motore esegua le 5 rotazioni mentre
-        // stampo "Aspetto..." ogni 100 ms
-        while (!wm.isFinished()) {
-            // stampo "Aspetto..."
-            System.out.println("Aspetto...");
-
-            // aspetto 100 millisecondi
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException ignored) {
-
-            }
-        }
-
-        // Stampa "finito"
-        System.out.println("finito");
-
-        // aspetto che venga cliccato un qualunque tasto del blocco NXT,
-        // questo perchè altrimenti il programma terminerebbe subito e non
-        // si riuscirebbe a leggere l'ultima cosa stampata.
-        Button.waitForAnyPress();
-    }
-}
-```
-
-Esempio di utlizzo della classe in maniera **sincrona**:
+Esempio di utlizzo della classe:
 
 ```java
 import lejos.nxt.Button;
 
 /**
  * Wait motor example class.
- * Questa classe crea uno wait con l'attesa di 5 roatazioni del motore sulla
- * porta A, poi stampa inizio e poi finito quando il motore ha eseguito 5
- * rotazioni.
+ * Aspetta che il motore effettui 3 rotazioni.
+ *
+ * @author giuliobosco
+ * @version 1.0 (2019-02-01)
  */
-public class UseWaitMotorSynchron {
+public class UseWaitMotor {
 
     /**
      * Metodo main della classe, avvia il programma di test della classe
-     * WaitMotor in maniera sincrona.
+     * WaitMotor.
      *
      * @param args Argomenti da linea di comando.
      */
-    public static void main(String[] args) {}
-        // Creo lo waiter settato per le 5 rotazioni ed il motore sulla
-        // porta A
-        WaitMotor wm = new WaitMotor(new SingleMotor('A'), 5);
+    public static void main(String[] args) {
+        // creo il gestore del motore
+        SingleMotor m = new SingleMotor('A');
+        // creo lo waiter del motore
+        WaitMotor wm = new WaitMotor(m, 3);
 
-        // aspetto che il motore esegua 5 rotazioni
-        wm.waiter();
+        // stampo il messaggio iniziale
+        System.out.println("Avvio motore");
+        // setto la velocita del motore a 10
+        m.setPower((byte)10);
+        // avvio il motore
+        m.start();
 
-        // stampo "finito"
-         System.out.println("finito");
+        // aspetto le 3 rotazioni
+        wm.waitMotor();
 
-         // aspetto che venga cliccato un qualunque tasto del
-         // blocco NXT, questo perchè altrimenti il programma
-         // terminerebbe subito e non si riuscirebbe a leggere
-         // l'ultima cosa stampata.
-         Button.waitForAnyPress();
+        // stampo il messaggio finale
+        System.out.println("Fermo motore");
+        // fermo il motore
+        m.stop();
+
+        // aspetto che venga premuto un bottone sul brick per terminare
+        // il programma
+        Button.waitForAnyPress();
     }
 }
 ```
