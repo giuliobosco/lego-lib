@@ -36,17 +36,7 @@ strutture di controllo `if (...) { ... }` e `while` o `do { ... } while` oppure 
 
 ### Wait
 
-Il punto di forza di degli wait è che possono essere utilizzati in maniera sincrona, sia che in
-maniera asincrona.  
-Tutte le classi hanno in comune 3 metodi principali per il loro controllo:
-
-- `beginWait()` serve per "aspettare" in mainera asincrona la condizione.
-- `isFinished()` ritorna un valore boleano, `true` se la condizione è stata trovata altrimenti
-    `false`.
-- `waiter()` serve per aspettare in maniera sincrona, cio&egrave; quando viene richiamato questo
-metodo il programma si ferma finch&eacute; la condizione non si avvera. (Richiama il metodo
-    `beginWait()` entra in un ciclo nel quale aspetta 50ms, esce dal ciclo quando `isFinished()`
-    ritorna true).
+Tutte le classi hanno in comune hanno un costruttore che permette di inizializzare ogni wait con tutte le configurazioni possibili ed un metodo che fa eseguire lo wait. 
 
 ![NXT Blocks](img/nxt-blocks/nxt-blocks.png)
 
@@ -72,96 +62,97 @@ Il diagramma UML della classe:
 
 <br>
 
+La classe WaitTime &egrave; stata fatta per mantenere la coerenza con le altre classi, ma pu&ograve; essere facilmente sostituita da un `Thread.sleep(millis);`.
+
 Esempio di utilizzo della classe in maniera **asincrona**:
 
 ```java
 import lejos.nxt.Button;
 
 /**
- * Wait time example class.
- * Questa classe crea un wait time con 2000 millisecondi di attesa, poi stampa
- * ogni 100 millisecondi "Aspetto..." finché non finisce il tempo della wait
- * time. Sfurtta la funzione asincrona del classe.
+ * Using WaitTime to test it.
+ * Aspetta del tempo.
+ *
+ * @author gabrialessi
+ * @author giuliobosco
+ * @version 1.q (2019-02-05)
  */
-public class UseWaitTimeAsynchron {
-    /**
+public class UseWaitTime {
+
+     /**
      * Metodo main della classe, avvia il programma di test della classe
-     * WaitTime in maniera asincrona.
+     * WaitTime.
      *
      * @param args Argomenti da linea di comando.
      */
     public static void main(String[] args) {
-        // creo il wait time con 2000 millisecondi di attesa
-        WaitTime wt = new WaitTime(2000);
+        // creo lo wait time, con una attesa di 5000 millisecondi, 
+        // 5 secondi.
+        WaitTime wt = new WaitTime(5000);
 
-        // avvio l'attesa del tempo impostato prima
-        wt.beginWait();
+        // stamo il messaggio iniziale, "aspettando..."
+        System.out.println("Aspettando...");
 
-        // aspetto che il tempo sia passato passato mentre
-        // stampo "Aspetto..." ogni 100 millisecondi
-        while (!wt.isFinished()) {
-            // Stampo "Aspetto..."
-            System.out.println("Aspetto...");
+        // aspetto i 5000 millisecondi
+        wt.waitTime();
 
-            // aspetto 100 millisecondi
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException ignored) {
+        // stampo ilmessaggio finale
+        System.out.println("Attesa terminata.");
 
-            }
-        }
-
-        // Stampo "finito"
-        System.out.println("finito");
-
-        // aspetto che venga cliccato un qualunque tasto del blocco NXT,
-        // questo perchè altrimenti il programma terminerebbe subito e non
-        // si riuscirebbe a leggere l'ultima cosa stampata.
-		Button.waitForAnyPress();
+        // aspetto che venga premuto un bottone sul brick per terminare
+        // il programma
+        Button.waitForAnyPress();
     }
 }
 ```
 
 <br>
-Esempio di utilizzo della classe in maniera <b>sincrona</b>:
+Oppure al posto della classe WaitTime, come detto in precedenza si
+pu&ograve; utilizzare il metodo `Thread.sleep(5000);`, che &egrave; un
+metodo interno alle libreire di java.
 
 ```java
 import lejos.nxt.Button;
 
 /**
- * Wait time example class.
- * Questa classe crea un wait time con 2000 millisecondi di
- * attesa, stampa "inizio", poi aspetta che lo wait termini
- * e stampa "finito".
+ * Using Thread.sleep(millis) for wait time.
+ * Una alternativa alla classe WaitTime.
+ *
+ * @author giuliobosco
+ * @version 1.0 (2019-02-05)
  */
- public class UseWaitTimeSynchron {
+public class UseThreadSleep {
 
      /**
-      * Metodo main della classe, avvia il programma di test della classe
-      * WaitTime in maniera sincrona.
-      *
-      * @param args Argomenti da linea di comando.
-      */
-     public static void main(String[] args) {
-         // creo il wait time con 2000 millisecondi di attesa
-         WaitTime wt = new WaitTime(2000);
+     * Metodo main della classe, mostra come utilizzare il metodo
+     * Thread.sleep(millis), che &egrave; una alternativa alla classe
+     * WaitTime.
+     *
+     * @param args Argomenti da linea di comando.
+     */
+    public static void main(String[] args) {
+        // per poter utilizzare il metodo Thread.sleep(millis) bisogna
+        // utilizzare la struttura try {...} catch (Exception e) {...}
+        // questo perch&eacute; la thread potrebbe venir interrotta e 
+        // provocherebbe un'eccezione.
+        try {
+            // stampo il messaggio iniziale, "aspettando..."
+            System.out.println("Aspettando...");
 
-         // stampo inizio
-         System.out.println("inizio");
+            // aspetto i 5000 millisecondi
+            Thread.sleep(5000);
+        } catch (InterruptedException ie) {
+            ie.printStackTrace();
+        }
 
-         // aspetto i 2000 millisecondi
-         wt.waiter();
+        // stampo ilmessaggio finale
+        System.out.println("Attesa terminata.");
 
-         // stampo "finito"
-         System.out.println("finito");
-
-         // aspetto che venga cliccato un qualunque tasto del
-         // blocco NXT, questo perchè altrimenti il programma
-         // terminerebbe subito e non si riuscirebbe a leggere
-         // l'ultima cosa stampata.
- 		Button.waitForAnyPress();
-     }
- }
+        // aspetto che venga premuto un bottone sul brick per terminare
+        // il programma
+        Button.waitForAnyPress();
+    }
+}
 ```
 
 ##### Wait Motor
