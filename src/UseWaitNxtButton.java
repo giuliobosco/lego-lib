@@ -25,12 +25,12 @@
 import lejos.nxt.Button;
 
 /**
- * Example of using the WaitLightSensor class. Useful for testing all the
- * methods: press left, enter, right and escape.
+ * Example of using the WaitNxtButton class. 
+ * Useful for testing all the methods: press left, enter, right and escape.
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 1.2 (2019-02-06)
+ * @version 1.3 (2019-02-06)
  */
 public class UseWaitNxtButton {
 

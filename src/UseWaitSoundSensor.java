@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 giuliobosco.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,39 +26,29 @@ import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
 /**
- * Wait sound sensor example class.
- * Aspetta che venga recepito un suono forte dal microfono
- * sulla porta 1.
+ * Example of using the WaitSoundSensor class. 
+ * Useful for testing the main method that waits a sound.
  *
  * @author giuliobosco
- * @version 1.0 (2019-02-01)
+ * @author gabrialessi
+ * @version 1.1 (2019-02-06)
  */
 public class UseWaitSoundSensor {
 
     /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitSoundSensor.
+     * Main method.
      *
-     * @param args Argomenti da linea di comando.
+     * @param args Command line arguments.
      */
     public static void main(String[] args) {
-        // creo lo waiter per il sound sensor sulla porta uno, che aspetta
-        // un suono forte.
-        WaitSoundSensor wss = new WaitSoundSensor(
-                SensorPort.S1, (byte)50, true);
-
-        // stampo messaggio iniziale
-        System.out.println("parlare davanti al microfono");
-
-        // aspetto che venga recepito un suono forte
-        wss.waitSound();
-
-        // stampo messaggio finale
-        System.out.println(
-                "Valore alto del microfono recepito");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
+        
+        // New wait for the sound sensor.
+        WaitSoundSensor wait = new WaitSoundSensor(SensorPort.S1, (byte) 80, true);
+        // Wait a loud sound.
+        System.out.println("Make a loud sound.");
+        wait.waitSound();
+        System.out.println("Wait over.");
         Button.waitForAnyPress();
     }
+    
 }

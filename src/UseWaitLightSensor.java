@@ -27,11 +27,11 @@ import lejos.nxt.SensorPort;
 
 /**
  * Example of using the WaitLightSensor class.
- * Useful for testing all the methods.
+ * Useful for testing the main method that waits the light.
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 2.0 (2019-02-06)
+ * @version 2.1 (2019-02-06)
  */
 public class UseWaitLightSensor {
 
