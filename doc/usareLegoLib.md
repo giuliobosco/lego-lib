@@ -235,6 +235,72 @@ public class UseWaitMotor {
 }
 ```
 
+### Wait Touch Sensor
+
+<div class="clearfix">
+    <div style="float:left">
+        <img style="width:65px" src="img/nxt-blocks/wait-touch.png">
+    </div>
+    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
+        Il blocco wait touch dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
+        classe&nbsp;`WaitTouchSensor`, la quale permette di aspettare del che un sensore di touch,
+        su una delle porte venga premuto, o rilasciato oppure cliccato, cioè cliccato e rilasciato.
+    </div>
+</div>
+
+Il diagramma UML della classe:
+
+<p style="text-align:center;">
+    <img src="img/classes/WaitTouchSensor.png" width="300">
+</p>
+Esempio di utlizzo della classe:
+
+```java
+import lejos.nxt.Button;
+import lejos.nxt.SensorPort;
+
+/**
+ * Wait touch sensor example class.
+ * Aspetta che il touch sensor sulla porta 1 venga premuto.
+ *
+ * @author giuliobosco
+ * @version 1.1 (01.02.2019)
+ */
+public class UseWaitTouchSensor {
+
+    /**
+     * Metodo main della classe, avvia il programma di test della classe
+     * WaitTouchSensor.
+     *
+     * @param args Argomenti da linea di comando.
+     */
+    public static void main(String[] args) {
+        // creo lo waiter per il touch sensor sulla porta uno, che aspetta
+        // un click del sensore.
+        WaitTouchSensor wtc = new WaitTouchSensor(SensorPort.S1,
+                WaitTouchSensor.CLICKED);
+
+        // stampo messaggio iniziale
+        System.out.println("cliccare il touch sensor sulla porta 1");
+
+        // aspetto che venga cliccato il touch sensor
+        wtc.waitTouch();
+
+        // stampo messagigo finale
+        System.out.println("touch sensor cliccato");
+
+        // aspetto che venga premuto un bottone sul brick per terminare
+        // il programma
+        Button.waitForAnyPress();
+    }
+}
+```
+
+Per sceglirere quale delle 3 azioni, (Premuto, rilasciato o cliccato) aspettare bisosgna cambiare il
+valore `CLICKED` nel costruttore dello waiter con:
+- `PRESSED` per premuto
+- `RELEASED` per rilasciato
+
 
 ### Strutture di controllo
 <div class="clearfix">
