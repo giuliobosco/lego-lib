@@ -286,6 +286,22 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore di luce percepisc
 - setLightSensor(): Metodo utile per impostare il sensore.
 - WaitLightSensor(): Metodo costruttore, istanzia un nuovo `WaitLightSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
 - waitLight(): È il metodo principale che termina l'attesa in base al valore di confronto.
+    ```
+    public void waitLight() {
+        boolean finished = false;
+        while (!finished) {
+            try {
+                if (this.isBigger()) {
+                    finished = this.getLightSensor().getLightValue() > this.getComparisonValue();
+                } else {
+                    finished = this.getLightSensor().getLightValue() < this.getComparisonValue();
+                }
+                Thread.sleep(WAIT_TIME);
+            } catch (InterruptedException ignored) {
+            }
+        }
+    }
+    ```
 
 #### Test WaitLightSensor
 
@@ -301,6 +317,21 @@ Classe che serve per aspettare che un motore faccia un certo numero di rotazioni
 - setComparisonValue(): Metodo utile per impostare il valore di confronto.
 - WaitMotor(): Metodo costruttore, istanzia un nuovo `WaitMotor` impostando il motore e il valore di confronto.
 - waitMotor(): È il metodo principale che termina l'attesa quando il motore raggiunge le rotazioni determinate.
+    ```
+    public void waitMotor() {
+        boolean finished = false;
+        while (!finished) {
+            try {
+                int earlyRotations = this.getSingleMotor().getMotor().getTachoCount();
+                while (earlyRotations + this.getComparisonValue() != earlyRotations) {
+                    Thread.sleep(1000);
+                }
+                finished = true;
+            } catch (InterruptedException ignored) {
+            }
+        }
+    }
+    ```
 
 #### Test WaitMotor
 
