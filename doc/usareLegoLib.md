@@ -70,8 +70,9 @@ Tutte le classi hanno in comune hanno un costruttore che permette di inizializza
 <br>
 Il diagramma UML della classe:
 
-<img src="img/classes/WaitTime.png">
-
+<p style="text-align:center;">
+    <img src="img/classes/WaitTime.png" width="200">
+</p>
 <br>
 
 La classe WaitTime &egrave; stata fatta per mantenere la coerenza con le altre classi, ma pu&ograve; essere facilmente sostituita da un `Thread.sleep(millis);`.
@@ -182,7 +183,9 @@ public class UseThreadSleep {
 
 Il diagramma UML della classe:
 
-<img src="img/classes/WaitMotor.png">
+<p style="text-align:center;">
+    <img src="img/classes/WaitMotor.png" width="300">
+</p>
 
 Esempio di utlizzo della classe:
 
