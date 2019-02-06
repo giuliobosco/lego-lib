@@ -22,7 +22,6 @@
  * THE SOFTWARE.
  */
 
-import lejos.nxt.LightSensor;
 import lejos.nxt.SensorPort;
 
 /**

@@ -28,7 +28,7 @@
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 3.2 (2019-02-06)
+ * @version 3.3 (2019-02-06)
  */
 public class Navigation {
     
@@ -37,7 +37,7 @@ public class Navigation {
     /**
      * The default turning of the navigation.
      */
-    public static final byte TURNING = 10;
+    public static final byte TURNING = 50;
 
     /**
      * The minimum navigation turning.
@@ -120,7 +120,7 @@ public class Navigation {
             turning = MIN_TURNING;
         }
         this.turning = turning;
-        this.updatePowerMotors();
+        this.updateTurningMotors();
     }
 
     // ------------------------------------------------------------------------- Constructors
@@ -230,17 +230,17 @@ public class Navigation {
      * Start the navigation.
      */
     public void start() {
+        this.setPower(SingleMotor.MAX_POWER);
         this.leftMotor.start();
         this.rightMotor.start();
-        this.setPower((byte) 0);
     }
 
     /**
      * Stop the navigation.
      */
     public void stop() {
-        this.leftMotor.start();
-        this.rightMotor.start();
+        this.leftMotor.stop();
+        this.rightMotor.stop();
     }
 
 }
