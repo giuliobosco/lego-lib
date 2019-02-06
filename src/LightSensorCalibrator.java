@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 giuliobosco.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,26 +26,48 @@ import lejos.nxt.LightSensor;
 import lejos.nxt.SensorPort;
 
 /**
- * 
- * @author giuliobosco (giuliobva@gmail.com)
+ * Calibrate the light sensor.
+ * Calibra il sensore di luce, con la luce che presente nel luogo
+ * dov'&egrave; il sensore.
+ *
+ * @author giuliobosco
  * @version 1.0 (2019-02-06)
  */
 public class LightSensorCalibrator {
 
+    /**
+     * Metodo main della classe, permette di calibrare il sensore
+     * di luce.
+     *
+     * @param args Comm
+     */
     public static void main(String[] args) {
+        // setto il sensore di luce su cui eseguire la calibrazione
         LightSensor ls = new LightSensor(SensorPort.S1);
 
-        System.out.println("Posizionare il sensore sul bianco. Poi premere Enter");
+        // scrivo il messaggio per avvertire l'utente di mettere il
+        // sensore di luce su una superfice bianca (o chiara)
+        System.out.println(
+                "Posizionare il sensore sul bianco. " +
+                        "Poi premere Enter");
 
-        System.out.println("\n\n\n\n\n\n\n\n\n");
-
+        // aspetto che venga premuto il bottone enter
         WaitNxtButton.enterButton();
 
+        // calibro il massimo di luce letta sul senore
         ls.calibrateHigh();
 
+        // pulisco il sensore del brick NXT
+        System.out.println("\n\n\n\n\n\n\n\n\n");
+
+        // scrivo il messaggio per avvertire l'utente di mettere il
+        // sensore di luce su una superfice scura (o nera)
         System.out.println("Posizionare il sensore sul nero. Poi premere Enter.");
 
+        // aspetto che venga premuto il bottone enter
         WaitNxtButton.enterButton();
+
+        // calibro il minimo di luce letta sul sensore
         ls.calibrateLow();
     }
     
