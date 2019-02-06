@@ -29,6 +29,196 @@ verdi del'ambiente sviluppo Mindstorm NXT.
 
 # Installazione
 
+Per poter utilizzare legolib c'&egrave; bisogno dell'ambiente di sviluppo di lejos, siccome esso
+&egrave; sviluppato in java vi è bisogno di installare per prima cosa il suo ambiente di sviluppo.
+
+## Java
+
+Java ha la potenza di poter essere eseguito su tutte le architetture di sistema operativo, che esso
+sia Windows, UNIX/Linux, Mac OS, sia a 32bit che a 64bit. Per avere questa potenza gli sviluppatori
+della Oracle (azienda che produce Java), hanno sviluppato una virtual machine che esegue il codice
+java. Quindi va installata, e siccome dobbiamo sviluppare serve anche il kid di sviluppo di java.
+
+### Java Runtime Environment
+
+Prima di installare la JRE bisogna provare a controllare se java non &egrave; gi&agrave; installato
+sul computer. Quindi aprere il `Prompt dei comandi`, premere il tasto Windows
+<img src="img/win-key.png" alt="Windows Key" width="20"/> che si trova sulla tastiera e
+contemporaneamente il tasto `R`. Quindi ciò farà aprire una piccola finestra in basso a sinistra, in
+cui bisognerà digitare `cmd` e premere invio. Comparirà una finestra nera, sulla quale scrivere il
+seguente comando:
+
+```
+java -version
+```
+
+E premere invio, se questo ritora una stringa a simile:
+
+```
+java version "1.8.0_191"
+Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
+```
+
+se compare una stringa contentente qualcosa di simile a `comando sconosciuto` proseguire con la
+guida, altrimenti passare direttamente al prossimo capitolo (Java Development Kit).
+
+Per installare java scaricare il pacchetto di installazione dal sito della Oracle, al seguente link:
+[https://www.java.com/en/download/](https://www.java.com/en/download/), dopo averlo scaricato aprire
+il file e seguire la procedura guidata.
+
+### Java Development Kit
+
+Prima di installare la JDK bisogna provare a controllare se essa &egrave; gi&arave; presente sulla
+macchina. Quindi digitare sul `Prompt dei comandi` aperto nel precedente capitolo, il seguente e
+digitare il segutente comando:
+
+```
+javac -version
+```
+
+se il programma ritorna una stringa come la seguente:
+
+```
+javac 1.8.0_191
+```
+
+passare direttamente al capitolo "Driver USB", altrimenti proseguire con la guida.
+
+Per insallare la JDK scaricare sempre dal sito ufficiale della Oracle al seguente link:
+[https://www.java.com/en/download/](https://www.java.com/en/download/) il pacchetto di installazione
+del Java Development Kit, successivamente installarlo e seguire la procedura guidata.
+
+### Variabili d'ambiente
+
+Prima di poter utilizzare Java bisogna impostare le sue `variabili d'ambiente`. Quindi andare nella
+cartella dove si ha installato Java (probabilmente
+`C:\Program Files (x86)\Java\<versione di Java>\bin`), copiare i percorsi delle due cartelle fino a
+`bin` e aprire il `Pannello di controllo`, recarsi nella sezione `Sistema`, poi su `Variabili
+d'ambiente` che si trovano sotto le impostazioni `Avanzate` e infine aggiungere il percorso nella
+variabile di sistema `Path`.
+
+<div class="clearfix">
+    <img src="img/variables.png" alt="Variables" width="49%" style="float:left;"/>
+    <img src="img/path.png" alt="Path" width="49%" style="float:right;margin-top:20px;"/>
+</div>
+
+## Driver USB
+
+Per fare in modo che il computer individui il dispositivo LEGO&reg;, è necessario disporre di un
+driver USB. Esso si scarica dal sito ufficiale Mindstorms
+([https://www.lego.com/r/www/r/mindstorms/-/media/franchises/mindstorms%202014/downloads/firmware%20and%20software/nxt%20software/nxt%20fantom%20drivers%20v120.zip?l.r2=-964392510](https://www.lego.com/r/www/r/mindstorms/-/media/franchises/mindstorms%202014/downloads/firmware%20and%20software/nxt%20software/nxt%20fantom%20drivers%20v120.zip?l.r2=-964392510))
+e bisognerà avviare il file `setup.exe` sotto la cartella `Windows` che si trova nella cartella
+compressa appena scaricata.  
+Quindi verificare che il brick NXT sia riconosciuto dal vostro PC aprendo `Gestione dispositivi` dal
+`Pannello di controllo` e il dispositivo verrà identificato in questo modo:
+
+<p style="text-align:center;">
+    <img src="img/lego-device.png" alt="LEGO device" width="67%"/>
+</p>
+
+## leJOS
+
+### Installazione
+Procedere scaricando l'applicativo dell'ultima versione (0.9.1) dal sito
+([https://sourceforge.net/projects/nxt.lejos.p/files/latest/download](https://sourceforge.net/projects/nxt.lejos.p/files/latest/download)).
+Quindi avviare il file appena scaricato e eseguire la procedura guidata dell'installer.
+
+### Configurazione
+
+Assicurarsi che il brick sia acceso collegato correttamente via USB, successivamente finire la
+configurazione avviando la finestra finale dove è attivata l'opzione `Launch NXJ Flash utility`.
+L'applicazione dovrebbe identificare il brick, quindi cliccare `Start program` e procedere con
+l'attivazione del firmware.  
+Ora la configurazione è giunta al termine e sul NXT dovrebbe apparire la schermata di leJOS.
+
+## Utilizzo
+
+In questo capitolo viene spiegato come iniziare a programmare con leJOS NXJ tramite un classico
+`HelloWorld`. È solamente necessario disporre di un editore di testo per scrivere il codice.
+
+### HelloWorld
+
+Iniziare creando il file `HelloWorld.java` e scrivendo la classe `HelloWorld` tramite il pacchetto
+predefinito di Java.
+
+```
+public class HelloWorld {
+
+}
+```
+
+Proseguire implementando il metodo `main` (che viene di solito usato come il metodo che genera un
+output).
+
+```
+public class HelloWorld {
+    public static void main (String[] args) {
+
+    }
+}
+```
+
+Ora scrivere la classica funzione che genera un output sotto forma di testo nello schermo LCD del
+brick.
+
+```
+public class HelloWorld {
+    public static void main (String[] args) {
+        System.out.println("Hello World");
+    }
+}
+```
+
+Se si avvia il programma in questo modo, verrà mostrata la scritta "HelloWorld" e si tornerà
+immediatamente nella schermata principale. Per limitare questo comportamento, si può inserire l'
+opzione che aspetta la pressione di un pulsante. Per fare ciò basta importare la libreria `Button` e
+inserire un semplice metodo.
+
+```
+import lejos.nxt.Button;
+
+public class HelloWorld {
+    public static void main (String[] args) {
+        System.out.println("Hello World");
+        Button.waitForAnyPress();
+    }
+}
+```
+
+Adesso il codice è pronto per essere compilato nel NXT e avviato.
+
+### Compilazione e avvio
+
+Per verificare il funzionamento del codice appena scritto, bisogna aprire un'istanza di
+`Windows PowerShell` nella cartella dove si trova il file `HelloWorld.java`, cliccando sul menu
+`File` in alto a sinistra e scegliendo `Apri Windows PowerShell`.  
+Si dovrebbe aprire una schermata blu, in cui occorre scrivere i seguenti comandi uno dopo l'altro:
+
+```
+nxjc HelloWorld.java
+```
+
+Compilazione del file.
+
+```
+nxjlink -o HelloWorld.nxj HelloWorld  
+```
+
+Caricamento della classe in un file compatibile con NXT.
+
+```
+nxjupload -r HelloWorld.nxj
+```
+
+Caricamento del file nel brick.
+
+```
+nxj -r -o HelloWorld.nxj HelloWorld
+```
+
+Avviamento del programma.
+
 <div class="page-break"></div>
 
 # Com&apos;&egrave; strutturato
