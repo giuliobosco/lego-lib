@@ -25,7 +25,6 @@
     - [HelloWorld](#helloworld)
         - [Test HelloWorld](#test-helloworld)
     - [WaitAnalogSensor](#waitanalogsensor)
-        - [Test WaitAnalogSensor](#test-waitanalogsensor)
     - [WaitLightSensor](#waitlightsensor)
         - [Test WaitLightSensor](#test-waitlightsensor)
     - [WaitMotor](#waitmotor)
@@ -45,9 +44,7 @@
     - [Navigation](#navigation)
         - [Test Navigation](#test-navigation)
     - [LineFollower](#linefollower)
-        - [Test LineFollower](#test-linefollower)
     - [PropotionalLineFollower](#proportionallinefollower)
-        - [Test ProportionalLineFollower](#test-proportionallinefollower)
 
 5. [Test di sistema](#test-di-sistema)
     - [Protocollo di test](#protocollo-di-test)
@@ -187,18 +184,24 @@ Qui è descritto come sono strutturate le cartelle contententi la libreria svilu
         - LineFollower.java
     - classes.jar
     - compile.ps1
+    - LFRunner.java
     - LineFollower.java
     - Navigation.java
     - PLFRunner.java
     - ProportionalLineFollower.java
     - SingleMotor.java
-    - Wait.java
+    - SingleMotorTest.java
+    - UseWaitLightSensor.java
+    - UseWaitMotor.java
+    - UseWaitNxtButtonSensor.java
+    - UseWaitSoundSensor.java
+    - UseWaitTime.java
+    - UseWaitTouchSensor.java
+    - UseWaitUltrasonicSensor.java
     - WaitAnalogSensor.java
-    - WaitDigitalSensor.java
     - WaitLightSensor.java
     - WaitMotor.java
     - WaitNxtButton.java
-    - WaitSensor.java
     - WaitSoundSensor.java
     - WaitTime.java
     - WaitTouchSensor.java
