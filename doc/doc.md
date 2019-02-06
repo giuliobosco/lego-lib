@@ -503,6 +503,22 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni perc
 - setUltrasonicSensor(): Metodo utile per impostare il sensore.
 - WaitUltrasonicSensor(): Metodo costruttore, istanzia un nuovo `WaitUltrasonicSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
 - waitUltrasonic(): È il metodo principale che termina l'attesa in base al valore di confronto.
+    ```
+    public void waitUltrasonic() {
+        boolean finished = false;
+        while (!finished) {
+            try {
+                if (this.isBigger()) {
+                    finished = this.getUltrasonicSensor().getDistance() > this.getComparisonValue();
+                } else {
+                    finished = this.getUltrasonicSensor().getDistance() < this.getComparisonValue();
+                }
+                Thread.sleep(WAIT_TIME);
+            } catch (InterruptedException ignored) {
+            }
+        }
+    }
+    ```
 
 #### Test WaitUltrasonicSensor
 
