@@ -1,4 +1,4 @@
-# Sistema didattico per LEGO EV3/NTX con libreria e documentazione
+# Sistema didattico per LEGO NTX con libreria e documentazione
 
 1. [Introduzione](#introduzione)
     - [Informazioni sul progetto](#informazioni-sul-progetto)
@@ -259,14 +259,19 @@ Classe che serve per generalizzare le classi che aspettano un sensore analogico 
 
 <img src="img/classes/waitanalogsensor.png" width=400>
 
-- WAIT_TIME: Costante che definisce l'intervallo di tempo tra un controllo e un altro della fine dell'attesa.
-- SENSOR_MIN_VALUE: Costante che definisce il minimo valore che un sensore può leggere.
-- SENSOR_MAX_VALUE: Costante che definisce il massimo valore che un sensore può leggere.
+- WAIT_TIME: Costante che definisce l'intervallo di tempo tra un controllo e un altro della fine dell'attesa. Valore: 100 (millisecondi).
+- SENSOR_MIN_VALUE: Costante che definisce il minimo valore che un sensore può leggere. Valore: 0.
+- SENSOR_MAX_VALUE: Costante che definisce il massimo valore che un sensore può leggere. Valore: 100.
 - comparisonValue: Attributo che rappresenta il valore da comparare con quello letto dal sensore.
 - bigger: Attributo che indica se il valore letto deve essere maggiore o minore di quello di confronto.
 - getComparisonValue(): Metodo che serve per ottenere il valore di confronto.
 - isBigger(): Metodo utile per sapere il valore dell'attributo `bigger`.
-- setComparisonValue(): Metodo utile per impostare il valore di confronto.
+- setComparisonValue(): Metodo utile per impostare il valore di confronto controllando che sia nell'intervallo definito da `SENSOR_MIN_VALUE` e `SENSOR_MAX_VALUE`.
+    ```
+    if (comparisonValue >= SENSOR_MIN_VALUE && comparisonValue <= SENSOR_MAX_VALUE) {
+        this.comparisonValue = comparisonValue;
+    }
+    ```
 - setBigger(): Metodo utile per impostare il valore dell'attributo `bigger`.
 - WaitAnalogSensor(): Metodo costruttore, istanzia un nuovo `WaitAnalogSensor`, defininendo il campo `bigger` e il valore per comparare.
 
