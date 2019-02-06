@@ -421,10 +421,10 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
 
 <img src="img/classes/waittouchsensor.png" width=400>
 
-- WAIT_TIME: Costante che definisce l'intervallo di tempo tra un controllo e un altro della fine dell'attesa.
-- PRESSED: Costante che definisce la pressione del sensore.
-- RELEASED: Costante che definisce il rilascio del sensore.
-- CLICKED: Costante che definisce il click (pressione e rilascio) del sensore.
+- WAIT_TIME: Costante che definisce l'intervallo di tempo tra un controllo e un altro della fine dell'attesa. Valore: 100 (millisecondi).
+- PRESSED: Costante che definisce la pressione del sensore. Valore: 0.
+- RELEASED: Costante che definisce il rilascio del sensore. Valore: 1.
+- CLICKED: Costante che definisce il click (pressione e rilascio) del sensore. Valore: 2.
 - touchSensor: Attributo che rappresenta il sensore di tocco.
 - waitAction: Attributo che rappresenta l'azione da aspettare (premuto, rilasciato o cliccato).
 - finished: Attributo interno che dice se l'attesa è finita.
@@ -434,11 +434,63 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
 - setWaitAction(): Metodo utile per impostare l'azione da aspettare.
 - WaitTouchSensor(): Metodo costruttore, istanzia un nuovo `WaitTouchSensor` impostando l'azione (premuto, rilasciato, cliccato) e il sensore o la porta del brick in cui è inserito il sensore.
 - isWaitAction(): Metodo utile per verificare che l'azione da aspettare imposta sia valida.
+    ```
+    if (waitAction == PRESSED || waitAction == RELEASED || waitAction == CLICKED) {
+        return true;
+    }
+    return false;
+    ```
 - isPressedButton(): Metodo che dice se il sensore è premuto.
+    ```
+    return this.getTouchSensor().isPressed();
+    ```
 - buttonPressedAction(): Metodo che aspetta la pressione del sensore.
+    ```
+    protected void buttonPressedAction() throws InterruptedException {
+        if (!this.isPressedButton()) {
+            while (!this.isPressedButton()) {
+                Thread.sleep(WAIT_TIME);
+            }
+            this.finished = true;
+        }
+    }
+    ```
 - buttonReleasedAction(): Metodo che aspetta il rilascio del sensore.
+    ```
+    protected void buttonReleasedAction() throws InterruptedException {
+        if (this.isPressedButton()) {
+            while (this.isPressedButton()) {
+                Thread.sleep(WAIT_TIME);
+            }
+            this.finished = true;
+        }
+    }
+    ```
 - buttonClickedAction(): Metodo che aspetta il click (pressione e rilascio) del sensore.
+    ```
+    protected void buttonClickedAction() throws InterruptedException {
+        this.buttonPressedAction();
+        this.buttonReleasedAction();
+    }
+    ```
 - waitTouch(): È il metodo principale che termina l'attesa in base all'azione impostata.
+    ```
+    public void waitTouch() {
+        while (!this.finished) {
+            try {
+                if (this.getWaitAction() == PRESSED) {
+                    this.buttonPressedAction();
+                } else if (this.getWaitAction() == RELEASED) {
+                    this.buttonReleasedAction();
+                } else if (this.getWaitAction() == CLICKED) {
+                    this.buttonClickedAction();
+                }
+                Thread.sleep(WAIT_TIME);
+            } catch (InterruptedException ignored) {
+            }
+        }
+    }
+    ```
 
 #### Test WaitTouchSensor
 
@@ -451,6 +503,22 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni perc
 - setUltrasonicSensor(): Metodo utile per impostare il sensore.
 - WaitUltrasonicSensor(): Metodo costruttore, istanzia un nuovo `WaitUltrasonicSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
 - waitUltrasonic(): È il metodo principale che termina l'attesa in base al valore di confronto.
+    ```
+    public void waitUltrasonic() {
+        boolean finished = false;
+        while (!finished) {
+            try {
+                if (this.isBigger()) {
+                    finished = this.getUltrasonicSensor().getDistance() > this.getComparisonValue();
+                } else {
+                    finished = this.getUltrasonicSensor().getDistance() < this.getComparisonValue();
+                }
+                Thread.sleep(WAIT_TIME);
+            } catch (InterruptedException ignored) {
+            }
+        }
+    }
+    ```
 
 #### Test WaitUltrasonicSensor
 
