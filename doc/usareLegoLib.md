@@ -168,7 +168,7 @@ public class UseThreadSleep {
 }
 ```
 
-##### Wait Motor
+### Wait Motor
 
 <div class="clearfix">
     <div style="float:left">
