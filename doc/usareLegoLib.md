@@ -53,8 +53,24 @@ Tutte le classi hanno in comune hanno un costruttore che permette di inizializza
 
 ![NXT Blocks](img/nxt-blocks/nxt-blocks.png)
 
+### Sensori analogici
+
+Gli waiter analogici si basano su una variabile contentente il valore di riferimento, questo valore
+viene confrontato con quello letto dai sensori. Poi vi &egrave; una variabile boleana, la quale
+viene utilizzata per sapere se il valore letto dal sensore deve essere maggiore o minore rispetto a
+quello memorizzato nella variabile di riferimento.
+Tutto questo &egrave; nella classe `WaitAnalogSensor`, la quale viene estesa dalle classi dei
+sensori analogici.
+
+Diagramma UML della classe `WaitAnalogSensor`:
+
+<p style="text-align:center;">
+    <img src="img/classes/WaitAnalogSensor.png" width="200">
+</p>
+
 
 <div class="page-break"></div>
+
 
 ### WaitTime
 
@@ -74,7 +90,6 @@ Il diagramma UML della classe:
 <p style="text-align:center;">
     <img src="img/classes/WaitTime.png" width="200">
 </p>
-<br>
 
 La classe WaitTime &egrave; stata fatta per mantenere la coerenza con le altre classi, ma pu&ograve; essere facilmente sostituita da un `Thread.sleep(millis);`.
 
@@ -169,6 +184,10 @@ public class UseThreadSleep {
 }
 ```
 
+
+<div class="page-break"></div>
+
+
 ### Wait Motor
 
 <div class="clearfix">
@@ -181,6 +200,8 @@ public class UseThreadSleep {
         un determinato numbero di rotazioni.
     </div>
 </div>
+
+<br>
 
 Il diagramma UML della classe:
 
@@ -389,12 +410,8 @@ public class UseWaitNxtButton {
     </div>
 </div>
 
-Lo waiter si basa su una variabile che contine il valore al quale viene comparato quello letto dal
-sensore ed una variabile boleana che indica se il valore da ricercare deve essere maggiore o minore
-di quello memorizzato nella variabile.  
-La parte della variabile di confronto e del controllo se maggiore o minore, sono stati messi nella
-classe `WaitAnalogSensor`, perch&eacute; sono utilizzati anche nelle classi `WaitSoundSensor` e
-`WaitLightSensor`, &egrave; stata fatta una generalizzazione.
+Come descritto nel capitolo `Wait > Sensori Analogici` i valori di riferimento sono gestiti nella
+classe `WaitAnalogSensor`.
 
 Il diagramma UML della classe:
 
@@ -455,7 +472,145 @@ public class UseWaitUltrasonicSensor {
         Button.waitForAnyPress();
     }
 }
+```
 
+### Wait Light Sensor
+
+<div class="clearfix">
+    <div style="float:left">
+        <img style="width:65px" src="img/nxt-blocks/wait-light.png">
+    </div>
+    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
+        Il blocco wait touch dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
+        classe&nbsp;`WaitLightSensor`, la quale permette di aspettare del che un sensore di
+        di suoni percepisca un valore più alto o piu basso di un certo valore.
+    </div>
+</div>
+
+Come descritto nel capitolo `Wait > Sensori Analogici` i valori di riferimento sono gestiti nella
+classe `WaitAnalogSensor`.
+
+Il diagramma UML della classe:
+
+<p style="text-align:center;">
+    <img src="img/classes/WaitLightSensor.png">
+</p>
+
+Esempio di utlizzo della classe:
+
+```java
+import lejos.nxt.Button;
+import lejos.nxt.SensorPort;
+
+/**
+ * Wait light sensor example class.
+ * Aspetta che il sensore di intensita di luce riflessa collegato
+ * alla porta 1 vegna messo su una superfice chiara, e poi scura.
+ *
+ * @author giuliobosco
+ * @version 1.0 (2019-02-01)
+ */
+public class UseWaitLightSensor {
+
+    /**
+     * Metodo main della classe, avvia il programma di test della classe
+     * WaitLightSensor.
+     *
+     * @param args Argomenti da linea di comando.
+     */
+    public static void main(String[] args) {
+        // creo lo waiter per il light sensor, sulla porta uno
+        WaitLightSensor wls = new WaitLightSensor(
+                SensorPort.S1, (byte)50, true);
+
+        // stampo il messaggio iniziale e aspetto che il sensore
+        // legga un valore alto piu alto di 50.
+        System.out.println("Mettere su superficie chiara");
+        wls.waitLight();
+
+        Button.waitForAnyPress();
+
+        // stampo il messaggio intermedio e aspetto che il sensore
+        // legga un valore piu basso di 50.
+        wls.setBigger(false);
+        System.out.println("Mettere su superfice scura");
+        wls.waitLight();
+
+        // stampo messaggio finale
+        System.out.println("Fine del test");
+
+        // aspetto che venga premuto un bottone sul brick per terminare
+        // il programma
+        Button.waitForAnyPress();
+    }
+}
+```
+
+### Wait Sound Sensor
+
+<div class="clearfix">
+    <div style="float:left">
+        <img style="width:65px" src="img/nxt-blocks/wait-sound.png">
+    </div>
+    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
+        Il blocco wait touch dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
+        classe&nbsp;`WaitSoundSensor`, la quale permette di aspettare del che un sensore di
+        di suoni percepisca un valore più alto o piu basso di un certo valore.
+    </div>
+</div>
+
+Come descritto nel capitolo `Wait > Sensori Analogici` i valori di riferimento sono gestiti nella
+classe `WaitAnalogSensor`.
+
+Il diagramma UML della classe:
+
+<p style="text-align:center;">
+    <img src="img/classes/WaitSoundSensor.png">
+</p>
+
+Esempio di utlizzo della classe:
+
+```java
+import lejos.nxt.Button;
+import lejos.nxt.SensorPort;
+
+/**
+ * Wait sound sensor example class.
+ * Aspetta che venga recepito un suono forte dal microfono
+ * sulla porta 1.
+ *
+ * @author giuliobosco
+ * @version 1.0 (2019-02-01)
+ */
+public class UseWaitSoundSensor {
+
+    /**
+     * Metodo main della classe, avvia il programma di test della classe
+     * WaitSoundSensor.
+     *
+     * @param args Argomenti da linea di comando.
+     */
+    public static void main(String[] args) {
+        // creo lo waiter per il sound sensor sulla porta uno, che aspetta
+        // un suono forte.
+        WaitSoundSensor wss = new WaitSoundSensor(
+                SensorPort.S1, (byte)50, true);
+
+        // stampo messaggio iniziale
+        System.out.println("parlare davanti al microfono");
+
+        // aspetto che venga recepito un suono forte
+        wss.waitSound();
+
+        // stampo messaggio finale
+        System.out.println(
+                "Valore alto del microfono recepito");
+
+        // aspetto che venga premuto un bottone sul brick per terminare
+        // il programma
+        Button.waitForAnyPress();
+    }
+}
 ```
 
 
