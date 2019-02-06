@@ -742,13 +742,44 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
 
 Classe figlia di `Navigation` che usa due motori e un sensore di luce per seguire una linea.
 
-- DEFAULT_LINE_ON_LEFT: Costante che definisce il valore predefinito per la posizione della linea rispetto al robot (destra o sinistra).
+- DEFAULT_LINE_ON_LEFT: Costante che definisce il valore predefinito per la posizione della linea rispetto al robot (destra o sinistra). Valore: true.
 - waitLightSensor: Attributo interno che rappresenta l'attesa del sensore di luce.
 - lineOnLeft: Attributo che rappresenta la posizione della linea rispetto al robot (come riferimento la sinistra).
 - isLineOnLeft(): Metodo che serve per sapere la posizione della linea.
 - setLineOnLeft(): Metodo utile per impostare la posizione della linea.
 - LineFollower(): Metodo costruttore, crea un nuovo `LineFollower` definendo motore destro e sinistro e l'attesa del sensore di luce.
 - start(): È il metodo principale che unisce la navigazione dei motori con l'attesa del sensore così da seguire la linea.
+    ```
+    public void start() {
+        WaitLightSensor wait = this.waitLightSensor;
+        // Set the comparison value of the sensor to 50 (halfway).
+        wait.setComparisonValue((byte) 50);
+        // The sensor value must be bigger depending on where the line is.
+        wait.setBigger(this.isLineOnLeft());
+        // Start of the navigation.
+        super.start();
+        while (true) {
+            // The sensor waits the light.
+            wait.waitLight();
+            // Turn to the left or to the right.
+            if (this.isLineOnLeft()) {
+                this.right(TURNING);
+            } else {
+                this.left(TURNING);
+            }
+            // Wait for the opposite light.
+            wait.setBigger(!wait.isBigger());
+            wait.waitLight();
+            if (this.isLineOnLeft()) {
+                this.left(TURNING);
+            } else {
+                this.right(TURNING);
+            }
+            // Invert the turning again.
+            wait.setBigger(!wait.isBigger());
+        }
+    }
+    ```
 
 #### Test LineFollower
 
