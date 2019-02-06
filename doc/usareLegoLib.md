@@ -243,6 +243,10 @@ Tutte le classi hanno in comune hanno un costruttore che permette di inizializza
 
 ![NXT Blocks](img/nxt-blocks/nxt-blocks.png)
 
+Ogni waiter ha almeno un costruttore, nel quale vi sono tutti i parametri con il quale lo si
+configura ed un metodo che inizia con `wait` e finisce con il nome del sencore che deve aspettare,
+questo metodo &egrave quello da utilizzare per eseguire lo waiter.
+
 ### Sensori analogici
 
 Gli waiter analogici si basano su una variabile contentente il valore di riferimento, questo valore
@@ -278,7 +282,7 @@ Diagramma UML della classe `WaitAnalogSensor`:
 Il diagramma UML della classe:
 
 <p style="text-align:center;">
-    <img src="img/classes/WaitTime.png" width="200">
+    <img src="img/classes/WaitTime.png" width="180">
 </p>
 
 La classe WaitTime &egrave; stata fatta per mantenere la coerenza con le altre classi, ma pu&ograve; essere facilmente sostituita da un `Thread.sleep(millis);`.
@@ -326,6 +330,7 @@ public class UseWaitTime {
 ```
 
 <br>
+
 Oppure al posto della classe WaitTime, come detto in precedenza si
 pu&ograve; utilizzare il metodo `Thread.sleep(5000);`, che &egrave; un
 metodo interno alle libreire di java.
@@ -384,7 +389,7 @@ public class UseThreadSleep {
     <div style="float:left">
         <img style="width:65px" src="img/nxt-blocks/wait-motor.png">
     </div>
-    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
+    <div style="float:left;padding: 12px 0 0 10px; max-width:428px">
         Il blocco wait motor dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
         classe&nbsp;`WaitMotor`, la quale permette di aspettare del che il motore abbia effettuato
         un determinato numbero di rotazioni.
@@ -396,7 +401,7 @@ public class UseThreadSleep {
 Il diagramma UML della classe:
 
 <p style="text-align:center;">
-    <img src="img/classes/WaitMotor.png" width="300">
+    <img src="img/classes/WaitMotor.png" width="280">
 </p>
 
 Esempio di utlizzo della classe:
@@ -453,12 +458,14 @@ public class UseWaitMotor {
     <div style="float:left">
         <img style="width:65px" src="img/nxt-blocks/wait-touch.png">
     </div>
-    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
+    <div style="float:left;padding: 12px 0 0 10px; max-width:428px">
         Il blocco wait touch dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
         classe&nbsp;`WaitTouchSensor`, la quale permette di aspettare del che un sensore di touch,
         su una delle porte venga premuto, o rilasciato oppure cliccato, cioè cliccato e rilasciato.
     </div>
 </div>
+
+<br>
 
 Il diagramma UML della classe:
 
@@ -516,11 +523,8 @@ public class UseWaitTouchSensor {
 }
 ```
 
-Per sceglirere quale delle 3 azioni, (Premuto, rilasciato o cliccato) aspettare bisosgna cambiare il
-valore `CLICKED` nel costruttore dello waiter con:
-- `PRESSED` per premuto
-- `RELEASED` per rilasciato
 
+<div class="page-break"></div>
 
 ### Wait NXT Button
 
@@ -528,17 +532,19 @@ valore `CLICKED` nel costruttore dello waiter con:
     <div style="float:left">
         <img style="width:65px" src="img/nxt-blocks/wait-nxt-button.png">
     </div>
-    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
+    <div style="float:left;padding: 12px 0 0 10px; max-width:428px">
         Il blocco wait nxt button dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
         classe&nbsp;`WaitNxtButton`, la quale permette di aspettare del che venga premuto uno dei
         bottoni sul brick NXT.
     </div>
 </div>
 
+<br>
+
 Il diagramma UML della classe:
 
 <p style="text-align:center;">
-    <img src="img/classes/WaitMotor.png" width="300">
+    <img src="img/classes/WaitNxtButton.png" width="250">
 </p>
 
 Per ogni bottone vi è un metodo statico, per cui per far aspettare il click di un bottone
@@ -594,18 +600,22 @@ public class UseWaitNxtButton {
 }
 ```
 
+<div class="page-break"></div>
+
 ### Wait Ultrasonic Sensor
 
 <div class="clearfix">
     <div style="float:left">
         <img style="width:65px" src="img/nxt-blocks/wait-touch.png">
     </div>
-    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
-        Il blocco wait touch dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
+    <div style="float:left;padding: 12px 0 0 10px; max-width:428px">
+        Il blocco wait ultrasonic dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
         classe&nbsp;`WaitUltrasonicSensor`, la quale permette di aspettare del che un sensore di
         ultrasuoni percepisca un valore più alto o piu basso di un certo valore.
     </div>
 </div>
+
+<br>
 
 Come descritto nel capitolo `Wait > Sensori Analogici` i valori di riferimento sono gestiti nella
 classe `WaitAnalogSensor`.
@@ -613,7 +623,7 @@ classe `WaitAnalogSensor`.
 Il diagramma UML della classe:
 
 <p style="text-align:center;">
-    <img src="img/classes/WaitSoundSensor.png">
+    <img src="img/classes/WaitUltrasonicSensor.png">
 </p>
 
 Esempio di utlizzo della classe:
@@ -671,18 +681,22 @@ public class UseWaitUltrasonicSensor {
 }
 ```
 
+<div class="page-break"></div>
+
 ### Wait Light Sensor
 
 <div class="clearfix">
     <div style="float:left">
         <img style="width:65px" src="img/nxt-blocks/wait-light.png">
     </div>
-    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
-        Il blocco wait touch dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
+    <div style="float:left;padding: 12px 0 0 10px; max-width:428px">
+        Il blocco wait light dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
         classe&nbsp;`WaitLightSensor`, la quale permette di aspettare del che un sensore di
         di suoni percepisca un valore più alto o piu basso di un certo valore.
     </div>
 </div>
+
+<br>
 
 Come descritto nel capitolo `Wait > Sensori Analogici` i valori di riferimento sono gestiti nella
 classe `WaitAnalogSensor`.
@@ -813,12 +827,14 @@ public class LightSensorCalibrator {
     <div style="float:left">
         <img style="width:65px" src="img/nxt-blocks/wait-sound.png">
     </div>
-    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
-        Il blocco wait touch dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
+    <div style="float:left;padding: 12px 0 0 10px; max-width:428px">
+        Il blocco wait sound dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
         classe&nbsp;`WaitSoundSensor`, la quale permette di aspettare del che un sensore di
         di suoni percepisca un valore più alto o piu basso di un certo valore.
     </div>
 </div>
+
+<br>
 
 Come descritto nel capitolo `Wait > Sensori Analogici` i valori di riferimento sono gestiti nella
 classe `WaitAnalogSensor`.
@@ -874,13 +890,15 @@ public class UseWaitSoundSensor {
 }
 ```
 
+<div class="page-break"></div>
 
 ## Strutture di controllo
+
 <div class="clearfix">
     <div style="float:left">
         <img width="80" src="img/nxt-blocks/while.png">
     </div>
-    <div style="float:left;; padding: 5px 0 0 30px">
+    <div style="float:left;; padding: 25px 0 0 30px">
         <p>
             La struttura di controllo del ciclo pu&ograve; essere rappresentata in diverse maniere:
         </p>
@@ -898,7 +916,7 @@ public class UseWaitSoundSensor {
     <div style="float:left">
         <img width="80" src="img/nxt-blocks/if.png">
     </div>
-    <div style="float:left; padding: 40px 0 0 30px">
+    <div style="float:left; padding: 50px 0 0 30px">
         <p>
             La struttura di controllo del switch o selezione &egrave; in programmazione &egrave;<br> rappresentata dalla struttura di controllo `if (...) { ... }`
         </p>
