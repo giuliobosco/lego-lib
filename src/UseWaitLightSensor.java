@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 giuliobosco.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,44 +26,36 @@ import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
 /**
- * Wait light sensor example class.
- * Aspetta che il sensore di intensita di luce riflessa collegato
- * alla porta 1 vegna messo su una superfice chiara, e poi scura.
+ * Example of using the WaitLightSensor class.
+ * Useful for testing all the methods.
  *
  * @author giuliobosco
- * @version 1.0 (2019-02-01)
+ * @author gabrialessi
+ * @version 2.0 (2019-02-06)
  */
 public class UseWaitLightSensor {
 
     /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitLightSensor.
+     * Main method.
      *
-     * @param args Argomenti da linea di comando.
+     * @param args Command line arguments.
      */
     public static void main(String[] args) {
-        // creo lo waiter per il light sensor, sulla porta uno
-        WaitLightSensor wls = new WaitLightSensor(
-                SensorPort.S1, (byte)50, true);
 
-        // stampo il messaggio iniziale e aspetto che il sensore
-        // legga un valore alto piu alto di 50.
-        System.out.println("Mettere su superficie chiara");
-        wls.waitLight();
-
+        // New wait for the light sensor.
+        WaitLightSensor wait = new WaitLightSensor(SensorPort.S1, (byte) 50, true);
+        // Wait for a clear light.
+        System.out.println("Put on a clear light.");
+        wait.waitLight();
+        System.out.println("OK, press a button.");
+        // Wait for the press of a button.
         Button.waitForAnyPress();
-
-        // stampo il messaggio intermedio e aspetto che il sensore
-        // legga un valore piu basso di 50.
-        wls.setBigger(false);
-        System.out.println("Mettere su superfice scura");
-        wls.waitLight();
-
-        // stampo messaggio finale
-        System.out.println("Fine del test");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
-        Button.waitForAnyPress();
+        // Wait for a dark light.
+        wait.setBigger(false);
+        System.out.println("Put on a dark light.");
+        wait.waitLight();
+        System.out.println("OK.");
+        
     }
+    
 }
