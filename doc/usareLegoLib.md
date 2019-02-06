@@ -376,6 +376,88 @@ public class UseWaitNxtButton {
 }
 ```
 
+### Wait Ultrasonic Sensor
+
+<div class="clearfix">
+    <div style="float:left">
+        <img style="width:65px" src="img/nxt-blocks/wait-touch.png">
+    </div>
+    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
+        Il blocco wait touch dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
+        classe&nbsp;`WaitUltrasonicSensor`, la quale permette di aspettare del che un sensore di
+        ultrasuoni percepisca un valore più alto o piu basso di un certo valore.
+    </div>
+</div>
+
+Lo waiter si basa su una variabile che contine il valore al quale viene comparato quello letto dal
+sensore ed una variabile boleana che indica se il valore da ricercare deve essere maggiore o minore
+di quello memorizzato nella variabile.  
+La parte della variabile di confronto e del controllo se maggiore o minore, sono stati messi nella
+classe `WaitAnalogSensor`, perch&eacute; sono utilizzati anche nelle classi `WaitSoundSensor` e
+`WaitLightSensor`, &egrave; stata fatta una generalizzazione.
+
+Il diagramma UML della classe:
+
+<p style="text-align:center;">
+    <img src="img/classes/WaitSoundSensor.png">
+</p>
+
+Esempio di utlizzo della classe:
+
+```java
+import lejos.nxt.Button;
+import lejos.nxt.SensorPort;
+
+/**
+ * Wait ultrasonic sensor example class.
+ * Aspetta che il sensore ad ultrasuoni (distanza) sulla porta 1
+ * legga un valore maggiore di 50cm, poi aspetta che venga premuto
+ * un qualunque tasto sul brick, poi aspetta di leggere un valore
+ * minore di 50cm sul sensore.
+ *
+ * @author giuliobosco
+ * @version 1.0 (2019-02-01)
+ */
+public class UseWaitUltrasonicSensor {
+
+    /**
+     * Metodo main della classe, avvia il programma di test della classeπ
+     * WaitUltrasonicSensor.
+     *
+     * @param args Argomenti da linea di comando.
+     */
+    public static void main(String[] args) {
+        // creo lo waiter per il ultrasonic sensor sulla porta uno.
+        WaitUltrasonicSensor wus = new WaitUltrasonicSensor(
+                SensorPort.S1, (byte) 50, true);
+
+        // stampo messaggio iniziale, aspetto che il sensore ad ultrasuoni
+        // legga un valore maggiore di 50cm
+        System.out.println(
+                "mettere il sensore piu lontano di 50cm dal sensore");
+        wus.waitUltrasonic();
+
+        // aspetto che venga premuto un qualunque bottone sul brick
+        Button.waitForAnyPress();
+
+        // stampo messaggio intermedio, aspetto che il sensore ad
+        // ultrasuoni legga un valore miniore di 50cm
+        wus.setBigger(false);
+        System.out.println(
+                "mettere il sensore piu vicino di 50cm dal sensore");
+        wus.waitUltrasonic();
+
+        // stampo messaggio finale
+        System.out.println("fine del test");
+
+        // aspetto che venga premuto un bottone sul brick per terminare
+        // il programma
+        Button.waitForAnyPress();
+    }
+}
+
+```
+
 
 ## Strutture di controllo
 <div class="clearfix">
