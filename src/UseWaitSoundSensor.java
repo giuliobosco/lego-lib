@@ -43,12 +43,20 @@ public class UseWaitSoundSensor {
     public static void main(String[] args) {
         
         // New wait for the sound sensor.
-        WaitSoundSensor wait = new WaitSoundSensor(SensorPort.S1, (byte) 80, true);
+        WaitSoundSensor wait = new WaitSoundSensor(SensorPort.S1, (byte) 90, true);
         // Wait a loud sound.
         System.out.println("Make a loud sound.");
         wait.waitSound();
         System.out.println("Wait over.");
+        // Wait a weak sound.
+        wait.setBigger(false);
+        wait.setComparisonValue((byte) 20);
+        System.out.println("Make a weak sound.");
+        wait.waitSound();
+        System.out.println("Wait over.");
+        // Wait for another button to end the test.
         Button.waitForAnyPress();
+        
     }
     
 }
