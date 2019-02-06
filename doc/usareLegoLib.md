@@ -4,18 +4,143 @@
   clear: both;
   display: table;
 }
+
+.index {
+    width:100%;
+}
+
+.index .capitle {
+    width: 100px;
+    float:l eft;
+}
+
+.index .page {
+    width: 50px;
+    float: left;
+    text-align: center;
+}
 </style>
 
 # **Usare lego lib**
 
 ## indice
 
-- Introduzione - pagina: 2
-- Installazione - pagina: 2
-- Com'&egrave; strutturato - pagina: 3
-- Wait - pagina: 3
-    - WaitTime - pagina: 4
-- Strutture di controllo - pagina x
+<div class="clearfix index">
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;"><h5>Capitolo</h5></div>
+    <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;"><h5>Pagina</h5></div>
+    <div style="margin-top:5px;widht:100%;"> </div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">Introduzione</div>
+    <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">Installazione</div>
+    <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">&emsp;Java</div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Java Runtime Environment
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Java Development Kit
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">3</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Variabili d'ambiente
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">3</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Java Development Kit
+        </div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">4</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;leJOS
+        </div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Intallazione
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Utilizzo
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;HelloWorld
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Compilazione e avvio
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">6</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;LegoLib &amp; IDE
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">6</div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+        Com'&egrave; strutturato
+    </div>
+    <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Blocchi arancioni
+        </div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Wait
+        </div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Sensori analogici
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Wait Time
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">8</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Wait Motor
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">10</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Wait Touch Sensor
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">11</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Wait NXT Button
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">13</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Wait Ultrasonic Sensor
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">15</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Wait Light Sensor
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">17</div>
+                <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                    &emsp;&emsp;&emsp;Calibrazione sensori di luce
+                </div>
+                <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">18</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Wait Sound Sensor
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Strutture di controllo
+        </div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">20</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Blocchi verdi
+        </div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">21</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Motore singolo
+        </div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">21</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;&emsp;Navigazione
+        </div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">22</div>
+
+</div>
 
 <div class="page-break"></div>
 
@@ -43,7 +168,7 @@ java. Quindi va installata, e siccome dobbiamo sviluppare serve anche il kid di 
 
 Prima di installare la JRE bisogna provare a controllare se java non &egrave; gi&agrave; installato
 sul computer. Quindi aprere il `Prompt dei comandi`, premere il tasto Windows
-<img src="img/win-key.png" alt="Windows Key" width="20"/> che si trova sulla tastiera e
+<img src="img/win-key.png" alt="Windows Key" width="10"> che si trova sulla tastiera e
 contemporaneamente il tasto `R`. Quindi ciò farà aprire una piccola finestra in basso a sinistra, in
 cui bisognerà digitare `cmd` e premere invio. Comparirà una finestra nera, sulla quale scrivere il
 seguente comando:
