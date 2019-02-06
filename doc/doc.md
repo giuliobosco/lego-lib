@@ -398,6 +398,20 @@ Classe utile per aspettare semplicemente del tempo.
 - setStartTime(): Metodo utile per impostare il tempo iniziale.
 - WaitTime(): Metodo costruttore, crea una nuova attesa definendo il tempo da aspettare.
 - waitTime(): È il metodo principale che aspetta il tempo definito.
+    ```
+    public void waitTime() {
+        this.setStartTime(System.currentTimeMillis());
+        boolean finished = false;
+        try {
+            while (!finished) {
+                long sum = this.getStartTime() + this.getWaitTime();
+                finished = sum >= System.currentTimeMillis();
+                Thread.sleep(this.getWaitTime() / 100);
+            }
+        } catch (InterruptedException ignored) {
+        }
+    }
+    ```
 
 #### Test WaitTime
 
