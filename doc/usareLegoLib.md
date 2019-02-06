@@ -67,6 +67,8 @@ Per installare java scaricare il pacchetto di installazione dal sito della Oracl
 [https://www.java.com/en/download/](https://www.java.com/en/download/), dopo averlo scaricato aprire
 il file e seguire la procedura guidata.
 
+<div class="page-break"></div>
+
 ### Java Development Kit
 
 Prima di installare la JDK bisogna provare a controllare se essa &egrave; gi&arave; presente sulla
@@ -103,6 +105,8 @@ variabile di sistema `Path`.
     <img src="img/path.png" alt="Path" width="49%" style="float:right;margin-top:20px;"/>
 </div>
 
+<div class="page-break"></div>
+
 ## Driver USB
 
 Per fare in modo che il computer individui il dispositivo LEGO&reg;, è necessario disporre di un
@@ -116,6 +120,8 @@ Quindi verificare che il brick NXT sia riconosciuto dal vostro PC aprendo `Gesti
 <p style="text-align:center;">
     <img src="img/lego-device.png" alt="LEGO device" width="67%"/>
 </p>
+
+<div class="page-break"></div>
 
 ## leJOS
 
