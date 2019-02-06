@@ -630,28 +630,111 @@ Classe utile per gestire un motore grande LEGO.
 
 Classe che viene usata come base per muovere il brick tramite i due motori.
 
-- TURNING: Costante che definisce il valore predefinito dello sterzo.
-- MIN_TURNING: Costante che definisce il valore minimo dell'angolo di sterzo.
-- MAX_TURNING: Costante che definisce il valore massimo dell'angolo di sterzo.
+- TURNING: Costante che definisce il valore predefinito dello sterzo. Valore: 10.
+- MIN_TURNING: Costante che definisce il valore minimo dello sterzo. Valore: `MIN_POWER` di `SingleMotor`.
+- MAX_TURNING: Costante che definisce il valore massimo dello sterzo. Valore: `MAX_POWER` di `SingleMotor`.
 - power: Attributo che rappresenta la potenza della navigazione.
-- turning: Attributo che rappresenta l'angolo di sterzo della navigazione.
+- turning: Attributo che rappresenta lo sterzo della navigazione.
 - leftMotor: Attributo che rappresenta il motore sinistro.
 - rightMotor: Attributo che rappresenta il motore destro.
 - getPower(): Metodo che serve per ottenere la potenza della navigazione.
-- getTurning(): Metodo che serve per ottenere l'angolo di svolta della navigazione.
+- getTurning(): Metodo che serve per ottenere la potenza di svolta della navigazione.
 - setPower(): Metodo utile per impostare la potenza della navigazione.
-- setTurning(): Metodo utile per impostare l'angolo di svolta della navigazione.
+    ```
+    public void setPower(byte power) {
+        if (power > SingleMotor.MAX_POWER) {
+            power = SingleMotor.MAX_POWER;
+        } else if (power < SingleMotor.MIN_POWER) {
+            power = SingleMotor.MIN_POWER;
+        }
+        this.power = power;
+        this.updatePowerMotors();
+    }
+    ```
+- setTurning(): Metodo utile per impostare la potenza di svolta della navigazione.
+    ```
+    public void setTurning(byte turning) {
+        if (turning > MAX_TURNING) {
+            turning = MAX_TURNING;
+        } else if (turning < MIN_TURNING) {
+            turning = MIN_TURNING;
+        }
+        this.turning = turning;
+        this.updatePowerMotors();
+    }
+    ```
 - Navigation(): Metodo costruttore, crea una nuova navigazione settando i motori direttamente oppure dalle porte in cui sono collegati.
 - updatePowerMotors(): Metodo utile per aggiornare la potenza dei motori e di conseguenza lo sterzo.
+    ```
+    private void updatePowerMotors() {
+        this.leftMotor.setPower(this.getPower());
+        this.rightMotor.setPower(this.getPower());
+        this.updateTurningMotors();
+    }
+    ```
 - updateTurningMotors: Metodo utile per aggiornare lo sterzo dei motori.
+    ```
+    private void updateTurningMotors() {
+        if (this.getTurning() > 0) {
+            this.leftMotor.decreasePower(this.getTurning());
+            this.rightMotor.increasePower(this.getTurning());
+        } else {
+            this.leftMotor.increasePower((byte) - this.getTurning());
+            this.rightMotor.decreasePower((byte) - this.getTurning());
+        }
+    }
+    ```
 - increasePower(): Metodo che serve per aumentare la potenza della navigazione.
+    ```
+    public void increasePower(byte value) {
+        this.setPower((byte) (this.getPower() + value));
+    }
+    ```
 - decreasePower(): Metodo che serve per diminuire la potenza della navigazione.
-- increaseTurning(): Metodo che serve per aumentare l'angolo di svolta della navigazione.
-- decreaseTurning(): Metodo che serve per diminuire l'angolo di svolta della navigazione.
-- left(): Metodo che permette di girare a sinistra di un certo angolo.
-- right(): Metodo che permette di girare a destra di un certo angolo.
+    ```
+    public void decreasePower(byte value) {
+        this.setPower((byte) (this.getPower() - value));
+    }
+    ```
+- increaseTurning(): Metodo che serve per aumentare la potenza di svolta della navigazione.
+    ```
+    public void increaseTurning(byte value) {
+        this.setTurning((byte) (this.getTurning() + value));
+    }
+    ```
+- decreaseTurning(): Metodo che serve per diminuire la potenza di svolta della navigazione.
+    ```
+    public void decreaseTurning(byte value) {
+        this.setTurning((byte) (this.getTurning() - value));
+    }
+    ```
+- left(): Metodo che permette di girare a sinistra di una certa intensità.
+    ```
+    public void left(byte turning) {
+        this.decreaseTurning(turning);
+    }
+    ```
+- right(): Metodo che permette di girare a destra di una certa intensità.
+    ```
+    public void right(byte turning) {
+        this.increaseTurning(turning);
+    }
+    ```
 - start(): Metodo che fa partire la navigazione azionando i motori.
+    ```
+    public void start() {
+        this.leftMotor.start();
+        this.rightMotor.start();
+        this.setPower((byte) 0);
+    }
+    ```
 - stop(): Metodo che ferma la navigazione arrestando i motori.
+    ```
+    public void stop() {
+        this.leftMotor.start();
+        this.rightMotor.start();
+    }
+    ```
 
 #### Test Navigation
 
