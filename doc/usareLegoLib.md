@@ -15,7 +15,7 @@
 - Com'&egrave; strutturato - pagina: 3
 - Wait - pagina: 3
     - WaitTime - pagina: 4
-- Strutture di controllo - pagina x 
+- Strutture di controllo - pagina x
 
 <div class="page-break"></div>
 
@@ -254,6 +254,7 @@ Il diagramma UML della classe:
 <p style="text-align:center;">
     <img src="img/classes/WaitTouchSensor.png" width="300">
 </p>
+
 Esempio di utlizzo della classe:
 
 ```java
