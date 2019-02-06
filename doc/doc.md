@@ -787,7 +787,7 @@ Classe figlia di `Navigation` che usa due motori e un sensore di luce per seguir
 
 Classe figlia di `Navigation` che usa due motori e due sensori di luce per seguire una linea in maniera proporzionale.
 
-- DEFAULT_FOLLOW_BLACK: Costante che definisce il colore della linea da seguire (nera o bianca).
+- DEFAULT_FOLLOW_BLACK: Costante che definisce il colore della linea da seguire (nera o bianca). Valore: true.
 - frontLightSensor: Attributo che rappresenta Il sensore di luce frontale.
 - backLightSensor: Attributo che rappresenta Il sensore di luce posteriore.
 - followBlack: Attributo che rappresenta il colore della linea da seguire (come riferimento la linea nera).
@@ -799,6 +799,29 @@ Classe figlia di `Navigation` che usa due motori e due sensori di luce per segui
 - setFollowBlack(): Metodo utile per impostare il colore della linea.
 - ProportionalLineFollower(): Metodo costruttore, crea un nuovo `ProportionalLineFollower` definendo motore destro e sinistro e i due sensori di luce.
 - start(): È il metodo principale che unisce la navigazione dei motori con i due sensori così da seguire la linea in modo proporzionale, quindi senza avere il riferimento della posizione della linea rispetto al robot.
+    ```
+    public void start() {
+        // Start of the navigation.
+        super.start();
+        while (true) {
+            if (this.getFrontLightSensor().getLightValue() < 50) {
+                byte value = (byte) this.getFrontLightSensor().getLightValue();
+                value -= this.getPower();
+                value /= 1.5;
+                this.setTurning(value);
+            } else {
+                if (this.getBackLightSensor().getLightValue() < 50) {
+                    byte value = (byte) this.getBackLightSensor().getLightValue();
+                    value -= this.getPower();
+                    value /= 1.5;
+                    this.setTurning(value);
+                } else {
+                    this.setTurning((byte) 0);
+                }
+            }
+        }
+    }
+    ```
 
 #### Test ProportionalLineFollower
 
