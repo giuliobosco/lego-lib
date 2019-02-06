@@ -3902,7 +3902,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -8,
+									"left": -16,
 									"top": -784,
 									"width": 10,
 									"height": 10
@@ -3918,7 +3918,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -8,
+									"left": -16,
 									"top": -784,
 									"width": 10,
 									"height": 10
