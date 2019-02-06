@@ -317,6 +317,21 @@ Classe che serve per aspettare che un motore faccia un certo numero di rotazioni
 - setComparisonValue(): Metodo utile per impostare il valore di confronto.
 - WaitMotor(): Metodo costruttore, istanzia un nuovo `WaitMotor` impostando il motore e il valore di confronto.
 - waitMotor(): È il metodo principale che termina l'attesa quando il motore raggiunge le rotazioni determinate.
+    ```
+    public void waitMotor() {
+        boolean finished = false;
+        while (!finished) {
+            try {
+                int earlyRotations = this.getSingleMotor().getMotor().getTachoCount();
+                while (earlyRotations + this.getComparisonValue() != earlyRotations) {
+                    Thread.sleep(1000);
+                }
+                finished = true;
+            } catch (InterruptedException ignored) {
+            }
+        }
+    }
+    ```
 
 #### Test WaitMotor
 
