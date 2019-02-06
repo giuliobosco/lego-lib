@@ -268,8 +268,10 @@ Classe che serve per generalizzare le classi che aspettano un sensore analogico 
 - isBigger(): Metodo utile per sapere il valore dell'attributo `bigger`.
 - setComparisonValue(): Metodo utile per impostare il valore di confronto controllando che sia nell'intervallo definito da `SENSOR_MIN_VALUE` e `SENSOR_MAX_VALUE`.
     ```
-    if (comparisonValue >= SENSOR_MIN_VALUE && comparisonValue <= SENSOR_MAX_VALUE) {
-        this.comparisonValue = comparisonValue;
+    public void setComparisonValue(byte comparisonValue) {
+        if (comparisonValue >= SENSOR_MIN_VALUE && comparisonValue <= SENSOR_MAX_VALUE) {
+            this.comparisonValue = comparisonValue;
+        }
     }
     ```
 - setBigger(): Metodo utile per impostare il valore dell'attributo `bigger`.
@@ -435,14 +437,19 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
 - WaitTouchSensor(): Metodo costruttore, istanzia un nuovo `WaitTouchSensor` impostando l'azione (premuto, rilasciato, cliccato) e il sensore o la porta del brick in cui è inserito il sensore.
 - isWaitAction(): Metodo utile per verificare che l'azione da aspettare imposta sia valida.
     ```
-    if (waitAction == PRESSED || waitAction == RELEASED || waitAction == CLICKED) {
-        return true;
+    private boolean isWaitAction(byte waitAction) {
+        if (waitAction == PRESSED || waitAction == RELEASED || waitAction == CLICKED) {
+            return true;
+        }
+        return false;
     }
     return false;
     ```
 - isPressedButton(): Metodo che dice se il sensore è premuto.
     ```
-    return this.getTouchSensor().isPressed();
+    public boolean isPressedButton() {
+        return this.getTouchSensor().isPressed();
+    }
     ```
 - buttonPressedAction(): Metodo che aspetta la pressione del sensore.
     ```
@@ -539,9 +546,11 @@ Classe utile per gestire un motore grande LEGO.
 - getPower(): Metodo che serve per ottenere la potenza del motore.
 - setMotorPort(): Metodo utile per impostare la porta in cui è collegato il motore.
     ```
-    if (this.isMotorPort(motorPort)) {
-        this.motorPort = motorPort;
-        this.setMotor(this.motorPort);
+    private void setMotorPort(char motorPort) {
+        if (this.isMotorPort(motorPort)) {
+            this.motorPort = motorPort;
+            this.setMotor(this.motorPort);
+        }
     }
     ```
 - setMotor(): Metodo utile per impostare il motore, se non si passa il motore si può usare la porta in cui esso è collegato.
@@ -563,29 +572,37 @@ Classe utile per gestire un motore grande LEGO.
     ```
 - setPower(): Metodo utile per impostare la potenza del motore.
     ```
-    if (power > MAX_POWER) {
-        power = MAX_POWER;
-    } else if (power < MIN_POWER) {
-        power = MIN_POWER;
+    public void setPower(byte power) {
+        if (power > MAX_POWER) {
+            power = MAX_POWER;
+        } else if (power < MIN_POWER) {
+            power = MIN_POWER;
+        }
+        this.power = power;
+        this.getMotor().setSpeed(this.getPower());
     }
-    this.power = power;
-    this.getMotor().setSpeed(this.getPower());
     ```
 - SingleMotor(): Metodo costruttore, si crea un nuovo `SingleMotor` definendo la porta in cui è collegato.
 - isMotorPort(): Metodo utile per controllare che la porta usata sia valida (`A`, `B` o `C`).
     ```
-    if (motorPort == PORT_A || motorPort == PORT_B || motorPort == PORT_C) {
-        return true;
+    public boolean isMotorPort(char motorPort) {
+        if (motorPort == PORT_A || motorPort == PORT_B || motorPort == PORT_C) {
+            return true;
+        }
+        return false;
     }
-    return false;
     ```
 - increasePower(): Metodo utile per aumentare la potenza del motore.
     ```
-    this.setPower((byte) (this.getPower() + value));
+    public void increasePower(byte value) {
+        this.setPower((byte) (this.getPower() + value));
+    }
     ```
 - decreasePower(): Metodo utile per diminuire la potenza del motore.
     ```
-    this.setPower((byte) (this.getPower() - value));
+    public void decreasePower(byte value) {
+        this.setPower((byte) (this.getPower() - value));
+    }
     ```
 - start(): Metodo che serve per azionare il motore.
     ```
