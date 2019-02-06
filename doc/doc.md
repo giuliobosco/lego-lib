@@ -646,7 +646,7 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
 
 <img src="img/classes/Navigation.png" width=400>
 
-- TURNING: Costante che definisce il valore predefinito dello sterzo. Valore: 10.
+- TURNING: Costante che definisce il valore predefinito dello sterzo. Valore: 50.
 - MIN_TURNING: Costante che definisce il valore minimo dello sterzo. Valore: `MIN_POWER` di `SingleMotor`.
 - MAX_TURNING: Costante che definisce il valore massimo dello sterzo. Valore: `MAX_POWER` di `SingleMotor`.
 - power: Attributo che rappresenta la potenza della navigazione.
@@ -676,7 +676,7 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
             turning = MIN_TURNING;
         }
         this.turning = turning;
-        this.updatePowerMotors();
+        this.updateTurningMotors();
     }
     ```
 - Navigation(): Metodo costruttore, crea una nuova navigazione settando i motori direttamente oppure dalle porte in cui sono collegati.
@@ -739,16 +739,16 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
 - start(): Metodo che fa partire la navigazione azionando i motori.
     ```
     public void start() {
+        this.setPower(SingleMotor.MAX_POWER);
         this.leftMotor.start();
         this.rightMotor.start();
-        this.setPower((byte) 0);
     }
     ```
 - stop(): Metodo che ferma la navigazione arrestando i motori.
     ```
     public void stop() {
-        this.leftMotor.start();
-        this.rightMotor.start();
+        this.leftMotor.stop();
+        this.rightMotor.stop();
     }
     ```
 
