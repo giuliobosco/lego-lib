@@ -257,7 +257,7 @@ Questo è il risultato ottenuto:
 
 Classe che serve per generalizzare le classi che aspettano un sensore analogico (microfono, tocco, ultrasuoni).
 
-<img src="img/classes/waitanalogsensor.png" width=400>
+<img src="img/classes/WaitAnalogSensor.png" width=400>
 
 - WAIT_TIME: Costante che definisce l'intervallo di tempo tra un controllo e un altro della fine dell'attesa. Valore: 100 (millisecondi).
 - SENSOR_MIN_VALUE: Costante che definisce il minimo valore che un sensore può leggere. Valore: 0.
@@ -282,6 +282,8 @@ Classe che serve per generalizzare le classi che aspettano un sensore analogico 
 ### WaitLightSensor
 
 Classe figlia di `WaitAnalogSensor` che aspetta che il sensore di luce percepisca un certo valore.
+
+<img src="img/classes/WaitLightSensor.png" width=800>
 
 - lightSensor: Attributo che rappresenta il sensore di luce.
 - getLightSensor(): Metodo che serve per ottenere il sensore.
@@ -310,6 +312,8 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore di luce percepisc
 ### WaitMotor
 
 Classe che serve per aspettare che un motore faccia un certo numero di rotazioni.
+
+<img src="img/classes/WaitMotor.png" width=600>
 
 - singleMotor: Attributo che rappresenta il motore grande (`SingleMotor`).
 - comparisonValue: Attributo che rappresenta il valore da comparare con quello ricevuto dal motore.
@@ -341,6 +345,8 @@ Classe che serve per aspettare che un motore faccia un certo numero di rotazioni
 
 Classe utile per aspettare la pressione di uno dei pulsanti presenti sul brick NXT. L'implementazione è molto semplice poiché esiste la classe `Button` che contiene il necessario per far funzionare correttamente l'attesa.
 
+<img src="img/classes/WaitNxtButton.png" width=400>
+
 - button(): Metodo che aspetta la pressione del pulsante passato.
     ```
     public static void button(Button button) {
@@ -363,6 +369,8 @@ Classe utile per aspettare la pressione di uno dei pulsanti presenti sul brick N
 ### WaitSoundSensor
 
 Classe figlia di `WaitAnalogSensor` che aspetta che il microfono percepisca un certo valore.
+
+<img src="img/classes/WaitSoundSensor.png" width=800>
 
 - soundSensor: Attributo che rappresenta il sensore di suono (microfono).
 - getSoundSensor(): Metodo che serve per ottenere il microfono.
@@ -392,6 +400,8 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il microfono percepisca un c
 
 Classe utile per aspettare semplicemente del tempo.
 
+<img src="img/classes/WaitTime.png" width=400>
+
 - waitTime: Attributo che rappresenta il tempo da aspettare (in millisecondi).
 - startTime: Attributo che rappresenta il tempo iniziale trascorso.
 - getWaitTime(): Metodo che serve per ottenere il tempo da aspettare.
@@ -419,9 +429,9 @@ Classe utile per aspettare semplicemente del tempo.
 
 ### WaitTouchSensor
 
-Classe utile per aspettare la pressione, il rilascio o il click di un sensore di tocco.  
+Classe utile per aspettare la pressione, il rilascio o il click di un sensore di tocco.
 
-<img src="img/classes/waittouchsensor.png" width=400>
+<img src="img/classes/WaitTouchSensor.png" width=400>
 
 - WAIT_TIME: Costante che definisce l'intervallo di tempo tra un controllo e un altro della fine dell'attesa. Valore: 100 (millisecondi).
 - PRESSED: Costante che definisce la pressione del sensore. Valore: 0.
@@ -505,6 +515,8 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
 
 Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni percepisca un certo valore.
 
+<img src="img/classes/WaitUltrasonicSensor.png" width=800>
+
 - ultrasonicSensor: Attributo che rappresenta il sensore a ultrasuoni.
 - getUltrasonicSensor(): Metodo che serve per ottenere il sensore.
 - setUltrasonicSensor(): Metodo utile per impostare il sensore.
@@ -532,6 +544,8 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni perc
 ### SingleMotor
 
 Classe utile per gestire un motore grande LEGO.
+
+<img src="img/classes/SingleMotor.png" width=400>
 
 - PORT_A: Costante che definisce la porta `A` del brick. Valore: 'A'.
 - PORT_B: Costante che definisce la porta `B` del brick. Valore: 'B'.
@@ -629,6 +643,8 @@ Classe utile per gestire un motore grande LEGO.
 ### Navigation
 
 Classe che viene usata come base per muovere il brick tramite i due motori.
+
+<img src="img/classes/Navigation.png" width=400>
 
 - TURNING: Costante che definisce il valore predefinito dello sterzo. Valore: 10.
 - MIN_TURNING: Costante che definisce il valore minimo dello sterzo. Valore: `MIN_POWER` di `SingleMotor`.
@@ -742,6 +758,8 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
 
 Classe figlia di `Navigation` che usa due motori e un sensore di luce per seguire una linea.
 
+<img src="img/classes/LineFollower.png" width=400>
+
 - DEFAULT_LINE_ON_LEFT: Costante che definisce il valore predefinito per la posizione della linea rispetto al robot (destra o sinistra). Valore: true.
 - waitLightSensor: Attributo interno che rappresenta l'attesa del sensore di luce.
 - lineOnLeft: Attributo che rappresenta la posizione della linea rispetto al robot (come riferimento la sinistra).
@@ -786,6 +804,8 @@ Classe figlia di `Navigation` che usa due motori e un sensore di luce per seguir
 ### ProportionalLineFollower
 
 Classe figlia di `Navigation` che usa due motori e due sensori di luce per seguire una linea in maniera proporzionale.
+
+<img src="img/classes/ProportionalLineFollower.png" width=400>
 
 - DEFAULT_FOLLOW_BLACK: Costante che definisce il colore della linea da seguire (nera o bianca). Valore: true.
 - frontLightSensor: Attributo che rappresenta Il sensore di luce frontale.
