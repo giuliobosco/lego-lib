@@ -546,6 +546,70 @@ public class UseWaitLightSensor {
 }
 ```
 
+#### Calibrazione sensori
+
+Per poter utilizzare in maniera ottimale i sensori, bisogna calibrarli con la luce attuale del'
+ambiente circostante.  
+Per calibrare i sensori bisogna settare la luce massima e la luce minima che pu&ograve; leggere il
+sensore. La luce massima che un sensore pu&ograve; leggere solitamente &egrave; intesa come il
+bianco, che riflette molta luce; mentre la luce minima che il sensore pu&ograve; leggere è il nero,
+che riflette pochissima luce.
+
+```java
+import lejos.nxt.LightSensor;
+import lejos.nxt.SensorPort;
+
+/**
+ * Calibrate the light sensor.
+ * Calibra il sensore di luce, con la luce che presente nel luogo
+ * dov'&egrave; il sensore.
+ *
+ * @author giuliobosco
+ * @version 1.0 (2019-02-06)
+ */
+public class LightSensorCalibrator {
+
+    /**
+     * Metodo main della classe, permette di calibrare il sensore
+     * di luce.
+     *
+     * @param args Comm
+     */
+    public static void main(String[] args) {
+        // setto il sensore di luce su cui eseguire la calibrazione
+        LightSensor ls = new LightSensor(SensorPort.S1);
+
+        // scrivo il messaggio per avvertire l'utente di mettere il
+        // sensore di luce su una superfice bianca (o chiara)
+        System.out.println(
+                "Posizionare il sensore sul bianco. " +
+                        "Poi premere Enter");
+
+        // aspetto che venga premuto il bottone enter
+        WaitNxtButton.enterButton();
+
+        // calibro il massimo di luce letta sul senore
+        ls.calibrateHigh();
+
+        // pulisco il sensore del brick NXT
+        System.out.println("\n\n\n\n\n\n\n\n\n");
+
+        // scrivo il messaggio per avvertire l'utente di mettere il
+        // sensore di luce su una superfice scura (o nera)
+        System.out.println("Posizionare il sensore sul nero. Poi premere Enter.");
+
+        // aspetto che venga premuto il bottone enter
+        WaitNxtButton.enterButton();
+
+        // calibro il minimo di luce letta sul sensore
+        ls.calibrateLow();
+    }
+
+}
+```
+
+<div class="page-break"></div>
+
 ### Wait Sound Sensor
 
 <div class="clearfix">
