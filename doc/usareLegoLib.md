@@ -15,6 +15,7 @@
 - Com'&egrave; strutturato - pagina: 3
 - Wait - pagina: 3
     - WaitTime - pagina: 4
+- Strutture di controllo - pagina x 
 
 <div class="page-break"></div>
 
@@ -46,7 +47,7 @@ I blocchi arancioni rappresentano i blcochi blocchi Wait, che in lego lib sono r
 Nei blocchi arancioni sono compresi anche le selezioni e i cicli, i quali sono implementati dalle
 strutture di controllo `if (...) { ... }` e `while` o `do { ... } while` oppure `for (...) { ... }`.
 
-### Wait
+## Wait
 
 Tutte le classi hanno in comune hanno un costruttore che permette di inizializzare ogni wait con tutte le configurazioni possibili ed un metodo che fa eseguire lo wait.
 
@@ -302,7 +303,7 @@ valore `CLICKED` nel costruttore dello waiter con:
 - `RELEASED` per rilasciato
 
 
-### Strutture di controllo
+## Strutture di controllo
 <div class="clearfix">
     <div style="float:left">
         <img width="80" src="img/nxt-blocks/while.png">
