@@ -25,7 +25,6 @@
     - [HelloWorld](#helloworld)
         - [Test HelloWorld](#test-helloworld)
     - [WaitAnalogSensor](#waitanalogsensor)
-        - [Test WaitAnalogSensor](#test-waitanalogsensor)
     - [WaitLightSensor](#waitlightsensor)
         - [Test WaitLightSensor](#test-waitlightsensor)
     - [WaitMotor](#waitmotor)
@@ -45,9 +44,7 @@
     - [Navigation](#navigation)
         - [Test Navigation](#test-navigation)
     - [LineFollower](#linefollower)
-        - [Test LineFollower](#test-linefollower)
     - [PropotionalLineFollower](#proportionallinefollower)
-        - [Test ProportionalLineFollower](#test-proportionallinefollower)
 
 5. [Test di sistema](#test-di-sistema)
     - [Protocollo di test](#protocollo-di-test)
