@@ -28,7 +28,7 @@
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 3.1 (2019-02-03)
+ * @version 3.2 (2019-02-06)
  */
 public class Navigation {
     
@@ -214,7 +214,7 @@ public class Navigation {
      * @param turning The value to turn to left.
      */
     public void left(byte turning) {
-        this.decreasePower(turning);
+        this.decreaseTurning(turning);
     }
 
     /**
@@ -223,7 +223,7 @@ public class Navigation {
      * @param turning The value to turn to right.
      */
     public void right(byte turning) {
-        this.increasePower(turning);
+        this.increaseTurning(turning);
     }
     
     /**
