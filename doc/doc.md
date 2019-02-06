@@ -280,8 +280,6 @@ Classe che serve per generalizzare le classi che aspettano un sensore analogico 
 - setBigger(): Metodo utile per impostare il valore dell'attributo `bigger`.
 - WaitAnalogSensor(): Metodo costruttore, istanzia un nuovo `WaitAnalogSensor`, defininendo il campo `bigger` e il valore per comparare.
 
-#### Test WaitAnalogSensor
-
 ### WaitLightSensor
 
 Classe figlia di `WaitAnalogSensor` che aspetta che il sensore di luce percepisca un certo valore.
@@ -311,6 +309,26 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore di luce percepisc
     ```
 
 #### Test WaitLightSensor
+
+Per eseguire il test si utilizza la classe `UseWaitLightSensor`, che crea un'attesa di un sensore di luce, ne stampa i valori impostati e infine usa il metodo principale di attesa.
+```
+public static void main(String[] args) {
+    // New wait for the light sensor.
+    WaitLightSensor wait = new WaitLightSensor(SensorPort.S1, (byte) 50, true);
+    // Wait for a clear light.
+    System.out.println("Put on a clear light.");
+    wait.waitLight();
+    System.out.println("OK, press a button.");
+    // Wait for the press of a button.
+    Button.waitForAnyPress();
+    // Wait for a dark light.
+    wait.setBigger(false);
+    System.out.println("Put on a dark light.");
+    wait.waitLight();
+    System.out.println("OK.");
+}
+```
+Dopo aver configurato i valori di riferimento per il bianco e il nero, l'esecuzione del test è andata a buon fine. I risultati ottenuti sono quelli aspettati quando si mette il sensore su una superficie chiara e poi una scura cambiando il valore di `bigger`.
 
 ### WaitMotor
 
@@ -363,11 +381,50 @@ Classe utile per aspettare la pressione di uno dei pulsanti presenti sul brick N
         button(Button.ENTER);
     }
     ```
-- rightButton(): Metodo che aspetta la pressione del pulsante destro".
+- rightButton(): Metodo che aspetta la pressione del pulsante destro.
+    ```
+    public static void rightButton() {
+        button(Button.RIGHT);
+    }
+    ```
 - leftButton(): Metodo che aspetta la pressione del pulsante sinistro.
+    ```
+    public static void leftButton() {
+        button(Button.LEFT);
+    }
+    ```
 - escapeButton(): Metodo che aspetta la pressione del pulsante in basso.
+    ```
+    public static void escapeButton() {
+        button(Button.ESCAPE);
+    }
+    ```
 
 #### Test WaitNxtButton
+
+Per effettuare i test si usa `UseWaitNxtButton`, in cui semplicemente si usano i metodi della classe `WaitNxtButton`.
+```
+public static void main(String[] args) {
+    // Wait for the left button.
+    System.out.println("Press left button to continue");
+    WaitNxtButton.leftButton();
+    // Wait for the enter button.
+    System.out.println("Button pressed\n\nPress enter button to continue");
+    WaitNxtButton.enterButton();
+    // Wait for the right button.
+    System.out.println("Button pressed\n\nPress right button to continue");
+    WaitNxtButton.rightButton();
+    System.out.println("Button pressed\n\n");
+    // Wait for the escape button.
+    System.out.println("Button pressed\n\nPress escape button to continue");
+    WaitNxtButton.escapeButton();
+    System.out.println("Button pressed\n\n");
+    // Wait for another button to end the test.
+    System.out.println("Test over.");
+    Button.waitForAnyPress();
+}
+```
+I metodi funzionano correttamente perché il programma avanza al prossimo pulsante solo quando si preme quello richiesto.
 
 ### WaitSoundSensor
 
@@ -398,6 +455,8 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il microfono percepisca un c
     ```
 
 #### Test WaitSoundSensor
+
+
 
 ### WaitTime
 
