@@ -28,7 +28,7 @@
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 3.2 (2019-02-01)
+ * @version 3.3 (2019-02-06)
  */
 public class WaitAnalogSensor {
 
@@ -115,7 +115,7 @@ public class WaitAnalogSensor {
      * @param bigger          If is bigger than the comparison value.
      * @param comparisonValue The comparison value.
      */
-    WaitAnalogSensor(boolean bigger, byte comparisonValue) {
+    public WaitAnalogSensor(boolean bigger, byte comparisonValue) {
         this.setBigger(bigger);
         this.setComparisonValue(comparisonValue);
     }
