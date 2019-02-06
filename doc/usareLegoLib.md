@@ -276,6 +276,13 @@ Il diagramma UML della classe:
     <img src="img/classes/WaitTouchSensor.png" width="300">
 </p>
 
+Per sceglirere quale delle 3 azioni, (Premuto, rilasciato o cliccato) aspettare bisosgna cambiare il
+valore `CLICKED` nel costruttore dello waiter con:
+
+- `PRESSED` per premuto
+- `RELEASED` per rilasciato
+
+
 Esempio di utlizzo della classe:
 
 ```java
@@ -707,3 +714,85 @@ public class UseWaitSoundSensor {
         </p>
     </div>
 </div>
+
+
+<div class="page-break"></div>
+
+## Blocchi verdi
+
+I blocchi verdi dell'ambiente di sviluppo Lego&#174; Mindstorm NXT sono quelli relativi agli
+attuatori.  
+Gli attuatori possono essere:
+
+- motori
+- schermi
+- display
+- led
+- buzzer
+- altoparlanti
+
+Quindi sono tutti quegli elementi che collegati ad un cirtcuito di controllo, a dipendenza della
+loro natura e dell'istruzione o segnale che gli viene invato, fanno dei movimenti, o modificano il
+loro stato.
+
+In questa libreria vi sono principalmente 2 classi di attuatori, perch&egrave; le altre gia sono
+state implementate dalla libreria interna di lejos.
+
+- Motore singolo
+- Navigazione
+
+La gestione dei motori è stata suddivisa in due classi differenti, una per il motore singolo mentre
+l'altra per la navigazione a due motori (per navigazione si intende il movimento del robot con due
+motori che lavorano in sincronia).
+
+La gestione del display è gia implementata dalla classe `System.in`, mentre le funzioni audio sono
+implementate nella classe `lejos.nxt.Sound`.
+
+### Motore singolo
+
+<div class="clearfix">
+    <div style="float:left">
+        <img style="width:65px" src="img/nxt-blocks/motor.png">
+    </div>
+    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
+        Il blocco motor (per il motore singolo) dell'ambiente di sviluppo Mindstorm NXT è
+        rappresentato dalla classe&nbsp;`SingleMotor`, la quale permette di gestire facilmente un
+        motore.
+    </div>
+</div>
+
+<br>
+
+Il diagramma UML della classe:
+
+<p style="text-align:center;">
+    <img src="img/classes/SingleMotor.png" style="width:210px">
+</p>
+
+<div class="page-break"></div>
+
+### Navigazione
+
+<div class="clearfix">
+    <div style="float:left">
+        <img style="width:65px" src="img/nxt-blocks/motor.png">
+    </div>
+    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
+        Il blocco motor (per la navigazione) dell'ambiente di sviluppo Mindstorm NXT è
+        rappresentato dalla classe&nbsp;`Navigation`, la quale permette di manovrare con
+        facilit&agrave; i motori.
+    </div>
+</div>
+
+<br>
+
+Il diagramma UML della classe:
+
+<p style="text-align:center;">
+    <img src="img/classes/Navigation.png" style="width:420px">
+</p>
+
+Per poter manovrare i motori bisogna settare la velocit&agrave; (con il metodo `setPower(power)`),
+mentre per manovrare la direzione bisogna usare il metodo `setTurning(turning)`. Poi bisogna avviare
+la navigazione con il metodo `startNaviagation()`, la quale pu&ograve; essere fermata con il metodo
+`stopNavigation()`.
