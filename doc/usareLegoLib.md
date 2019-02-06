@@ -225,6 +225,12 @@ nxj -r -o HelloWorld.nxj HelloWorld
 
 Avviamento del programma.
 
+## LegoLib &amp; IDE
+
+Gli IDE (Integrated Development Environment) sono degli applicativi studiati per facilitare il
+compito agli sviluppatori, per poter utilizzare legolib in un IDE bisogna importare in esso il file
+`.jar` che contiene tutte le classi di legolib. Per ogni IDE vi è una diffrente procedura.
+
 <div class="page-break"></div>
 
 # Com&apos;&egrave; strutturato
