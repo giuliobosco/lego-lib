@@ -14984,7 +14984,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFnolo5VWPpe+w="
 					},
-					"name": "WaitAnalogSensor",
+					"name": "WaitAnalogSensor Model",
 					"ownedViews": [
 						{
 							"_type": "UMLClassView",
