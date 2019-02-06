@@ -184,18 +184,24 @@ Qui è descritto come sono strutturate le cartelle contententi la libreria svilu
         - LineFollower.java
     - classes.jar
     - compile.ps1
+    - LFRunner.java
     - LineFollower.java
     - Navigation.java
     - PLFRunner.java
     - ProportionalLineFollower.java
     - SingleMotor.java
-    - Wait.java
+    - SingleMotorTest.java
+    - UseWaitLightSensor.java
+    - UseWaitMotor.java
+    - UseWaitNxtButtonSensor.java
+    - UseWaitSoundSensor.java
+    - UseWaitTime.java
+    - UseWaitTouchSensor.java
+    - UseWaitUltrasonicSensor.java
     - WaitAnalogSensor.java
-    - WaitDigitalSensor.java
     - WaitLightSensor.java
     - WaitMotor.java
     - WaitNxtButton.java
-    - WaitSensor.java
     - WaitSoundSensor.java
     - WaitTime.java
     - WaitTouchSensor.java
