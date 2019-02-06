@@ -526,11 +526,11 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni perc
 
 Classe utile per gestire un motore grande LEGO.
 
-- PORT_A: Costante che definisce la porta `A` del brick.
-- PORT_B: Costante che definisce la porta `B` del brick.
-- PORT_C: Costante che definisce la porta `C` del brick.
-- MIN_POWER: Costante che definisce la potenza minima del motore.
-- MAX_POWER: Costante che definisce la potenza massima del motore.
+- PORT_A: Costante che definisce la porta `A` del brick. Valore: 'A'.
+- PORT_B: Costante che definisce la porta `B` del brick. Valore: 'B'.
+- PORT_C: Costante che definisce la porta `C` del brick. Valore: 'C'.
+- MIN_POWER: Costante che definisce la potenza minima del motore. Valore: 0.
+- MAX_POWER: Costante che definisce la potenza massima del motore. Valore: 100.
 - motorPort: Attributo che rappresenta la porta dove è collegato il motore.
 - motor: Attributo che rappresenta il motore.
 - power: Attributo che rappresenta la potenza del motore.
@@ -538,15 +538,74 @@ Classe utile per gestire un motore grande LEGO.
 - getMotor(): Metodo che serve per ottenere il motore.
 - getPower(): Metodo che serve per ottenere la potenza del motore.
 - setMotorPort(): Metodo utile per impostare la porta in cui è collegato il motore.
+    ```
+    if (this.isMotorPort(motorPort)) {
+        this.motorPort = motorPort;
+        this.setMotor(this.motorPort);
+    }
+    ```
 - setMotor(): Metodo utile per impostare il motore, se non si passa il motore si può usare la porta in cui esso è collegato.
+    ```
+    private void setMotor(NXTRegulatedMotor motor) {
+        this.motor = motor;
+    }
+
+    private void setMotor(char motorPort) {
+        this.motorPort = motorPort;
+        if (motorPort == PORT_A) {
+            this.setMotor(Motor.A);
+        } else if (motorPort == PORT_B) {
+            this.setMotor(Motor.B);
+        } else if (motorPort == PORT_C) {
+            this.setMotor(Motor.C);
+        }
+    }
+    ```
 - setPower(): Metodo utile per impostare la potenza del motore.
+    ```
+    if (power > MAX_POWER) {
+        power = MAX_POWER;
+    } else if (power < MIN_POWER) {
+        power = MIN_POWER;
+    }
+    this.power = power;
+    this.getMotor().setSpeed(this.getPower());
+    ```
 - SingleMotor(): Metodo costruttore, si crea un nuovo `SingleMotor` definendo la porta in cui è collegato.
 - isMotorPort(): Metodo utile per controllare che la porta usata sia valida (`A`, `B` o `C`).
+    ```
+    if (motorPort == PORT_A || motorPort == PORT_B || motorPort == PORT_C) {
+        return true;
+    }
+    return false;
+    ```
 - increasePower(): Metodo utile per aumentare la potenza del motore.
+    ```
+    this.setPower((byte) (this.getPower() + value));
+    ```
 - decreasePower(): Metodo utile per diminuire la potenza del motore.
+    ```
+    this.setPower((byte) (this.getPower() - value));
+    ```
 - start(): Metodo che serve per azionare il motore.
+    ```
+    public void start() {
+        this.getMotor().forward();
+        this.getMotor().setSpeed(this.getPower());
+    }
+    ```
 - stop(): Metodo che ferma il motore.
+    ```
+    public void stop() {
+        this.getMotor().stop();
+    }
+    ```
 - rotate(): Metodo che ruota il motore dell'angolo passato.
+    ```
+    public void rotate(int angle) {
+        this.getMotor().rotate(angle);
+    }
+    ```
 
 #### Test SingleMotor
 
