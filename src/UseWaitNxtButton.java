@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 giuliobosco.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,40 +25,40 @@
 import lejos.nxt.Button;
 
 /**
- * Wait nxt button example class.
- * Testa la funzionalita dell'aspettare la premuta dei bottoni sul brick
- * nxt. Prima richiede di premere il tasto sinistro, poi quello di enter,
- * ed infine il tasto destro.
+ * Example of using the WaitLightSensor class. Useful for testing all the
+ * methods: press left, enter, right and escape.
  *
  * @author giuliobosco
- * @version 1.1 (2019-02-01)
+ * @author gabrialessi
+ * @version 1.2 (2019-02-06)
  */
 public class UseWaitNxtButton {
 
     /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitNxtButton.
+     * Main method.
      *
-     * @param args Argomenti da linea di comando.
+     * @param args Command line arguments.
      */
     public static void main(String[] args) {
-        // aspetto che il tasto sinistro venga premuto
+
+        // Wait for the left button.
         System.out.println("Press left button to continue");
         WaitNxtButton.leftButton();
-
-        // aspetto che il tasto enter venga premuto
-        System.out.println(
-                "Button pressed\n\nPress enter button to continue");
+        // Wait for the enter button.
+        System.out.println("Button pressed\n\nPress enter button to continue");
         WaitNxtButton.enterButton();
-
-        // aspetto che il tasto destro venga premuto
-        System.out.println(
-                "Button pressed\n\nPress right button to continue");
+        // Wait for the right button.
+        System.out.println("Button pressed\n\nPress right button to continue");
         WaitNxtButton.rightButton();
         System.out.println("Button pressed\n\n");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
+        // Wait for the escape button.
+        System.out.println("Button pressed\n\nPress escape button to continue");
+        WaitNxtButton.escapeButton();
+        System.out.println("Button pressed\n\n");
+        // Wait for another button to end the test.
+        System.out.println("Test over.");
         Button.waitForAnyPress();
+
     }
+    
 }
