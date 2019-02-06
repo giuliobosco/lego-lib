@@ -87,6 +87,7 @@ public class LineFollower extends Navigation {
     public LineFollower(SingleMotor leftMotor, SingleMotor rightMotor, WaitLightSensor waitLightSensor) {
         super(leftMotor, rightMotor);
         this.lineOnLeft = DEFAULT_LINE_ON_LEFT;
+        this.waitLightSensor = waitLightSensor;
     }
 
     // ------------------------------------------------------------------------- Help Methods
