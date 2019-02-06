@@ -2616,8 +2616,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 792,
-											"top": -563,
+											"left": -168,
+											"top": -627,
 											"height": 13
 										},
 										{
@@ -2627,8 +2627,8 @@
 												"$ref": "AAAAAAFohr9vCQTtslQ="
 											},
 											"font": "Arial;13;1",
-											"left": 557,
-											"top": 71,
+											"left": 77,
+											"top": 39,
 											"width": 316.3544921875,
 											"height": 13,
 											"text": "WaitNxtButton"
@@ -2641,8 +2641,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 792,
-											"top": -563,
+											"left": -168,
+											"top": -627,
 											"width": 99.67724609375,
 											"height": 13,
 											"text": "(from All classes)"
@@ -2655,15 +2655,15 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 792,
-											"top": -563,
+											"left": -168,
+											"top": -627,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 552,
-									"top": 64,
+									"left": 72,
+									"top": 32,
 									"width": 326.3544921875,
 									"height": 25,
 									"stereotypeLabel": {
@@ -2689,10 +2689,10 @@
 										"$ref": "AAAAAAFnrLAKA6ro4QQ="
 									},
 									"font": "Arial;13;0",
-									"left": 552,
-									"top": 89,
+									"left": 72,
+									"top": 57,
 									"width": 326.3544921875,
-									"height": 68
+									"height": 10
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -2714,11 +2714,11 @@
 												"$ref": "AAAAAAFnrSK+rh0NuUM="
 											},
 											"font": "Arial;13;0",
-											"left": 557,
-											"top": 162,
+											"left": 77,
+											"top": 72,
 											"width": 316.3544921875,
 											"height": 13,
-											"text": "+setButton(button: Button): void",
+											"text": "+static button(button: Button): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2731,11 +2731,11 @@
 												"$ref": "AAAAAAFnrSLPqh28YZw="
 											},
 											"font": "Arial;13;0",
-											"left": 557,
-											"top": 177,
+											"left": 77,
+											"top": 87,
 											"width": 316.3544921875,
 											"height": 13,
-											"text": "+getButton(): Button",
+											"text": "+static enterButton(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2748,11 +2748,11 @@
 												"$ref": "AAAAAAFnrSMolSHEV44="
 											},
 											"font": "Arial;13;0",
-											"left": 557,
-											"top": 192,
+											"left": 77,
+											"top": 102,
 											"width": 316.3544921875,
 											"height": 13,
-											"text": "+WaitNxtButton(waitAction: byte, button: Button)",
+											"text": "+static rightButton(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2765,19 +2765,36 @@
 												"$ref": "AAAAAAFoVsU5qHPO7kQ="
 											},
 											"font": "Arial;13;0",
-											"left": 557,
-											"top": 207,
+											"left": 77,
+											"top": 117,
 											"width": 316.3544921875,
 											"height": 13,
-											"text": "+isPressedSensor(): boolean",
+											"text": "+static leftButton(): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFowdtnTZ8evvM=",
+											"_parent": {
+												"$ref": "AAAAAAFohr9vCQT3seY="
+											},
+											"model": {
+												"$ref": "AAAAAAFowcN0PEponqA="
+											},
+											"font": "Arial;13;0",
+											"left": 77,
+											"top": 132,
+											"width": 316.3544921875,
+											"height": 13,
+											"text": "+static escapeButton(): void",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 552,
-									"top": 157,
+									"left": 72,
+									"top": 67,
 									"width": 326.3544921875,
-									"height": 68
+									"height": 83
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -2790,8 +2807,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 488,
-									"top": -224,
+									"left": 8,
+									"top": -256,
 									"width": 10,
 									"height": 10
 								},
@@ -2806,18 +2823,18 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 488,
-									"top": -224,
+									"left": 8,
+									"top": -256,
 									"width": 10,
 									"height": 10
 								}
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 552,
-							"top": 64,
+							"left": 72,
+							"top": 32,
 							"width": 326.3544921875,
-							"height": 161,
+							"height": 118,
 							"nameCompartment": {
 								"$ref": "AAAAAAFohr9vCQTtslQ="
 							},
