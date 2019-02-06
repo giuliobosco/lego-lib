@@ -340,7 +340,18 @@ Classe che serve per aspettare che un motore faccia un certo numero di rotazioni
 Classe utile per aspettare la pressione di uno dei pulsanti presenti sul brick NXT. L'implementazione è molto semplice poiché esiste la classe `Button` che contiene il necessario per far funzionare correttamente l'attesa.
 
 - button(): Metodo che aspetta la pressione del pulsante passato.
+    ```
+    public static void button(Button button) {
+        // waiting for pressing the button.
+        button.waitForPress();
+    }
+    ```
 - enterButton(): Metodo che aspetta la pressione del pulsante centrale.
+    ```
+    public static void enterButton() {
+        button(Button.ENTER);
+    }
+    ```
 - rightButton(): Metodo che aspetta la pressione del pulsante destro".
 - leftButton(): Metodo che aspetta la pressione del pulsante sinistro.
 - escapeButton(): Metodo che aspetta la pressione del pulsante in basso.
@@ -356,6 +367,22 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il microfono percepisca un c
 - setSoundSensor(): Metodo utile per impostare il microfono.
 - WaitSoundSensor(): Metodo costruttore, istanzia un nuovo `WaitSoundSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
 - waitSound(): È il metodo principale che termina l'attesa in base al valore di confronto.
+    ```
+    public void waitSound() {
+        boolean finished = false;
+        while (!finished) {
+            try {
+                if (this.isBigger()) {
+                    finished = this.getSoundSensor().readValue() > this.getComparisonValue();
+                } else {
+                    finished = this.getSoundSensor().readValue() < this.getComparisonValue();
+                }
+                Thread.sleep(WAIT_TIME);
+            } catch (InterruptedException ignored) {
+            }
+        }
+    }
+    ```
 
 #### Test WaitSoundSensor
 
@@ -371,6 +398,20 @@ Classe utile per aspettare semplicemente del tempo.
 - setStartTime(): Metodo utile per impostare il tempo iniziale.
 - WaitTime(): Metodo costruttore, crea una nuova attesa definendo il tempo da aspettare.
 - waitTime(): È il metodo principale che aspetta il tempo definito.
+    ```
+    public void waitTime() {
+        this.setStartTime(System.currentTimeMillis());
+        boolean finished = false;
+        try {
+            while (!finished) {
+                long sum = this.getStartTime() + this.getWaitTime();
+                finished = sum >= System.currentTimeMillis();
+                Thread.sleep(this.getWaitTime() / 100);
+            }
+        } catch (InterruptedException ignored) {
+        }
+    }
+    ```
 
 #### Test WaitTime
 
