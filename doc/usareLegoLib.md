@@ -304,6 +304,79 @@ valore `CLICKED` nel costruttore dello waiter con:
 - `RELEASED` per rilasciato
 
 
+### Wait NXT Button
+
+<div class="clearfix">
+    <div style="float:left">
+        <img style="width:65px" src="img/nxt-blocks/wait-nxt-button.png">
+    </div>
+    <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
+        Il blocco wait nxt button dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
+        classe&nbsp;`WaitNxtButton`, la quale permette di aspettare del che venga premuto uno dei
+        bottoni sul brick NXT.
+    </div>
+</div>
+
+Il diagramma UML della classe:
+
+<p style="text-align:center;">
+    <img src="img/classes/WaitMotor.png" width="300">
+</p>
+
+Per ogni bottone vi è un metodo statico, per cui per far aspettare il click di un bottone
+baster&agrave; richiamare il metodo.
+
+- bottone sinistro: `WaitNxtButton.leftButton()`
+- bottone di invio: `WaitNxtButton.enterButton()`
+- bottone destro: `WaitNxtButton.rightButton()`
+- bottone indietro: `WaitNxtButton.backButton()`
+
+Esempio di utlizzo della classe:
+
+```java
+import lejos.nxt.Button;
+
+/**
+ * Wait nxt button example class.
+ * Testa la funzionalita dell'aspettare la premuta dei bottoni sul brick
+ * nxt. Prima richiede di premere il tasto sinistro, poi quello di enter,
+ * ed infine il tasto destro.
+ *
+ * @author giuliobosco
+ * @version 1.1 (2019-02-01)
+ */
+public class UseWaitNxtButton {
+
+    /**
+     * Metodo main della classe, avvia il programma di test della classe
+     * WaitNxtButton.
+     *
+     * @param args Argomenti da linea di comando.
+     */
+    public static void main(String[] args) {
+        // aspetto che il tasto sinistro venga premuto
+        System.out.println("Press left button to continue");
+        WaitNxtButton.leftButton();
+
+        // aspetto che il tasto enter venga premuto
+        System.out.println(
+                "Button pressed\n\nPress enter button to continue");
+        WaitNxtButton.enterButton();
+
+        // aspetto che il tasto destro venga premuto
+        System.out.println(
+                "Button pressed\n\nPress right button to continue");
+        WaitNxtButton.rightButton();
+        System.out.println("Button pressed\n\n");
+
+        // aspetto che venga premuto un bottone sul brick per terminare
+        // il programma
+        Button.waitForAnyPress();
+    }
+}
+```
+
+
 ## Strutture di controllo
 <div class="clearfix">
     <div style="float:left">
