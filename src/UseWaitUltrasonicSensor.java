@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 giuliobosco.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,49 +26,36 @@ import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
 /**
- * Wait ultrasonic sensor example class.
- * Aspetta che il sensore ad ultrasuoni (distanza) sulla porta 1
- * legga un valore maggiore di 50cm, poi aspetta che venga premuto
- * un qualunque tasto sul brick, poi aspetta di leggere un valore
- * minore di 50cm sul sensore.
+ * Wait ultrasonic sensor example class. 
+ * Wait a distance bigger than 50cm, then a distance lower than 50cm.
  *
  * @author giuliobosco
- * @version 1.0 (2019-02-01)
+ * @author gabrialessi
+ * @version 1.1 (2019-02-07)
  */
 public class UseWaitUltrasonicSensor {
 
     /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitUltrasonicSensor.
+     * Main method.
      *
-     * @param args Argomenti da linea di comando.
+     * @param args Command line arguments.
      */
     public static void main(String[] args) {
-        // creo lo waiter per il ultrasonic sensor sulla porta uno.
-        WaitUltrasonicSensor wus = new WaitUltrasonicSensor(
-                SensorPort.S1, (byte) 50, true);
 
-        // stampo messaggio iniziale, aspetto che il sensore ad ultrasuoni
-        // legga un valore maggiore di 50cm
-        System.out.println(
-                "mettere il sensore piu lontano di 50cm dal sensore");
-        wus.waitUltrasonic();
-
-        // aspetto che venga premuto un qualunque bottone sul brick
+        // New wait for the ultrasonic sensor on port 1.
+        WaitUltrasonicSensor wait = new WaitUltrasonicSensor(SensorPort.S1, (byte) 50, true);
+        // Wait a distance bigger than 50cm.
+        System.out.println("Distance bigger than 50cm.");
+        wait.waitUltrasonic();
         Button.waitForAnyPress();
-
-        // stampo messaggio intermedio, aspetto che il sensore ad
-        // ultrasuoni legga un valore miniore di 50cm
-        wus.setBigger(false);
-        System.out.println(
-                "mettere il sensore piu vicino di 50cm dal sensore");
-        wus.waitUltrasonic();
-
-        // stampo messaggio finale
+        // Wait a distance lower than 50cm.
+        wait.setBigger(false);
+        System.out.println("Distance lower than 50cm.");
+        wait.waitUltrasonic();
+        // End of test after pressing a brick button.
         System.out.println("fine del test");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
         Button.waitForAnyPress();
+        
     }
+    
 }
