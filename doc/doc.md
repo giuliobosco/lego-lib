@@ -505,21 +505,21 @@ Classe utile per aspettare semplicemente del tempo.
 - waitTime(): È il metodo principale che aspetta il tempo definito.
     ```java
     /**
-     * Aspetta del tempo
+     * Aspetta del tempo.
      */
     public void waitTime() {
-        // salva lo UNIX Time corrente in start time
+        // Salva lo UNIX Time corrente in start time.
         this.setStartTime(System.currentTimeMillis());
-        // setta a false la variabile finished, la quale permette di uscire dal ciclo while
+        // Setta a false la variabile finished, la quale permette di uscire dal ciclo while.
         boolean finished = false;
         try {
             while (!finished) {
-                // finche non è finito eseguo il seguente codice
-                // somma lo UNIX Time salvato  a quello da aspettare
+                // Finché non è finito eseguo il seguente codice:
+                // somma lo UNIX Time salvato a quello da aspettare.
                 long sum = this.getStartTime() + this.getWaitTime();
-                // compara la somma allo UNIX Time salvato
+                // Compara la somma allo UNIX Time salvato.
                 finished = sum >= System.currentTimeMillis();
-                // aspetta un centesimo del tempo da aspettare.
+                // Aspetta un centesimo del tempo da aspettare.
                 Thread.sleep(this.getWaitTime() / 100);
             }
         } catch (InterruptedException ignored) {
