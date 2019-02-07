@@ -382,18 +382,18 @@ Classe che serve per aspettare che un motore faccia un certo numero di rotazioni
 - waitMotor(): È il metodo principale che termina l'attesa quando il motore raggiunge le rotazioni determinate.
     ```java
     /**
-     * Aspetta le rotazioni dei motori
+     * Aspetta le rotazioni dei motori.
      */
     public void waitMotor() {
-        // setta a false la variabile finished, la quale permette di uscire dal ciclo while
+        // Setta a false la variabile finished, la quale permette di uscire dal ciclo while.
         boolean finished = false;
         while (!finished) {
-            // finche non è finito eseguo il codice seguente
+            // Finché non è finito eseguo il codice seguente.
             try {
-                // rotazioni attuali
+                // Rotazioni attuali.
                 int earlyRotations = this.getSingleMotor().getMotor().getTachoCount();
                 while (earlyRotations + this.getComparisonValue() != earlyRotations) {
-                    // finche le rotazioni sono maggiori di quelle attuali aspetta
+                    // Finché le rotazioni sono maggiori di quelle attuali aspetta.
                     Thread.sleep(1000);
                 }
                 finished = true;
