@@ -29,9 +29,9 @@ import lejos.nxt.Button;
  * Stampa i valori che legge dal touch sensor sulla porta 1.
  *
  * @author giuliobosco
- * @version 1.0 (2019-02-07)
+ * @version 1.1 (2019-02-07)
  */
-public class TestTouchSensor {
+public class TestNxtButton {
 
     /**
      * Main method.
