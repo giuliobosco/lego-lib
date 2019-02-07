@@ -1249,6 +1249,15 @@ ripetibile alle stesse condizioni.
 |**Procedura**     | <ul><li>Collegare il sensore ultrasonic sensor alla porta 1 del brick NXT</li><li>Caricare sul brick il programma<code>TestUltrasonicSensor</code></li><li>Eseguire il programma</li><li>Mettere il sensore in direzione di una parete</li><li>Avvicinare ed allontanare il sensore alla parete</li></ul>|
 |**Risultati attesi** |Quando il sensore si avvicina alla parete il numero sul display deve diminuire mentre quando si allontana il valore deve aumentare |
 
+|Test Case      | TC-006                               |
+|---------------|--------------------------------------|
+|**Nome**       |Controllare i sensori: LightSensor |
+|**Riferimento**|REQ-02                               |
+|**Descrizione**|Controllare che il sensore sensore di luce funzioni correttamente con leJOS |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Collegare il sensore di touch alla porta 1 del brick NXT</li><li>Caricare sul brick il programma<code>TestLightSensor</code></li><li>Eseguire il programma</li><li>Posizionare il sensore di luce su una superficie scura</li><li>spostare il sensore di luce su una superficie chiara</li></ul>|
+|**Risultati attesi** |Quando il sensore di luce &egrave; sulla superficie chiara il valore deve essere alto mentre quando il sensore di luce &egrave; su una superficie scura il valore deve essere basso |
+
 ### Risultati test
 
 Tabella riassuntiva in cui si inseriscono i test riusciti e non del
