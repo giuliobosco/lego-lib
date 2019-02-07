@@ -1240,6 +1240,14 @@ ripetibile alle stesse condizioni.
 |**Procedura**     | <ul><li>Eseguire il programma <code>TestNxtButton</code> sul brick NXT</li><li>Cliccare i bottoni seguendo l'ordine<ol><li>Tasto destro</li><li>Tasto enter</li><li>Tasto sinistro</li><li>Tasto escape</li></ol></li></ul>|
 |**Risultati attesi** |Quando viene premuto un bottone cliccare nella rispettiva colonna deve essere scritto down, altrimenti up. |
 
+|Test Case      | TC-005                               |
+|---------------|--------------------------------------|
+|**Nome**       |Controllare i sensori: UltrasonicSensor |
+|**Riferimento**|REQ-02                               |
+|**Descrizione**|Controllare che il sensore ultrasonic sensor funzioni correttamente con leJOS |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Collegare il sensore ultrasonic sensor alla porta 1 del brick NXT</li><li>Caricare sul brick il programma<code>TestUltrasonicSensor</code></li><li>Eseguire il programma</li><li>Mettere il sensore in direzione di una parete</li><li>Avvicinare ed allontanare il sensore alla parete</li></ul>|
+|**Risultati attesi** |Quando il sensore si avvicina alla parete il numero sul display deve diminuire mentre quando si allontana il valore deve aumentare |
 
 ### Risultati test
 
