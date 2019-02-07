@@ -61,6 +61,8 @@
 
 9. [Allegati](#allegati)
 
+<div class="page-break"></div>
+
 ## Introduzione
 
 ### Informazioni sul progetto
@@ -73,17 +75,19 @@ Data fine: 08.02.2019
 
 ### Abstract
 
-> In this document we describe how we developed the "LEGO Library" product: a library developed in 
-> Java useful for automating the most common operations when programming LEGO robots. For example, 
-> reading data received from a sensor or moving operations with actuators. These libraries will be 
-> mainly used by the computer scientists of the second year class of the Trevano School of Arts and 
-> Crafts to implement the programs for the WRO (World Robot Olympiad) and FLL (First LEGO League). 
-> This collection of functions  will allow users to focus more on the main problem to be solved by 
+> In this document we describe how we developed the "LEGO Library" product: a library developed in
+> Java useful for automating the most common operations when programming LEGO robots. For example,
+> reading data received from a sensor or moving operations with actuators. These libraries will be
+> mainly used by the computer scientists of the second year class of the Trevano School of Arts and
+> Crafts to implement the programs for the WRO (World Robot Olympiad) and FLL (First LEGO League).
+> This collection of functions  will allow users to focus more on the main problem to be solved by
 > already having the basic operations implemented and tested.
 
 ### Scopo
 
 Questo prodotto ha l'obiettivo di semplificare la parte di implementazione quando si sta sviluppando un progetto con dei robot LEGO&#174; Mindstorms. Il frutto del mandato comprende una libreria in grado di eseguire le funzioni più basilari e fondamentali che un robot deve svolgere durante una missione.
+
+<div class="page-break"></div>
 
 ## Analisi
 
@@ -111,6 +115,8 @@ La specifica dei requisiti del progetto è rappresentata tramite tabelle che def
 |**Note**    |È necessario testare ogni componente utilizzato durante la realizzazione del progetto.|
 | *Sub-req 1* |Testare componenti (7 tra sensori e attuatori) su NXT con leJOS|
 
+<div class="page-break"></div>
+
 |ID  |REQ-03                                          |
 |----|------------------------------------------------|
 |**Nome**    |Componenti - Sensori|
@@ -131,6 +137,8 @@ La specifica dei requisiti del progetto è rappresentata tramite tabelle che def
 |**Note**    |Ogni attuatore deve avere dei metodi per controllarlo.|
 | *Sub-req 1* |Motore Grande |
 | *Sub-req 2* |Schermo LCD del brick |
+
+<div class="page-break"></div>
 
 |ID  |REQ-05                                          |
 |----|------------------------------------------------|
@@ -161,11 +169,16 @@ Per la realizzazione del prodotto ci siamo serviti dei nostri computer portatili
 - HP ENVY Notebook, Intel&reg; Core I7, RAM 16GB, Windows 10 Home 64 bit
 - Brick LEGO&reg; NXT
 
-### Pianificazione
+<div class="page-break"></div>
 
-La pianificazione del progetto è stata effettuata mediante la realizzazione di un diagramma di Gantt.
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<div style="-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform: rotate(90deg);-ms-transform: rotate(90deg);transform: rotate(90deg);width:650px;">
+    <h3>Pianificazione</h3>
+    <p>La pianificazione del progetto è stata effettuata mediante la realizzazione di un diagramma di Gantt.</p>
+    <img src="img/gantt.png" style="widht:450px;">
+</div>
 
-![Diagramma di gantt](img/gantt.png)
+<div class="page-break"></div>
 
 ## Progettazione
 
@@ -207,9 +220,16 @@ Qui è descritto come sono strutturate le cartelle contententi la libreria svilu
     - WaitTouchSensor.java
     - WaitUltrasonicSensor.java
 
-#### Diagramma delle classi
+<div class="page-break"></div>
 
-![Diagramma delle classi](img/lego-lib-uml.png)
+<br><br><br><br><br><br><br><br><br>
+<div style="-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform: rotate(90deg);-ms-transform: rotate(90deg);transform: rotate(90deg);width:650px;">
+    <p>&nbsp;</p>
+    <h4 style="padding-top:20px;">Diagramma delle classi</h4>
+    <img src="img/lego-lib-uml.png" style="widht:450px;">
+</div>
+
+<div class="page-break"></div>
 
 #### Componenti
 
@@ -229,6 +249,8 @@ Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sens
 - *SingleMotor*, il motore più potente per i LEGO&reg; Mindstorms.
 - *LCD*, è lo schermino che si trova sul brick.
 
+<div class="page-break"></div>
+
 ## Implementazione
 
 Il capitolo di implementazione mostra in poche parole la messa in atto della progettazione. Tutte le classi presenti nel diagramma vengono qui spiegate più nel dettaglio illustrando i metodi e le parti di codice tramite screenshots o rappresentazioni o schemi e tabelle.
@@ -238,29 +260,49 @@ L'implementazione del prodotto è composta da delle classi `Wait` che servono pe
 ### HelloWorld
 
 Questa classe è stata usata come test per iniziare a capire come implementare un programma Java in un brick NXT e per essere usata come esempio nella guida per configurare leJOS su Windows. È presente solo il metodo `main` con due classiche funzioni che insieme formano semplicemente l'output "Hello World".
-```
+```java
 import lejos.nxt.Button;
 
+/**
+ * Hello world classe di test.
+ *
+ * @author gabrielealessi
+ * @version 1.0 (2019-02-06)
+ */
 public class HelloWorld {
-	public static void main(String[] args) {
-		System.out.println("Hello World");
-		Button.waitForAnyPress();
-	}
+    /**
+     * Metodo main, stampa "Hello World" e aspetta che un tasto venga premuto.
+     *
+     * @param args Argomenti da linea di comando.
+     */
+    public static void main(String[] args) {
+        // stampo "Hello World"
+        System.out.println("Hello World");
+        // aspetto che venga premuto un tasto
+        Button.waitForAnyPress();
+    }
 }
 ```
 
 #### Test HelloWorld
 
-Per verificare il giusto funzionamento della classe l'abbiamo caricata sul brick e l'abbiamo avviata attraverso i comandi spiegati nella guida [InstallWindows](installWindows.md).  
+Per verificare il giusto funzionamento della classe l'abbiamo caricata sul brick e l'abbiamo avviata.
+Per caricare e avviare i programmi sul blocchetto NXT c'è la guida `usareLegoLib`.    
 Questo è il risultato ottenuto:
 
-<img src="img/helloworld_test.png" width=200>
+<p style="text-align:center;">
+<img src="img/helloworld_test.png" width="92">
+</p>
+
+<div class="page-break"></div>
 
 ### WaitAnalogSensor
 
 Classe che serve per generalizzare le classi che aspettano un sensore analogico (microfono, tocco, ultrasuoni).
 
-<img src="img/classes/WaitAnalogSensor.png" width=400>
+<p style="text-align:center;">
+<img src="img/classes/WaitAnalogSensor.png" width=300>
+</p><br>
 
 - WAIT_TIME: Costante che definisce l'intervallo di tempo tra un controllo e un altro della fine dell'attesa. Valore: 100 (millisecondi).
 - SENSOR_MIN_VALUE: Costante che definisce il minimo valore che un sensore può leggere. Valore: 0.
@@ -270,15 +312,25 @@ Classe che serve per generalizzare le classi che aspettano un sensore analogico 
 - getComparisonValue(): Metodo che serve per ottenere il valore di confronto.
 - isBigger(): Metodo utile per sapere il valore dell'attributo `bigger`.
 - setComparisonValue(): Metodo utile per impostare il valore di confronto controllando che sia nell'intervallo definito da `SENSOR_MIN_VALUE` e `SENSOR_MAX_VALUE`.
-    ```
+    ```java
+    /**
+     * Setta il comparison value.
+     * Controlla che il valore sia maggiore del valore minimo e minore del valore massimo.
+     *
+     * @param comparisonValue Valore di riferimento.
+     */
     public void setComparisonValue(byte comparisonValue) {
+        // controllo che sia maggiore del valore minimo e minore del valore massimo
         if (comparisonValue >= SENSOR_MIN_VALUE && comparisonValue <= SENSOR_MAX_VALUE) {
+            // assegno il valore
             this.comparisonValue = comparisonValue;
         }
     }
     ```
 - setBigger(): Metodo utile per impostare il valore dell'attributo `bigger`.
 - WaitAnalogSensor(): Metodo costruttore, istanzia un nuovo `WaitAnalogSensor`, defininendo il campo `bigger` e il valore per comparare.
+
+<div class="page-break"></div>
 
 ### WaitLightSensor
 
@@ -291,16 +343,26 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore di luce percepisc
 - setLightSensor(): Metodo utile per impostare il sensore.
 - WaitLightSensor(): Metodo costruttore, istanzia un nuovo `WaitLightSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
 - waitLight(): È il metodo principale che termina l'attesa in base al valore di confronto.
-    ```
+    ```java
+    /**
+     * Aspetta il sensore di luce, secondo i parametri memorizzati negli attributi della classe.
+     */
     public void waitLight() {
+        // Setta a false la variabile finished, la quale permette di uscire dal ciclo while.
         boolean finished = false;
         while (!finished) {
+            // finche non è finito eseguo il seguente codice
             try {
                 if (this.isBigger()) {
+                    // se deve essere maggiore confronto il valore del sensore di luce e quello di
+                    // riferimento (comparisonValue) assegno a finished il risultato
                     finished = this.getLightSensor().getLightValue() > this.getComparisonValue();
                 } else {
+                    // se deve essere minore confronto inversamente a preima i due valori
                     finished = this.getLightSensor().getLightValue() < this.getComparisonValue();
                 }
+
+                // aspetto WAIT_TIME (100 millis) fra un ciclo e l'altro
                 Thread.sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {
             }
@@ -308,33 +370,15 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore di luce percepisc
     }
     ```
 
-#### Test WaitLightSensor
-
-Per eseguire il test si utilizza la classe `UseWaitLightSensor`, che crea un'attesa di un sensore di luce, ne stampa i valori impostati e infine usa il metodo principale di attesa.
-```
-public static void main(String[] args) {
-    // New wait for the light sensor.
-    WaitLightSensor wait = new WaitLightSensor(SensorPort.S1, (byte) 50, true);
-    // Wait for a clear light.
-    System.out.println("Put on a clear light.");
-    wait.waitLight();
-    System.out.println("OK, press a button.");
-    // Wait for the press of a button.
-    Button.waitForAnyPress();
-    // Wait for a dark light.
-    wait.setBigger(false);
-    System.out.println("Put on a dark light.");
-    wait.waitLight();
-    System.out.println("OK.");
-}
-```
-Dopo aver configurato i valori di riferimento per il bianco e il nero, l'esecuzione del test è andata a buon fine. I risultati ottenuti sono quelli aspettati quando si mette il sensore su una superficie chiara e poi una scura cambiando il valore di `bigger`.
+<div class="page-break"></div>
 
 ### WaitMotor
 
 Classe che serve per aspettare che un motore faccia un certo numero di rotazioni.
 
-<img src="img/classes/WaitMotor.png" width=600>
+<p style="text-align:center;">
+<img src="img/classes/WaitMotor.png" width="600">
+</p>
 
 - singleMotor: Attributo che rappresenta il motore grande (`SingleMotor`).
 - comparisonValue: Attributo che rappresenta il valore da comparare con quello ricevuto dal motore.
@@ -344,13 +388,20 @@ Classe che serve per aspettare che un motore faccia un certo numero di rotazioni
 - setComparisonValue(): Metodo utile per impostare il valore di confronto.
 - WaitMotor(): Metodo costruttore, istanzia un nuovo `WaitMotor` impostando il motore e il valore di confronto.
 - waitMotor(): È il metodo principale che termina l'attesa quando il motore raggiunge le rotazioni determinate.
-    ```
+    ```java
+    /**
+     * Aspetta le rotazioni dei motori
+     */
     public void waitMotor() {
+        // setta a false la variabile finished, la quale permette di uscire dal ciclo while
         boolean finished = false;
         while (!finished) {
+            // finche non è finito eseguo il codice seguente
             try {
+                // rotazioni attuali
                 int earlyRotations = this.getSingleMotor().getMotor().getTachoCount();
                 while (earlyRotations + this.getComparisonValue() != earlyRotations) {
+                    // finche le rotazioni sono maggiori di quelle attuali aspetta
                     Thread.sleep(1000);
                 }
                 finished = true;
@@ -360,71 +411,49 @@ Classe che serve per aspettare che un motore faccia un certo numero di rotazioni
     }
     ```
 
-#### Test WaitMotor
+<div class="page-break"></div>
 
 ### WaitNxtButton
 
 Classe utile per aspettare la pressione di uno dei pulsanti presenti sul brick NXT. L'implementazione è molto semplice poiché esiste la classe `Button` che contiene il necessario per far funzionare correttamente l'attesa.
 
-<img src="img/classes/WaitNxtButton.png" width=400>
+<p style="text-align:center;">
+    <img src="img/classes/WaitNxtButton.png" width="175">
+</p>
 
 - button(): Metodo che aspetta la pressione del pulsante passato.
-    ```
+    ```java
     public static void button(Button button) {
         // waiting for pressing the button.
         button.waitForPress();
     }
     ```
 - enterButton(): Metodo che aspetta la pressione del pulsante centrale.
-    ```
+    ```java
     public static void enterButton() {
         button(Button.ENTER);
     }
     ```
 - rightButton(): Metodo che aspetta la pressione del pulsante destro.
-    ```
+    ```java
     public static void rightButton() {
         button(Button.RIGHT);
     }
     ```
 - leftButton(): Metodo che aspetta la pressione del pulsante sinistro.
-    ```
+    ```java
     public static void leftButton() {
         button(Button.LEFT);
     }
     ```
 - escapeButton(): Metodo che aspetta la pressione del pulsante in basso.
-    ```
+    ```java
     public static void escapeButton() {
         button(Button.ESCAPE);
     }
     ```
 
-#### Test WaitNxtButton
-
-Per effettuare i test si usa `UseWaitNxtButton`, in cui semplicemente si usano i metodi della classe `WaitNxtButton`.
-```
-public static void main(String[] args) {
-    // Wait for the left button.
-    System.out.println("Press left button to continue");
-    WaitNxtButton.leftButton();
-    // Wait for the enter button.
-    System.out.println("Button pressed\n\nPress enter button to continue");
-    WaitNxtButton.enterButton();
-    // Wait for the right button.
-    System.out.println("Button pressed\n\nPress right button to continue");
-    WaitNxtButton.rightButton();
-    System.out.println("Button pressed\n\n");
-    // Wait for the escape button.
-    System.out.println("Button pressed\n\nPress escape button to continue");
-    WaitNxtButton.escapeButton();
-    System.out.println("Button pressed\n\n");
-    // Wait for another button to end the test.
-    System.out.println("Test over.");
-    Button.waitForAnyPress();
-}
-```
-I metodi funzionano correttamente perché il programma avanza al prossimo pulsante solo quando si preme quello richiesto.
+<div class="page-break"></div>
 
 ### WaitSoundSensor
 
@@ -437,16 +466,26 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il microfono percepisca un c
 - setSoundSensor(): Metodo utile per impostare il microfono.
 - WaitSoundSensor(): Metodo costruttore, istanzia un nuovo `WaitSoundSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
 - waitSound(): È il metodo principale che termina l'attesa in base al valore di confronto.
-    ```
+    ```java
+    /**
+     * Aspetta un suono.
+     */
     public void waitSound() {
+        // setta a false la variabile finished, la quale permette di uscire dal ciclo while
         boolean finished = false;
         while (!finished) {
+            // finche non è finito eseguo il seguente codice
             try {
                 if (this.isBigger()) {
+                    // se deve essere maggiore confronto il valore del sensore di luce e quello di
+                    // riferimento (comparisonValue) assegno a finished il risultato
                     finished = this.getSoundSensor().readValue() > this.getComparisonValue();
                 } else {
+                    // se deve essere minore confronto inversamente a preima i due valori
                     finished = this.getSoundSensor().readValue() < this.getComparisonValue();
                 }
+
+                // aspetto WAIT_TIME (100 millis) fra un ciclo e l'altro
                 Thread.sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {
             }
@@ -454,33 +493,15 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il microfono percepisca un c
     }
     ```
 
-#### Test WaitSoundSensor
-
-Per testare la classe si usa `WaitSoundSensor`, che usa il metodo che aspetta un suono basandosi sul valore di confronto. Prima si aspetta un suono forte, poi uno debole (silenzio).
-```
-public static void main(String[] args) {
-    // New wait for the sound sensor.
-    WaitSoundSensor wait = new WaitSoundSensor(SensorPort.S1, (byte) 90, true);
-    // Wait a loud sound.
-    System.out.println("Make a loud sound.");
-    wait.waitSound();
-    System.out.println("Wait over.");
-    // Wait a weak sound.
-    wait.setBigger(false);
-    wait.setComparisonValue((byte) 20);
-    System.out.println("Make a weak sound.");
-    wait.waitSound();
-    System.out.println("Wait over.");
-    // Wait for another button to end the test.
-    Button.waitForAnyPress();
-}
-```
+<div class="page-break"></div>
 
 ### WaitTime
 
 Classe utile per aspettare semplicemente del tempo.
 
-<img src="img/classes/WaitTime.png" width=400>
+<p style="text-align:center;">
+<img src="img/classes/WaitTime.png" width="200">
+</p>
 
 - waitTime: Attributo che rappresenta il tempo da aspettare (in millisecondi).
 - startTime: Attributo che rappresenta il tempo iniziale trascorso.
@@ -490,14 +511,23 @@ Classe utile per aspettare semplicemente del tempo.
 - setStartTime(): Metodo utile per impostare il tempo iniziale.
 - WaitTime(): Metodo costruttore, crea una nuova attesa definendo il tempo da aspettare.
 - waitTime(): È il metodo principale che aspetta il tempo definito.
-    ```
+    ```java
+    /**
+     * Aspetta del tempo
+     */
     public void waitTime() {
+        // salva lo UNIX Time corrente in start time
         this.setStartTime(System.currentTimeMillis());
+        // setta a false la variabile finished, la quale permette di uscire dal ciclo while
         boolean finished = false;
         try {
             while (!finished) {
+                // finche non è finito eseguo il seguente codice
+                // somma lo UNIX Time salvato  a quello da aspettare
                 long sum = this.getStartTime() + this.getWaitTime();
+                // compara la somma allo UNIX Time salvato
                 finished = sum >= System.currentTimeMillis();
+                // aspetta un centesimo del tempo da aspettare.
                 Thread.sleep(this.getWaitTime() / 100);
             }
         } catch (InterruptedException ignored) {
@@ -505,13 +535,15 @@ Classe utile per aspettare semplicemente del tempo.
     }
     ```
 
-#### Test WaitTime
+<div class="page-break"></div>
 
 ### WaitTouchSensor
 
 Classe utile per aspettare la pressione, il rilascio o il click di un sensore di tocco.
 
-<img src="img/classes/WaitTouchSensor.png" width=400>
+<p style="text-align:center;">
+<img src="img/classes/WaitTouchSensor.png" width="300">
+</p>
 
 - WAIT_TIME: Costante che definisce l'intervallo di tempo tra un controllo e un altro della fine dell'attesa. Valore: 100 (millisecondi).
 - PRESSED: Costante che definisce la pressione del sensore. Valore: 0.
@@ -526,62 +558,109 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
 - setWaitAction(): Metodo utile per impostare l'azione da aspettare.
 - WaitTouchSensor(): Metodo costruttore, istanzia un nuovo `WaitTouchSensor` impostando l'azione (premuto, rilasciato, cliccato) e il sensore o la porta del brick in cui è inserito il sensore.
 - isWaitAction(): Metodo utile per verificare che l'azione da aspettare imposta sia valida.
-    ```
+    ```java
+    /**
+     * Checks that the comparison wait action is valid.
+     *
+     * @param waitAction The wait action to check.
+     * @return True if the value is a valid action.
+     */
     private boolean isWaitAction(byte waitAction) {
+        // controllo se è un azione valida
         if (waitAction == PRESSED || waitAction == RELEASED || waitAction == CLICKED) {
             return true;
         }
         return false;
     }
-    return false;
     ```
+    <div class="page-break"></div>
 - isPressedButton(): Metodo che dice se il sensore è premuto.
-    ```
+    ```java
+    /**
+     * Method that tells if the sensor is pressed.
+     *
+     * @return If the touch sensor is pressed.
+     */
     public boolean isPressedButton() {
         return this.getTouchSensor().isPressed();
     }
     ```
 - buttonPressedAction(): Metodo che aspetta la pressione del sensore.
-    ```
+    ```java
+    /**
+     * Method that wait for the pression of the button.
+     *
+     * @throws InterruptedException If an interrupted exception occurred.
+     */
     protected void buttonPressedAction() throws InterruptedException {
+        // se non è premuto il bottone
         if (!this.isPressedButton()) {
+            // aspetta che venga premuto
             while (!this.isPressedButton()) {
                 Thread.sleep(WAIT_TIME);
             }
+            // setta finished a true, perché il bottone è stato premuto
             this.finished = true;
         }
     }
     ```
 - buttonReleasedAction(): Metodo che aspetta il rilascio del sensore.
-    ```
+    ```java
+    /**
+     * Method that wait for the release of the button.
+     *
+     * @throws InterruptedException If an interrupted exception occurred.
+     */
     protected void buttonReleasedAction() throws InterruptedException {
+        // se il botton è premuto
         if (this.isPressedButton()) {
+            // aspetta che venga rilasciato
             while (this.isPressedButton()) {
                 Thread.sleep(WAIT_TIME);
             }
+            // setta finished a true, perché il bottone è stato rilasciato
             this.finished = true;
         }
     }
     ```
 - buttonClickedAction(): Metodo che aspetta il click (pressione e rilascio) del sensore.
-    ```
+    ```java
+    /**
+     * Method that wait for the click of the button (pressed and released).
+     *
+     * @throws InterruptedException If an interrupted exception occurred.
+     */
     protected void buttonClickedAction() throws InterruptedException {
+        // aspetta che venga premuto il bottone
         this.buttonPressedAction();
+        // aspetta che venga rilasciato il bottone
         this.buttonReleasedAction();
     }
     ```
+    <div class="page-break"></div>
 - waitTouch(): È il metodo principale che termina l'attesa in base all'azione impostata.
-    ```
+    ```java
+    /**
+     * Main method that finishes the wait based on the wait action.
+     */
     public void waitTouch() {
+        // se non è finito
         while (!this.finished) {
             try {
                 if (this.getWaitAction() == PRESSED) {
+                    // se si aspetta che il bottone venga premuto
+                    // aspetta che venga premuto
                     this.buttonPressedAction();
                 } else if (this.getWaitAction() == RELEASED) {
+                    // se si aspetta che il bottone venga rilasciato
+                    // aspetta che venga rilasciato
                     this.buttonReleasedAction();
                 } else if (this.getWaitAction() == CLICKED) {
+                    // se si aspetta che il bottone venga cliccato
+                    // aspetta che venga cliccato
                     this.buttonClickedAction();
                 }
+                // aspetta i millisecondi in WAIT_TIME
                 Thread.sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {
             }
@@ -589,7 +668,7 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
     }
     ```
 
-#### Test WaitTouchSensor
+<div class="page-break"></div>
 
 ### WaitUltrasonicSensor
 
@@ -602,16 +681,27 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni perc
 - setUltrasonicSensor(): Metodo utile per impostare il sensore.
 - WaitUltrasonicSensor(): Metodo costruttore, istanzia un nuovo `WaitUltrasonicSensor` impostando il valore di confronto, se il valore letto deve essere maggiore di quello di confronto e il sensore o la porta del brick in cui è inserito il sensore.
 - waitUltrasonic(): È il metodo principale che termina l'attesa in base al valore di confronto.
-    ```
+    ```java
+    /**
+     * Main method that finishes the wait based on the comparison value.
+     */
     public void waitUltrasonic() {
+        // setta a false la variabile finished, la quale permette di uscire dal ciclo while
         boolean finished = false;
         while (!finished) {
+            // finche non è finito eseguo il seguente codice
             try {
                 if (this.isBigger()) {
+                    // se deve essere maggiore confronto il valore del sensore ad
+                    // ultrasuoni e quello di riferimento (comparisonValue) assegno
+                    // a finished il risultato
                     finished = this.getUltrasonicSensor().getDistance() > this.getComparisonValue();
                 } else {
+                    // se deve essere minore confronto inversamente a prima i valori
                     finished = this.getUltrasonicSensor().getDistance() < this.getComparisonValue();
                 }
+
+                // aspettto i millisecondi in WAIT_TIME
                 Thread.sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {
             }
@@ -619,13 +709,15 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni perc
     }
     ```
 
-#### Test WaitUltrasonicSensor
+<div class="page-break"></div>
 
 ### SingleMotor
 
 Classe utile per gestire un motore grande LEGO.
 
-<img src="img/classes/SingleMotor.png" width=400>
+<p style="text-align:center;">
+    <img src="img/classes/SingleMotor.png" width="400">
+</p>
 
 - PORT_A: Costante che definisce la porta `A` del brick. Valore: 'A'.
 - PORT_B: Costante che definisce la porta `B` del brick. Valore: 'B'.
@@ -637,49 +729,88 @@ Classe utile per gestire un motore grande LEGO.
 - power: Attributo che rappresenta la potenza del motore.
 - getMotorPort(): Metodo che serve per ottenere la porta in cui è collegato il motore.
 - getMotor(): Metodo che serve per ottenere il motore.
-- getPower(): Metodo che serve per ottenere la potenza del motore.
+- getPower(): Metodo che serve per ottenere la potenza del motore.<div class="page-break"></div>
 - setMotorPort(): Metodo utile per impostare la porta in cui è collegato il motore.
-    ```
+    ```java
+    /**
+     * Set the motor port on the NXT brick of the single motor.
+     *
+     * @param motorPort The port where the motor is connected.
+     */
     private void setMotorPort(char motorPort) {
+        // se la porta è valida
         if (this.isMotorPort(motorPort)) {
+            // assegno la porta alla variabile
             this.motorPort = motorPort;
+            // setto il motore su quella porta
             this.setMotor(this.motorPort);
         }
     }
     ```
 - setMotor(): Metodo utile per impostare il motore, se non si passa il motore si può usare la porta in cui esso è collegato.
-    ```
+    ```java
+    /**
+     * Set the motor connected to the brick.
+     *
+     * @param motor The motor connected to the brick.
+     */
     private void setMotor(NXTRegulatedMotor motor) {
+        // setto il motore
         this.motor = motor;
     }
 
+    /**
+     * Set the motor connected to the brick.
+     *
+     * @param motorPort The port where the motor is connected.
+     */
     private void setMotor(char motorPort) {
+        // setto la porta del motore
         this.motorPort = motorPort;
         if (motorPort == PORT_A) {
+            // se è la porta A assegno il motore A
             this.setMotor(Motor.A);
         } else if (motorPort == PORT_B) {
+            // se è la porta B assegno il motore B
             this.setMotor(Motor.B);
         } else if (motorPort == PORT_C) {
+            // se è la porta C assegno il motore C
             this.setMotor(Motor.C);
         }
     }
     ```
 - setPower(): Metodo utile per impostare la potenza del motore.
-    ```
+    ```java
+    /**
+     * Set the power of the motor.
+     *
+     * @param power The power of the motor.
+     */
     public void setPower(byte power) {
         if (power > MAX_POWER) {
+            // se la potenza è maggiore del massimo assegno il massimo
             power = MAX_POWER;
         } else if (power < MIN_POWER) {
+            // se la potenza è minore del minimo assegno il minimo
             power = MIN_POWER;
         }
+        // assegno la potenza all'attributo della classe
         this.power = power;
+        // setto la potenza ai motori
         this.getMotor().setSpeed(this.getPower());
     }
     ```
 - SingleMotor(): Metodo costruttore, si crea un nuovo `SingleMotor` definendo la porta in cui è collegato.
 - isMotorPort(): Metodo utile per controllare che la porta usata sia valida (`A`, `B` o `C`).
-    ```
+    ```java
+    /**
+     * Check if the motor port passed as parameter exists on the NXT brick.
+     *
+     * @param motorPort The motor port on the NXT brick to check if exists.
+     * @return True if the motor port exists on the NXT brick, otherwise false.
+     */
     public boolean isMotorPort(char motorPort) {
+        // controllo se la porta è valida
         if (motorPort == PORT_A || motorPort == PORT_B || motorPort == PORT_C) {
             return true;
         }
@@ -687,38 +818,65 @@ Classe utile per gestire un motore grande LEGO.
     }
     ```
 - increasePower(): Metodo utile per aumentare la potenza del motore.
-    ```
+    ```java
+    /**
+     * Increases the power of the motor.
+     *
+     * @param value The value to increase the power.
+     */
     public void increasePower(byte value) {
+        // autmento la potenza del motore
         this.setPower((byte) (this.getPower() + value));
     }
     ```
 - decreasePower(): Metodo utile per diminuire la potenza del motore.
-    ```
+    ```java
+    /**
+     * Decreases the power of the motor.
+     *
+     * @param value The value to decrease the power.
+     */
     public void decreasePower(byte value) {
+        // decremento la potenza del motore
         this.setPower((byte) (this.getPower() - value));
     }
     ```
 - start(): Metodo che serve per azionare il motore.
-    ```
+    ```java
+    /**
+     * Starts the motor.
+     */
     public void start() {
+        // avvio il motore
         this.getMotor().forward();
         this.getMotor().setSpeed(this.getPower());
     }
     ```
 - stop(): Metodo che ferma il motore.
-    ```
+    ```java
+    /**
+     * Stops the motor.
+     */
     public void stop() {
+        // fermo il motore
         this.getMotor().stop();
     }
     ```
+    <div class="page-break"></div>
 - rotate(): Metodo che ruota il motore dell'angolo passato.
-    ```
+    ```java
+    /**
+     * Rotate the motor by an angle.
+     *
+     * @param angle The angle of the rotation.
+     */
     public void rotate(int angle) {
+        // ruoto il motore di un certo angolo
         this.getMotor().rotate(angle);
     }
     ```
 
-#### Test SingleMotor
+<div class="page-break"></div>
 
 ### Navigation
 
