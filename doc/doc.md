@@ -271,8 +271,19 @@ Questa classe è stata usata come test per iniziare a capire come implementare u
 package test;
 import lejos.nxt.Button;
 
+/**
+ * Hello World.
+ * Stampa "Hello World" sul display LCD del brick NXT.
+ *
+ * @author gabrielealessi
+ * @version 1.0 (2019-02-07)
+ */
 public class HelloWorld {
-
+    /**
+     * Metodo main della classe, stampa "Hello World".
+     *
+     * @param args Argomenti da linea di comando.
+     */
     public static void main(String[] args) {
         // Stampo "Hello World".
         System.out.println("Hello World");
@@ -289,7 +300,7 @@ Sulla guida `usareLegoLib` è spiegato come compilare e caricare programmi Java 
 Questo è il risultato ottenuto:
 
 <p style="text-align:center;">
-<img src="img/helloworld_test.png" width="92">
+<img src="img/helloworld_test.png" width="82">
 </p>
 
 <div class="page-break"></div>
@@ -421,6 +432,11 @@ Classe utile per aspettare la pressione di uno dei pulsanti presenti sul brick N
 
 - button(): Metodo che aspetta la pressione del pulsante passato.
     ```java
+    /**
+     * Aspetta che venga premuto un bottone.
+     *
+     * @param button Bottone da aspettare.
+     */
     public static void button(Button button) {
         // Attesa della pressione del pulsante specificato.
         button.waitForPress();
@@ -428,25 +444,41 @@ Classe utile per aspettare la pressione di uno dei pulsanti presenti sul brick N
     ```
 - enterButton(): Metodo che aspetta la pressione del pulsante centrale.
     ```java
+    /**
+     * Aspetta il bottone enter.
+     */
     public static void enterButton() {
+        // Richiama il metodo per aspettare un bottone con il bottone enter come parametro
         button(Button.ENTER);
     }
     ```
 - rightButton(): Metodo che aspetta la pressione del pulsante destro.
     ```java
+    /**
+     * Aspetta il bottone destro.
+     */
     public static void rightButton() {
+        // Richiama il metodo per aspettare un bottone con il bottone destro come parametro
         button(Button.RIGHT);
     }
     ```
 - leftButton(): Metodo che aspetta la pressione del pulsante sinistro.
     ```java
+    /**
+     * Aspetta il bottone sinistro.
+     */
     public static void leftButton() {
+        // Richiama il metodo per aspettare un bottone con il bottone enter come parametro
         button(Button.LEFT);
     }
     ```
 - escapeButton(): Metodo che aspetta la pressione del pulsante in basso.
     ```java
+    /**
+     * Aspetta il bottone indietro.
+     */
     public static void escapeButton() {
+        // Richiama il metodo per aspettare un bottone con il bottone enter come parametro
         button(Button.ESCAPE);
     }
     ```
@@ -557,6 +589,12 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
 - WaitTouchSensor(): Metodo costruttore, istanzia un nuovo `WaitTouchSensor` impostando l'azione (premuto, rilasciato, cliccato) e il sensore o la porta del brick in cui è inserito il sensore.
 - isWaitAction(): Metodo utile per verificare che l'azione da aspettare imposta sia valida.
     ```java
+    /**
+     * Controlla se la wait aciton è valida.
+     *
+     * @param waitAction Wait action da controllare.
+     * @return True se la wait action è valida, altrimenti false.
+     */
     private boolean isWaitAction(byte waitAction) {
         // Controllo se l'azione passata è valida.
         if (waitAction == PRESSED || waitAction == RELEASED || waitAction == CLICKED) {
@@ -568,6 +606,11 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
     <div class="page-break"></div>
 - isPressedButton(): Metodo che dice se il sensore è premuto.
     ```java
+    /**
+     * Controlla se il bottone del sensore è premuto.
+     *
+     * @return True se il bottone del sensore è premuto.
+     */
     public boolean isPressedButton() {
         // Se il sensore è premuto ritorna 'true'.
         return this.getTouchSensor().isPressed();
@@ -575,6 +618,9 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
     ```
 - buttonPressedAction(): Metodo che aspetta la pressione del sensore.
     ```java
+    /**
+     * Aspetta che venga premuto il bottone del sensore.
+     */
     protected void buttonPressedAction() throws InterruptedException {
         // Se non è premuto il sensore.
         if (!this.isPressedButton()) {
@@ -589,6 +635,9 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
     ```
 - buttonReleasedAction(): Metodo che aspetta il rilascio del sensore.
     ```java
+    /**
+     * Aspetta che venga rilasciato il bottone del sensore.
+     */
     protected void buttonReleasedAction() throws InterruptedException {
         // Se il sensore è premuto.
         if (this.isPressedButton()) {
@@ -603,6 +652,9 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
     ```
 - buttonClickedAction(): Metodo che aspetta il click (pressione e rilascio) del sensore.
     ```java
+    /**
+     * Aspetta che venga premuto (premuto e rilasciato) il bottone del sensore.
+     */
     protected void buttonClickedAction() throws InterruptedException {
         // Aspetta che venga premuto il sensore.
         this.buttonPressedAction();
@@ -614,7 +666,7 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
 - waitTouch(): È il metodo principale che termina l'attesa in base all'azione impostata.
     ```java
     /**
-     * Main method that finishes the wait based on the wait action.
+     * Metodo che fa aspettare l'evento sul bottone.
      */
     public void waitTouch() {
         // se non è finito
@@ -656,7 +708,7 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni perc
 - waitUltrasonic(): È il metodo principale che termina l'attesa in base al valore di confronto.
     ```java
     /**
-     * Main method that finishes the wait based on the comparison value.
+     * Metodo che fa aspettare il valore giusto del sensore ad ultrasuoni.
      */
     public void waitUltrasonic() {
         // setta a false la variabile finished, la quale permette di uscire dal ciclo while
@@ -689,7 +741,7 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore a ultrasuoni perc
 Classe utile per gestire un motore grande LEGO.
 
 <p style="text-align:center;">
-    <img src="img/classes/SingleMotor.png" width="400">
+    <img src="img/classes/SingleMotor.png" width="300">
 </p>
 
 - PORT_A: Costante che definisce la porta `A` del brick. Valore: 'A'.
@@ -702,7 +754,7 @@ Classe utile per gestire un motore grande LEGO.
 - power: Attributo che rappresenta la potenza del motore.
 - getMotorPort(): Metodo che serve per ottenere la porta in cui è collegato il motore.
 - getMotor(): Metodo che serve per ottenere il motore.
-- getPower(): Metodo che serve per ottenere la potenza del motore.<div class="page-break"></div>
+- getPower(): Metodo che serve per ottenere la potenza del motore.
 - setMotorPort(): Metodo utile per impostare la porta in cui è collegato il motore.
     ```java
     /**
@@ -720,12 +772,15 @@ Classe utile per gestire un motore grande LEGO.
         }
     }
     ```
+
+<div class="page-break"></div>
+
 - setMotor(): Metodo utile per impostare il motore, se non si passa il motore si può usare la porta in cui esso è collegato.
     ```java
     /**
-     * Set the motor connected to the brick.
+     * Setta il motore connesso al brick.
      *
-     * @param motor The motor connected to the brick.
+     * @param motor Motore connesso al brick.
      */
     private void setMotor(NXTRegulatedMotor motor) {
         // setto il motore
@@ -733,9 +788,9 @@ Classe utile per gestire un motore grande LEGO.
     }
 
     /**
-     * Set the motor connected to the brick.
+     * Setta il motore connesso al brick.
      *
-     * @param motorPort The port where the motor is connected.
+     * @param motorPort Porta dove è connesso il motore al brick.
      */
     private void setMotor(char motorPort) {
         // setto la porta del motore
@@ -755,9 +810,9 @@ Classe utile per gestire un motore grande LEGO.
 - setPower(): Metodo utile per impostare la potenza del motore.
     ```java
     /**
-     * Set the power of the motor.
+     * Setta la potenza del motore.
      *
-     * @param power The power of the motor.
+     * @param power Potenza del motore.
      */
     public void setPower(byte power) {
         if (power > MAX_POWER) {
@@ -777,10 +832,10 @@ Classe utile per gestire un motore grande LEGO.
 - isMotorPort(): Metodo utile per controllare che la porta usata sia valida (`A`, `B` o `C`).
     ```java
     /**
-     * Check if the motor port passed as parameter exists on the NXT brick.
+     * Controlla se la porta del motore passata come argomento è valida.
      *
-     * @param motorPort The motor port on the NXT brick to check if exists.
-     * @return True if the motor port exists on the NXT brick, otherwise false.
+     * @param motorPort Porta da controllare se è valida.
+     * @return True se la porta del motore esiste, altrimenti false.
      */
     public boolean isMotorPort(char motorPort) {
         // controllo se la porta è valida
@@ -793,9 +848,9 @@ Classe utile per gestire un motore grande LEGO.
 - increasePower(): Metodo utile per aumentare la potenza del motore.
     ```java
     /**
-     * Increases the power of the motor.
+     * Aumenta la potenza del motore.
      *
-     * @param value The value to increase the power.
+     * @param value Valore di cui aumentare la potenza del motore.
      */
     public void increasePower(byte value) {
         // autmento la potenza del motore
@@ -805,9 +860,9 @@ Classe utile per gestire un motore grande LEGO.
 - decreasePower(): Metodo utile per diminuire la potenza del motore.
     ```java
     /**
-     * Decreases the power of the motor.
+     * Decrementare la potenza del motore.
      *
-     * @param value The value to decrease the power.
+     * @param value Valore di cui decrementare la potenza del motore.
      */
     public void decreasePower(byte value) {
         // decremento la potenza del motore
@@ -817,7 +872,7 @@ Classe utile per gestire un motore grande LEGO.
 - start(): Metodo che serve per azionare il motore.
     ```java
     /**
-     * Starts the motor.
+     * Avviare il motore.
      */
     public void start() {
         // avvio il motore
@@ -828,20 +883,19 @@ Classe utile per gestire un motore grande LEGO.
 - stop(): Metodo che ferma il motore.
     ```java
     /**
-     * Stops the motor.
+     * Fermare il motore.
      */
     public void stop() {
         // fermo il motore
         this.getMotor().stop();
     }
     ```
-    <div class="page-break"></div>
 - rotate(): Metodo che ruota il motore dell'angolo passato.
     ```java
     /**
-     * Rotate the motor by an angle.
+     * Ruotare il motore di un angolo.
      *
-     * @param angle The angle of the rotation.
+     * @param angle Angolo di cui ruotare il motore.
      */
     public void rotate(int angle) {
         // ruoto il motore di un certo angolo
@@ -855,7 +909,9 @@ Classe utile per gestire un motore grande LEGO.
 
 Classe che viene usata come base per muovere il brick tramite i due motori.
 
-<img src="img/classes/Navigation.png" width=400>
+<p style="text-align:center;">
+<img src="img/classes/Navigation.png" width=3800>
+</p>
 
 - TURNING: Costante che definisce il valore predefinito dello sterzo. Valore: 50.
 - MIN_TURNING: Costante che definisce il valore minimo dello sterzo. Valore: `MIN_POWER` di `SingleMotor`.
@@ -868,6 +924,12 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
 - getTurning(): Metodo che serve per ottenere la potenza di svolta della navigazione.
 - setPower(): Metodo utile per impostare la potenza della navigazione.
     ```java
+    /**
+     * Setta la potenza dei motori.
+     * Controlla se il valore è valido.
+     *
+     * @param power Potenza dei motori.
+     */
     public void setPower(byte power) {
         // La potenza non può essere maggiore di quella massima.
         if (power > SingleMotor.MAX_POWER) {
@@ -882,8 +944,15 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
         this.updatePowerMotors();
     }
     ```
+    <div class="page-break"></div>
 - setTurning(): Metodo utile per impostare la potenza di svolta della navigazione.
     ```java
+    /**
+     * Setta lo sterzo della navigazione.
+     * Lo sterzo toglie il valore dello sterzo ad un motore e lo aggiunge all'altro.
+     *
+     * @param turning Sterzo della navigazione.
+     */
     public void setTurning(byte turning) {
         // Lo sterzo non può essere maggiore di quello massimo.
         if (turning > MAX_TURNING) {
@@ -901,6 +970,10 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
 - Navigation(): Metodo costruttore, crea una nuova navigazione settando i motori direttamente oppure dalle porte in cui sono collegati.
 - updatePowerMotors(): Metodo utile per aggiornare la potenza dei motori e di conseguenza lo sterzo.
     ```java
+    /**
+     * Aggiorna lo stato dei motori.
+     * Aggiorna la potenza del motore sinistro e destro, e infine aggiorna lo sterzo.
+     */
     private void updatePowerMotors() {
         // Imposto la potenza al motore sinistro.
         this.leftMotor.setPower(this.getPower());
@@ -912,6 +985,9 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
     ```
 - updateTurningMotors: Metodo utile per aggiornare lo sterzo dei motori.
     ```java
+    /**
+     * Aggiorna lo sterzo dei motori.
+     */
     private void updateTurningMotors() {
         // Giro a sinistra.
         if (this.getTurning() > 0) {
@@ -926,6 +1002,11 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
     ```
 - increasePower(): Metodo che serve per aumentare la potenza della navigazione.
     ```java
+    /**
+     * Incrementa la potenza della navigazione.
+     *
+     * @param value Valore di cui incrementare la potenza della naviagazione.
+     */
     public void increasePower(byte value) {
         // Imposto la potenza aumentandola di 'value'.
         this.setPower((byte) (this.getPower() + value));
@@ -933,6 +1014,11 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
     ```
 - decreasePower(): Metodo che serve per diminuire la potenza della navigazione.
     ```java
+    /**
+     * Decrementare la potenza della naviagazione.
+     *
+     * @param value Value di cui decrementare la potenza della navigazione.
+     */
     public void decreasePower(byte value) {
         // Imposto la potenza diminuendola di 'value'.
         this.setPower((byte) (this.getPower() - value));
@@ -940,6 +1026,11 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
     ```
 - increaseTurning(): Metodo che serve per aumentare la potenza di svolta della navigazione.
     ```java
+    /**
+     * Incrementare lo sterzo della navigazione.
+     *
+     * @param value Valore di cui incrementare lo sterzo.
+     */
     public void increaseTurning(byte value) {
         // Imposto lo sterzo aumentandolo di 'value'.
         this.setTurning((byte) (this.getTurning() + value));
@@ -947,6 +1038,11 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
     ```
 - decreaseTurning(): Metodo che serve per diminuire la potenza di svolta della navigazione.
     ```java
+    /**
+     * Decrementare lo sterzo della navigazione.
+     *
+     * @param value Valore di cui decrementare lo sterzo della navigazione.
+     */
     public void decreaseTurning(byte value) {
         // Imposto lo sterzo diminuendolo di 'value'.
         this.setTurning((byte) (this.getTurning() - value));
@@ -954,18 +1050,32 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
     ```
 - left(): Metodo che permette di girare a sinistra di una certa intensità.
     ```java
+    /**
+     * Gira a sinistra.
+     *
+     * @param turning Sterzo verso sinistra.
+     */
     public void left(byte turning) {
         this.decreaseTurning(turning);
     }
     ```
 - right(): Metodo che permette di girare a destra di una certa intensità.
     ```java
+    /**
+     * Gira a destra.
+     *
+     * @param turning Sterzo verso destra.
+     */
     public void right(byte turning) {
         this.increaseTurning(turning);
     }
     ```
+    <div class="page-break"></div>
 - start(): Metodo che fa partire la navigazione azionando i motori.
     ```java
+    /**
+     * Avvia i motori.
+     */
     public void start() {
         // Imposto la potenza al massimo.
         this.setPower(SingleMotor.MAX_POWER);
@@ -976,6 +1086,9 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
     ```
 - stop(): Metodo che ferma la navigazione arrestando i motori.
     ```java
+    /**
+     * Ferma i motori.
+     */
     public void stop() {
         // Fermo i motori.
         this.leftMotor.stop();
@@ -983,13 +1096,15 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
     }
     ```
 
-#### Test Navigation
+<div class="page-break"></div>
 
 ### LineFollower
 
 Classe figlia di `Navigation` che usa due motori e un sensore di luce per seguire una linea.
 
-<img src="img/classes/LineFollower.png" width=400>
+<p>
+<img src="img/classes/LineFollower.png">
+</p>
 
 - DEFAULT_LINE_ON_LEFT: Costante che definisce il valore predefinito per la posizione della linea rispetto al robot (destra o sinistra). Valore: true.
 - waitLightSensor: Attributo interno che rappresenta l'attesa del sensore di luce.
@@ -999,6 +1114,9 @@ Classe figlia di `Navigation` che usa due motori e un sensore di luce per seguir
 - LineFollower(): Metodo costruttore, crea un nuovo `LineFollower` definendo motore destro e sinistro e l'attesa del sensore di luce.
 - start(): È il metodo principale che unisce la navigazione dei motori con l'attesa del sensore così da seguire la linea.
     ```java
+    /**
+     * Start the line follower.
+     */
     public void start() {
         // Sensore di luce.
         WaitLightSensor wait = this.waitLightSensor;
@@ -1033,13 +1151,13 @@ Classe figlia di `Navigation` che usa due motori e un sensore di luce per seguir
     }
     ```
 
-#### Test LineFollower
-
 ### ProportionalLineFollower
 
 Classe figlia di `Navigation` che usa due motori e due sensori di luce per seguire una linea in maniera proporzionale.
 
-<img src="img/classes/ProportionalLineFollower.png" width=400>
+<p>
+<img src="img/classes/ProportionalLineFollower.png">
+</p>
 
 - DEFAULT_FOLLOW_BLACK: Costante che definisce il colore della linea da seguire (nera o bianca). Valore: true.
 - frontLightSensor: Attributo che rappresenta Il sensore di luce frontale.
@@ -1051,9 +1169,15 @@ Classe figlia di `Navigation` che usa due motori e due sensori di luce per segui
 - setFrontLightSensor(): Metodo utile per impostare il sensore di luce frontale.
 - setBackLightSensor(): Metodo utile per impostare il sensore di luce posteriore.
 - setFollowBlack(): Metodo utile per impostare il colore della linea.
-- ProportionalLineFollower(): Metodo costruttore, crea un nuovo `ProportionalLineFollower` definendo motore destro e sinistro e i due sensori di luce.
+- ProportionalLineFollower(): Metodo costruttore, crea un nuovo `ProportionalLineFollower` definendo
+motore destro e sinistro e i due sensori di luce.
+<div class="page-break"></div>
+
 - start(): È il metodo principale che unisce la navigazione dei motori con i due sensori così da seguire la linea in modo proporzionale, quindi senza avere il riferimento della posizione della linea rispetto al robot.
     ```java
+    /**
+     * Avviare il line follower proporzionale.
+     */
     public void start() {
         // Avvio della navigazione.
         super.start();
@@ -1076,8 +1200,6 @@ Classe figlia di `Navigation` che usa due motori e due sensori di luce per segui
         }
     }
     ```
-
-#### Test ProportionalLineFollower
 
 ## Test di sistema
 
