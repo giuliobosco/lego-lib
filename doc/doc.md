@@ -1201,6 +1201,8 @@ motore destro e sinistro e i due sensori di luce.
     }
     ```
 
+<div class="page-break"></div>
+
 ## Test di sistema
 
 ### Protocollo di test
@@ -1228,6 +1230,16 @@ ripetibile alle stesse condizioni.
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
 |**Procedura**     | <ul><li>Collegare il sensore di touch alla porta 1 del brick NXT</li><li>Caricare sul brick il programma<code>TestTouchSensor</code></li><li>Eseguire il programma</li></ul>|
 |**Risultati attesi** |Quando il touch sensor &egrave; premuto dovrebbe ritornare true, mentre quando non lo &egrave; dovrebbe ritornare false. |
+
+|Test Case      | TC-004                               |
+|---------------|--------------------------------------|
+|**Nome**       |Controllare i sensori: Nxt Button |
+|**Riferimento**|REQ-02                               |
+|**Descrizione**|Controllare che i bottoni del brick NXT funzionino correttamente con leJOS |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Eseguire il programma <code>TestNxtButton</code> sul brick NXT</li><li>Cliccare i bottoni seguendo l'ordine<ol><li>Tasto destro</li><li>Tasto enter</li><li>Tasto sinistro</li><li>Tasto escape</li></ol></li></ul>|
+|**Risultati attesi** |Quando viene premuto un bottone cliccare nella rispettiva colonna deve essere scritto down, altrimenti up. |
+
 
 ### Risultati test
 
