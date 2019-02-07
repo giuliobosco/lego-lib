@@ -198,15 +198,16 @@ Qui è descritto come sono strutturate le cartelle contententi la libreria svilu
     - classes.jar
     - compile.ps1
     - LFRunner.java
+    - LightSensorCalibrator.java
     - LineFollower.java
     - Navigation.java
     - PLFRunner.java
     - ProportionalLineFollower.java
     - SingleMotor.java
-    - SingleMotorTest.java
+    - UseThreadSleep.java
     - UseWaitLightSensor.java
     - UseWaitMotor.java
-    - UseWaitNxtButtonSensor.java
+    - UseWaitNxtButton.java
     - UseWaitSoundSensor.java
     - UseWaitTime.java
     - UseWaitTouchSensor.java
