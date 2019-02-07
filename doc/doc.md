@@ -312,9 +312,9 @@ Classe che serve per generalizzare le classi che aspettano un sensore analogico 
      * @param comparisonValue Valore di riferimento.
      */
     public void setComparisonValue(byte comparisonValue) {
-        // controllo che sia maggiore del valore minimo e minore del valore massimo
+        // Controllo che sia maggiore del valore minimo e minore del valore massimo.
         if (comparisonValue >= SENSOR_MIN_VALUE && comparisonValue <= SENSOR_MAX_VALUE) {
-            // assegno il valore
+            // Assegno il valore.
             this.comparisonValue = comparisonValue;
         }
     }
@@ -337,24 +337,24 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il sensore di luce percepisc
 - waitLight(): È il metodo principale che termina l'attesa in base al valore di confronto.
     ```java
     /**
-     * Aspetta il sensore di luce, secondo i parametri memorizzati negli attributi della classe.
+     * Aspetta il sensore di luce secondo i parametri memorizzati negli attributi della classe.
      */
     public void waitLight() {
         // Setta a false la variabile finished, la quale permette di uscire dal ciclo while.
         boolean finished = false;
         while (!finished) {
-            // finche non è finito eseguo il seguente codice
+            // Finché non è finito eseguo il seguente codice.
             try {
                 if (this.isBigger()) {
-                    // se deve essere maggiore confronto il valore del sensore di luce e quello di
-                    // riferimento (comparisonValue) assegno a finished il risultato
+                    // Se deve essere maggiore confronto il valore del sensore di luce e quello di
+                    // riferimento (comparisonValue) assegno a finished il risultato.
                     finished = this.getLightSensor().getLightValue() > this.getComparisonValue();
                 } else {
-                    // se deve essere minore confronto inversamente a preima i due valori
+                    // Se deve essere minore confronto i valori come prima ma al contrario.
                     finished = this.getLightSensor().getLightValue() < this.getComparisonValue();
                 }
 
-                // aspetto WAIT_TIME (100 millis) fra un ciclo e l'altro
+                // Aspetto WAIT_TIME (100 millis) fra un ciclo e l'altro.
                 Thread.sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {
             }
