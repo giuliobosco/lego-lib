@@ -256,30 +256,21 @@ Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sens
 
 Il capitolo di implementazione mostra in poche parole la messa in atto della progettazione. Tutte le classi presenti nel diagramma vengono qui spiegate più nel dettaglio illustrando i metodi e le parti di codice tramite screenshots o rappresentazioni o schemi e tabelle.
 
-L'implementazione del prodotto è composta da delle classi `Wait` che servono per aspettare che succeda qualcosa, ad esempio che un sensore legga un certo valore oppure aspettare del tempo. Ogni classe di questo tipo ha la sua classe di utilizzo, cioè del semplice codice utile per testare il corretto funzionamento dell'attesa. Poi ci sono le classi che permettono di controllare gli attuatori per muovere il robot (`SingleMotor`, `Navigation`). Infine ci sono le classi più importanti, dove più moduli vengono uniti per creare classi come `LineFollower` e `ProportionalLineFollower`.
+L'implementazione del prodotto è composta da delle classi `Wait` che servono per aspettare che succeda qualcosa, ad esempio che un sensore legga un certo valore oppure aspettare del tempo. Ogni classe di questo tipo ha la sua classe di utilizzo, cioè del semplice codice utile per testare il corretto funzionamento dell'attesa. Poi ci sono le classi che permettono di controllare gli attuatori per muovere il robot (`SingleMotor`, `Navigation`). Infine ci sono le classi più complesse, dove più moduli vengono uniti per creare classi come `LineFollower` e `ProportionalLineFollower`.
 
 ### HelloWorld
 
 Questa classe è stata usata come test per iniziare a capire come implementare un programma Java in un brick NXT e per essere usata come esempio nella guida per configurare leJOS su Windows. È presente solo il metodo `main` con due classiche funzioni che insieme formano semplicemente l'output "Hello World".
 ```java
+package test;
 import lejos.nxt.Button;
 
-/**
- * Hello world classe di test.
- *
- * @author gabrielealessi
- * @version 1.0 (2019-02-06)
- */
 public class HelloWorld {
-    /**
-     * Metodo main, stampa "Hello World" e aspetta che un tasto venga premuto.
-     *
-     * @param args Argomenti da linea di comando.
-     */
+
     public static void main(String[] args) {
-        // stampo "Hello World"
+        // Stampo "Hello World".
         System.out.println("Hello World");
-        // aspetto che venga premuto un tasto
+        // Attesa della pressione di un pulsante per terminare il test.
         Button.waitForAnyPress();
     }
 }
@@ -288,7 +279,7 @@ public class HelloWorld {
 #### Test HelloWorld
 
 Per verificare il giusto funzionamento della classe l'abbiamo caricata sul brick e l'abbiamo avviata.
-Per caricare e avviare i programmi sul blocchetto NXT c'è la guida `usareLegoLib`.    
+Sulla guida `usareLegoLib` è spiegato come compilare e caricare programmi Java sul NXT.  
 Questo è il risultato ottenuto:
 
 <p style="text-align:center;">
