@@ -35,26 +35,32 @@
         </taskproperties>
         <task id="1" name="lego-lib" meeting="false" start="2018-11-14" duration="63" complete="0" expand="true"/>
         <task id="3" name="analisi" meeting="false" start="2018-11-14" duration="8" complete="0" expand="true">
-            <task id="4" name="QDC" meeting="false" start="2018-11-14" duration="1" complete="0" expand="true"/>
-            <task id="5" name="intervista" meeting="false" start="2018-11-16" duration="1" complete="0" expand="true"/>
-            <task id="0" name="specifica dei requisiti" color="#8cb6ce" meeting="false" start="2018-11-21" duration="3" complete="0" expand="true"/>
+            <depend id="10" type="2" difference="0" hardness="Strong"/>
+            <task id="4" name="QDC" meeting="false" start="2018-11-14" duration="1" complete="0" expand="true">
+                <depend id="5" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="5" name="intervista" color="#8cb6ce" meeting="false" start="2018-11-15" duration="1" complete="0" thirdDate="2018-11-16" thirdDate-constraint="0" expand="true">
+                <depend id="0" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="0" name="specifica dei requisiti" color="#8cb6ce" meeting="false" start="2018-11-16" duration="3" complete="0" thirdDate="2018-11-21" thirdDate-constraint="0" expand="true"/>
             <task id="6" name="pianificazione" meeting="false" start="2018-11-21" duration="1" complete="0" expand="true"/>
             <task id="9" name="analisi dei mezzi" meeting="false" start="2018-11-23" duration="1" complete="0" expand="true"/>
             <task id="8" name="analisi del dominio" meeting="false" start="2018-11-23" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="10" name="progettazione" meeting="false" start="2018-11-28" duration="38" complete="0" expand="true">
+        <task id="10" name="progettazione" color="#000000" meeting="false" start="2018-11-28" duration="38" complete="0" thirdDate="2018-11-28" thirdDate-constraint="0" expand="true">
             <task id="11" name="componenti" meeting="false" start="2018-11-28" duration="3" complete="0" expand="true"/>
             <task id="12" name="design procedurale" meeting="false" start="2018-11-30" duration="36" complete="0" expand="true"/>
             <task id="13" name="diagramma delle classi" meeting="false" start="2018-11-30" duration="36" complete="0" expand="true"/>
             <task id="14" name="installazione firmware" meeting="false" start="2018-11-28" duration="3" complete="0" expand="true"/>
             <task id="17" name="test firmware" meeting="false" start="2018-11-30" duration="4" complete="0" expand="true"/>
         </task>
-        <task id="19" name="implementazione" meeting="false" start="2018-12-14" duration="36" complete="0" expand="true"/>
-        <task id="20" name="documentazione" meeting="false" start="2018-11-21" duration="56" complete="0" expand="true">
-            <task id="22" name="documentazione progetto" meeting="false" start="2018-11-21" duration="56" complete="0" expand="true"/>
+        <task id="19" name="implementazione e test" meeting="false" start="2018-12-14" duration="39" complete="0" expand="true"/>
+        <task id="20" name="documentazione" meeting="false" start="2018-11-21" duration="58" complete="0" expand="true">
+            <task id="22" name="documentazione progetto" meeting="false" start="2018-11-21" duration="58" complete="0" expand="true"/>
             <task id="25" name="guida lejos" color="#8cb6ce" meeting="false" start="2018-11-30" duration="11" complete="0" expand="true"/>
             <task id="23" name="guida libreria" meeting="false" start="2019-01-23" duration="11" complete="0" expand="true"/>
         </task>
+        <task id="27" name="test di sistema" color="#8cb6ce" meeting="false" start="2019-02-06" duration="3" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
