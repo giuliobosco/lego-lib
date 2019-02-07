@@ -1220,6 +1220,14 @@ ripetibile alle stesse condizioni.
 |**Procedura**     | - Go to “Cards manager” menu, in main page click “Import Profiles” link, Select the “1.2.001.xml” file, Import the Profile - Go to “Cards manager” menu, in main page click “Import Cards” link, Select the “1.2.001.txt” file, Delete the cards, Select the “1.2.001.txt” file, Import the cards |
 |**Risultati attesi** |Keys visible in the DB (OtaCardKey) but not visible in the GUI (Card details) |
 
+|Test Case      | TC-003                               |
+|---------------|--------------------------------------|
+|**Nome**       |Controllare i sensori: TouchSensor |
+|**Riferimento**|REQ-02                               |
+|**Descrizione**|Controllare che il sensore touch sensor funzioni correttamente con leJOS |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Collegare il sensore di touch alla porta 1 del brick NXT</li><li>Caricare sul brick il programma<code>TestTouchSensor</code></li><li>Eseguire il programma</li></ul>|
+|**Risultati attesi** |Quando il touch sensor &egrave; premuto dovrebbe ritornare true, mentre quando non lo &egrave; dovrebbe ritornare false. |
 
 ### Risultati test
 
