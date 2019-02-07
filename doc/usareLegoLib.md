@@ -21,9 +21,9 @@
 }
 </style>
 
-# **Usare lego lib**
+# **Usare lego-lib**
 
-## indice
+## Indice
 
 <div class="clearfix index">
     <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;"><h5>Capitolo</h5></div>
@@ -72,11 +72,11 @@
             </div>
             <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">6</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
-                &emsp;&emsp;LegoLib &amp; IDE
+                &emsp;&emsp;lego-lib &amp; IDE
             </div>
             <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">6</div>
     <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
-        Com'&egrave; strutturato
+        Struttura
     </div>
     <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
@@ -136,7 +136,7 @@
         </div>
         <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">21</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
-            &emsp;&emsp;Navigazione
+            &emsp;Navigazione
         </div>
         <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">22</div>
 
@@ -144,77 +144,45 @@
 
 <div class="page-break"></div>
 
-# introduzione
-Lego lib &egrave; una libreria per controllare il brick Lego Mindstorm NXT con pi&ugrave;
-facili&agrave;. Principalmente questa libreria &egrave; composta dai blocchi arancioni e da quelli
-verdi del'ambiente sviluppo Mindstorm NXT.
+# Introduzione
+Questa è una libreria sviluppata in Java che è utile per controllare un brick LEGO&reg; NXT con pi&ugrave; facili&agrave;. Principalmente questa libreria &egrave; composta dai blocchi arancioni e da quelli
+verdi dell'ambiente di sviluppo LEGO&reg; Mindstorms.
 
-- Bloccchi arancioni: Servono per aspettare che un determinato sensore legga un determinato valore
-- Blocchi verdi: servono per la navigazione del robot
+- Bloccchi arancioni: Servono per aspettare che un determinato sensore legga un determinato valore.
+- Blocchi verdi: servono per la navigazione del robot tramite dei motori.
 
 # Installazione
 
-Per poter utilizzare legolib c'&egrave; bisogno dell'ambiente di sviluppo di lejos, siccome esso
-&egrave; sviluppato in java vi è bisogno di installare per prima cosa il suo ambiente di sviluppo.
+Per poter utilizzare il prodotto &egrave; necessario un ambiente di sviluppo leJOS, siccome esso &egrave; basato in Java vi è bisogno di installare per prima cosa il suo ambiente di sviluppo.
 
 ## Java
 
 Java ha la potenza di poter essere eseguito su tutte le architetture di sistema operativo, che esso
 sia Windows, UNIX/Linux, Mac OS, sia a 32bit che a 64bit. Per avere questa potenza gli sviluppatori
-della Oracle (azienda che produce Java), hanno sviluppato una virtual machine che esegue il codice
-java. Quindi va installata, e siccome dobbiamo sviluppare serve anche il kid di sviluppo di java.
+della Oracle (azienda che produce Java), hanno sviluppato una macchina virtuale che esegue il codice
+Java. Quindi va installata e siccome bisogna anche sviluppare serve anche il kit di sviluppo di Java.
 
 ### Java Runtime Environment
 
-Prima di installare la JRE bisogna provare a controllare se java non &egrave; gi&agrave; installato
-sul computer. Quindi aprere il `Prompt dei comandi`, premere il tasto Windows
-<img src="img/win-key.png" alt="Windows Key" width="10"> che si trova sulla tastiera e
-contemporaneamente il tasto `R`. Quindi ciò farà aprire una piccola finestra in basso a sinistra, in
-cui bisognerà digitare `cmd` e premere invio. Comparirà una finestra nera, sulla quale scrivere il
-seguente comando:
-
+Innanzitutto controllare che Java sia gi&agrave; presente sul PC.  
+Iniziare aprendo una finestra del `Prompt dei comandi`: premere il tasto Windows che si trova sulla tastiera e contemporaneamente il tasto `R`. Quindi ci&ograve; far&agrave; aprire una piccola finestra in basso a sinistra, in cui bisognerà digitare `cmd` e premere invio. Comparir&agrave; una finestra nera, sulla quale scrivere il seguente comando:
 ```
 java -version
 ```
-
-E premere invio, se questo ritora una stringa a simile:
-
+Dopo aver premuto invio, se Java &egrave; gi&agrave; installato (passare al punto [Java Development Kit](#java-development-kit)), comparir&agrave; una scritta simile:
 ```
 java version "1.8.0_191"
 Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
 Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 ```
-
-se compare una stringa contentente qualcosa di simile a `comando sconosciuto` proseguire con la
-guida, altrimenti passare direttamente al prossimo capitolo (Java Development Kit).
-
-Per installare java scaricare il pacchetto di installazione dal sito della Oracle, al seguente link:
-[https://www.java.com/en/download/](https://www.java.com/en/download/), dopo averlo scaricato aprire
-il file e seguire la procedura guidata.
+Altrimenti sar&agrave; necessario installare Java, scaricandolo dal sito ufficiale ([https://www.java.com/en/download/](https://www.java.com/en/download/)). Dopo aver scaricato il file d'installazione, aprirlo e seguire la procedura guidata.
 
 <div class="page-break"></div>
 
 ### Java Development Kit
 
-Prima di installare la JDK bisogna provare a controllare se essa &egrave; gi&arave; presente sulla
-macchina. Quindi digitare sul `Prompt dei comandi` aperto nel precedente capitolo, il seguente e
-digitare il segutente comando:
-
-```
-javac -version
-```
-
-se il programma ritorna una stringa come la seguente:
-
-```
-javac 1.8.0_191
-```
-
-passare direttamente al capitolo "Driver USB", altrimenti proseguire con la guida.
-
-Per insallare la JDK scaricare sempre dal sito ufficiale della Oracle al seguente link:
-[https://www.java.com/en/download/](https://www.java.com/en/download/) il pacchetto di installazione
-del Java Development Kit, successivamente installarlo e seguire la procedura guidata.
+La Java Development Kit &egrave; un ambiente di sviluppo necessario se si vuole implementare in Java, quindi qui di seguito sar&agrave; spiegato come integrarlo nel computer.  
+Prima di tutto scaricare l'installer della versione a 32 bit (x86) per Windows ([https://www.oracle.com/technetwork/java/javase/downloads](https://www.oracle.com/technetwork/java/javase/downloads)). Successivamente aprire il file appena scaricato e seguire la procedura.
 
 ### Variabili d'ambiente
 
@@ -234,10 +202,10 @@ variabile di sistema `Path`.
 
 ## Driver USB
 
-Per fare in modo che il computer individui il dispositivo LEGO&reg;, è necessario disporre di un
+Per fare in modo che il computer individui il dispositivo LEGO&reg;, &egrave; necessario disporre di un
 driver USB. Esso si scarica dal sito ufficiale Mindstorms
 ([https://www.lego.com/r/www/r/mindstorms/-/media/franchises/mindstorms%202014/downloads/firmware%20and%20software/nxt%20software/nxt%20fantom%20drivers%20v120.zip?l.r2=-964392510](https://www.lego.com/r/www/r/mindstorms/-/media/franchises/mindstorms%202014/downloads/firmware%20and%20software/nxt%20software/nxt%20fantom%20drivers%20v120.zip?l.r2=-964392510))
-e bisognerà avviare il file `setup.exe` sotto la cartella `Windows` che si trova nella cartella
+e bisogner&agrave; avviare il file `setup.exe` sotto la cartella `Windows` che si trova nella cartella
 compressa appena scaricata.  
 Quindi verificare che il brick NXT sia riconosciuto dal vostro PC aprendo `Gestione dispositivi` dal
 `Pannello di controllo` e il dispositivo verrà identificato in questo modo:
@@ -266,7 +234,7 @@ Ora la configurazione è giunta al termine e sul NXT dovrebbe apparire la scherm
 ## Utilizzo
 
 In questo capitolo viene spiegato come iniziare a programmare con leJOS NXJ tramite un classico
-`HelloWorld`. È solamente necessario disporre di un editore di testo per scrivere il codice.
+`HelloWorld`. &Egrave; solamente necessario disporre di un editore di testo per scrivere il codice.
 
 ### HelloWorld
 
@@ -350,33 +318,33 @@ nxj -r -o HelloWorld.nxj HelloWorld
 
 Avviamento del programma.
 
-## LegoLib &amp; IDE
+## lego-lib &amp; IDE
 
 Gli IDE (Integrated Development Environment) sono degli applicativi studiati per facilitare il
-compito agli sviluppatori, per poter utilizzare legolib in un IDE bisogna importare in esso il file
-`.jar` che contiene tutte le classi di legolib. Per ogni IDE vi è una diffrente procedura.
+compito degli sviluppatori, per poter utilizzare la libreria in un IDE bisogna importare in esso il file
+`.jar` che contiene tutte le classi di lego-lib. Per ogni IDE vi è una differente procedura.
 
 <div class="page-break"></div>
 
-# Com&apos;&egrave; strutturato
+# Struttura
 
-Lego lib, principalmente è compreso di una libreria che rappresentano i blocchi arancioni e quelli
-verdi dell'ambiente di sviluppo Mindstorm NXT.
+Lego-lib, principalmente &egrave; composto da una libreria che usa i blocchi arancioni e quelli
+verdi dell'ambiente di sviluppo Mindstorms.
 
 ## Blocchi arancioni
-Servono per aspettare che un determinato sensore legga un determinato valore oppure rappresentano le
+Servono per aspettare che un determinato sensore legga un determinato valore, oppure rappresentano le
 strutture di controllo di programmazione sequenziale.  
-Per esempio aspettare che il sensore di luce riflessa legga un valore più alto del 50%.
+Per esempio si pu&ograve; aspettare che il sensore di luce riflessa legga un valore pi&ugrave; alto del 50%.
 
-I blocchi arancioni rappresentano i blcochi blocchi Wait, che in lego lib sono rappresentati dalle
- classi contenute nel package `legolib` che cominciano il loro nome con `Wait`.
+I blocchi arancioni rappresentano i blocchi Wait, che in lego-lib sono compresi dalle
+ classi contenute nel package `legolib` il cui nome comincia con `Wait`.
 
 Nei blocchi arancioni sono compresi anche le selezioni e i cicli, i quali sono implementati dalle
-strutture di controllo `if (...) { ... }` e `while` o `do { ... } while` oppure `for (...) { ... }`.
+strutture di controllo `if ()`, `while ()`, `do while ()` oppure `for ()`.
 
 ## Wait
 
-Tutte le classi hanno in comune hanno un costruttore che permette di inizializzare ogni wait con tutte le configurazioni possibili ed un metodo che fa eseguire lo wait.
+Tutte le classi hanno in comune hanno un costruttore che permette di inizializzare ogni attesa con tutte le configurazioni possibili ed un metodo che fa eseguire l'attesa configurata tramite i parametri scelti.
 
 ![NXT Blocks](img/nxt-blocks/nxt-blocks.png)
 
@@ -387,10 +355,10 @@ questo metodo &egrave quello da utilizzare per eseguire lo waiter.
 ### Sensori analogici
 
 Gli waiter analogici si basano su una variabile contentente il valore di riferimento, questo valore
-viene confrontato con quello letto dai sensori. Poi vi &egrave; una variabile boleana, la quale
+viene confrontato con quello letto dai sensori. Poi vi &egrave; una variabile booleana, la quale
 viene utilizzata per sapere se il valore letto dal sensore deve essere maggiore o minore rispetto a
 quello memorizzato nella variabile di riferimento.
-Tutto questo &egrave; nella classe `WaitAnalogSensor`, la quale viene estesa dalle classi dei
+Tutto questo &egrave; nella classe `WaitAnalogSensor`, che viene estesa dalle classi dei
 sensori analogici.
 
 Diagramma UML della classe `WaitAnalogSensor`:
@@ -399,9 +367,7 @@ Diagramma UML della classe `WaitAnalogSensor`:
     <img src="img/classes/WaitAnalogSensor.png" width="200">
 </p>
 
-
 <div class="page-break"></div>
-
 
 ### WaitTime
 
@@ -410,8 +376,8 @@ Diagramma UML della classe `WaitAnalogSensor`:
         <img style="width:65px" src="img/nxt-blocks/wait-time.png">
     </div>
     <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
-        Il blocco wait time dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
-        classe&nbsp;`WaitTime`, la quale permette di aspettare del tempo, in millisecondi.
+        Il blocco wait time dell'ambiente di sviluppo Mindstorms &egrave; rappresentato dalla
+        classe&nbsp; `WaitTime`, la quale permette di aspettare del tempo definito in millisecondi.
     </div>
 </div>
 
@@ -429,38 +395,16 @@ Esempio di utilizzo della classe in maniera **asincrona**:
 ```java
 import lejos.nxt.Button;
 
-/**
- * Using WaitTime to test it.
- * Aspetta del tempo.
- *
- * @author gabrialessi
- * @author giuliobosco
- * @version 1.q (2019-02-05)
- */
 public class UseWaitTime {
 
-     /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitTime.
-     *
-     * @param args Argomenti da linea di comando.
-     */
     public static void main(String[] args) {
-        // creo lo wait time, con una attesa di 5000 millisecondi,
-        // 5 secondi.
-        WaitTime wt = new WaitTime(5000);
-
-        // stamo il messaggio iniziale, "aspettando..."
+        // Creazione di un'attesa di 5000 millisecondi (5 secondi).
+        WaitTime wait = new WaitTime(5000);
+        // Esecuzione dell'attesa.
         System.out.println("Aspettando...");
-
-        // aspetto i 5000 millisecondi
-        wt.waitTime();
-
-        // stampo ilmessaggio finale
+        wait.waitTime();
         System.out.println("Attesa terminata.");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
+        // Fine del test dopo la pressione un pulsante.
         Button.waitForAnyPress();
     }
 }
@@ -470,55 +414,32 @@ public class UseWaitTime {
 
 Oppure al posto della classe WaitTime, come detto in precedenza si
 pu&ograve; utilizzare il metodo `Thread.sleep(5000);`, che &egrave; un
-metodo interno alle libreire di java.
+metodo compreso nelle librerie di Java.
 
 ```java
 import lejos.nxt.Button;
 
-/**
- * Using Thread.sleep(millis) for wait time.
- * Una alternativa alla classe WaitTime.
- *
- * @author giuliobosco
- * @version 1.0 (2019-02-05)
- */
 public class UseThreadSleep {
 
-     /**
-     * Metodo main della classe, mostra come utilizzare il metodo
-     * Thread.sleep(millis), che &egrave; una alternativa alla classe
-     * WaitTime.
-     *
-     * @param args Argomenti da linea di comando.
-     */
     public static void main(String[] args) {
-        // per poter utilizzare il metodo Thread.sleep(millis) bisogna
-        // utilizzare la struttura try {...} catch (Exception e) {...}
-        // questo perch&eacute; la thread potrebbe venir interrotta e
-        // provocherebbe un'eccezione.
+        // Il metodo Thread.sleep() solleva un'eccezione, quindi bisogna
+        // fare un try-catch della InterruptedException.
         try {
-            // stampo il messaggio iniziale, "aspettando..."
+            // Effettuo l'attesa di 5000 millisecondi (5 secondi).
             System.out.println("Aspettando...");
-
-            // aspetto i 5000 millisecondi
             Thread.sleep(5000);
         } catch (InterruptedException ie) {
             ie.printStackTrace();
         }
-
-        // stampo ilmessaggio finale
+        // Messaggio di conclusione.
         System.out.println("Attesa terminata.");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
+        // Fine del test dopo la pressione un pulsante.
         Button.waitForAnyPress();
     }
 }
 ```
 
-
 <div class="page-break"></div>
-
 
 ### Wait Motor
 
@@ -527,8 +448,8 @@ public class UseThreadSleep {
         <img style="width:65px" src="img/nxt-blocks/wait-motor.png">
     </div>
     <div style="float:left;padding: 12px 0 0 10px; max-width:428px">
-        Il blocco wait motor dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
-        classe&nbsp;`WaitMotor`, la quale permette di aspettare del che il motore abbia effettuato
+        Il blocco wait motor dell'ambiente di sviluppo Mindstorms &egrave; rappresentato dalla
+        classe&nbsp;`WaitMotor`, la quale permette di aspettare che il motore abbia effettuato
         un determinato numbero di rotazioni.
     </div>
 </div>
@@ -538,7 +459,7 @@ public class UseThreadSleep {
 Il diagramma UML della classe:
 
 <p style="text-align:center;">
-    <img src="img/classes/WaitMotor.png" width="280">
+    <img src="img/classes/WaitMotor.png" width="350">
 </p>
 
 Esempio di utlizzo della classe:
@@ -546,44 +467,24 @@ Esempio di utlizzo della classe:
 ```java
 import lejos.nxt.Button;
 
-/**
- * Wait motor example class.
- * Aspetta che il motore effettui 3 rotazioni.
- *
- * @author giuliobosco
- * @version 1.0 (2019-02-01)
- */
 public class UseWaitMotor {
 
-    /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitMotor.
-     *
-     * @param args Argomenti da linea di comando.
-     */
     public static void main(String[] args) {
-        // creo il gestore del motore
+        // Imposto il motore sulla porta 'A'.
         SingleMotor m = new SingleMotor('A');
-        // creo lo waiter del motore
-        WaitMotor wm = new WaitMotor(m, 3);
-
-        // stampo il messaggio iniziale
-        System.out.println("Avvio motore");
-        // setto la velocita del motore a 10
-        m.setPower((byte)10);
-        // avvio il motore
+        // Creazione dell'attesa di 3 rotazioni.
+        WaitMotor wait = new WaitMotor(m, 3);
+        // Imposto la velocità del motore a 10%.
+        System.out.println("Avvio motore.");
+        m.setPower((byte) 10);
+        // Avvio del motore.
         m.start();
-
-        // aspetto le 3 rotazioni
-        wm.waitMotor();
-
-        // stampo il messaggio finale
-        System.out.println("Fermo motore");
-        // fermo il motore
+        // Attesa delle 3 rotazioni.
+        wait.waitMotor();
+        // Arresto del motore.
+        System.out.println("Fermo motore.");
         m.stop();
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
+        // Fine del test dopo la pressione un pulsante.
         Button.waitForAnyPress();
     }
 }
@@ -596,9 +497,8 @@ public class UseWaitMotor {
         <img style="width:65px" src="img/nxt-blocks/wait-touch.png">
     </div>
     <div style="float:left;padding: 12px 0 0 10px; max-width:428px">
-        Il blocco wait touch dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
-        classe&nbsp;`WaitTouchSensor`, la quale permette di aspettare del che un sensore di touch,
-        su una delle porte venga premuto, o rilasciato oppure cliccato, cioè cliccato e rilasciato.
+        Il blocco wait touch dell'ambiente di sviluppo Mindstorm NXT &egrave; rappresentato dalla
+        classe&nbsp;`WaitTouchSensor`, la quale permette di aspettare che un sensore di tocco venga premuto, rilasciato oppure cliccato, cioè cliccato e rilasciato.
     </div>
 </div>
 
@@ -610,12 +510,12 @@ Il diagramma UML della classe:
     <img src="img/classes/WaitTouchSensor.png" width="300">
 </p>
 
-Per sceglirere quale delle 3 azioni, (Premuto, rilasciato o cliccato) aspettare bisosgna cambiare il
-valore `CLICKED` nel costruttore dello waiter con:
+Per sceglirere quale delle tre azioni aspettare (premuto, rilasciato o cliccato), bisosgna cambiare il
+valore `waitAction` nel costruttore dell'attesa con:
 
-- `PRESSED` per premuto
-- `RELEASED` per rilasciato
-
+- `PRESSED` per pressione,
+- `RELEASED` per rilascio,
+- `CLICKED` per click.
 
 Esempio di utlizzo della classe:
 
@@ -623,43 +523,20 @@ Esempio di utlizzo della classe:
 import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
-/**
- * Wait touch sensor example class.
- * Aspetta che il touch sensor sulla porta 1 venga premuto.
- *
- * @author giuliobosco
- * @version 1.1 (01.02.2019)
- */
 public class UseWaitTouchSensor {
 
-    /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitTouchSensor.
-     *
-     * @param args Argomenti da linea di comando.
-     */
     public static void main(String[] args) {
-        // creo lo waiter per il touch sensor sulla porta uno, che aspetta
-        // un click del sensore.
-        WaitTouchSensor wtc = new WaitTouchSensor(SensorPort.S1,
-                WaitTouchSensor.CLICKED);
-
-        // stampo messaggio iniziale
-        System.out.println("cliccare il touch sensor sulla porta 1");
-
-        // aspetto che venga cliccato il touch sensor
-        wtc.waitTouch();
-
-        // stampo messagigo finale
-        System.out.println("touch sensor cliccato");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
+        // Creazione dell'attesa di un sensore sulla porta 1.
+        WaitTouchSensor wait = new WaitTouchSensor(SensorPort.S1, WaitTouchSensor.CLICKED);
+        // Attesa del click del sensore.
+        System.out.println("Cliccare il sensore sulla porta 1.");
+        wait.waitTouch();
+        System.out.println("Cliccato.");
+        // Fine del test dopo la pressione un pulsante.
         Button.waitForAnyPress();
     }
 }
 ```
-
 
 <div class="page-break"></div>
 
@@ -670,9 +547,9 @@ public class UseWaitTouchSensor {
         <img style="width:65px" src="img/nxt-blocks/wait-nxt-button.png">
     </div>
     <div style="float:left;padding: 12px 0 0 10px; max-width:428px">
-        Il blocco wait nxt button dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
-        classe&nbsp;`WaitNxtButton`, la quale permette di aspettare del che venga premuto uno dei
-        bottoni sul brick NXT.
+        Il blocco wait NXT button dell'ambiente di sviluppo Mindstorm NXT &egrave; rappresentato dalla
+        classe&nbsp;`WaitNxtButton`, che permette di aspettare che venga premuto uno specifico
+        pulsante sul brick NXT.
     </div>
 </div>
 
@@ -684,54 +561,37 @@ Il diagramma UML della classe:
     <img src="img/classes/WaitNxtButton.png" width="250">
 </p>
 
-Per ogni bottone vi è un metodo statico, per cui per far aspettare il click di un bottone
-baster&agrave; richiamare il metodo.
+Per ogni pulsante vi è un metodo statico che aspetta il suo click.
 
-- bottone sinistro: `WaitNxtButton.leftButton()`
-- bottone di invio: `WaitNxtButton.enterButton()`
-- bottone destro: `WaitNxtButton.rightButton()`
-- bottone indietro: `WaitNxtButton.backButton()`
+- pulsante sinistro: `WaitNxtButton.leftButton()`,
+- pulsante invio: `WaitNxtButton.enterButton()`,
+- pulsante destro: `WaitNxtButton.rightButton()`,
+- pulsante indietro: `WaitNxtButton.escapeButton()`.
 
 Esempio di utlizzo della classe:
 
 ```java
 import lejos.nxt.Button;
 
-/**
- * Wait nxt button example class.
- * Testa la funzionalita dell'aspettare la premuta dei bottoni sul brick
- * nxt. Prima richiede di premere il tasto sinistro, poi quello di enter,
- * ed infine il tasto destro.
- *
- * @author giuliobosco
- * @version 1.1 (2019-02-01)
- */
 public class UseWaitNxtButton {
 
-    /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitNxtButton.
-     *
-     * @param args Argomenti da linea di comando.
-     */
     public static void main(String[] args) {
-        // aspetto che il tasto sinistro venga premuto
-        System.out.println("Press left button to continue");
+        // Attesa del pulsante sinistro.
+        System.out.println("Premere il pulsante sinistro.");
         WaitNxtButton.leftButton();
-
-        // aspetto che il tasto enter venga premuto
-        System.out.println(
-                "Button pressed\n\nPress enter button to continue");
+        // Attesa del pulsante enter.
+        System.out.println("OK\n\nPremere il pulsante enter.");
         WaitNxtButton.enterButton();
-
-        // aspetto che il tasto destro venga premuto
-        System.out.println(
-                "Button pressed\n\nPress right button to continue");
+        // Attesa del pulsante destro.
+        System.out.println("OK\n\nPremere il pulsante destro.");
         WaitNxtButton.rightButton();
-        System.out.println("Button pressed\n\n");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
+        System.out.println("OK\n\n");
+        // Attesa del pulsante indietro.
+        System.out.println("OK\n\nPremere il pulsante indietro.");
+        WaitNxtButton.escapeButton();
+        System.out.println("OK\n\n");
+        // Fine del test dopo la pressione un pulsante.
+        System.out.println("Fine.");
         Button.waitForAnyPress();
     }
 }
@@ -746,15 +606,15 @@ public class UseWaitNxtButton {
         <img style="width:65px" src="img/nxt-blocks/wait-touch.png">
     </div>
     <div style="float:left;padding: 12px 0 0 10px; max-width:428px">
-        Il blocco wait ultrasonic dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
-        classe&nbsp;`WaitUltrasonicSensor`, la quale permette di aspettare del che un sensore di
-        ultrasuoni percepisca un valore più alto o piu basso di un certo valore.
+        Il blocco wait ultrasonic dell'ambiente di sviluppo Mindstorms &egrave; rappresentato dalla
+        classe&nbsp;`WaitUltrasonicSensor`, la quale permette di aspettare del che un sensore a
+        ultrasuoni percepisca un valore pi&ugrave; alto o pi&ugrave; basso di un valore di riferimento.
     </div>
 </div>
 
 <br>
 
-Come descritto nel capitolo `Wait > Sensori Analogici` i valori di riferimento sono gestiti nella
+Come descritto nel capitolo `Wait > Sensori analogici`, i valori di riferimento sono gestiti nella
 classe `WaitAnalogSensor`.
 
 Il diagramma UML della classe:
@@ -769,50 +629,23 @@ Esempio di utlizzo della classe:
 import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
-/**
- * Wait ultrasonic sensor example class.
- * Aspetta che il sensore ad ultrasuoni (distanza) sulla porta 1
- * legga un valore maggiore di 50cm, poi aspetta che venga premuto
- * un qualunque tasto sul brick, poi aspetta di leggere un valore
- * minore di 50cm sul sensore.
- *
- * @author giuliobosco
- * @version 1.0 (2019-02-01)
- */
 public class UseWaitUltrasonicSensor {
 
-    /**
-     * Metodo main della classe, avvia il programma di test della classeπ
-     * WaitUltrasonicSensor.
-     *
-     * @param args Argomenti da linea di comando.
-     */
     public static void main(String[] args) {
-        // creo lo waiter per il ultrasonic sensor sulla porta uno.
-        WaitUltrasonicSensor wus = new WaitUltrasonicSensor(
-                SensorPort.S1, (byte) 50, true);
-
-        // stampo messaggio iniziale, aspetto che il sensore ad ultrasuoni
-        // legga un valore maggiore di 50cm
-        System.out.println(
-                "mettere il sensore piu lontano di 50cm dal sensore");
-        wus.waitUltrasonic();
-
-        // aspetto che venga premuto un qualunque bottone sul brick
+        // Creazione dell'attesa del sensore a ultrasuoni nella porta 1,
+        // con il valore che deve essere maggiore di 50.
+        WaitUltrasonicSensor wait = new WaitUltrasonicSensor(SensorPort.S1, (byte) 50, true);
+        // Inizio dell'attesa.
+        System.out.println("Mettere il sensore più lontano di 50cm.");
+        wait.waitUltrasonic();
+        // Attesa della pressione di un qualsiasi pulsante sul brick.
         Button.waitForAnyPress();
-
-        // stampo messaggio intermedio, aspetto che il sensore ad
-        // ultrasuoni legga un valore miniore di 50cm
-        wus.setBigger(false);
-        System.out.println(
-                "mettere il sensore piu vicino di 50cm dal sensore");
-        wus.waitUltrasonic();
-
-        // stampo messaggio finale
-        System.out.println("fine del test");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
+        // Ora si aspetta un valore minore di 50cm.
+        wait.setBigger(false);
+        System.out.println("Mettere il sensore più vicino di 50cm.");
+        wait.waitUltrasonic();
+        // Fine del test dopo la pressione un pulsante.
+        System.out.println("Fine.");
         Button.waitForAnyPress();
     }
 }
@@ -827,15 +660,15 @@ public class UseWaitUltrasonicSensor {
         <img style="width:65px" src="img/nxt-blocks/wait-light.png">
     </div>
     <div style="float:left;padding: 12px 0 0 10px; max-width:428px">
-        Il blocco wait light dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
-        classe&nbsp;`WaitLightSensor`, la quale permette di aspettare del che un sensore di
-        di suoni percepisca un valore più alto o piu basso di un certo valore.
+        Il blocco wait light dell'ambiente di sviluppo Mindstorms &egrave; rappresentato dalla
+        classe&nbsp;`WaitLightSensor`, che permette di aspettare del che un sensore di
+        luce percepisca un valore pi&ugrave; alto o pi&ugrave; basso di un valore di riferimento.
     </div>
 </div>
 
 <br>
 
-Come descritto nel capitolo `Wait > Sensori Analogici` i valori di riferimento sono gestiti nella
+Come descritto nel capitolo `Wait > Sensori analogici` i valori di riferimento sono gestiti nella
 classe `WaitAnalogSensor`.
 
 Il diagramma UML della classe:
@@ -850,45 +683,23 @@ Esempio di utlizzo della classe:
 import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
-/**
- * Wait light sensor example class.
- * Aspetta che il sensore di intensita di luce riflessa collegato
- * alla porta 1 vegna messo su una superfice chiara, e poi scura.
- *
- * @author giuliobosco
- * @version 1.0 (2019-02-01)
- */
 public class UseWaitLightSensor {
 
-    /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitLightSensor.
-     *
-     * @param args Argomenti da linea di comando.
-     */
     public static void main(String[] args) {
-        // creo lo waiter per il light sensor, sulla porta uno
-        WaitLightSensor wls = new WaitLightSensor(
-                SensorPort.S1, (byte)50, true);
-
-        // stampo il messaggio iniziale e aspetto che il sensore
-        // legga un valore alto piu alto di 50.
-        System.out.println("Mettere su superficie chiara");
-        wls.waitLight();
-
+        // Creazione dell'attesa del sensore di luce nella porta 1,
+        // con il valore che deve essere maggiore di 50 (chiaro).
+        WaitLightSensor wait = new WaitLightSensor(SensorPort.S1, (byte) 50, true);
+        // Inizio dell'attesa.
+        System.out.println("Mettere il sensore su una superficie chiara.");
+        wait.waitLight();
+        // Attesa della pressione di un qualsiasi pulsante sul brick.
         Button.waitForAnyPress();
-
-        // stampo il messaggio intermedio e aspetto che il sensore
-        // legga un valore piu basso di 50.
-        wls.setBigger(false);
-        System.out.println("Mettere su superfice scura");
-        wls.waitLight();
-
-        // stampo messaggio finale
-        System.out.println("Fine del test");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
+        // Ora si aspetta un valore minore di 50 (scuro).
+        wait.setBigger(false);
+        System.out.println("Mettere il sensore su una superficie scura.");
+        wait.waitLight();
+        // Fine del test dopo la pressione un pulsante.
+        System.out.println("Fine.");
         Button.waitForAnyPress();
     }
 }
@@ -896,63 +707,34 @@ public class UseWaitLightSensor {
 
 #### Calibrazione sensori
 
-Per poter utilizzare in maniera ottimale i sensori, bisogna calibrarli con la luce attuale del'
+Per poter utilizzare in maniera ottimale i sensori, bisogna calibrarli con la luce attuale dell'
 ambiente circostante.  
 Per calibrare i sensori bisogna settare la luce massima e la luce minima che pu&ograve; leggere il
 sensore. La luce massima che un sensore pu&ograve; leggere solitamente &egrave; intesa come il
-bianco, che riflette molta luce; mentre la luce minima che il sensore pu&ograve; leggere è il nero,
+bianco, che riflette molta luce; mentre la luce minima che il sensore pu&ograve; leggere &egrave; il nero,
 che riflette pochissima luce.
+
+Per fare la calibrazione si pu&ograve; usare il seguente codice:
 
 ```java
 import lejos.nxt.LightSensor;
 import lejos.nxt.SensorPort;
 
-/**
- * Calibrate the light sensor.
- * Calibra il sensore di luce, con la luce che presente nel luogo
- * dov'&egrave; il sensore.
- *
- * @author giuliobosco
- * @version 1.0 (2019-02-06)
- */
 public class LightSensorCalibrator {
 
-    /**
-     * Metodo main della classe, permette di calibrare il sensore
-     * di luce.
-     *
-     * @param args Comm
-     */
     public static void main(String[] args) {
-        // setto il sensore di luce su cui eseguire la calibrazione
+        // Imposto il sensore di luce sulla porta 1.
         LightSensor ls = new LightSensor(SensorPort.S1);
-
-        // scrivo il messaggio per avvertire l'utente di mettere il
-        // sensore di luce su una superfice bianca (o chiara)
-        System.out.println(
-                "Posizionare il sensore sul bianco. " +
-                        "Poi premere Enter");
-
-        // aspetto che venga premuto il bottone enter
+        // Configurazione luce bianca.
+        System.out.println("Mettere il sensore sul bianco e premere enter.");
         WaitNxtButton.enterButton();
-
-        // calibro il massimo di luce letta sul senore
         ls.calibrateHigh();
-
-        // pulisco il sensore del brick NXT
         System.out.println("\n\n\n\n\n\n\n\n\n");
-
-        // scrivo il messaggio per avvertire l'utente di mettere il
-        // sensore di luce su una superfice scura (o nera)
-        System.out.println("Posizionare il sensore sul nero. Poi premere Enter.");
-
-        // aspetto che venga premuto il bottone enter
+        // Configurazione luce nera.
+        System.out.println("Mettere il sensore sul nero e premere enter.");
         WaitNxtButton.enterButton();
-
-        // calibro il minimo di luce letta sul sensore
         ls.calibrateLow();
     }
-
 }
 ```
 
@@ -965,15 +747,15 @@ public class LightSensorCalibrator {
         <img style="width:65px" src="img/nxt-blocks/wait-sound.png">
     </div>
     <div style="float:left;padding: 12px 0 0 10px; max-width:428px">
-        Il blocco wait sound dell'ambiente di sviluppo Mindstorm NXT è rappresentato dalla
+        Il blocco wait sound dell'ambiente di sviluppo Mindstorms è rappresentato dalla
         classe&nbsp;`WaitSoundSensor`, la quale permette di aspettare del che un sensore di
-        di suoni percepisca un valore più alto o piu basso di un certo valore.
+        souno (microfono) percepisca un valore pi&ugrave; alto o pi&ugrave; basso di un valore di riferimento.
     </div>
 </div>
 
 <br>
 
-Come descritto nel capitolo `Wait > Sensori Analogici` i valori di riferimento sono gestiti nella
+Come descritto nel capitolo `Wait > Sensori analogici` i valori di riferimento sono gestiti nella
 classe `WaitAnalogSensor`.
 
 Il diagramma UML della classe:
@@ -988,40 +770,16 @@ Esempio di utlizzo della classe:
 import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
-/**
- * Wait sound sensor example class.
- * Aspetta che venga recepito un suono forte dal microfono
- * sulla porta 1.
- *
- * @author giuliobosco
- * @version 1.0 (2019-02-01)
- */
 public class UseWaitSoundSensor {
 
-    /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitSoundSensor.
-     *
-     * @param args Argomenti da linea di comando.
-     */
     public static void main(String[] args) {
-        // creo lo waiter per il sound sensor sulla porta uno, che aspetta
-        // un suono forte.
-        WaitSoundSensor wss = new WaitSoundSensor(
-                SensorPort.S1, (byte)50, true);
-
-        // stampo messaggio iniziale
-        System.out.println("parlare davanti al microfono");
-
-        // aspetto che venga recepito un suono forte
-        wss.waitSound();
-
-        // stampo messaggio finale
-        System.out.println(
-                "Valore alto del microfono recepito");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
+        // Creazione attesa di un suono superiore al 50.
+        WaitSoundSensor wait = new WaitSoundSensor(SensorPort.S1, (byte) 50, true);
+        // Esecuzione dell'attesa.
+        System.out.println("Parlare davanti al microfono.");
+        wait.waitSound();
+        System.out.println("OK.");
+        // Fine del test dopo la pressione un pulsante.
         Button.waitForAnyPress();
     }
 }
@@ -1042,7 +800,7 @@ public class UseWaitSoundSensor {
         <ul>
             <li>`while (...) { ... }`</li>
             <li>`do { ... } while (...)`</li>
-            <li>`for (...) { ... }`</li>
+            <li>`for (...;...;...) { ... }`</li>
         </ul>
     </div>
 </div>
@@ -1055,7 +813,7 @@ public class UseWaitSoundSensor {
     </div>
     <div style="float:left; padding: 50px 0 0 30px">
         <p>
-            La struttura di controllo del switch o selezione &egrave; in programmazione &egrave;<br> rappresentata dalla struttura di controllo `if (...) { ... }`
+            La struttura di controllo dello switch o selezione in programmazione &egrave;<br> rappresentata dalla struttura di controllo `if (...) { ... }`.
         </p>
     </div>
 </div>
@@ -1065,32 +823,32 @@ public class UseWaitSoundSensor {
 
 ## Blocchi verdi
 
-I blocchi verdi dell'ambiente di sviluppo Lego&#174; Mindstorm NXT sono quelli relativi agli
+I blocchi verdi dell'ambiente di sviluppo LEGO&#174; Mindstorms sono quelli relativi agli
 attuatori.  
 Gli attuatori possono essere:
 
-- motori
-- schermi
-- display
-- led
-- buzzer
-- altoparlanti
+- Motori,
+- Schermi,
+- Display,
+- Led,
+- Buzzer,
+- Altoparlanti.
 
-Quindi sono tutti quegli elementi che collegati ad un cirtcuito di controllo, a dipendenza della
-loro natura e dell'istruzione o segnale che gli viene invato, fanno dei movimenti, o modificano il
+Quindi sono tutti quegli elementi che collegati ad un circuito di controllo, a dipendenza della
+loro natura e dell'istruzione o segnale che gli viene invato, fanno dei movimenti o modificano il
 loro stato.
 
-In questa libreria vi sono principalmente 2 classi di attuatori, perch&egrave; le altre gia sono
-state implementate dalla libreria interna di lejos.
+In questa libreria ci sono principalmente due classi di attuatori, perch&eacute; le altre gi&agrave; sono
+state implementate dalla libreria interna di leJOS.
 
-- Motore singolo
-- Navigazione
+- Motore singolo,
+- Navigazione.
 
-La gestione dei motori è stata suddivisa in due classi differenti, una per il motore singolo mentre
+La gestione dei motori &egrave; stata suddivisa in due classi differenti: una per il motore singolo, mentre
 l'altra per la navigazione a due motori (per navigazione si intende il movimento del robot con due
-motori che lavorano in sincronia).
+motori che lavorano in sintonia).
 
-La gestione del display è gia implementata dalla classe `System.in`, mentre le funzioni audio sono
+La gestione del display &egrave; gia implementata dalla classe `System.in`, mentre le funzioni audio sono
 implementate nella classe `lejos.nxt.Sound`.
 
 ### Motore singolo
@@ -1100,8 +858,8 @@ implementate nella classe `lejos.nxt.Sound`.
         <img style="width:65px" src="img/nxt-blocks/motor.png">
     </div>
     <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
-        Il blocco motor (per il motore singolo) dell'ambiente di sviluppo Mindstorm NXT è
-        rappresentato dalla classe&nbsp;`SingleMotor`, la quale permette di gestire facilmente un
+        Il blocco motor (per il motore singolo) dell'ambiente di sviluppo Mindstorms &egrave;
+        rappresentato dalla classe&nbsp;`SingleMotor`, che permette di gestire facilmente un
         motore.
     </div>
 </div>
@@ -1123,7 +881,7 @@ Il diagramma UML della classe:
         <img style="width:65px" src="img/nxt-blocks/motor.png">
     </div>
     <div style="float:left;padding: 20px 0 0 10px; max-width:428px">
-        Il blocco motor (per la navigazione) dell'ambiente di sviluppo Mindstorm NXT è
+        Il blocco motor (per la navigazione) dell'ambiente di sviluppo Mindstorms &egrave;
         rappresentato dalla classe&nbsp;`Navigation`, la quale permette di manovrare con
         facilit&agrave; i motori.
     </div>
@@ -1137,7 +895,7 @@ Il diagramma UML della classe:
     <img src="img/classes/Navigation.png" style="width:420px">
 </p>
 
-Per poter manovrare i motori bisogna settare la velocit&agrave; (con il metodo `setPower(power)`),
-mentre per manovrare la direzione bisogna usare il metodo `setTurning(turning)`. Poi bisogna avviare
-la navigazione con il metodo `startNaviagation()`, la quale pu&ograve; essere fermata con il metodo
-`stopNavigation()`.
+Per poter manovrare i motori bisogna impostare la velocit&agrave; con il metodo `setPower(power)`,
+mentre per manovrare la direzione bisogna usare il metodo `setTurning(turning)`. Poi &egrave; necessario avviare
+la navigazione con il metodo `start()` e pu&ograve; essere fermata con il metodo
+`stop()`.
