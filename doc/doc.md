@@ -416,7 +416,7 @@ Classe utile per aspettare la pressione di uno dei pulsanti presenti sul brick N
 - button(): Metodo che aspetta la pressione del pulsante passato.
     ```java
     public static void button(Button button) {
-        // waiting for pressing the button.
+        // Attesa della pressione del pulsante specificato.
         button.waitForPress();
     }
     ```
@@ -460,24 +460,24 @@ Classe figlia di `WaitAnalogSensor` che aspetta che il microfono percepisca un c
 - waitSound(): È il metodo principale che termina l'attesa in base al valore di confronto.
     ```java
     /**
-     * Aspetta un suono.
+     * Attesa di un suono.
      */
     public void waitSound() {
-        // setta a false la variabile finished, la quale permette di uscire dal ciclo while
+        // Setta a false la variabile finished, la quale permette di uscire dal ciclo while.
         boolean finished = false;
         while (!finished) {
-            // finche non è finito eseguo il seguente codice
+            // Finché non è finito eseguo il seguente codice
             try {
                 if (this.isBigger()) {
-                    // se deve essere maggiore confronto il valore del sensore di luce e quello di
-                    // riferimento (comparisonValue) assegno a finished il risultato
+                    // Se deve essere maggiore confronto il valore del sensore di luce e quello di
+                    // riferimento (comparisonValue) assegno a finished il risultato.
                     finished = this.getSoundSensor().readValue() > this.getComparisonValue();
                 } else {
-                    // se deve essere minore confronto inversamente a preima i due valori
+                    // Se deve essere minore confronto i valori al contrario.
                     finished = this.getSoundSensor().readValue() < this.getComparisonValue();
                 }
 
-                // aspetto WAIT_TIME (100 millis) fra un ciclo e l'altro
+                // Aspetto WAIT_TIME (100 millis) fra un ciclo e l'altro.
                 Thread.sleep(WAIT_TIME);
             } catch (InterruptedException ignored) {
             }
