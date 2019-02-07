@@ -992,33 +992,36 @@ Classe figlia di `Navigation` che usa due motori e un sensore di luce per seguir
 - setLineOnLeft(): Metodo utile per impostare la posizione della linea.
 - LineFollower(): Metodo costruttore, crea un nuovo `LineFollower` definendo motore destro e sinistro e l'attesa del sensore di luce.
 - start(): È il metodo principale che unisce la navigazione dei motori con l'attesa del sensore così da seguire la linea.
-    ```
+    ```java
     public void start() {
+        // Sensore di luce.
         WaitLightSensor wait = this.waitLightSensor;
-        // Set the comparison value of the sensor to 50 (halfway).
+        // Setto il valore di confronto a 50 (metà).
         wait.setComparisonValue((byte) 50);
-        // The sensor value must be bigger depending on where the line is.
+        // Il valore del sensore deve essere maggiore 
+        // a dipendenza della posizione della linea.
         wait.setBigger(this.isLineOnLeft());
-        // Start of the navigation.
+        // Avvio della navigazione.
         super.start();
         while (true) {
-            // The sensor waits the light.
+            // Attesa della luce riflessa.
             wait.waitLight();
-            // Turn to the left or to the right.
+            // Svolta a destra o sinistra.
             if (this.isLineOnLeft()) {
                 this.right(TURNING);
             } else {
                 this.left(TURNING);
             }
-            // Wait for the opposite light.
+            // Attesa della luce opposta.
             wait.setBigger(!wait.isBigger());
             wait.waitLight();
+            // Svolta a destra o sinistra.
             if (this.isLineOnLeft()) {
                 this.left(TURNING);
             } else {
                 this.right(TURNING);
             }
-            // Invert the turning again.
+            // Inverto ancora la direzione.
             wait.setBigger(!wait.isBigger());
         }
     }
@@ -1044,7 +1047,7 @@ Classe figlia di `Navigation` che usa due motori e due sensori di luce per segui
 - setFollowBlack(): Metodo utile per impostare il colore della linea.
 - ProportionalLineFollower(): Metodo costruttore, crea un nuovo `ProportionalLineFollower` definendo motore destro e sinistro e i due sensori di luce.
 - start(): È il metodo principale che unisce la navigazione dei motori con i due sensori così da seguire la linea in modo proporzionale, quindi senza avere il riferimento della posizione della linea rispetto al robot.
-    ```
+    ```java
     public void start() {
         // Start of the navigation.
         super.start();
