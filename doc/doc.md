@@ -551,14 +551,8 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
 - WaitTouchSensor(): Metodo costruttore, istanzia un nuovo `WaitTouchSensor` impostando l'azione (premuto, rilasciato, cliccato) e il sensore o la porta del brick in cui è inserito il sensore.
 - isWaitAction(): Metodo utile per verificare che l'azione da aspettare imposta sia valida.
     ```java
-    /**
-     * Checks that the comparison wait action is valid.
-     *
-     * @param waitAction The wait action to check.
-     * @return True if the value is a valid action.
-     */
     private boolean isWaitAction(byte waitAction) {
-        // controllo se è un azione valida
+        // Controllo se l'azione passata è valida.
         if (waitAction == PRESSED || waitAction == RELEASED || waitAction == CLICKED) {
             return true;
         }
@@ -568,64 +562,45 @@ Classe utile per aspettare la pressione, il rilascio o il click di un sensore di
     <div class="page-break"></div>
 - isPressedButton(): Metodo che dice se il sensore è premuto.
     ```java
-    /**
-     * Method that tells if the sensor is pressed.
-     *
-     * @return If the touch sensor is pressed.
-     */
     public boolean isPressedButton() {
+        // Se il sensore è premuto ritorna 'true'.
         return this.getTouchSensor().isPressed();
     }
     ```
 - buttonPressedAction(): Metodo che aspetta la pressione del sensore.
     ```java
-    /**
-     * Method that wait for the pression of the button.
-     *
-     * @throws InterruptedException If an interrupted exception occurred.
-     */
     protected void buttonPressedAction() throws InterruptedException {
-        // se non è premuto il bottone
+        // Se non è premuto il sensore.
         if (!this.isPressedButton()) {
-            // aspetta che venga premuto
+            // Aspetta che venga premuto.
             while (!this.isPressedButton()) {
                 Thread.sleep(WAIT_TIME);
             }
-            // setta finished a true, perché il bottone è stato premuto
+            // Setta finished a true, perché il sensore è stato premuto.
             this.finished = true;
         }
     }
     ```
 - buttonReleasedAction(): Metodo che aspetta il rilascio del sensore.
     ```java
-    /**
-     * Method that wait for the release of the button.
-     *
-     * @throws InterruptedException If an interrupted exception occurred.
-     */
     protected void buttonReleasedAction() throws InterruptedException {
-        // se il botton è premuto
+        // Se il sensore è premuto.
         if (this.isPressedButton()) {
-            // aspetta che venga rilasciato
+            // Aspetta che venga rilasciato.
             while (this.isPressedButton()) {
                 Thread.sleep(WAIT_TIME);
             }
-            // setta finished a true, perché il bottone è stato rilasciato
+            // Setta finished a true, perché il sensore è stato rilasciato.
             this.finished = true;
         }
     }
     ```
 - buttonClickedAction(): Metodo che aspetta il click (pressione e rilascio) del sensore.
     ```java
-    /**
-     * Method that wait for the click of the button (pressed and released).
-     *
-     * @throws InterruptedException If an interrupted exception occurred.
-     */
     protected void buttonClickedAction() throws InterruptedException {
-        // aspetta che venga premuto il bottone
+        // Aspetta che venga premuto il sensore.
         this.buttonPressedAction();
-        // aspetta che venga rilasciato il bottone
+        // Aspetta che venga rilasciato il sensore.
         this.buttonReleasedAction();
     }
     ```
@@ -886,44 +861,57 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
 - getPower(): Metodo che serve per ottenere la potenza della navigazione.
 - getTurning(): Metodo che serve per ottenere la potenza di svolta della navigazione.
 - setPower(): Metodo utile per impostare la potenza della navigazione.
-    ```
+    ```java
     public void setPower(byte power) {
+        // La potenza non può essere maggiore di quella massima.
         if (power > SingleMotor.MAX_POWER) {
             power = SingleMotor.MAX_POWER;
+        // La potenza non può essere minore di quella minima.
         } else if (power < SingleMotor.MIN_POWER) {
             power = SingleMotor.MIN_POWER;
         }
+        // Imposto la potenza.
         this.power = power;
+        // Aggiorno la potenza a entrambi i motori.
         this.updatePowerMotors();
     }
     ```
 - setTurning(): Metodo utile per impostare la potenza di svolta della navigazione.
-    ```
+    ```java
     public void setTurning(byte turning) {
+        // Lo sterzo non può essere maggiore di quello massimo.
         if (turning > MAX_TURNING) {
             turning = MAX_TURNING;
+        // Lo sterzo non può essere minore di quello minimo.
         } else if (turning < MIN_TURNING) {
             turning = MIN_TURNING;
         }
+        // Imposto lo sterzo.
         this.turning = turning;
+        // Aggiorno lo sterzo a entrambi i motori.
         this.updateTurningMotors();
     }
     ```
 - Navigation(): Metodo costruttore, crea una nuova navigazione settando i motori direttamente oppure dalle porte in cui sono collegati.
 - updatePowerMotors(): Metodo utile per aggiornare la potenza dei motori e di conseguenza lo sterzo.
-    ```
+    ```java
     private void updatePowerMotors() {
+        // Imposto la potenza al motore sinistro.
         this.leftMotor.setPower(this.getPower());
+        // Imposto la potenza al motore destro.
         this.rightMotor.setPower(this.getPower());
+        // Aggiorno lo sterzo.
         this.updateTurningMotors();
     }
     ```
 - updateTurningMotors: Metodo utile per aggiornare lo sterzo dei motori.
-    ```
+    ```java
     private void updateTurningMotors() {
+        // Giro a sinistra.
         if (this.getTurning() > 0) {
             this.leftMotor.decreasePower(this.getTurning());
             this.rightMotor.increasePower(this.getTurning());
+        // Giro a destra.
         } else {
             this.leftMotor.increasePower((byte) - this.getTurning());
             this.rightMotor.decreasePower((byte) - this.getTurning());
@@ -931,52 +919,59 @@ Classe che viene usata come base per muovere il brick tramite i due motori.
     }
     ```
 - increasePower(): Metodo che serve per aumentare la potenza della navigazione.
-    ```
+    ```java
     public void increasePower(byte value) {
+        // Imposto la potenza aumentandola di 'value'.
         this.setPower((byte) (this.getPower() + value));
     }
     ```
 - decreasePower(): Metodo che serve per diminuire la potenza della navigazione.
-    ```
+    ```java
     public void decreasePower(byte value) {
+        // Imposto la potenza diminuendola di 'value'.
         this.setPower((byte) (this.getPower() - value));
     }
     ```
 - increaseTurning(): Metodo che serve per aumentare la potenza di svolta della navigazione.
-    ```
+    ```java
     public void increaseTurning(byte value) {
+        // Imposto lo sterzo aumentandolo di 'value'.
         this.setTurning((byte) (this.getTurning() + value));
     }
     ```
 - decreaseTurning(): Metodo che serve per diminuire la potenza di svolta della navigazione.
-    ```
+    ```java
     public void decreaseTurning(byte value) {
+        // Imposto lo sterzo diminuendolo di 'value'.
         this.setTurning((byte) (this.getTurning() - value));
     }
     ```
 - left(): Metodo che permette di girare a sinistra di una certa intensità.
-    ```
+    ```java
     public void left(byte turning) {
         this.decreaseTurning(turning);
     }
     ```
 - right(): Metodo che permette di girare a destra di una certa intensità.
-    ```
+    ```java
     public void right(byte turning) {
         this.increaseTurning(turning);
     }
     ```
 - start(): Metodo che fa partire la navigazione azionando i motori.
-    ```
+    ```java
     public void start() {
+        // Imposto la potenza al massimo.
         this.setPower(SingleMotor.MAX_POWER);
+        // Avvio i motori.
         this.leftMotor.start();
         this.rightMotor.start();
     }
     ```
 - stop(): Metodo che ferma la navigazione arrestando i motori.
-    ```
+    ```java
     public void stop() {
+        // Fermo i motori.
         this.leftMotor.stop();
         this.rightMotor.stop();
     }
