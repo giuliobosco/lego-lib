@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 SAMT.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,34 +26,31 @@ import lejos.nxt.LightSensor;
 import lejos.nxt.SensorPort;
 
 /**
- * Example of using proportional line follower.
+ * Example of using PropotionalLineFollower.
  *
  * @author giuliobosco
- * @version 2.0 (2019-02-01)
+ * @author gabrialessi
+ * @version 2.1 (2019-02-07)
  */
 public class PLFRunner {
-    // ------------------------------------------------------------------------------------ Costants
-    // ---------------------------------------------------------------------------------- Attributes
-    // --------------------------------------------------------------------------- Getters & Setters
-    // -------------------------------------------------------------------------------- Constructors
-    // -------------------------------------------------------------------------------- Help Methods
-    // ----------------------------------------------------------------------------- General Methods
-    // --------------------------------------------------------------------------- Static Components
 
     /**
-     * Main method of the class.
+     * Main method.
      *
      * @param args Command line arguments.
      */
     public static void main(String[] args) {
-        // Create proportional line follower
-        ProportionalLineFollower plf = new ProportionalLineFollower(
-                new SingleMotor('A'), // left motor on port A
-                new SingleMotor('B'), // right motor on port B
-                new LightSensor(SensorPort.S1), // frontal light sensor on port 1
-                new LightSensor(SensorPort.S2)); // back light sensor on port 2
 
-        // start the line follower
+        // New ProportionalLineFollower.
+        ProportionalLineFollower plf = new ProportionalLineFollower(
+                new SingleMotor('A'), // Left motor on port 'A'.
+                new SingleMotor('B'), // Right motor on port 'B'.
+                new LightSensor(SensorPort.S1), // Front light sensor on port 1.
+                new LightSensor(SensorPort.S2)); // Back light sensor on port 2.
+
+        // Start the follower.
         plf.start();
+
     }
+
 }
