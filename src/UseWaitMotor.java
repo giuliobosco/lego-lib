@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 giuliobosco.
+ * Copyright 2019 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,46 +22,36 @@
  * THE SOFTWARE.
  */
 
-import lejos.nxt.Button;
-
 /**
- * Wait motor example class.
- * Aspetta che il motore effettui 3 rotazioni.
+ * Example of using the WaitMotor class. 
+ * Waits for three rotations.
  *
  * @author giuliobosco
- * @version 1.0 (2019-02-01)
+ * @author gabrialessi
+ * @version 1.1 (2019-02-07)
  */
 public class UseWaitMotor {
 
     /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitMotor.
+     * Main method
      *
-     * @param args Argomenti da linea di comando.
+     * @param args Command line arguments.
      */
     public static void main(String[] args) {
-        // creo il gestore del motore
+
+        // Set the motor on port 'A'.
         SingleMotor m = new SingleMotor('A');
-        // creo lo waiter del motore
-        WaitMotor wm = new WaitMotor(m, 3);
-
-        // stampo il messaggio iniziale
-        System.out.println("Avvio motore");
-        // setto la velocita del motore a 10
-        m.setPower((byte)10);
-        // avvio il motore
+        // New wait for the motor.
+        WaitMotor wait = new WaitMotor(m, 3);
+        // Start the motor.
+        System.out.println("Start motor.");
+        m.setPower((byte) 10);
         m.start();
-
-        // aspetto le 3 rotazioni
-        wm.waitMotor();
-
-        // stampo il messaggio finale
-        System.out.println("Fermo motore");
-        // fermo il motore
+        // Wait for three rotations.
+        wait.waitMotor();
+        // Stop the motor.
+        System.out.println("Stop motor.");
         m.stop();
 
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
-        Button.waitForAnyPress();
     }
 }
