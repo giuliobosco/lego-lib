@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 giuliobosco.
+ * Copyright 2018 SAMT.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,41 +22,31 @@
  * THE SOFTWARE.
  */
 
-import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
 /**
- * Wait touch sensor example class.
- * Aspetta che il touch sensor sulla porta 1 venga premuto.
+ * Wait touch sensor example class. 
+ * Wait for the click of the touch sensor.
  *
  * @author giuliobosco
- * @version 1.1 (01.02.2019)
+ * @author gabrialessi
+ * @version 1.2 (2019-02-07)
  */
 public class UseWaitTouchSensor {
 
     /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitTouchSensor.
+     * Main method.
      *
-     * @param args Argomenti da linea di comando.
+     * @param args Command line arguments.
      */
     public static void main(String[] args) {
-        // creo lo waiter per il touch sensor sulla porta uno, che aspetta
-        // un click del sensore.
-        WaitTouchSensor wtc = new WaitTouchSensor(SensorPort.S1,
-                WaitTouchSensor.CLICKED);
 
-        // stampo messaggio iniziale
-        System.out.println("cliccare il touch sensor sulla porta 1");
+        // New wait for the click of the touch sensor on port 1.
+        WaitTouchSensor wait = new WaitTouchSensor(SensorPort.S1, WaitTouchSensor.CLICKED);
+        // Wait the click.
+        System.out.println("Click the touch sensor.");
+        wait.waitTouch();
+        System.out.println("Touch sensor clicked.");
 
-        // aspetto che venga cliccato il touch sensor
-        wtc.waitTouch();
-
-        // stampo messagigo finale
-        System.out.println("touch sensor cliccato");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
-        Button.waitForAnyPress();
     }
 }
