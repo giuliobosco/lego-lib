@@ -1253,7 +1253,7 @@ ripetibile alle stesse condizioni.
 |---------------|--------------------------------------|
 |**Nome**       |Controllare i sensori: LightSensor |
 |**Riferimento**|REQ-02                               |
-|**Descrizione**|Controllare che il sensore sensore di luce funzioni correttamente con leJOS |
+|**Descrizione**|Controllare che il sensore di luce funzioni correttamente con leJOS |
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
 |**Procedura**     | <ul><li>Collegare il sensore di luce alla porta 1 del brick NXT</li><li>Caricare sul brick il programma<code>TestLightSensor</code></li><li>Eseguire il programma</li><li>Posizionare il sensore di luce su una superficie scura</li><li>spostare il sensore di luce su una superficie chiara</li></ul>|
 |**Risultati attesi** |Quando il sensore di luce &egrave; sulla superficie chiara il valore deve essere alto mentre quando il sensore di luce &egrave; su una superficie scura il valore deve essere basso |
@@ -1262,7 +1262,7 @@ ripetibile alle stesse condizioni.
 |---------------|--------------------------------------|
 |**Nome**       |Controllare i sensori: SoundSensor |
 |**Riferimento**|REQ-02                               |
-|**Descrizione**|Controllare che il sensore sensore di luce funzioni correttamente con leJOS |
+|**Descrizione**|Controllare che il sensore di suono funzioni correttamente con leJOS |
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
 |**Procedura**     | <ul><li>Collegare il sensore di suono alla porta 1 del brick NXT</li><li>Caricare sul brick il programma<code>TestSoundSensor</code></li><li>Eseguire il programma</li><li>Mettere il sensore in un luogo silenzioso</li><li>spostare il sensore in un luogo con piu rumore</li></ul>|
 |**Risultati attesi** |Quando il sensore di suono &egrave; in un luogo silenzioso il valore deve essere basso, mentre nel luogo piu rumoroso il valore deve essere piu alto. |
