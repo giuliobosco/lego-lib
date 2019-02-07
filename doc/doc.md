@@ -1,3 +1,9 @@
+<style>
+th, td {
+    padding:2px 5px!important;
+}
+</style>
+
 # Sistema didattico per LEGO NTX con libreria e documentazione
 
 1. [Introduzione](#introduzione)
@@ -115,8 +121,6 @@ La specifica dei requisiti del progetto è rappresentata tramite tabelle che def
 |**Note**    |È necessario testare ogni componente utilizzato durante la realizzazione del progetto.|
 | *Sub-req 1* |Testare componenti (7 tra sensori e attuatori) su NXT con leJOS|
 
-<div class="page-break"></div>
-
 |ID  |REQ-03                                          |
 |----|------------------------------------------------|
 |**Nome**    |Componenti - Sensori|
@@ -129,6 +133,8 @@ La specifica dei requisiti del progetto è rappresentata tramite tabelle che def
 | *Sub-req 4* |Microfono |
 | *Sub-req 5* |Pulsanti del brick |
 
+<div class="page-break"></div>
+
 |ID  |REQ-04                                          |
 |----|------------------------------------------------|
 |**Nome**    |Componenti - Attuatori|
@@ -138,14 +144,14 @@ La specifica dei requisiti del progetto è rappresentata tramite tabelle che def
 | *Sub-req 1* |Motore Grande |
 | *Sub-req 2* |Schermo LCD del brick |
 
-<div class="page-break"></div>
-
 |ID  |REQ-05                                          |
 |----|------------------------------------------------|
 |**Nome**    |LineFollower proporzionale|
 |**Priorità**|1                     |
 |**Versione**|2.0                   |
 |**Note**    |È necessario implementare la funzione "LineFollower" in modo proporzionale e facile da utilizzare.|
+
+<div class="page-break"></div>
 
 ### Analisi dei mezzi
 
@@ -998,7 +1004,7 @@ Classe figlia di `Navigation` che usa due motori e un sensore di luce per seguir
         WaitLightSensor wait = this.waitLightSensor;
         // Setto il valore di confronto a 50 (metà).
         wait.setComparisonValue((byte) 50);
-        // Il valore del sensore deve essere maggiore 
+        // Il valore del sensore deve essere maggiore
         // a dipendenza della posizione della linea.
         wait.setBigger(this.isLineOnLeft());
         // Avvio della navigazione.
