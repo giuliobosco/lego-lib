@@ -26,36 +26,27 @@ import lejos.nxt.Button;
 
 /**
  * Using WaitTime to test it.
- * Aspetta del tempo.
  *
  * @author gabrialessi
  * @author giuliobosco
- * @version 1.1 (2019-02-05)
+ * @version 1.2 (2019-02-07)
  */
 public class UseWaitTime {
 
-     /**
-     * Metodo main della classe, avvia il programma di test della classe
-     * WaitTime.
+    /**
+     * Main method.
      *
-     * @param args Argomenti da linea di comando.
+     * @param args Command line arguments.
      */
     public static void main(String[] args) {
-        // creo lo wait time, con una attesa di 5000 millisecondi, 
-        // 5 secondi.
-        WaitTime wt = new WaitTime(5000);
 
-        // stamo il messaggio iniziale, "aspettando..."
-        System.out.println("Aspettando...");
-
-        // aspetto i 5000 millisecondi
-        wt.waitTime();
-
-        // stampo ilmessaggio finale
-        System.out.println("Attesa terminata.");
-
-        // aspetto che venga premuto un bottone sul brick per terminare
-        // il programma
+        // Create wait of 5000 milliseconds (5 seconds).
+        WaitTime wait = new WaitTime(5000);
+        // Start the wait.
+        System.out.println("Waiting...");
+        wait.waitTime();
+        // Wait over, press a button on the brick.
+        System.out.println("Wait over.");
         Button.waitForAnyPress();
     }
 }
