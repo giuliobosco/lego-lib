@@ -1568,10 +1568,17 @@ completamente implementati, al di fuori dei test case. Non devono essere
 riportati gli errori e i problemi riscontrati e poi risolti durante il
 progetto.
 
-## Consuntivo
+<div class="page-break"></div>
 
-Rispetto alla pianificazione iniziale sono cambiate molte cose: ci sono stati capitoli che sono durati meno del previsto e altri che hanno occupato molto più tempo di quanto pianificato. Inoltre è stato necessario lavorare a casa per recuperare il tempo perso quando si riscontravano dei problemi durante la progettazione e l'implementazione.  
-Questo è il diagramma di Gantt che mostra come abbiamo usato il nostro tempo durante lo sviluppo del progetto.
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<div style="-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform: rotate(90deg);-ms-transform: rotate(90deg);transform: rotate(90deg);width:650px;">
+    <h2>Consuntivo</h2>
+    <p>Rispetto alla pianificazione iniziale sono cambiate molte cose: ci sono stati capitoli che sono durati meno del previsto e altri che hanno occupato molto più tempo di quanto pianificato. Inoltre è stato necessario lavorare a casa per recuperare il tempo perso quando si riscontravano dei problemi durante la progettazione e l'implementazione.  
+Questo è il diagramma di Gantt definitivo che mostra come abbiamo usato il nostro tempo durante lo sviluppo del progetto:</p>
+    <img src="img/gantt.png" style="widht:450px;">
+</div>
+
+<div class="page-break"></div>
 
 ## Conclusioni
 
