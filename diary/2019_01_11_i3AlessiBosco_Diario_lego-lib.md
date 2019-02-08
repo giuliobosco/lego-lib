@@ -46,7 +46,7 @@ Per quanto riguarda la documentazione siamo un po' fermi perché ci stiamo conce
 Bisogna dire che la struttura delle classi sta prendendo forma e alcune cose sono cambiate rispetto alla progettazione iniziale, quindi prossimamente verrà caricato il diagramma delle classi definitivo.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 16:30 |Implementazione|
 
 ##  Problemi riscontrati e soluzioni adottate

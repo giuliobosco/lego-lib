@@ -27,7 +27,7 @@ public void run() {
 
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 16:30 |Documentazione e test|
 
 ##  Problemi riscontrati e soluzioni adottate

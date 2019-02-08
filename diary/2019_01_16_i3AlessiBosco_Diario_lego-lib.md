@@ -49,7 +49,7 @@ public void run() {
 ```
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 14:45 |Implementazione|
 
 ##  Problemi riscontrati e soluzioni adottate

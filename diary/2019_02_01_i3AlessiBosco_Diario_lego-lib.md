@@ -57,7 +57,7 @@ Bisogna dire che ora è molto più semplice usare le classi visto che praticamen
 A fine giornata siamo anche riusciti a finire di adattare tutte le classi e eliminare tutto quello che non è necessario, quindi se va tutto bene oggi termina l'implementazione.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 16:30 |Documentazione e test|
 
 ##  Problemi riscontrati e soluzioni adottate

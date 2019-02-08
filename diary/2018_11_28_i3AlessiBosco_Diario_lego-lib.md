@@ -11,7 +11,7 @@ L'installazione di ROBOTC sembra essere andata a buon fine, ma con leJOS c'è st
 A fine giornata ci sono stati dati i sensori e gli attuatori.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 14:45 |Progettazione        |
 
 ##  Problemi riscontrati e soluzioni adottate

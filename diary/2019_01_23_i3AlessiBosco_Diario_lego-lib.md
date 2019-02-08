@@ -33,29 +33,29 @@ public class Wait extends Thread {
     ...
 
     // ------------------------------------------------------------------------- Fields
-    
+
     ...
 
     // ------------------------------------------------------------------------- Getters
-    
+
     int getValue() { return ... }
-    
+
     // ------------------------------------------------------------------------- Setters
-    
+
     void setValue(value) { ... }
 
     // ------------------------------------------------------------------------- Constructors
-    
+
     Wait(field1, field2) { ... }
 
     // ------------------------------------------------------------------------- Help Methods
 
     ...
-    
+
     // ------------------------------------------------------------------------- General Methods
-    
+
     ...
-    
+
 }
 ```
 Poi è stato creato il package per i test delle classi, questa è la struttura delle classi di test:
@@ -81,7 +81,7 @@ public class WaitTouchSensorTest {
 Nel frattempo stiamo anche lavorando nella creazione della guida per utilizzare il prodotto.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 14:45 |Documentazione e test|
 
 ##  Problemi riscontrati e soluzioni adottate

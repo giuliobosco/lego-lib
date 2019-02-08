@@ -21,7 +21,7 @@ Inoltre sono state eliminate dal progetto i componenti riguardanti il sensore di
 Durante le prossime lezioni cercheremo di concludere definitivamente il capitolo di implementazione nella documentazione e iniziare a fare un po' di test.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 16:30 |Documentazione|
 
 ##  Problemi riscontrati e soluzioni adottate

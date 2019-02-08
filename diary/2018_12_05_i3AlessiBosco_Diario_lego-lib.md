@@ -13,7 +13,7 @@ Durante questa giornata abbiamo risolto il problema con leJOS, riuscendo a compi
 Poi abbiamo continuato progettando i metodi che implementeremo e inseriremo nella libreria finale.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 14:45 |Progettazione                   |
 
 ##  Problemi riscontrati e soluzioni adottate

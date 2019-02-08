@@ -37,7 +37,7 @@ Dopo una rapida revisione generale, è stato creato un file in cui sono elencate
 ```
 - Javadoc
 - versions + authors
-- use a default layout: 
+- use a default layout:
     - Constants
     - Fields
     - Getters
@@ -63,7 +63,7 @@ Classe `Thread` usata per generalizzare tutte le classi `Wait`. Queste classi so
 ```
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 16:30 |Implementazione e documentazione|
 
 ##  Problemi riscontrati e soluzioni adottate

@@ -24,7 +24,7 @@ Di seguito si trova l'abstract del progetto, che verrà prossimamente tradotto i
 Per concludere la giornata abbiamo fatto il diario e iniziato a pensare al capitolo di progettazione.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 16:30 |Analisi        |
 
 ##  Problemi riscontrati e soluzioni adottate

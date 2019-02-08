@@ -15,7 +15,7 @@ Successivamente abbiamo continuato con l'analisi del progetto iniziando la speci
 ![Diagramma di gantt](../doc/img/gantt.png)  
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 14:45 |Analisi e pianificazione        |
 
 ##  Problemi riscontrati e soluzioni adottate

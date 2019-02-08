@@ -7,7 +7,7 @@
 Oggi non abbiamo lavorato sul progetto perché abbiamo visto la teoria delle presentazioni per il modulo 306 e visto le presentazioni di alcuni compagni.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 14:45 |Presentazioni modulo 306  |
 
 ##  Problemi riscontrati e soluzioni adottate

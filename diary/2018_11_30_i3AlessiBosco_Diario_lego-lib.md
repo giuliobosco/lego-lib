@@ -9,7 +9,7 @@ Ci è stato comunicato chi lavora su cosa (noi con leJOS), quindi abbiamo una si
 Siamo riusciti a installare leJOS sul brick NXT, ma ci sono stati problema nell'utilizzarlo con un IDE e eseguire del codice.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 16:30 |Progettazione        |
 
 ##  Problemi riscontrati e soluzioni adottate

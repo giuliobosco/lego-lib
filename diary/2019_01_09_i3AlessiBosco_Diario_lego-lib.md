@@ -8,7 +8,7 @@ Durante la pausa invernale non abbiamo effettuato particolari progressi, quindi 
 Stiamo implementando in particolare le classi Wait.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 14:45 |Implementazione|
 
 ##  Problemi riscontrati e soluzioni adottate

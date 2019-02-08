@@ -9,7 +9,7 @@ Quindi è stato necessario adattare la documentazione alla nuova consegna: crear
 Nel frattempo abbiamo lavorato anche sulla progettazione iniziando a costruire i diagrammi e ideando i metodi.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 14:45 |Progettazione e documentazione|
 
 ##  Problemi riscontrati e soluzioni adottate

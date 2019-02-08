@@ -73,7 +73,7 @@ I metodi funzionano correttamente perché il programma avanza al prossimo pulsan
 Inoltre ci sarà da consegnare la presentazione, ma sarà fatta fuori dal posto perché ci servirà più tempo possibile per fare i test e tutto ciò che non possiamo fare a casa.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 16:30 |Documentazione e test|
 
 ##  Problemi riscontrati e soluzioni adottate

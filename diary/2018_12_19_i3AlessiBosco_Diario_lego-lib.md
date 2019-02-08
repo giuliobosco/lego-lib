@@ -11,7 +11,7 @@ Durante questa giornata abbiamo continuato con l'implementazione definendo le cl
 Questo è il prototipo del diagramma delle classi e della struttura in generale, ma prossimamente verrà sicuramente aggiornato.
 
 |Orario        |Lavoro svolto					|
-|--------------|------------------------------	|
+|--------------|--------------------------------|
 |13:15 - 14:45 |Progettazione  |
 
 ##  Problemi riscontrati e soluzioni adottate
