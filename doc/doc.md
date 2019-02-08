@@ -167,6 +167,7 @@ I software usati comprendono quelli presenti sui nostri PC e il firmware per il 
 - StarUML 3.0.2
 - NetBeans IDE 8.2
 - Windows PowerShell ISE Host 5.1.17134.407
+- Atom 1.34.0
 
 #### Hardware
 
