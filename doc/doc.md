@@ -139,7 +139,42 @@ th, td {
         Test
     </div>
     <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
-
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Protocollo di test
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Risultati test
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Mancanze/limitazioni conosciute
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+        Consuntivo
+    </div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+        Conclusioni
+    </div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Sviluppi futuri
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Considerazioni personali
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Sitografia
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+        Allegati
+    </div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
 </div>
 
 <div class="page-break"></div>
@@ -1458,7 +1493,7 @@ facilmente generalizzabili o sono specifici di un caso particolare? ecc
 Il prodotto ha molti punti da migliorare, ma anche molte cose su cui si può lavorare per renderlo più completo.
 
 ### Considerazioni personali
-Durante la realizzazione del progetto sono state imparate varie tecninche di lavoro e come comportarsi quando si lavora in coppia. La gestione del repository sul sistema di versioning è andata bene ed è stata utile, perché si poteva sempre sapere chi stava lavorando su cosa e le modifiche venivano condivise in modo facile e veloce. Tuttavia, bisogna dire che i committenti non sono stati molto chiari con la specifica dei requisiti e ci è voluto troppo tempo per capire cosa bisognasse effettivamente sviluppare. 
+Durante la realizzazione del progetto sono state imparate varie tecninche di lavoro e come comportarsi quando si lavora in coppia. La gestione del repository sul sistema di versioning è andata bene ed è stata utile, perché si poteva sempre sapere chi stava lavorando su cosa e le modifiche venivano condivise in modo facile e veloce. Tuttavia, bisogna dire che i committenti non sono stati molto chiari con la specifica dei requisiti e ci è voluto troppo tempo per capire cosa bisognasse effettivamente sviluppare.
 
 ### Sitografia
 
