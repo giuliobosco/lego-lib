@@ -1268,12 +1268,12 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 
 |Test Case      | TC-001                               |
 |---------------|--------------------------------------|
-|**Nome**       |Import a card, but not shown with the GUI |
-|**Riferimento**|REQ-012                               |
-|**Descrizione**|Import a card with KIC, KID and KIK keys with no obfuscation, but not shown with the GUI |
-|**Prerequisiti**|Store on local PC: Profile\_1.2.001.xml (appendix n\_n) and Cards\_1.2.001.txt (appendix n\_n) |
-|**Procedura**     | - Go to “Cards manager” menu, in main page click “Import Profiles” link, Select the “1.2.001.xml” file, Import the Profile - Go to “Cards manager” menu, in main page click “Import Cards” link, Select the “1.2.001.txt” file, Delete the cards, Select the “1.2.001.txt” file, Import the cards |
-|**Risultati attesi** |Keys visible in the DB (OtaCardKey) but not visible in the GUI (Card details) |
+|**Nome**       |Verificare il funzionamento di leJOS su NXT |
+|**Riferimento**|REQ-01                               |
+|**Descrizione**|Installare il firmware sul brick NXT che si vuole utilizzare e caricarci un programma Java verificando il funzionamento |
+|**Prerequisiti**|Avere Java installato sulla macchina e scrivere un semplice programma di test |
+|**Procedura**     | <ul><li>Installare il driver USB per collegare il NXT </li><li>Installare e configurare leJOS</li><li>Scrivere un programma di test, ad esempio <code>HelloWorld</code></li></ul> |
+|**Risultati attesi** |Il computer identifica il brick NXT e si riesce a caricare ed eseguire un programma Java|
 
 |Test Case      | TC-003                               |
 |---------------|--------------------------------------|
@@ -1281,7 +1281,7 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Riferimento**|REQ-02                               |
 |**Descrizione**|Controllare che il sensore touch sensor funzioni correttamente con leJOS |
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
-|**Procedura**     | <ul><li>Collegare il sensore di touch alla porta 1 del brick NXT</li><li>Caricare sul brick il programma<code>TestTouchSensor</code></li><li>Eseguire il programma</li></ul>|
+|**Procedura**     | <ul><li>Collegare il sensore di touch alla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>TestTouchSensor</code></li><li>Eseguire il programma</li></ul>|
 |**Risultati attesi** |Quando il touch sensor &egrave; premuto dovrebbe ritornare true, mentre quando non lo &egrave; dovrebbe ritornare false. |
 
 |Test Case      | TC-004                               |
