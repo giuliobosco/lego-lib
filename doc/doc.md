@@ -1240,17 +1240,29 @@ motore destro e sinistro e i due sensori di luce.
         super.start();
         while (true) {
             if (this.getFrontLightSensor().getLightValue() < 50) {
+                // se il sensore di luce anteriore legge un valore minore di 50 salva il valore
+                // nella variabile value
                 byte value = (byte) this.getFrontLightSensor().getLightValue();
+                // sottrai a value la potenza dei motori
                 value -= this.getPower();
+                // dividi value per 1.5
                 value /= 1.5;
+                // setta value allo sterzo della navigazione
                 this.setTurning(value);
             } else {
+                // altrimenti
                 if (this.getBackLightSensor().getLightValue() < 50) {
+                    // se il sensore di luce posteriore legge un valore minore di 50 salva il Valore
+                    // nella variabile value
                     byte value = (byte) this.getBackLightSensor().getLightValue();
+                    // sottrai a value la potenza dei motori
                     value -= this.getPower();
+                    // dividi value per 1.5
                     value /= 1.5;
+                    // setta il valore di value allo sterzo della navigazione
                     this.setTurning(value);
                 } else {
+                    // altrimenti vai dritto
                     this.setTurning((byte) 0);
                 }
             }
