@@ -1513,6 +1513,15 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Collegare il motore sulla porta A del brick NXT</li><li>Caricare sul brick il programma <code>UseWaitMotor</code></li><li>Eseguire il programma</li><li>Attendere 3 rotazioni del motore</li></ul>|
 |**Risultati attesi** |Il test identifica correttamente le tre rotazioni e poi si ferma |
 
+|Test Case      | TC-015                               |
+|---------------|--------------------------------------|
+|**Nome**       |WaitTime |
+|**Riferimento**|REQ-03                               |
+|**Descrizione**|Creare una classe che aspetti il tempo definito |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Caricare sul brick il programma <code>UseWaitTime</code></li><li>Eseguire il programma</li><li>Attendere 5 secondi</li></ul>|
+|**Risultati attesi** |Il test aspetta 5 secondi e poi finisce |
+
 ### Risultati test
 
 Tabella riassuntiva in cui si inseriscono i test riusciti e non del
