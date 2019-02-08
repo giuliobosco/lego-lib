@@ -1495,6 +1495,15 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Collegare il microfono sulla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>UseWaitSoundSensor</code></li><li>Eseguire il programma</li><li>Attesa di un suono forte</li><li>Attesa di un suono debole (silenzio)</li></ul>|
 |**Risultati attesi** |Il test identifica correttamente le intensità di rumore. |
 
+|Test Case      | TC-013                               |
+|---------------|--------------------------------------|
+|**Nome**       |WaitNxtButton |
+|**Riferimento**|REQ-03                               |
+|**Descrizione**|Creare una classe che aspetti un certo pulsante di quelli presenti sul brick NXT |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Caricare sul brick il programma <code>UseWaitNxtButton</code></li><li>Eseguire il programma</li><li>Attesa del pulsante sinistro</li><li>Attesa del pulsante enter</li><li>Attesa del pulsante destro</li><li>Attesa del pulsante indietro</li></ul>|
+|**Risultati attesi** |Il test identifica correttamente i pulsanti e non succede niente se si premono quelli non interessati |
+
 ### Risultati test
 
 Tabella riassuntiva in cui si inseriscono i test riusciti e non del
