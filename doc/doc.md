@@ -1544,10 +1544,10 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 | Test Case | Risultato  |
 | --------- | ---------- |
 | TC-001    | <p style="color:lime;">Il brick &egrave; stato configurato correttamente e il programma viene eseguito producendo l'output voluto (Il test &egrave; spiegato in questa documentazione). Inoltre &egrave; anche presente la guida dell'installazione e dell'utilizzo del prodotto (usareLegoLib).</p> |
-| TC-002    | <p style="color:lime;">Bum</p> |
-| TC-003    | <p style="color:lime;">Bum</p> |
-| TC-004    | <p style="color:lime;">Bum</p> |
-| TC-005    | <p style="color:lime;">Bum</p> |
+| TC-002    | <p style="color:lime;">Il programma ritorna true e false correttamente in base al sensore di tocco se &egrave; premuto o meno.</p> |
+| TC-003    | <p style="color:lime;">Il programma mostra correttamente quale pulsante viene premuto.</p> |
+| TC-004    | <p style="color:lime;">Il numero sul display mostra correttamente la distanza tra il sensore e la superficie a cui si punta.</p> |
+| TC-005    | <p style="color:lime;">Il numero &egrave; alto se la superficie &egrave; chiara, mentre &egrave; pi&ugrave; basso se la superficie &egrave; scura.</p> |
 | TC-006    | <p style="color:lime;">Bum</p> |
 | TC-007    | <p style="color:lime;">Bum</p> |
 | TC-008    | <p style="color:lime;">Bum</p> |
