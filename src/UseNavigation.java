@@ -23,11 +23,11 @@
  */
 
 /**
- * Example of using the Navigaiton class.
+ * Example of using the Navigation class (robot with two motors).
  *
  * @author giuliobosco
  * @author gabrialessi
- * @version 1.3 (2019-02-06)
+ * @version 1.1 (2019-02-08)
  */
 public class UseNavigation {
 
@@ -37,34 +37,29 @@ public class UseNavigation {
      * @param args Command line arguments.
      */
     public static void main(String[] args) {
-
+        // New navigation with two motors.
         try {
             Navigation n = new Navigation(
                     new SingleMotor(SingleMotor.PORT_A),
                     new SingleMotor(SingleMotor.PORT_B));
-
-            n.setPower((byte) 100);
-
+            // Start the motors on max power.
+            n.setPower(SingleMotor.MAX_POWER);
             n.start();
-
-            Thread.sleep(10000);
-
+            Thread.sleep(5000);
+            // Turning the motors
             n.setTurning((byte) 50);
-
             Thread.sleep(5000);
-
             n.setTurning((byte) -50);
-
             Thread.sleep(5000);
-
-            n.left((byte)100);
-
+            // Turn to left
+            n.left((byte) 100);
             Thread.sleep(10000);
-
+            // Stop the navigation
             n.stop();
+            System.out.println("Stop");
         } catch (InterruptedException ie) {
-
         }
+        
     }
 
 }
