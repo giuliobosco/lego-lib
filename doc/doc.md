@@ -1564,6 +1564,86 @@ motore destro e sinistro e i due sensori di luce.
         <td style="color:green!important;text-align:center;">OK</td>
         <td>Il brick &egrave; stato configurato correttamente e il programma viene eseguito producendo l'output voluto (Il test &egrave; spiegato in questa documentazione). Inoltre &egrave; anche presente la guida dell'installazione e dell'utilizzo del prodotto (usareLegoLib).</td>
     </tr>
+    <tr>
+        <td>TC-002</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>Il programma ritorna true e false correttamente in base al sensore di tocco se &egrave; premuto o meno.</td>
+    </tr>
+    <tr>
+        <td>TC-003</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>Il programma mostra correttamente quale pulsante viene premuto.</td>
+    </tr>
+    <tr>
+        <td>TC-004</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>Il numero sul display mostra correttamente la distanza tra il sensore e la superficie a cui si punta.</td>
+    </tr>
+    <tr>
+        <td>TC-005</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>Il numero &egrave; alto se la superficie &egrave; chiara, mentre &egrave; pi&ugrave; basso se la superficie &egrave; scura.</td>
+    </tr>
+    <tr>
+        <td>TC-006</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>Il valore &egrave; alto se si fa un suono vicino al microfono, mentre se si fa silenzio il valore &egrave; basso.</td>
+    </tr>
+    <tr>
+        <td>TC-007</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>Il motore fa correttamente due rotazioni.</td>
+    </tr>
+    <tr>
+        <td>TC-008</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>I valori del sensore di luce vengono impostati correttamente.</td>
+    </tr>
+    <tr>
+        <td>TC-009</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>All'inizio il sensore viene messo su una luce scura, poi quando va nella luce chiara da risultato positivo. Poi si mette su una luce scura e da risultato positivo.</td>
+    </tr>
+    <tr>
+        <td>TC-010</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>Il test termina solo quando il sensore viene premuto e rilasciato (click).</td>
+    </tr>
+    <tr>
+        <td>TC-011</td>
+        <td style="color:red!important;text-align:center;">FAILED</td>
+        <td>Il sensore a ultrasuoni non identifica una distanza maggiore di 50cm.</td>
+    </tr>
+    <tr>
+        <td>TC-012</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>Il microfono percepisce correttamente prima un suono forte e poi il silenzio.</td>
+    </tr>
+    <tr>
+        <td>TC-013</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>Il test continua solo se viene premuto il pulsante interessato.</td>
+    </tr>
+    <tr>
+        <td>TC-014</td>
+        <td style="color:green!important;text-align:center;"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>TC-015</td>
+        <td style="color:green!important;text-align:center;"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>TC-016</td>
+        <td style="color:green!important;text-align:center;"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>TC-017</td>
+        <td style="color:green!important;text-align:center;"></td>
+        <td></td>
+    </tr>
 </table>
 
 | Test Case | Risultato  |
