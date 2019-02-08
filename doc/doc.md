@@ -1553,6 +1553,19 @@ motore destro e sinistro e i due sensori di luce.
 
 ### Risultati test
 
+<table>
+    <tr>
+        <th style="min-width:48px">Test Case</th>
+        <th style="text-align:center;">Risultato</th>
+        <th>Note</th>
+    </tr>
+    <tr>
+        <td>TC-001</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>Il brick &egrave; stato configurato correttamente e il programma viene eseguito producendo l'output voluto (Il test &egrave; spiegato in questa documentazione). Inoltre &egrave; anche presente la guida dell'installazione e dell'utilizzo del prodotto (usareLegoLib).</td>
+    </tr>
+</table>
+
 | Test Case | Risultato  |
 | --------- | ---------- |
 | TC-001    | <p style="color:lime;">Il brick &egrave; stato configurato correttamente e il programma viene eseguito producendo l'output voluto (Il test &egrave; spiegato in questa documentazione). Inoltre &egrave; anche presente la guida dell'installazione e dell'utilizzo del prodotto (usareLegoLib).</p> |
