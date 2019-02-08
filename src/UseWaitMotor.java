@@ -45,7 +45,7 @@ public class UseWaitMotor {
         WaitMotor wait = new WaitMotor(m, 3);
         // Start the motor.
         System.out.println("Start motor.");
-        m.setPower((byte) 10);
+        m.setPower(SingleMotor.MAX_POWER);
         m.start();
         // Wait for three rotations.
         wait.waitMotor();

@@ -142,10 +142,6 @@ th, td {
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Risultati test
         </div>
-        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">43</div>
-        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
-            &emsp;Mancanze/limitazioni conosciute
-        </div>
         <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
     <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
         Consuntivo
@@ -1661,18 +1657,10 @@ motore destro e sinistro e i due sensori di luce.
 | TC-011    | <p style="color:red;">Il sensore a ultrasuoni non identifica una distanza maggiore di 50cm.</p> |
 | TC-012    | <p style="color:lime;">Il microfono percepisce correttamente prima un suono forte e poi il silenzio.</p> |
 | TC-013    | <p style="color:lime;">Il test continua solo se viene premuto il pulsante interessato.</p> |
-| TC-014    | <p style="color:lime;">Bum</p> |
-| TC-015    | <p style="color:lime;">Bum</p> |
-| TC-016    | <p style="color:lime;">Bum</p> |
-| TC-017    | <p style="color:lime;">Bum</p> |
-
-### Mancanze/limitazioni conosciute
-
-Descrizione con motivazione di eventuali elementi mancanti o non
-completamente implementati, al di fuori dei test case. Non devono essere
-riportati gli errori e i problemi riscontrati e poi risolti durante il
-progetto.
-
+| TC-014    | <p style="color:red;">Il motore non si ferma dopo le tre rotazioni</p> |
+| TC-015    | <p style="color:red;">L'attesa non dura 5 secondi ma finisce subito.</p> |
+| TC-016    | <p style="color:lime;">La navigazione esegue i metodi impostati correttamente.</p> |
+| TC-017    | <p style="color:red;">Il robot non segue la linea correttamente.</p> |
 
 <div class="page-break"></div>
 
