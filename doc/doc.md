@@ -1521,13 +1521,20 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Caricare sul brick il programma <code>UseWaitTime</code></li><li>Eseguire il programma</li><li>Attendere 5 secondi</li></ul>|
 |**Risultati attesi** |Il test aspetta 5 secondi e poi finisce |
 
+|Test Case      | TC-016                               |
+|---------------|--------------------------------------|
+|**Nome**       |Navigation |
+|**Riferimento**|REQ-04                               |
+|**Descrizione**|Creare una classe che permetta di controllare la navigazione a due motori del robot |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Caricare sul brick il programma <code>UseNavigation</code></li><li>Eseguire il programma</li><li>Attendere che il programma di test esegua i metodi per testarli</li></ul>|
+|**Risultati attesi** |I metodi funzionano correttamente e permettono di guidare un robot |
+
 ### Risultati test
 
-Tabella riassuntiva in cui si inseriscono i test riusciti e non del
-prodotto finale. Se un test non riesce e viene corretto l’errore, questo
-dovrà risultare nel documento finale come riuscito (la procedura della
-correzione apparirà nel diario), altrimenti dovrà essere descritto
-l’errore con eventuali ipotesi di correzione.
+| Test Case | Risultato  |
+| --------- | ---------- |
+| TC-001    | <p style="color:lime;">Il brick &egrave; stato configurato correttamente e il programma viene eseguito producendo l'output voluto (Il test &egrave; spiegato in questa documentazione). Inoltre &egrave; anche presente la guida dell'installazione e dell'utilizzo del prodotto (usareLegoLib).</p> |
 
 ### Mancanze/limitazioni conosciute
 
