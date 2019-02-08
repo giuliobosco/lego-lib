@@ -1365,7 +1365,7 @@ facilmente generalizzabili o sono specifici di un caso particolare? ecc
 Il prodotto ha molti punti da migliorare, ma anche molte cose su cui si può lavorare per renderlo più completo.
 
 ### Considerazioni personali
-Cosa ho imparato in questo progetto? ecc
+Durante la realizzazione del progetto sono state imparate varie tecninche di lavoro e come comportarsi quando si lavora in coppia. La gestione del repository sul sistema di versioning è andata bene ed è stata utile, perché si poteva sempre sapere chi stava lavorando su cosa e le modifiche venivano condivise in modo facile e veloce. Tuttavia, bisogna dire che i committenti non sono stati molto chiari con la specifica dei requisiti e ci è voluto troppo tempo per capire cosa bisognasse effettivamente sviluppare. 
 
 ### Sitografia
 
