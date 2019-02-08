@@ -1609,8 +1609,6 @@ Questo è il diagramma di Gantt definitivo che mostra come abbiamo usato il nost
 
 ## Conclusioni
 
-Quali sono le implicazioni della mia soluzione? Che impatto avrà?
-Cambierà il mondo? È un successo importante? È solo un’aggiunta
 La soluzione implementata permette di creare pi&ugrave; agevolmente dei programmi complessi,
 permettera di concentrarsi maggiormente sulla risoluzione dei problemi delle gare di robotica che
 sui problemi legati alla comunicazione con i sensori.
@@ -1631,6 +1629,10 @@ Durante la realizzazione del progetto sono state imparate varie tecninche di lav
 ### Sitografia
 
 - http://www.lejos.org/nxt/nxj/tutorial/Preliminaries/FirstProgram.htm, 19-12-2018
+- http://www.lejos.org/nxt/nxj/api/index.html
+- http://www.lejos.org/nxt/nxj/tutorial/MotorTutorial/ControllingMotors.htm
+- http://www.lejos.org/nxt/nxj/tutorial/LCD_Sensors/LCD_Sensors.htm
+- http://stackoverflow.com
 
 ## Allegati
 
