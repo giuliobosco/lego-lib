@@ -1616,7 +1616,14 @@ stato una perdita di tempo? I risultati ottenuti sono generali,
 facilmente generalizzabili o sono specifici di un caso particolare? ecc
 
 ### Sviluppi futuri
-Il prodotto ha molti punti da migliorare, ma anche molte cose su cui si può lavorare per renderlo più completo.
+
+Il prodotto ha molti punti da migliorare, ma anche molte cose su cui si può lavorare per renderlo
+più completo. Nel caso in cui leJOS fornisse una JMV migliore che supporta la programmazione
+concorrenziale, si potrebbe riprendere l'idea delle classi Wait asincrone, le quali permetterebbero
+di sviluppare programmi molto pi&ugrave; complessi.
+
+La libreria sviluppata in questo progetto può comunque essere usata come base per progetti molto
+complicati, come la WRO, riuscendo a focalizzare le proprie energie sui problemi della gara.
 
 ### Considerazioni personali
 Durante la realizzazione del progetto sono state imparate varie tecninche di lavoro e come comportarsi quando si lavora in coppia. La gestione del repository sul sistema di versioning è andata bene ed è stata utile, perché si poteva sempre sapere chi stava lavorando su cosa e le modifiche venivano condivise in modo facile e veloce. Tuttavia, bisogna dire che i committenti non sono stati molto chiari con la specifica dei requisiti e ci è voluto troppo tempo per capire cosa bisognasse effettivamente sviluppare.
