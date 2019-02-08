@@ -142,7 +142,7 @@ th, td {
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Risultati test
         </div>
-        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">43</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Mancanze/limitazioni conosciute
         </div>
@@ -1384,8 +1384,6 @@ motore destro e sinistro e i due sensori di luce.
 
 ### Protocollo di test
 
-In questo capitolo vengono spiegati i test effettuati in base alla specifica dei requisiti.
-
 |Test Case      | TC-001                               |
 |---------------|--------------------------------------|
 |**Nome**       |Verificare il funzionamento di leJOS su NXT e produrre una guida|
@@ -1404,6 +1402,8 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Collegare il sensore di touch alla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>TestTouchSensor</code></li><li>Eseguire il programma</li></ul>|
 |**Risultati attesi** |Quando il touch sensor &egrave; premuto dovrebbe ritornare <b>true</b>, mentre quando non lo &egrave; dovrebbe ritornare <b>false</b>. |
 
+<div class="page-break"></div>
+
 |Test Case      | TC-003                               |
 |---------------|--------------------------------------|
 |**Nome**       |Controllare i sensori: NxtButton |
@@ -1421,6 +1421,8 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
 |**Procedura**     | <ul><li>Collegare il sensore a ultrasuoni sensor alla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>TestUltrasonicSensor</code></li><li>Eseguire il programma</li><li>Mettere il sensore in direzione di una parete</li><li>Avvicinare ed allontanare il sensore alla parete</li></ul>|
 |**Risultati attesi** |Quando il sensore si avvicina alla parete il numero sul display deve diminuire, mentre quando si allontana il valore deve aumentare |
+
+<div class="page-break"></div>
 
 |Test Case      | TC-005                               |
 |---------------|--------------------------------------|
@@ -1449,6 +1451,8 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Collegare il sensore di touch alla porta A del brick NXT</li><li>Caricare sul brick il programma <code>TestMotor</code></li><li>Eseguire il programma</li></ul>|
 |**Risultati attesi** |Il motore dovrebbe fare due rotazioni |
 
+<div class="page-break"></div>
+
 |Test Case      | TC-008                               |
 |---------------|--------------------------------------|
 |**Nome**       |Calibrazione LightSensor |
@@ -1476,6 +1480,8 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Collegare il sensore di tocco sulla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>UseWaitTouchSensor</code></li><li>Eseguire il programma</li><li>Attesa del click del sensore</li></ul>|
 |**Risultati attesi** |Il test identifica correttamente il click del sensore. |
 
+<div class="page-break"></div>
+
 |Test Case      | TC-011                               |
 |---------------|--------------------------------------|
 |**Nome**       |WaitUltrasonicSensor |
@@ -1492,7 +1498,9 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Descrizione**|Creare una classe che aspetti una certa intensità di rumore percepita dal microfono |
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
 |**Procedura**     | <ul><li>Collegare il microfono sulla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>UseWaitSoundSensor</code></li><li>Eseguire il programma</li><li>Attesa di un suono forte</li><li>Attesa di un suono debole (silenzio)</li></ul>|
-|**Risultati attesi** |Il test identifica correttamente le intensità di rumore. |
+|Risultati attesi|Il test identifica correttamente le intensità di rumore.|
+
+<div class="page-break"></div>
 
 |Test Case      | TC-013                               |
 |---------------|--------------------------------------|
@@ -1501,7 +1509,7 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Descrizione**|Creare una classe che aspetti un certo pulsante di quelli presenti sul brick NXT |
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
 |**Procedura**     | <ul><li>Caricare sul brick il programma <code>UseWaitNxtButton</code></li><li>Eseguire il programma</li><li>Attesa del pulsante sinistro</li><li>Attesa del pulsante enter</li><li>Attesa del pulsante destro</li><li>Attesa del pulsante indietro</li></ul>|
-|**Risultati attesi** |Il test identifica correttamente i pulsanti e non succede niente se si premono quelli non interessati |
+|**Risultati attesi** |Il test identifica correttamente i pulsanti e non succede niente se si premono quelli non interessati|
 
 |Test Case      | TC-014                               |
 |---------------|--------------------------------------|
@@ -1521,6 +1529,8 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Caricare sul brick il programma <code>UseWaitTime</code></li><li>Eseguire il programma</li><li>Attendere 5 secondi</li></ul>|
 |**Risultati attesi** |Il test aspetta 5 secondi e poi finisce |
 
+<div class="page-break"></div>
+
 |Test Case      | TC-016                               |
 |---------------|--------------------------------------|
 |**Nome**       |Navigation |
@@ -1539,6 +1549,8 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Caricare sul brick il programma <code>PLFRunner</code></li><li>Eseguire il programma dopo aver messo il robot su una linea</li></ul>|
 |**Risultati attesi** |Il robot segue la linea correttamente |
 
+<div class="page-break"></div>
+
 ### Risultati test
 
 | Test Case | Risultato  |
@@ -1548,14 +1560,14 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 | TC-003    | <p style="color:lime;">Il programma mostra correttamente quale pulsante viene premuto.</p> |
 | TC-004    | <p style="color:lime;">Il numero sul display mostra correttamente la distanza tra il sensore e la superficie a cui si punta.</p> |
 | TC-005    | <p style="color:lime;">Il numero &egrave; alto se la superficie &egrave; chiara, mentre &egrave; pi&ugrave; basso se la superficie &egrave; scura.</p> |
-| TC-006    | <p style="color:lime;">Bum</p> |
-| TC-007    | <p style="color:lime;">Bum</p> |
-| TC-008    | <p style="color:lime;">Bum</p> |
-| TC-009    | <p style="color:lime;">Bum</p> |
-| TC-010    | <p style="color:lime;">Bum</p> |
-| TC-011    | <p style="color:lime;">Bum</p> |
-| TC-012    | <p style="color:lime;">Bum</p> |
-| TC-013    | <p style="color:lime;">Bum</p> |
+| TC-006    | <p style="color:lime;">Il valore &egrave; alto se si fa un suono vicino al microfono, mentre se si fa silenzio il valore &egrave; basso.</p> |
+| TC-007    | <p style="color:lime;">Il motore fa correttamente due rotazioni.</p> |
+| TC-008    | <p style="color:lime;">I valori del sensore di luce vengono impostati correttamente.</p> |
+| TC-009    | <p style="color:lime;">All'inizio il sensore viene messo su una luce scura, poi quando va nella luce chiara da risultato positivo. Poi si mette su una luce scura e da risultato positivo.</p> |
+| TC-010    | <p style="color:lime;">Il test termina solo quando il sensore viene premuto e rilasciato (click).</p> |
+| TC-011    | <p style="color:red;">Il sensore a ultrasuoni non identifica una distanza maggiore di 50cm.</p> |
+| TC-012    | <p style="color:lime;">Il microfono percepisce correttamente prima un suono forte e poi il silenzio.</p> |
+| TC-013    | <p style="color:lime;">Il test continua solo se viene premuto il pulsante interessato.</p> |
 | TC-014    | <p style="color:lime;">Bum</p> |
 | TC-015    | <p style="color:lime;">Bum</p> |
 | TC-016    | <p style="color:lime;">Bum</p> |
@@ -1568,10 +1580,12 @@ completamente implementati, al di fuori dei test case. Non devono essere
 riportati gli errori e i problemi riscontrati e poi risolti durante il
 progetto.
 
+
 <div class="page-break"></div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
 <div style="-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform: rotate(90deg);-ms-transform: rotate(90deg);transform: rotate(90deg);width:650px;">
+    <p>&nbsp;<br></p>
     <h2>Consuntivo</h2>
     <p>Rispetto alla pianificazione iniziale sono cambiate molte cose: ci sono stati capitoli che sono durati meno del previsto e altri che hanno occupato molto più tempo di quanto pianificato. Inoltre è stato necessario lavorare a casa per recuperare il tempo perso quando si riscontravano dei problemi durante la progettazione e l'implementazione.  
 Questo è il diagramma di Gantt definitivo che mostra come abbiamo usato il nostro tempo durante lo sviluppo del progetto:</p>
