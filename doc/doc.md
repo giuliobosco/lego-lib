@@ -1598,15 +1598,15 @@ Questo è il diagramma di Gantt definitivo che mostra come abbiamo usato il nost
 ## Conclusioni
 
 La soluzione implementata permette di creare pi&ugrave; agevolmente dei programmi complessi,
-permettera di concentrarsi maggiormente sulla risoluzione dei problemi delle gare di robotica che
+permetter&agrave; di concentrarsi maggiormente sulla risoluzione dei problemi delle gare di robotica che
 sui problemi legati alla comunicazione con i sensori.
 
 ### Sviluppi futuri
 
 Il prodotto ha molti punti da migliorare, ma anche molte cose su cui si può lavorare per renderlo
 più completo. Nel caso in cui leJOS fornisse una JMV migliore che supporta la programmazione
-concorrenziale, si potrebbe riprendere l'idea delle classi Wait asincrone, le quali permetterebbero
-di sviluppare programmi molto pi&ugrave; complessi.
+concorrente, si potrebbe riprendere l'idea delle classi Wait asincrone, le quali permetterebbero
+di sviluppare programmi molto pi&ugrave; completi.
 
 La libreria sviluppata in questo progetto può comunque essere usata come base per progetti molto
 complicati, come la WRO, riuscendo a focalizzare le proprie energie sui problemi della gara.
@@ -1617,10 +1617,10 @@ Durante la realizzazione del progetto sono state imparate varie tecninche di lav
 ### Sitografia
 
 - http://www.lejos.org/nxt/nxj/tutorial/Preliminaries/FirstProgram.htm, 19-12-2018
-- http://www.lejos.org/nxt/nxj/api/index.html
-- http://www.lejos.org/nxt/nxj/tutorial/MotorTutorial/ControllingMotors.htm
-- http://www.lejos.org/nxt/nxj/tutorial/LCD_Sensors/LCD_Sensors.htm
-- http://stackoverflow.com
+- http://www.lejos.org/nxt/nxj/api/index.html, 06-02-2019
+- http://www.lejos.org/nxt/nxj/tutorial/MotorTutorial/ControllingMotors.htm, 30-01-2019
+- http://www.lejos.org/nxt/nxj/tutorial/LCD_Sensors/LCD_Sensors.htm, 01-02-2019
+- http://stackoverflow.com, 06-02-2019
 
 ## Allegati
 
