@@ -1472,6 +1472,33 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Collegare il sensore di luce sulla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>UseWaitLightSensor</code></li><li>Eseguire il programma</li><li>Attesa di una luce chiara</li><li>Attesa di una luce scura</li></ul>|
 |**Risultati attesi** |Il test identifica correttamente la luce chiara e successivamente la luce scura. |
 
+|Test Case      | TC-010                               |
+|---------------|--------------------------------------|
+|**Nome**       |WaitTouchSensor |
+|**Riferimento**|REQ-03                               |
+|**Descrizione**|Creare una classe che aspetti la pressione o il rilascio o il click (pressione e rilascio) di un sensore di tocco |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Collegare il sensore di tocco sulla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>UseWaitTouchSensor</code></li><li>Eseguire il programma</li><li>Attesa del click del sensore</li></ul>|
+|**Risultati attesi** |Il test identifica correttamente il click del sensore. |
+
+|Test Case      | TC-011                               |
+|---------------|--------------------------------------|
+|**Nome**       |WaitUltrasonicSensor |
+|**Riferimento**|REQ-03                               |
+|**Descrizione**|Creare una classe che aspetti una certa distanza dal sensore a ultrasuoni |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Collegare il sensore a ultrasuoni sulla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>UseWaitUltrasonicSensor</code></li><li>Eseguire il programma</li><li>Attesa di una distanza maggiore a 50cm</li><li>Attesa di una distanza minore a 50cm</li></ul>|
+|**Risultati attesi** |Il test identifica correttamente le distanze. |
+
+|Test Case      | TC-012                               |
+|---------------|--------------------------------------|
+|**Nome**       |WaitSoundSensor |
+|**Riferimento**|REQ-03                               |
+|**Descrizione**|Creare una classe che aspetti una certa intensità di rumore percepita dal microfono |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Collegare il microfono sulla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>UseWaitSoundSensor</code></li><li>Eseguire il programma</li><li>Attesa di un suono forte</li><li>Attesa di un suono debole (silenzio)</li></ul>|
+|**Risultati attesi** |Il test identifica correttamente le intensità di rumore. |
+
 ### Risultati test
 
 Tabella riassuntiva in cui si inseriscono i test riusciti e non del
