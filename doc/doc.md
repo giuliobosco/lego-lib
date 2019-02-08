@@ -192,48 +192,63 @@ Per la realizzazione del prodotto ci siamo serviti dei nostri computer portatili
 
 In questo settore viene spiegato come è stata ideata la struttura del sistema e in che modo i singoli componenti e moduli sono legati tra loro.
 
-#### Design procedurale
+#### Struttura del sistema
 
-Qui è descritto come sono strutturate le cartelle contententi la libreria sviluppata.
+Lego lib deve essere suddiviso in pacchetti, per mantenere una struttura ordinata dei file. Il
+pacchetto principale `ch.ti.cpttrevano.samt.legolib`.
 
-- src
-    - out
+- ch.ti.cpttrevano.samt.legolib
+    - calibration
+        - LightSensorCalibrator.java
+    - linefollower
+        - LineFollower.java
+        - ProportionalLineFollower.java
+    - motor
+        - Navigation
+        - SingleMotor.java
     - test
         - HelloWorld.java
         - LineFollower.java
-    - classes.jar
-    - compile.ps1
-    - LFRunner.java
-    - LightSensorCalibrator.java
-    - LineFollower.java
-    - Navigation.java
-    - PLFRunner.java
-    - ProportionalLineFollower.java
-    - SingleMotor.java
-    - UseThreadSleep.java
-    - UseWaitLightSensor.java
-    - UseWaitMotor.java
-    - UseWaitNxtButton.java
-    - UseWaitSoundSensor.java
-    - UseWaitTime.java
-    - UseWaitTouchSensor.java
-    - UseWaitUltrasonicSensor.java
-    - WaitAnalogSensor.java
-    - WaitLightSensor.java
-    - WaitMotor.java
-    - WaitNxtButton.java
-    - WaitSoundSensor.java
-    - WaitTime.java
-    - WaitTouchSensor.java
-    - WaitUltrasonicSensor.java
+        - TestLightSensor.java
+        - TestMotor.java
+        - TestNxtButton.java
+        - TestSoundSensor.java
+        - TestUltrasonicSensor.java
+        - LFRunner.java
+        - PLFRunner.java
+    - use
+        - UseThreadSleep.java
+        - UseWaitLightSensor.java
+        - UseWaitMotor.java
+        - UseWaitNxtButton.java
+        - UseWaitSoundSensor.java
+        - UseWaitTime.java
+        - UseWaitTouchSensor.java
+        - UseWaitUltrasonicSensor.java<br><br><br><br>
+    - wait
+        - WaitAnalogSensor.java
+        - WaitLightSensor.java
+        - WaitMotor.java
+        - WaitNxtButton.java
+        - WaitSoundSensor.java
+        - WaitTime.java
+        - WaitTouchSensor.java
+        - WaitUltrasonicSensor.java
+- out
+- classes.jar
+- compile.ps1
 
 <div class="page-break"></div>
 
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
 <div style="-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform: rotate(90deg);-ms-transform: rotate(90deg);transform: rotate(90deg);width:650px;">
-    <p>&nbsp;</p>
+    <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
     <h4 style="padding-top:20px;">Diagramma delle classi</h4>
-    <img src="img/lego-lib-uml.png" style="widht:450px;">
+    <img src="img/lego-lib-uml_old.png" style="widht:450px;"><p>&nbsp;</p>
+    <p>Lego lib è basato su 2 tipi di classi, delle classi per il movimento e delle classi per gli
+    `Wait`, che servono per "aspettare" degli eventi, come aspettare del tempo, o che venga premuto un
+    bottone, oppure che un sensore legga un determinato valore. Gli `Wait` possono essere eseguiti in
+    maniera sincrona (un istruzione dopo l'altra) uppure asincrona (eseguire piu istruzioni contemporaneamente). </p>
 </div>
 
 <div class="page-break"></div>
