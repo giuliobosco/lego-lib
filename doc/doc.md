@@ -1363,59 +1363,68 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Installare il driver USB per collegare il NXT </li><li>Installare e configurare leJOS</li><li>Scrivere un programma di test, ad esempio <code>HelloWorld</code></li><li>Produrre una guida di tutto il procedimento</li></ul> |
 |**Risultati attesi** |Il computer identifica il brick NXT e si riesce a caricare ed eseguire un programma Java e la guida è stata fatta (<code>usareLegoLib</code>)|
 
-|Test Case      | TC-003                               |
+|Test Case      | TC-002                               |
 |---------------|--------------------------------------|
 |**Nome**       |Controllare i sensori: TouchSensor |
 |**Riferimento**|REQ-02                               |
-|**Descrizione**|Controllare che il sensore touch sensor funzioni correttamente con leJOS |
+|**Descrizione**|Controllare che il sensore di tocco funzioni correttamente con leJOS |
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
 |**Procedura**     | <ul><li>Collegare il sensore di touch alla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>TestTouchSensor</code></li><li>Eseguire il programma</li></ul>|
-|**Risultati attesi** |Quando il touch sensor &egrave; premuto dovrebbe ritornare true, mentre quando non lo &egrave; dovrebbe ritornare false. |
+|**Risultati attesi** |Quando il touch sensor &egrave; premuto dovrebbe ritornare <b>true</b>, mentre quando non lo &egrave; dovrebbe ritornare <b>false</b>. |
+
+|Test Case      | TC-003                               |
+|---------------|--------------------------------------|
+|**Nome**       |Controllare i sensori: NxtButton |
+|**Riferimento**|REQ-02                               |
+|**Descrizione**|Controllare che i pulsanti del brick NXT funzionino correttamente con leJOS |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Eseguire il programma <code>TestNxtButton</code> sul brick NXT</li><li>Cliccare i pulsanti seguendo l'ordine:<ol><li>Tasto destro</li><li>Tasto enter</li><li>Tasto sinistro</li><li>Tasto escape</li></ol></li></ul>|
+|**Risultati attesi** |Quando viene premuto un pulsante viene scritto nella rispettiva colonna nello schermo LCD "down", altrimenti "up". |
 
 |Test Case      | TC-004                               |
 |---------------|--------------------------------------|
-|**Nome**       |Controllare i sensori: Nxt Button |
-|**Riferimento**|REQ-02                               |
-|**Descrizione**|Controllare che i bottoni del brick NXT funzionino correttamente con leJOS |
-|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
-|**Procedura**     | <ul><li>Eseguire il programma <code>TestNxtButton</code> sul brick NXT</li><li>Cliccare i bottoni seguendo l'ordine<ol><li>Tasto destro</li><li>Tasto enter</li><li>Tasto sinistro</li><li>Tasto escape</li></ol></li></ul>|
-|**Risultati attesi** |Quando viene premuto un bottone cliccare nella rispettiva colonna deve essere scritto down, altrimenti up. |
-
-|Test Case      | TC-005                               |
-|---------------|--------------------------------------|
 |**Nome**       |Controllare i sensori: UltrasonicSensor |
 |**Riferimento**|REQ-02                               |
-|**Descrizione**|Controllare che il sensore ultrasonic sensor funzioni correttamente con leJOS |
+|**Descrizione**|Controllare che il sensore a ultrasuoni funzioni correttamente con leJOS |
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
-|**Procedura**     | <ul><li>Collegare il sensore ultrasonic sensor alla porta 1 del brick NXT</li><li>Caricare sul brick il programma<code>TestUltrasonicSensor</code></li><li>Eseguire il programma</li><li>Mettere il sensore in direzione di una parete</li><li>Avvicinare ed allontanare il sensore alla parete</li></ul>|
-|**Risultati attesi** |Quando il sensore si avvicina alla parete il numero sul display deve diminuire mentre quando si allontana il valore deve aumentare |
+|**Procedura**     | <ul><li>Collegare il sensore a ultrasuoni sensor alla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>TestUltrasonicSensor</code></li><li>Eseguire il programma</li><li>Mettere il sensore in direzione di una parete</li><li>Avvicinare ed allontanare il sensore alla parete</li></ul>|
+|**Risultati attesi** |Quando il sensore si avvicina alla parete il numero sul display deve diminuire, mentre quando si allontana il valore deve aumentare |
 
-|Test Case      | TC-006                               |
+|Test Case      | TC-005                               |
 |---------------|--------------------------------------|
 |**Nome**       |Controllare i sensori: LightSensor |
 |**Riferimento**|REQ-02                               |
 |**Descrizione**|Controllare che il sensore di luce funzioni correttamente con leJOS |
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
-|**Procedura**     | <ul><li>Collegare il sensore di luce alla porta 1 del brick NXT</li><li>Caricare sul brick il programma<code>TestLightSensor</code></li><li>Eseguire il programma</li><li>Posizionare il sensore di luce su una superficie scura</li><li>spostare il sensore di luce su una superficie chiara</li></ul>|
-|**Risultati attesi** |Quando il sensore di luce &egrave; sulla superficie chiara il valore deve essere alto mentre quando il sensore di luce &egrave; su una superficie scura il valore deve essere basso |
+|**Procedura**     | <ul><li>Collegare il sensore di luce alla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>TestLightSensor</code></li><li>Eseguire il programma</li><li>Posizionare il sensore di luce su una superficie scura</li><li>spostare il sensore di luce su una superficie chiara</li></ul>|
+|**Risultati attesi** |Quando il sensore di luce &egrave; sulla superficie chiara il valore deve essere alto, mentre quando il sensore di luce &egrave; su una superficie scura il valore deve essere basso |
 
-|Test Case      | TC-007                               |
+|Test Case      | TC-006                               |
 |---------------|--------------------------------------|
 |**Nome**       |Controllare i sensori: SoundSensor |
 |**Riferimento**|REQ-02                               |
 |**Descrizione**|Controllare che il sensore di suono funzioni correttamente con leJOS |
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
-|**Procedura**     | <ul><li>Collegare il sensore di suono alla porta 1 del brick NXT</li><li>Caricare sul brick il programma<code>TestSoundSensor</code></li><li>Eseguire il programma</li><li>Mettere il sensore in un luogo silenzioso</li><li>spostare il sensore in un luogo con piu rumore</li></ul>|
-|**Risultati attesi** |Quando il sensore di suono &egrave; in un luogo silenzioso il valore deve essere basso, mentre nel luogo piu rumoroso il valore deve essere piu alto. |
+|**Procedura**     | <ul><li>Collegare il sensore di suono alla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>TestSoundSensor</code></li><li>Eseguire il programma</li><li>Mettere il sensore in un luogo silenzioso</li><li>spostare il sensore in un luogo con più rumore</li></ul>|
+|**Risultati attesi** |Quando il sensore di suono &egrave; in un luogo silenzioso il valore deve essere basso, mentre nel luogo più rumoroso il valore deve essere piu alto. |
 
-|Test Case      | TC-008                               |
+|Test Case      | TC-007                               |
 |---------------|--------------------------------------|
-|**Nome**       |Controllare i Motori |
+|**Nome**       |Controllare i motori |
 |**Riferimento**|REQ-02                               |
 |**Descrizione**|Controllare che il motore funzioni correttamente con leJOS |
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
-|**Procedura**     | <ul><li>Collegare il sensore di touch alla porta 1 del brick NXT</li><li>Caricare sul brick il programma<code>TestSoundSensor</code></li><li>Eseguire il programma</li></ul>|
-|**Risultati attesi** |Il motore dovrebbe aver fatto 2 giri di rotazione |
+|**Procedura**     | <ul><li>Collegare il sensore di touch alla porta A del brick NXT</li><li>Caricare sul brick il programma <code>TestMotor</code></li><li>Eseguire il programma</li></ul>|
+|**Risultati attesi** |Il motore dovrebbe fare due rotazioni |
+
+|Test Case      | TC-008                               |
+|---------------|--------------------------------------|
+|**Nome**       |Calibrazione LightSensor |
+|**Riferimento**|REQ-03                               |
+|**Descrizione**|Creare una classe che sia in grado di calibrare il sensore di luce |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Collegare il sensore di luce alla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>LightSensorCalibrator</code></li><li>Eseguire il programma</li><li>Calibrazione del bianco</li><li>Calibrazione del nero</li></ul>|
+|**Risultati attesi** |Dopo la calibrazione, il sensore avrà come punto 0 la calibrazione del nero e come punto 100 la calibrazione del bianco. |
 
 ### Risultati test
 
