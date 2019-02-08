@@ -117,21 +117,23 @@ La specifica dei requisiti del progetto è rappresentata tramite tabelle che def
 |----|------------------------------------------------|
 |**Nome**    |Verifica componenti|
 |**Priorità**|1                     |
-|**Versione**|2.1                   |
+|**Versione**|2.2                   |
 |**Note**    |È necessario testare ogni componente utilizzato durante la realizzazione del progetto.|
-| *Sub-req 1* |Testare componenti (7 tra sensori e attuatori) su NXT con leJOS|
+| *Sub-req 1* |Testare componenti (6 tra sensori e attuatori) su NXT con leJOS|
 
 |ID  |REQ-03                                          |
 |----|------------------------------------------------|
-|**Nome**    |Componenti - Sensori|
+|**Nome**    |Sviluppo blocchetti arancioni|
 |**Priorità**|1                     |
-|**Versione**|2.1                   |
-|**Note**    |Ogni sensore deve avere un metodo per la lettura del valore e se è possibile uno per calibrarlo.|
+|**Versione**|3.0                   |
+|**Note**    |Creare delle classi che simulino i blocchetti arancioni dell'ambiente di sviluppo Mindstorms.|
 | *Sub-req 1* |Sensore di luce |
-| *Sub-req 2* |Sensore tattile |
+| *Sub-req 2* |Sensore di tocco |
 | *Sub-req 3* |Sensore a ultrasuoni (distanza) |
 | *Sub-req 4* |Microfono |
 | *Sub-req 5* |Pulsanti del brick |
+| *Sub-req 6* |Motore |
+| *Sub-req 7* |Tempo |
 
 <div class="page-break"></div>
 
@@ -1350,6 +1352,15 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
 |**Procedura**     | <ul><li>Collegare il sensore di luce alla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>LightSensorCalibrator</code></li><li>Eseguire il programma</li><li>Calibrazione del bianco</li><li>Calibrazione del nero</li></ul>|
 |**Risultati attesi** |Dopo la calibrazione, il sensore avrà come punto 0 la calibrazione del nero e come punto 100 la calibrazione del bianco. |
+
+|Test Case      | TC-009                               |
+|---------------|--------------------------------------|
+|**Nome**       |WaitLightSensor |
+|**Riferimento**|REQ-03                               |
+|**Descrizione**|Creare una classe che aspetti un certo valore dal sensore di luce |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Collegare il sensore di luce sulla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>UseWaitLightSensor</code></li><li>Eseguire il programma</li><li>Attesa di una luce chiara</li><li>Attesa di una luce scura</li></ul>|
+|**Risultati attesi** |Il test identifica correttamente la luce chiara e successivamente la luce scura. |
 
 ### Risultati test
 
