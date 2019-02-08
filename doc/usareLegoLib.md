@@ -241,7 +241,7 @@ In questo capitolo viene spiegato come iniziare a programmare con leJOS NXJ tram
 Iniziare creando il file `HelloWorld.java` e scrivendo la classe `HelloWorld` tramite il pacchetto
 predefinito di Java.
 
-```
+```java
 public class HelloWorld {
 
 }
@@ -250,7 +250,7 @@ public class HelloWorld {
 Proseguire implementando il metodo `main` (che viene di solito usato come il metodo che genera un
 output).
 
-```
+```java
 public class HelloWorld {
     public static void main (String[] args) {
 
@@ -261,7 +261,7 @@ public class HelloWorld {
 Ora scrivere la classica funzione che genera un output sotto forma di testo nello schermo LCD del
 brick.
 
-```
+```java
 public class HelloWorld {
     public static void main (String[] args) {
         System.out.println("Hello World");
@@ -274,7 +274,7 @@ immediatamente nella schermata principale. Per limitare questo comportamento, si
 opzione che aspetta la pressione di un pulsante. Per fare ciò basta importare la libreria `Button` e
 inserire un semplice metodo.
 
-```
+```java
 import lejos.nxt.Button;
 
 public class HelloWorld {
@@ -395,8 +395,21 @@ Esempio di utilizzo della classe in maniera **asincrona**:
 ```java
 import lejos.nxt.Button;
 
+/**
+ * Classe che aspetta del tempo.
+ * Si crea un oggetto WaitTime impostando il tempo a 5000 millisecondi.
+ *
+ * @author gabrialessi
+ * @author giuliobosco
+ * @version 1.2 (2019-02-07)
+ */
 public class UseWaitTime {
 
+    /**
+     * Metodo main, si esegue il test facendo l'attesa.
+     *
+     * @param args Argomenti a linea di comando.
+     */
     public static void main(String[] args) {
         // Creazione di un'attesa di 5000 millisecondi (5 secondi).
         WaitTime wait = new WaitTime(5000);
@@ -419,8 +432,21 @@ metodo compreso nelle librerie di Java.
 ```java
 import lejos.nxt.Button;
 
+/**
+ * Attesa tramite Thread.sleep(millis).
+ * Questa classe è un'alternativa a WaitTime.
+ *
+ * @author giuliobosco
+ * @author gabrialessi
+ * @version 1.1 (2019-02-07)
+ */
 public class UseThreadSleep {
 
+    /**
+     * Metodo main, si esegue il test facendo l'attesa.
+     *
+     * @param args Argomenti a linea di comando.
+     */
     public static void main(String[] args) {
         // Il metodo Thread.sleep() solleva un'eccezione, quindi bisogna
         // fare un try-catch della InterruptedException.
@@ -467,8 +493,22 @@ Esempio di utlizzo della classe:
 ```java
 import lejos.nxt.Button;
 
+/**
+ * Esempio di come usare la classe WaitMotor.
+ * In questo caso si aspettano tre rotazioni dal motore impostato.
+ *
+ * @author giuliobosco
+ * @author gabrialessi
+ * @version 1.1 (2019-02-07)
+ */
 public class UseWaitMotor {
 
+    /**
+     * Metodo main, si esegue il test impostando il motore 
+     * e facendo l'attesa di tre rotazioni.
+     *
+     * @param args Argomenti a linea di comando.
+     */
     public static void main(String[] args) {
         // Imposto il motore sulla porta 'A'.
         SingleMotor m = new SingleMotor('A');
@@ -523,8 +563,23 @@ Esempio di utlizzo della classe:
 import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
+/**
+ * Esempio d'uso di WaitTouchSensor. 
+ * Si aspetta la pressione di un sensore di tocco. Il sensore può essere
+ * impostato sulle altre porte e avere l'azione di attesa differente 
+ * (premuto, rilasciato, cliccato).
+ *
+ * @author giuliobosco
+ * @author gabrialessi
+ * @version 1.2 (2019-02-07)
+ */
 public class UseWaitTouchSensor {
 
+    /**
+     * Metodo main, si esegue il test attendendo la pressione del sensore.
+     *
+     * @param args Argomenti a linea di comando.
+     */
     public static void main(String[] args) {
         // Creazione dell'attesa di un sensore sulla porta 1.
         WaitTouchSensor wait = new WaitTouchSensor(SensorPort.S1, WaitTouchSensor.CLICKED);
@@ -573,8 +628,23 @@ Esempio di utlizzo della classe:
 ```java
 import lejos.nxt.Button;
 
+/**
+ * Classe in cui si usano i metodi della classe WaitNxtButton. 
+ * I metodi aspettano la pressione dei pulsanti del brick:
+ * sinistro, enter, destro e indietro (escape).
+ *
+ * @author giuliobosco
+ * @author gabrialessi
+ * @version 1.3 (2019-02-06)
+ */
 public class UseWaitNxtButton {
 
+    /**
+     * Metodo main, si esegue il test chiamando tutti i metodi
+     * della classe WaitNxtButton.
+     *
+     * @param args Argomenti a linea di comando.
+     */
     public static void main(String[] args) {
         // Attesa del pulsante sinistro.
         System.out.println("Premere il pulsante sinistro.");
@@ -629,8 +699,23 @@ Esempio di utlizzo della classe:
 import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
+/**
+ * Esempio d'uso della classe WaitUltrasonicSensor.
+ * Prima si aspetta una distanza maggiore di 50cm dal sensore, poi 
+ * una minore di 50cm.
+ *
+ * @author giuliobosco
+ * @author gabrialessi
+ * @version 1.1 (2019-02-07)
+ */
 public class UseWaitUltrasonicSensor {
 
+    /**
+     * Metodo main, si esegue il test aspettando dal sensore a ultrasuoni 
+     * una distanza maggiore di 50cm e poi una minore di 50cm.
+     *
+     * @param args Argomenti a linea di comando.
+     */
     public static void main(String[] args) {
         // Creazione dell'attesa del sensore a ultrasuoni nella porta 1,
         // con il valore che deve essere maggiore di 50.
@@ -683,8 +768,22 @@ Esempio di utlizzo della classe:
 import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
+/**
+ * Esempio d'uso della classe WaitLightSensor.
+ * Si aspetta una luce chiara e successivamente una luce scura.
+ *
+ * @author giuliobosco
+ * @author gabrialessi
+ * @version 2.1 (2019-02-06)
+ */
 public class UseWaitLightSensor {
 
+    /**
+     * Metodo main, si esegue il test aspettando dal sensore di luce 
+     * una luce chiara e poi una luce scura.
+     *
+     * @param args Argomenti a linea di comando.
+     */
     public static void main(String[] args) {
         // Creazione dell'attesa del sensore di luce nella porta 1,
         // con il valore che deve essere maggiore di 50 (chiaro).
@@ -720,8 +819,23 @@ Per fare la calibrazione si pu&ograve; usare il seguente codice:
 import lejos.nxt.LightSensor;
 import lejos.nxt.SensorPort;
 
+/**
+ * Classe utile per calibrare il sensore di luce. 
+ * Si calibra il sensore usando come riferimento il bianco e il nero.
+ * In questo modo è tutto proporzionale all'ambiente di lavoro.
+ *
+ * @author giuliobosco
+ * @author gabrialessi
+ * @version 1.1 (2019-02-07)
+ */
 public class LightSensorCalibrator {
 
+    /**
+     * Metodo main, si calibrano nero e bianco tramite 
+     * i metodi della classe LightSensor e un sensore di luce.
+     *
+     * @param args Argomenti a linea di comando.
+     */
     public static void main(String[] args) {
         // Imposto il sensore di luce sulla porta 1.
         LightSensor ls = new LightSensor(SensorPort.S1);
@@ -770,8 +884,22 @@ Esempio di utlizzo della classe:
 import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
+/**
+ * Esempio d'uso della classe WaitSoundSensor.
+ * Il microfono aspetta che recepisca un suono forte.
+ *
+ * @author giuliobosco
+ * @author gabrialessi
+ * @version 1.1 (2019-02-06)
+ */
 public class UseWaitSoundSensor {
 
+    /**
+     * Metodo main, si esegue il test aspettando dal microfono 
+     * un suono forte.
+     *
+     * @param args Argomenti a linea di comando.
+     */
     public static void main(String[] args) {
         // Creazione attesa di un suono superiore al 50.
         WaitSoundSensor wait = new WaitSoundSensor(SensorPort.S1, (byte) 50, true);
