@@ -1504,6 +1504,15 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Caricare sul brick il programma <code>UseWaitNxtButton</code></li><li>Eseguire il programma</li><li>Attesa del pulsante sinistro</li><li>Attesa del pulsante enter</li><li>Attesa del pulsante destro</li><li>Attesa del pulsante indietro</li></ul>|
 |**Risultati attesi** |Il test identifica correttamente i pulsanti e non succede niente se si premono quelli non interessati |
 
+|Test Case      | TC-014                               |
+|---------------|--------------------------------------|
+|**Nome**       |WaitMotor |
+|**Riferimento**|REQ-03                               |
+|**Descrizione**|Creare una classe che aspetti un certo numero di rotazioni da parte di un motore |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Collegare il motore sulla porta A del brick NXT</li><li>Caricare sul brick il programma <code>UseWaitMotor</code></li><li>Eseguire il programma</li><li>Attendere 3 rotazioni del motore</li></ul>|
+|**Risultati attesi** |Il test identifica correttamente le tre rotazioni e poi si ferma |
+
 ### Risultati test
 
 Tabella riassuntiva in cui si inseriscono i test riusciti e non del
