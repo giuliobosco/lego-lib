@@ -279,6 +279,48 @@ Il capitolo di implementazione mostra in poche parole la messa in atto della pro
 
 L'implementazione del prodotto è composta da delle classi `Wait` che servono per aspettare che succeda qualcosa, ad esempio che un sensore legga un certo valore oppure aspettare del tempo. Ogni classe di questo tipo ha la sua classe di utilizzo, cioè del semplice codice utile per testare il corretto funzionamento dell'attesa. Poi ci sono le classi che permettono di controllare gli attuatori per muovere il robot (`SingleMotor`, `Navigation`). Infine ci sono le classi più complesse, dove più moduli vengono uniti per creare classi come `LineFollower` e `ProportionalLineFollower`.
 
+Durante lo sviluppo di lego lib, mentre abbiamo iniziato a testare le classi ci siamo accorti che
+con tutti i package compilare le classi e caricarle sul brick NXT diventava molto complicato quindi
+abbiamo deciso di rimuovere tutti i pacchetti e mettere tutti i file in un unica cartella.
+Meno le classi per testare i sensori che sono nella cartella `src/test/`.
+
+Nuova struttura dei file e delle cartelle
+
+- src
+    - `*.java`
+    - test
+        - `Test*.java`
+
+In oltre abbiamo scoperto un bug presente nella JVM leJOS per LEGO&reg; Mindstorm NXT, quando si
+eseguono due processi (`Thread`), contemporaneamente la JVM non riescie ad eseguire le comparazioni
+di valori.  
+A differenza di quello che è scritto nella documentazione ufficiale di leJOS.
+Questo non permette il corretto funzionamento delle classi, perché tutte le funzioni asincrone non
+potevano funzionare, ma siccome le funzioni sincrone erano basate su quelle asincrone, per non dover
+riscrivere due volte il codice, tutte le classi che erano state scritte non funzionavano pi&ugrave;.  
+Per questo abbiamo dovuto riprendere in mano la progettazione e riprogettare l'intero sistema.
+
+Con il nuovo sistema non &egrave; pi&ugrave; possibile eseguire operazioni asincrone ed &egrave;
+stata tolta anche tutta la generalizzazione che era stata fatta prima, il funzionamento delle classi
+&egrave; stato semplificato.
+
+<div class="page-break"></div>
+
+<br><br><br>
+<div style="-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform: rotate(90deg);-ms-transform: rotate(90deg);transform: rotate(90deg);width:650px;">
+    <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+    <h4 style="padding-top:20px;">Diagramma delle classi</h4>
+    <img src="img/lego-lib-uml.png" style="widht:450px;"><p>&nbsp;</p>
+    <p>Nella nuova progettazione non vi sono pi&ugrave; tutte le ereditariet&agrave; e le relazioni
+    fra le classi. Quindi &egrave; stato semplificato molto il codice. &Egrave; rimasta pero la
+    relazione fra le classi <code>Wait</code> dei sensori analogici, per scrivere una volta sola (nella
+    classe <code>WaitAnalogSensor</code>) la logica dei valori, <code>comparisonValue</code> e
+    <code>bigger</code>.</p>
+</div>
+
+<div class="page-break"></div>
+
+
 ### HelloWorld
 
 Questa classe è stata usata come test per iniziare a capire come implementare un programma Java in un brick NXT e per essere usata come esempio nella guida per configurare leJOS su Windows. È presente solo il metodo `main` con due classiche funzioni che insieme formano semplicemente l'output "Hello World".
@@ -315,7 +357,7 @@ Sulla guida `usareLegoLib` è spiegato come compilare e caricare programmi Java 
 Questo è il risultato ottenuto:
 
 <p style="text-align:center;">
-<img src="img/helloworld_test.png" width="82">
+<img src="img/helloworld_test.png" width="150">
 </p>
 
 <div class="page-break"></div>
