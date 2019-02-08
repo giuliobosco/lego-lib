@@ -1685,19 +1685,6 @@ Durante la realizzazione del progetto sono state imparate varie tecninche di lav
 
 Elenco degli allegati, esempio:
 
--   Diari di lavoro
-
--   Codici sorgente/documentazione macchine virtuali
-
--   Istruzioni di installazione del prodotto (con credenziali
-    di accesso) e/o di eventuali prodotti terzi
-
--   Documentazione di prodotti di terzi
-
--   Eventuali guide utente / Manuali di utilizzo
-
--   Mandato e/o Qdc
-
--   Prodotto
-
--   …
+- Diari di lavoro
+- Guida Usare Lego Lib
+- Codice sorgente / documentazioni / javadoc (zip)
