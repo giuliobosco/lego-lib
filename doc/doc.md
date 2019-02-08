@@ -1269,12 +1269,12 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 
 |Test Case      | TC-001                               |
 |---------------|--------------------------------------|
-|**Nome**       |Verificare il funzionamento di leJOS su NXT |
+|**Nome**       |Verificare il funzionamento di leJOS su NXT e produrre una guida|
 |**Riferimento**|REQ-01                               |
-|**Descrizione**|Installare il firmware sul brick NXT che si vuole utilizzare e caricarci un programma Java verificando il funzionamento |
+|**Descrizione**|Installare il firmware sul brick NXT che si vuole utilizzare e caricarci un programma Java verificando il funzionamento e fare una guida della procedura|
 |**Prerequisiti**|Avere Java installato sulla macchina e scrivere un semplice programma di test |
-|**Procedura**     | <ul><li>Installare il driver USB per collegare il NXT </li><li>Installare e configurare leJOS</li><li>Scrivere un programma di test, ad esempio <code>HelloWorld</code></li></ul> |
-|**Risultati attesi** |Il computer identifica il brick NXT e si riesce a caricare ed eseguire un programma Java|
+|**Procedura**     | <ul><li>Installare il driver USB per collegare il NXT </li><li>Installare e configurare leJOS</li><li>Scrivere un programma di test, ad esempio <code>HelloWorld</code></li><li>Produrre una guida di tutto il procedimento</li></ul> |
+|**Risultati attesi** |Il computer identifica il brick NXT e si riesce a caricare ed eseguire un programma Java e la guida è stata fatta (<code>usareLegoLib</code>)|
 
 |Test Case      | TC-003                               |
 |---------------|--------------------------------------|
