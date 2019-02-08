@@ -1333,7 +1333,7 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Collegare il sensore di suono alla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>TestSoundSensor</code></li><li>Eseguire il programma</li><li>Mettere il sensore in un luogo silenzioso</li><li>spostare il sensore in un luogo con più rumore</li></ul>|
 |**Risultati attesi** |Quando il sensore di suono &egrave; in un luogo silenzioso il valore deve essere basso, mentre nel luogo più rumoroso il valore deve essere piu alto. |
 
-|Test Case      | TC-008                               |
+|Test Case      | TC-007                               |
 |---------------|--------------------------------------|
 |**Nome**       |Controllare i motori |
 |**Riferimento**|REQ-02                               |
@@ -1341,6 +1341,15 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
 |**Procedura**     | <ul><li>Collegare il sensore di touch alla porta A del brick NXT</li><li>Caricare sul brick il programma <code>TestMotor</code></li><li>Eseguire il programma</li></ul>|
 |**Risultati attesi** |Il motore dovrebbe fare due rotazioni |
+
+|Test Case      | TC-008                               |
+|---------------|--------------------------------------|
+|**Nome**       |Calibrazione LightSensor |
+|**Riferimento**|REQ-03                               |
+|**Descrizione**|Creare una classe che sia in grado di calibrare il sensore di luce |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Collegare il sensore di luce alla porta 1 del brick NXT</li><li>Caricare sul brick il programma <code>LightSensorCalibrator</code></li><li>Eseguire il programma</li><li>Calibrazione del bianco</li><li>Calibrazione del nero</li></ul>|
+|**Risultati attesi** |Dopo la calibrazione, il sensore avrà come punto 0 la calibrazione del nero e come punto 100 la calibrazione del bianco. |
 
 ### Risultati test
 
