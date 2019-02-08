@@ -245,10 +245,10 @@ pacchetto principale `ch.ti.cpttrevano.samt.legolib`.
     <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
     <h4 style="padding-top:20px;">Diagramma delle classi</h4>
     <img src="img/lego-lib-uml_old.png" style="widht:450px;"><p>&nbsp;</p>
-    <p>Lego lib è basato su 2 tipi di classi, delle classi per il movimento e delle classi per gli
-    `Wait`, che servono per "aspettare" degli eventi, come aspettare del tempo, o che venga premuto un
-    bottone, oppure che un sensore legga un determinato valore. Gli `Wait` possono essere eseguiti in
-    maniera sincrona (un istruzione dopo l'altra) uppure asincrona (eseguire piu istruzioni contemporaneamente). </p>
+    <p>La libreria è basata su due tipi di classi: delle classi per il movimento e delle classi per gli
+    `Wait`, che servono per "aspettare" degli eventi. Ad esempio aspettare del tempo, o la pressione di un
+    pulsante, oppure che un sensore legga un determinato valore. Gli `Wait` possono essere eseguiti in
+    maniera sincrona (un'istruzione dopo l'altra) oppure asincrona (eseguire più istruzioni contemporaneamente). </p>
 </div>
 
 <div class="page-break"></div>
