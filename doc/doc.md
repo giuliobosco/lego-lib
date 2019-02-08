@@ -1611,9 +1611,9 @@ Questo è il diagramma di Gantt definitivo che mostra come abbiamo usato il nost
 
 Quali sono le implicazioni della mia soluzione? Che impatto avrà?
 Cambierà il mondo? È un successo importante? È solo un’aggiunta
-marginale o è semplicemente servita per scoprire che questo percorso è
-stato una perdita di tempo? I risultati ottenuti sono generali,
-facilmente generalizzabili o sono specifici di un caso particolare? ecc
+La soluzione implementata permette di creare pi&ugrave; agevolmente dei programmi complessi,
+permettera di concentrarsi maggiormente sulla risoluzione dei problemi delle gare di robotica che
+sui problemi legati alla comunicazione con i sensori.
 
 ### Sviluppi futuri
 
