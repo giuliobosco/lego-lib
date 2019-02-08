@@ -6,66 +6,176 @@ th, td {
 
 # Sistema didattico per LEGO NTX con libreria e documentazione
 
-1. [Introduzione](#introduzione)
-    - [Informazioni sul progetto](#informazioni-sul-progetto)
-    - [Abstract](#abstract)
-    - [Scopo](#scopo)
+## Indice
 
-2. [Analisi](#analisi)
-    - [Analisi del dominio](#analisi-del-dominio)
-    - [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
-    - [Analisi dei mezzi](#analisi-dei-mezzi)
-        - [Software](#software)
-        - [Hardware](#hardware)
-    - [Pianificazione](#pianificazione)
-
-3. [Progettazione](#progettazione)
-    - [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
-        - [Design procedurale](#design-procedurale)
-        - [Diagramma delle classi](#diagramma-delle-classi)
-    - [Componenti](#componenti)
-        - [Sensori](#sensori)
-        - [Attuatori](#attuatori)
-
-4. [Implementazione](#implementazione)
-    - [HelloWorld](#helloworld)
-        - [Test HelloWorld](#test-helloworld)
-    - [WaitAnalogSensor](#waitanalogsensor)
-    - [WaitLightSensor](#waitlightsensor)
-        - [Test WaitLightSensor](#test-waitlightsensor)
-    - [WaitMotor](#waitmotor)
-        - [Test WaitMotor](#test-waitmotor)
-    - [WaitNxtButton](#waitnxtbutton)
-        - [Test WaitNxtButton](#test-waitnxtbutton)
-    - [WaitSoundSensor](#waitsoundsensor)
-        - [Test WaitSoundSensor](#test-waitsoundsensor)
-    - [WaitTime](#waittime)
-        - [Test WaitTime](#test-waittime)
-    - [WaitTouchSensor](#waittouchsensor)
-        - [Test WaitTouchSensor](#test-waittouchsensor)
-    - [WaitUltrasonicSensor](#waitultrasonicsensor)
-        - [Test WaitUltrasonicSensor](#test-waitultrasonicsensor)
-    - [SingleMotor](#singlemotor)
-        - [Test SingleMotor](#test-singlemotor)
-    - [Navigation](#navigation)
-        - [Test Navigation](#test-navigation)
-    - [LineFollower](#linefollower)
-    - [PropotionalLineFollower](#proportionallinefollower)
-
-5. [Test di sistema](#test-di-sistema)
-    - [Protocollo di test](#protocollo-di-test)
-    - [Risultati test](#risultati-test)
-    - [Mancanze/limitazioni conosciute](#mancanze/limitazioni-conosciute)
-
-6. [Consuntivo](#consuntivo)
-
-7. [Conclusioni](#conclusioni)
-    - [Sviluppi futuri](#sviluppi-futuri)
-    - [Considerazioni personali](#considerazioni-personali)
-
-8. [Sitografia](#sitografia)
-
-9. [Allegati](#allegati)
+<div class="clearfix index">
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;"><h5>Capitolo</h5></div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;"><h5>Pagina</h5></div>
+    <div style="margin-top:5px;widht:100%;"> </div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">Introduzione</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+        <div style="margin-top:5px;widht:100%;"> </div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">&emsp;Informazione sul progetto</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+        <div style="margin-top:5px;widht:100%;"> </div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">&emsp;Abstrat</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+        <div style="margin-top:5px;widht:100%;"> </div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">&emsp;Scopo</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">Analisi</div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">&emsp;Analisi del dominio</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">&emsp;Analisi e specifica dei requisiti</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">&emsp;Analisi dei mezzi</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Hardware
+            </div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Software
+            </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">3</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Pianificazione
+        </div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">3</div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+        Progettazione
+    </div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">4</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Design dell'architettura
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Struttura del sistema
+            </div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Diagramma delle classi
+            </div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Componenti
+            </div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+                <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                    &emsp;&emsp;&emsp;Sensori
+                </div>
+                <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+                <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                    &emsp;&emsp;&emsp;Attuatori
+                </div>
+                <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">6</div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+        Implementazione
+    </div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">6</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;HelloWorld
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Blocchi arancioni
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Test HelloWorld
+            </div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;WaitAnalogSensor
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;WaitLightSensor
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">8</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;WaitMotor
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">10</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;WaitNxtButton
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">11</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;WaitSoundSensor
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">12</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;WaitTime
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">13</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;WaitSoundSensor
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">14</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;WaitUltrasonicSensor
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">15</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;SingleMotor
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">16</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Navigation
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">17</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;LineFollower
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">18</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;ProportionalLineFollower
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">18</div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+        Test
+    </div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Protocollo di test
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Risultati test
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Mancanze/limitazioni conosciute
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+        Consuntivo
+    </div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+        Conclusioni
+    </div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Sviluppi futuri
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Considerazioni personali
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+            &emsp;Sitografia
+        </div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+    <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+        Allegati
+    </div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+</div>
 
 <div class="page-break"></div>
 
@@ -1394,7 +1504,7 @@ facilmente generalizzabili o sono specifici di un caso particolare? ecc
 Il prodotto ha molti punti da migliorare, ma anche molte cose su cui si può lavorare per renderlo più completo.
 
 ### Considerazioni personali
-Durante la realizzazione del progetto sono state imparate varie tecninche di lavoro e come comportarsi quando si lavora in coppia. La gestione del repository sul sistema di versioning è andata bene ed è stata utile, perché si poteva sempre sapere chi stava lavorando su cosa e le modifiche venivano condivise in modo facile e veloce. Tuttavia, bisogna dire che i committenti non sono stati molto chiari con la specifica dei requisiti e ci è voluto troppo tempo per capire cosa bisognasse effettivamente sviluppare. 
+Durante la realizzazione del progetto sono state imparate varie tecninche di lavoro e come comportarsi quando si lavora in coppia. La gestione del repository sul sistema di versioning è andata bene ed è stata utile, perché si poteva sempre sapere chi stava lavorando su cosa e le modifiche venivano condivise in modo facile e veloce. Tuttavia, bisogna dire che i committenti non sono stati molto chiari con la specifica dei requisiti e ci è voluto troppo tempo per capire cosa bisognasse effettivamente sviluppare.
 
 ### Sitografia
 
