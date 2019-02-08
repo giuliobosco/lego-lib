@@ -1553,6 +1553,19 @@ motore destro e sinistro e i due sensori di luce.
 
 ### Risultati test
 
+<table>
+    <tr>
+        <th style="min-width:48px">Test Case</th>
+        <th style="text-align:center;">Risultato</th>
+        <th>Note</th>
+    </tr>
+    <tr>
+        <td>TC-001</td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>Il brick &egrave; stato configurato correttamente e il programma viene eseguito producendo l'output voluto (Il test &egrave; spiegato in questa documentazione). Inoltre &egrave; anche presente la guida dell'installazione e dell'utilizzo del prodotto (usareLegoLib).</td>
+    </tr>
+</table>
+
 | Test Case | Risultato  |
 | --------- | ---------- |
 | TC-001    | <p style="color:lime;">Il brick &egrave; stato configurato correttamente e il programma viene eseguito producendo l'output voluto (Il test &egrave; spiegato in questa documentazione). Inoltre &egrave; anche presente la guida dell'installazione e dell'utilizzo del prodotto (usareLegoLib).</p> |
@@ -1596,14 +1609,19 @@ Questo è il diagramma di Gantt definitivo che mostra come abbiamo usato il nost
 
 ## Conclusioni
 
-Quali sono le implicazioni della mia soluzione? Che impatto avrà?
-Cambierà il mondo? È un successo importante? È solo un’aggiunta
-marginale o è semplicemente servita per scoprire che questo percorso è
-stato una perdita di tempo? I risultati ottenuti sono generali,
-facilmente generalizzabili o sono specifici di un caso particolare? ecc
+La soluzione implementata permette di creare pi&ugrave; agevolmente dei programmi complessi,
+permettera di concentrarsi maggiormente sulla risoluzione dei problemi delle gare di robotica che
+sui problemi legati alla comunicazione con i sensori.
 
 ### Sviluppi futuri
-Il prodotto ha molti punti da migliorare, ma anche molte cose su cui si può lavorare per renderlo più completo.
+
+Il prodotto ha molti punti da migliorare, ma anche molte cose su cui si può lavorare per renderlo
+più completo. Nel caso in cui leJOS fornisse una JMV migliore che supporta la programmazione
+concorrenziale, si potrebbe riprendere l'idea delle classi Wait asincrone, le quali permetterebbero
+di sviluppare programmi molto pi&ugrave; complessi.
+
+La libreria sviluppata in questo progetto può comunque essere usata come base per progetti molto
+complicati, come la WRO, riuscendo a focalizzare le proprie energie sui problemi della gara.
 
 ### Considerazioni personali
 Durante la realizzazione del progetto sono state imparate varie tecninche di lavoro e come comportarsi quando si lavora in coppia. La gestione del repository sul sistema di versioning è andata bene ed è stata utile, perché si poteva sempre sapere chi stava lavorando su cosa e le modifiche venivano condivise in modo facile e veloce. Tuttavia, bisogna dire che i committenti non sono stati molto chiari con la specifica dei requisiti e ci è voluto troppo tempo per capire cosa bisognasse effettivamente sviluppare.
@@ -1611,6 +1629,10 @@ Durante la realizzazione del progetto sono state imparate varie tecninche di lav
 ### Sitografia
 
 - http://www.lejos.org/nxt/nxj/tutorial/Preliminaries/FirstProgram.htm, 19-12-2018
+- http://www.lejos.org/nxt/nxj/api/index.html
+- http://www.lejos.org/nxt/nxj/tutorial/MotorTutorial/ControllingMotors.htm
+- http://www.lejos.org/nxt/nxj/tutorial/LCD_Sensors/LCD_Sensors.htm
+- http://stackoverflow.com
 
 ## Allegati
 
