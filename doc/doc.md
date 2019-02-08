@@ -142,31 +142,31 @@ th, td {
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Risultati test
         </div>
-        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">42</div>
     <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
         Consuntivo
     </div>
-    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">43</div>
     <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
         Conclusioni
     </div>
-    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">44</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Sviluppi futuri
         </div>
-        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">44</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Considerazioni personali
         </div>
-        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">44</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Sitografia
         </div>
-        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">44</div>
     <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
         Allegati
     </div>
-    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">44</div>
 </div>
 
 <div class="page-break"></div>
@@ -205,8 +205,6 @@ Fino a ora, gli allievi della sezione Informatica delle classi prima e seconda, 
 
 ### Analisi e specifica dei requisiti
 
-La specifica dei requisiti del progetto è rappresentata tramite tabelle che definiscono le basi del prodotto. Le tabelle vengono elencate in base alla priorità e all'importanza del requisito.
-
 |ID  |REQ-01                                          |
 |----|------------------------------------------------|
 |**Nome**    |Installazione del firmware|
@@ -223,6 +221,8 @@ La specifica dei requisiti del progetto è rappresentata tramite tabelle che def
 |**Note**    |È necessario testare ogni componente utilizzato durante la realizzazione del progetto.|
 | *Sub-req 1* |Testare componenti (6 tra sensori e attuatori) su NXT con leJOS|
 
+<div class="page-break"></div>
+
 |ID  |REQ-03                                          |
 |----|------------------------------------------------|
 |**Nome**    |Sviluppo blocchetti arancioni|
@@ -236,8 +236,6 @@ La specifica dei requisiti del progetto è rappresentata tramite tabelle che def
 | *Sub-req 5* |Pulsanti del brick |
 | *Sub-req 6* |Motore |
 | *Sub-req 7* |Tempo |
-
-<div class="page-break"></div>
 
 |ID  |REQ-04                                          |
 |----|------------------------------------------------|
@@ -294,8 +292,6 @@ Per la realizzazione del prodotto ci siamo serviti dei nostri computer portatili
 ## Progettazione
 
 ### Design dell’architettura del sistema
-
-In questo settore viene spiegato come è stata ideata la struttura del sistema e in che modo i singoli componenti e moduli sono legati tra loro.
 
 #### Struttura del sistema
 
@@ -378,8 +374,6 @@ Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sens
 <div class="page-break"></div>
 
 ## Implementazione
-
-Il capitolo di implementazione mostra in poche parole la messa in atto della progettazione. Tutte le classi presenti nel diagramma vengono qui spiegate più nel dettaglio illustrando i metodi e le parti di codice tramite screenshots o rappresentazioni o schemi e tabelle.
 
 L'implementazione del prodotto è composta da delle classi `Wait` che servono per aspettare che succeda qualcosa, ad esempio che un sensore legga un certo valore oppure aspettare del tempo. Ogni classe di questo tipo ha la sua classe di utilizzo, cioè del semplice codice utile per testare il corretto funzionamento dell'attesa. Poi ci sono le classi che permettono di controllare gli attuatori per muovere il robot (`SingleMotor`, `Navigation`). Infine ci sono le classi più complesse, dove più moduli vengono uniti per creare classi come `LineFollower` e `ProportionalLineFollower`.
 
@@ -1622,12 +1616,12 @@ motore destro e sinistro e i due sensori di luce.
     </tr>
     <tr>
         <td>TC-014</td>
-        <td style="color:red!important;text-align:center;"><FAILED/td>
+        <td style="color:red!important;text-align:center;">FAILED</td>
         <td>Il motore non si ferma dopo le tre rotazioni</td>
     </tr>
     <tr>
         <td>TC-015</td>
-        <td style="color:red!important;text-align:center;">FAILDE</td>
+        <td style="color:red!important;text-align:center;">FAILED</td>
         <td>L'attesa non dura 5 secondi ma finisce subito.</td>
     </tr>
     <tr>
