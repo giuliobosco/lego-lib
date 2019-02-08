@@ -1530,11 +1530,36 @@ In questo capitolo vengono spiegati i test effettuati in base alla specifica dei
 |**Procedura**     | <ul><li>Caricare sul brick il programma <code>UseNavigation</code></li><li>Eseguire il programma</li><li>Attendere che il programma di test esegua i metodi per testarli</li></ul>|
 |**Risultati attesi** |I metodi funzionano correttamente e permettono di guidare un robot |
 
+|Test Case      | TC-017                               |
+|---------------|--------------------------------------|
+|**Nome**       |ProportionalLineFollower |
+|**Riferimento**|REQ-05                               |
+|**Descrizione**|Creare una classe che permetta a un robot di seguire una linea in maniera proporzionale |
+|**Prerequisiti**|Aver installato il firmware leJOS sul brick NXT |
+|**Procedura**     | <ul><li>Caricare sul brick il programma <code>PLFRunner</code></li><li>Eseguire il programma dopo aver messo il robot su una linea</li></ul>|
+|**Risultati attesi** |Il robot segue la linea correttamente |
+
 ### Risultati test
 
 | Test Case | Risultato  |
 | --------- | ---------- |
 | TC-001    | <p style="color:lime;">Il brick &egrave; stato configurato correttamente e il programma viene eseguito producendo l'output voluto (Il test &egrave; spiegato in questa documentazione). Inoltre &egrave; anche presente la guida dell'installazione e dell'utilizzo del prodotto (usareLegoLib).</p> |
+| TC-002    | <p style="color:lime;">Bum</p> |
+| TC-003    | <p style="color:lime;">Bum</p> |
+| TC-004    | <p style="color:lime;">Bum</p> |
+| TC-005    | <p style="color:lime;">Bum</p> |
+| TC-006    | <p style="color:lime;">Bum</p> |
+| TC-007    | <p style="color:lime;">Bum</p> |
+| TC-008    | <p style="color:lime;">Bum</p> |
+| TC-009    | <p style="color:lime;">Bum</p> |
+| TC-010    | <p style="color:lime;">Bum</p> |
+| TC-011    | <p style="color:lime;">Bum</p> |
+| TC-012    | <p style="color:lime;">Bum</p> |
+| TC-013    | <p style="color:lime;">Bum</p> |
+| TC-014    | <p style="color:lime;">Bum</p> |
+| TC-015    | <p style="color:lime;">Bum</p> |
+| TC-016    | <p style="color:lime;">Bum</p> |
+| TC-017    | <p style="color:lime;">Bum</p> |
 
 ### Mancanze/limitazioni conosciute
 
