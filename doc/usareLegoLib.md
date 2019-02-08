@@ -48,7 +48,7 @@
             </div>
             <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">3</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
-            &emsp;Java Development Kit
+            &emsp;Driver USB
         </div>
         <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">4</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
@@ -57,6 +57,10 @@
         <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Intallazione
+            </div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+            <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
+                &emsp;&emsp;Configurazione
             </div>
             <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
@@ -106,39 +110,39 @@
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Wait NXT Button
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">13</div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">12</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Wait Ultrasonic Sensor
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">15</div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">13</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Wait Light Sensor
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">17</div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">14</div>
                 <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                     &emsp;&emsp;&emsp;Calibrazione sensori di luce
                 </div>
-                <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">18</div>
+                <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">15</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Wait Sound Sensor
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">16</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Strutture di controllo
         </div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">20</div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">17</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Blocchi verdi
         </div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">21</div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">18</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Motore singolo
         </div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">21</div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">18</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Navigazione
         </div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">22</div>
+        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
 
 </div>
 
@@ -285,8 +289,6 @@ public class HelloWorld {
 }
 ```
 
-Adesso il codice è pronto per essere compilato nel NXT e avviato.
-
 ### Compilazione e avvio
 
 Per verificare il funzionamento del codice appena scritto, bisogna aprire un'istanza di
@@ -423,7 +425,7 @@ public class UseWaitTime {
 }
 ```
 
-<br>
+<div class="page-break"></div>
 
 Oppure al posto della classe WaitTime, come detto in precedenza si
 pu&ograve; utilizzare il metodo `Thread.sleep(5000);`, che &egrave; un
@@ -504,7 +506,7 @@ import lejos.nxt.Button;
 public class UseWaitMotor {
 
     /**
-     * Metodo main, si esegue il test impostando il motore 
+     * Metodo main, si esegue il test impostando il motore
      * e facendo l'attesa di tre rotazioni.
      *
      * @param args Argomenti a linea di comando.
@@ -547,7 +549,7 @@ public class UseWaitMotor {
 Il diagramma UML della classe:
 
 <p style="text-align:center;">
-    <img src="img/classes/WaitTouchSensor.png" width="300">
+    <img src="img/classes/WaitTouchSensor.png" width="200">
 </p>
 
 Per sceglirere quale delle tre azioni aspettare (premuto, rilasciato o cliccato), bisosgna cambiare il
@@ -564,9 +566,9 @@ import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 
 /**
- * Esempio d'uso di WaitTouchSensor. 
+ * Esempio d'uso di WaitTouchSensor.
  * Si aspetta la pressione di un sensore di tocco. Il sensore può essere
- * impostato sulle altre porte e avere l'azione di attesa differente 
+ * impostato sulle altre porte e avere l'azione di attesa differente
  * (premuto, rilasciato, cliccato).
  *
  * @author giuliobosco
@@ -613,7 +615,7 @@ public class UseWaitTouchSensor {
 Il diagramma UML della classe:
 
 <p style="text-align:center;">
-    <img src="img/classes/WaitNxtButton.png" width="250">
+    <img src="img/classes/WaitNxtButton.png" width="180">
 </p>
 
 Per ogni pulsante vi è un metodo statico che aspetta il suo click.
@@ -629,7 +631,7 @@ Esempio di utlizzo della classe:
 import lejos.nxt.Button;
 
 /**
- * Classe in cui si usano i metodi della classe WaitNxtButton. 
+ * Classe in cui si usano i metodi della classe WaitNxtButton.
  * I metodi aspettano la pressione dei pulsanti del brick:
  * sinistro, enter, destro e indietro (escape).
  *
@@ -701,7 +703,7 @@ import lejos.nxt.SensorPort;
 
 /**
  * Esempio d'uso della classe WaitUltrasonicSensor.
- * Prima si aspetta una distanza maggiore di 50cm dal sensore, poi 
+ * Prima si aspetta una distanza maggiore di 50cm dal sensore, poi
  * una minore di 50cm.
  *
  * @author giuliobosco
@@ -711,7 +713,7 @@ import lejos.nxt.SensorPort;
 public class UseWaitUltrasonicSensor {
 
     /**
-     * Metodo main, si esegue il test aspettando dal sensore a ultrasuoni 
+     * Metodo main, si esegue il test aspettando dal sensore a ultrasuoni
      * una distanza maggiore di 50cm e poi una minore di 50cm.
      *
      * @param args Argomenti a linea di comando.
@@ -779,7 +781,7 @@ import lejos.nxt.SensorPort;
 public class UseWaitLightSensor {
 
     /**
-     * Metodo main, si esegue il test aspettando dal sensore di luce 
+     * Metodo main, si esegue il test aspettando dal sensore di luce
      * una luce chiara e poi una luce scura.
      *
      * @param args Argomenti a linea di comando.
@@ -804,6 +806,8 @@ public class UseWaitLightSensor {
 }
 ```
 
+<div class="page-break"></div>
+
 #### Calibrazione sensori
 
 Per poter utilizzare in maniera ottimale i sensori, bisogna calibrarli con la luce attuale dell'
@@ -820,7 +824,7 @@ import lejos.nxt.LightSensor;
 import lejos.nxt.SensorPort;
 
 /**
- * Classe utile per calibrare il sensore di luce. 
+ * Classe utile per calibrare il sensore di luce.
  * Si calibra il sensore usando come riferimento il bianco e il nero.
  * In questo modo è tutto proporzionale all'ambiente di lavoro.
  *
@@ -831,7 +835,7 @@ import lejos.nxt.SensorPort;
 public class LightSensorCalibrator {
 
     /**
-     * Metodo main, si calibrano nero e bianco tramite 
+     * Metodo main, si calibrano nero e bianco tramite
      * i metodi della classe LightSensor e un sensore di luce.
      *
      * @param args Argomenti a linea di comando.
@@ -895,7 +899,7 @@ import lejos.nxt.SensorPort;
 public class UseWaitSoundSensor {
 
     /**
-     * Metodo main, si esegue il test aspettando dal microfono 
+     * Metodo main, si esegue il test aspettando dal microfono
      * un suono forte.
      *
      * @param args Argomenti a linea di comando.
