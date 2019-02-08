@@ -245,12 +245,12 @@ La specifica dei requisiti del progetto è rappresentata tramite tabelle che def
 
 |ID  |REQ-04                                          |
 |----|------------------------------------------------|
-|**Nome**    |Componenti - Attuatori|
+|**Nome**    |Sviluppo blocchetti verdi|
 |**Priorità**|1                     |
-|**Versione**|2.0                   |
+|**Versione**|3.0                   |
 |**Note**    |Ogni attuatore deve avere dei metodi per controllarlo.|
-| *Sub-req 1* |Motore Grande |
-| *Sub-req 2* |Schermo LCD del brick |
+| *Sub-req 1* |Motore |
+| *Sub-req 2* |Navigazione a due motori |
 
 |ID  |REQ-05                                          |
 |----|------------------------------------------------|
@@ -378,7 +378,6 @@ Per ogni sensore ci deve essere un metodo per la lettura dei dati letti dal sens
 ##### Attuatori
 
 - *SingleMotor*, il motore più potente per i LEGO&reg; Mindstorms.
-- *LCD*, è lo schermino che si trova sul brick.
 
 <div class="page-break"></div>
 
