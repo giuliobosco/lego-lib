@@ -1622,45 +1622,25 @@ motore destro e sinistro e i due sensori di luce.
     </tr>
     <tr>
         <td>TC-014</td>
-        <td style="color:green!important;text-align:center;"></td>
-        <td></td>
+        <td style="color:red!important;text-align:center;"><FAILED/td>
+        <td>Il motore non si ferma dopo le tre rotazioni</td>
     </tr>
     <tr>
         <td>TC-015</td>
-        <td style="color:green!important;text-align:center;"></td>
-        <td></td>
+        <td style="color:red!important;text-align:center;">FAILDE</td>
+        <td>L'attesa non dura 5 secondi ma finisce subito.</td>
     </tr>
     <tr>
         <td>TC-016</td>
-        <td style="color:green!important;text-align:center;"></td>
-        <td></td>
+        <td style="color:green!important;text-align:center;">OK</td>
+        <td>La navigazione esegue i metodi impostati correttamente.</td>
     </tr>
     <tr>
         <td>TC-017</td>
-        <td style="color:green!important;text-align:center;"></td>
-        <td></td>
+        <td style="color:red!important;text-align:center;">FAILED</td>
+        <td>Il robot non segue la linea correttamente.</td>
     </tr>
 </table>
-
-| Test Case | Risultato  |
-| --------- | ---------- |
-| TC-001    | <p style="color:lime;">Il brick &egrave; stato configurato correttamente e il programma viene eseguito producendo l'output voluto (Il test &egrave; spiegato in questa documentazione). Inoltre &egrave; anche presente la guida dell'installazione e dell'utilizzo del prodotto (usareLegoLib).</p> |
-| TC-002    | <p style="color:lime;">Il programma ritorna true e false correttamente in base al sensore di tocco se &egrave; premuto o meno.</p> |
-| TC-003    | <p style="color:lime;">Il programma mostra correttamente quale pulsante viene premuto.</p> |
-| TC-004    | <p style="color:lime;">Il numero sul display mostra correttamente la distanza tra il sensore e la superficie a cui si punta.</p> |
-| TC-005    | <p style="color:lime;">Il numero &egrave; alto se la superficie &egrave; chiara, mentre &egrave; pi&ugrave; basso se la superficie &egrave; scura.</p> |
-| TC-006    | <p style="color:lime;">Il valore &egrave; alto se si fa un suono vicino al microfono, mentre se si fa silenzio il valore &egrave; basso.</p> |
-| TC-007    | <p style="color:lime;">Il motore fa correttamente due rotazioni.</p> |
-| TC-008    | <p style="color:lime;">I valori del sensore di luce vengono impostati correttamente.</p> |
-| TC-009    | <p style="color:lime;">All'inizio il sensore viene messo su una luce scura, poi quando va nella luce chiara da risultato positivo. Poi si mette su una luce scura e da risultato positivo.</p> |
-| TC-010    | <p style="color:lime;">Il test termina solo quando il sensore viene premuto e rilasciato (click).</p> |
-| TC-011    | <p style="color:red;">Il sensore a ultrasuoni non identifica una distanza maggiore di 50cm.</p> |
-| TC-012    | <p style="color:lime;">Il microfono percepisce correttamente prima un suono forte e poi il silenzio.</p> |
-| TC-013    | <p style="color:lime;">Il test continua solo se viene premuto il pulsante interessato.</p> |
-| TC-014    | <p style="color:red;">Il motore non si ferma dopo le tre rotazioni</p> |
-| TC-015    | <p style="color:red;">L'attesa non dura 5 secondi ma finisce subito.</p> |
-| TC-016    | <p style="color:lime;">La navigazione esegue i metodi impostati correttamente.</p> |
-| TC-017    | <p style="color:red;">Il robot non segue la linea correttamente.</p> |
 
 <div class="page-break"></div>
 
