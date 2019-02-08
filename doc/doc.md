@@ -1172,7 +1172,7 @@ Classe figlia di `Navigation` che usa due motori e un sensore di luce per seguir
 - start(): È il metodo principale che unisce la navigazione dei motori con l'attesa del sensore così da seguire la linea.
     ```java
     /**
-     * Start the line follower.
+     * Avvio del line follower.
      */
     public void start() {
         // Sensore di luce.
@@ -1264,11 +1264,7 @@ motore destro e sinistro e i due sensori di luce.
 
 ### Protocollo di test
 
-Definire in modo accurato tutti i test che devono essere realizzati per
-garantire l’adempimento delle richieste formulate nei requisiti. I test
-fungono da garanzia di qualità del prodotto. Ogni test deve essere
-ripetibile alle stesse condizioni.
-
+In questo capitolo vengono spiegati i test effettuati in base alla specifica dei requisiti.
 
 |Test Case      | TC-001                               |
 |---------------|--------------------------------------|
