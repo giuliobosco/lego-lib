@@ -27,122 +27,122 @@
 
 <div class="clearfix index">
     <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;"><h5>Capitolo</h5></div>
-    <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;"><h5>Pagina</h5></div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;"><h5>Pagina</h5></div>
     <div style="margin-top:5px;widht:100%;"> </div>
     <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">Introduzione</div>
-    <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
     <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">Installazione</div>
-    <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">&emsp;Java</div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Java Runtime Environment
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">2</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Java Development Kit
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">3</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">3</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Variabili d'ambiente
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">3</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">3</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Driver USB
         </div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">4</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">4</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;leJOS
         </div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Intallazione
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Configurazione
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Utilizzo
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;HelloWorld
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">5</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Compilazione e avvio
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">6</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">6</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;lego-lib &amp; IDE
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">6</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">6</div>
     <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
         Struttura
     </div>
-    <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
+    <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Blocchi arancioni
         </div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Wait
         </div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Sensori analogici
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">7</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Wait Time
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">8</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">8</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Wait Motor
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">10</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">10</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Wait Touch Sensor
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">11</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">11</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Wait NXT Button
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">12</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">12</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Wait Ultrasonic Sensor
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">13</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">13</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Wait Light Sensor
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">14</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">14</div>
                 <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                     &emsp;&emsp;&emsp;Calibrazione sensori di luce
                 </div>
-                <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">15</div>
+                <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">15</div>
             <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
                 &emsp;&emsp;Wait Sound Sensor
             </div>
-            <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">16</div>
+            <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">16</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Strutture di controllo
         </div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">17</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">17</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Blocchi verdi
         </div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">18</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">18</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Motore singolo
         </div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">18</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">18</div>
         <div class="capitle" style="width:80%;float:left;border-bottom:1px dotted #DDDDDD;">
             &emsp;Navigazione
         </div>
-        <div class="page" style="text-align:center;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
+        <div class="page" style="text-align:right;width:20%;float:left;border-bottom:1px dotted #DDDDDD;">19</div>
 
 </div>
 
